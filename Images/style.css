@@ -1,0 +1,28 @@
+body,table{
+font-size : 9pt; 
+font-family : 'Verdana';
+	margin: 0px;
+}
+body {
+	line-height: 24px;
+	color: #0099FF;
+	SCROLLBAR-FACE-COLOR:#FFFFFF;
+	SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+	SCROLLBAR-SHADOW-COLOR: #FFFFFF;
+	SCROLLBAR-3DLIGHT-COLOR: #FFFFFF;
+	SCROLLBAR-ARROW-COLOR: #66CCFF;
+	SCROLLBAR-TRACK-COLOR: #FFFFFF;
+	SCROLLBAR-DARKSHADOW-COLOR: #FFFFFF; 
+}
+
+a {
+	color: #3366CC;
+	text-decoration: none;
+}
+
+a:hover{position:relative;top:1px;left:1px;}
+
+.title {
+	color: #0033CC;
+	font-weight: bold;
+}
