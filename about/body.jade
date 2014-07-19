@@ -8,16 +8,25 @@ mixin slide(x,y,r,s,z,rx,ry)
     For the best experience please use the latest **Chrome**, **Safari** or **Firefox** browser.
 nav
   a(href='#name') Icer
+    i.icon-book
   a(href='#education') education
+    i.icon-book
   a(href='#work-experience') work experience
+    i.icon-book
   a(href='#skills') skills
+    i.icon-book
   a(href='#work') work
+    i.icon-book
   a(href='#side-projects') side projects
+    i.icon-book
   //-a#contact-nav(href='#contact')
   //-  i.icon-envelope  
   a#next(href='#', onclick='impress().next();')
+    i.icon-book
     | next
     i.icon-chevron-right  
+div.navegate
+  span.font.doodle-nav navigate
 #impress
   +slide(0,0,0,5)#name
     h1 Icer, Liang
@@ -52,11 +61,9 @@ nav
       | 大学 
   +slide(1500,2000,0,1,-1250,-90)
     :markdown
-        > 发表在《计算机科学》的《复杂背景下视频序列中的人脸定位》;
-
-        > 发表在《The International Conference on Sustainable  Development in Building and Environment, Chongqing, China 25-27th,September,2007》的《Face Location in Video Sequence with Complex Background》;
-
-        > 发表在《材料导报》的《基于数字显微图像处理的水泥粒度分析》
+        * 发表在《计算机科学》的《复杂背景下视频序列中的人脸定位》;
+        * 发表在《The International Conference on Sustainable  Development in Building and Environment, Chongqing, China 25-27th,September,2007》的《Face Location in Video Sequence with Complex Background》;
+        * 发表在《材料导报》的《基于数字显微图像处理的水泥粒度分析》
     h2
       i.icon-book  
       | 论文
@@ -72,100 +79,126 @@ nav
       | 参与过的项目
   +slide(1500,2000,0,1,-2250,-90)
     :markdown
-        WEBGAME和平世界(基于网页的即时战略游戏)
-        > 项目中职责： 项目管理、系统构架
+        #### WEBGAME和平世界(基于网页的即时战略游戏)
+        * 项目中职责： 项目管理、系统构架
 
-        基于人脸识别的安防监控系统
-        > 项目中职责：系统构架，核心算法设计
+        #### 基于人脸识别的安防监控系统
+        * 项目中职责：系统构架，核心算法设计
     h2
       i.icon-book  
       | 项目管理经验 
   +slide(700,1500,90,2)#work-experience
-    p
-      a(href='http://www.feinno.com/')
-        img(src='fetion.gif', height=30)
-        | D-Media
-      | &nbsp;in Chongqing, Developer->Leader->Architect->PM
-    p
-      a(href='http://honeywell.com/')
-        img(src='honeywell.jpg', height=40)
-      | &nbsp;in Shanghai, Developer->Architect
-    h2
-      i.icon-building  
-      | work experience
-  +slide(700,-1500,90,2)
-    p
-      a(href='http://www.feinno.com/')
-        img(src='fetion.gif', height=30)
-        | D-Media
-      | &nbsp;in Chongqing, Developer->Leader->Architect->PM
-    p
-      a(href='http://honeywell.com/')
-        img(src='honeywell.jpg', height=40)
-      | &nbsp;in Shanghai, Developer->Architect
-    h2
-      i.icon-building  
-      | work experience
-  +slide(0,1500,90,2)#skills
     ul
       li
-        a(href='#/languages') Programming Languages
+        a(href='http://www.feinno.com/')
+          img(src='fetion.gif', height=30)
+          | D-Media
+        | &nbsp;in Chongqing, Developer->Leader->Architect->PM
       li
-        a(href='#/web') Web Technologies
-      li
-        a(href='#/game') Game Technologies
-      li
-        a(href='#/cms') Web CMS
+        a(href='http://honeywell.com/')
+          img(src='honeywell.jpg', height=40)
+        | &nbsp;in Shanghai, Developer->Architect
+    h2
+      i.icon-building  
+      | work experience
+  +slide(-300,1500,90,2)#skills
+    #skillmap
+      .skills-wrapper
+        .skills-sunburst
+        .skills-chart
+          #skills-chart-breadcrumb
     h2
       i.icon-star  
       | skills
-  #work.step(data-x='-700', data-y='1500', data-rotate='90', data-scale='2')
+  +slide(-2300,1500,90,2).video
     ul
       li
-        a(href='http://www.kageetai.net/portfolio/flickr-fixr', target='_blank')
-          | Flickr Fixr
-          img.thumb(src='http://kageetai.lynx.uberspace.de/wordpress/wp-content/uploads/2012/06/Capture.png', alt='Flickr Fixr')
-      li
-        a(href='http://www.kageetai.net/portfolio/bored-game', target='_blank')
-          | Bored Game
-          img.thumb(src='http://www.scirra.com/arcade/images/1185/game-big.jpg', alt='Bored Game')
-      li this site using HTML5, CSS3 and SASS with Compass
+        video(id='video', autoplay, muted)
+          source#coverVideo(src='video/test.mp4', type='video/mp4')
     h2
-      i.icon-laptop  
-      | example work
-  #side-projects.step(data-x='-1400', data-y='1500', data-rotate='90', data-scale='2')
-    ul
-      li
-        | own website
-        a(href='http://kageetai.net/', target='_blank') kageetai.net
-      li
-        | several smaller website projects currently in development
-      li
-        | volunteer work at youth organization
-        a(href='http://www.jugendmediencamp.de/', target='_blank') Jugendmediencamp
-      li
-        | movie and web project for young movie project
-    h2
-      i.icon-tags  
-      | side projects
+      i.icon-star  
+      | skills
+//-  #work.step(data-x='-700', data-y='1500', data-rotate='90', data-scale='2')
+//-    ul
+//-      li
+//-        a(href='http://www.kageetai.net/portfolio/flickr-fixr', target='_blank')
+//-          | Flickr Fixr
+//-          img.thumb(src='http://kageetai.lynx.uberspace.de/wordpress/wp-content/uploads/2012/06/Capture.png', alt='Flickr Fixr')
+//-      li
+//-        a(href='http://www.kageetai.net/portfolio/bored-game', target='_blank')
+//-          | Bored Game
+//-          img.thumb(src='http://www.scirra.com/arcade/images/1185/game-big.jpg', alt='Bored Game')
+//-      li this site using HTML5, CSS3 and SASS with Compass
+//-    h2
+//-      i.icon-laptop  
+//-      | example work
+//-  #side-projects.step(data-x='-1400', data-y='1500', data-rotate='90', data-scale='2')
+//-    ul
+//-      li
+//-        | own website
+//-        a(href='http://kageetai.net/', target='_blank') kageetai.net
+//-      li
+//-        | several smaller website projects currently in development
+//-      li
+//-        | volunteer work at youth organization
+//-        a(href='http://www.jugendmediencamp.de/', target='_blank') Jugendmediencamp
+//-      li
+//-        | movie and web project for young movie project
+//-    h2
+//-      i.icon-tags  
+//-      | side projects
   #contact.step(data-x='-2000', data-y='1000', data-rotate='0', data-scale='1')
     ul
       li
-        a(href='mailto:kageetai@gmail.com', target='_blank') kageetai@gmail.com
+        a(href='mailto:shuang.liang@honeywell.com', target='_blank') Liang, Icer (E585909)
     h2
       i.icon-envelope  
       | contact me
   // <div id="overview" class="step" data-x="0" data-y="1000" data-scale="5">&nbsp;</div>
 .hint
-  p.
-    Use a spacebar or arrow keys to navigate
+  p.mouse Use Arrows or SpaceBar keys to navigate
+//-.menu
+//-  ul
+//-    li
+//-      a.font(href='#slogan')
+//-        | Home
+//-        i.icon-home
+//-    li
+//-      a.font(href='#what')
+//-        | What we Do
+//-        i.icon-code
+//-    li
+//-      a.font(href='#how')
+//-        | How we Do
+//-        i.icon-sitemap
+//-    li
+//-      a.font(href='#tech')
+//-        | Technologies
+//-        i.icon-cogs
+//-    li
+//-      a.font(href='#services')
+//-        | Services
+//-        i.icon-beaker
+//-    li
+//-      a.font(href='#success')
+//-        | Succes Stories
+//-        i.icon-star
+button#next
+  span.next
+    i.icon-double-angle-right
 script
   |if ("ontouchstart" in document.documentElement) {
   |  document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
   |}
 script(src='js/impress.js')
+script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+script(src='js/d3.js')
+script(src='js/skill.js')
 script
   |if (!window.location.search.match(/print/)) {
   |  impress().init();
+  |  var myVid=document.getElementById("video");
+  |  myVid.autoplay=true;
+  |  myVid.load();
   |}
 
