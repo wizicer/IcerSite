@@ -85,11 +85,11 @@
         return .299 * color.r + .587 * color.g + .114 * color.b
     }
     function k(a) {
-        var c = ["#3182bd", "#C86EDF", "#FF9500", "#52BE65", "#FF4981"],
+        var c = ["#4CC3D9", "#FFC65D", "#7BC8A4", "#93648D", "#404040"],
             d = [-.1, -.05, 0];
         if (1 == a.depth) {
-            var e = c[x % 5];
-            return x++, e
+            var e = c[coloralternative % 5];
+            return coloralternative++, e
         }
         if (a.depth > 1) {
             var f = d[a.value % 3];
@@ -243,10 +243,13 @@
             .endAngle(function (a) { return a.x + a.dx - .01 / (a.depth + .5) })
             .innerRadius(function (a) { return rad / Math.PI * a.depth })
             .outerRadius(function (a) { return rad / Math.PI * (a.depth + 1) - 1 });
-    d3.json("skills.json", function (root) {
+    //d3.json("skills.json", function (root) {
+    //d3.json("js/skillsdata.js", function (root) {
+    
+    var coloralternative = 0
         initbreadcrumb();
         var path = sunburst
-            .data(d3.entries(root))
+            .data(d3.entries(skillsdata))
             .selectAll("g")
             .data(proficiencydata)
             .enter()
@@ -278,6 +281,41 @@
             .attr("r", rad / Math.PI)
             .attr("opacity", 0);
         initchart();
-    });
-    var x = 0
+    //});
+
+
+	window.addEventListener('impress:stepenter', function() {
+	  var v =$('#video.active video')[0];
+      if (v!==undefined){
+        v.load();
+        v.play();
+      }
+	});
+	window.addEventListener('impress:stepleave', function() {
+	  var v =$('#video.past video')[0];
+      if (v!==undefined){
+        v.pause();
+      }
+	});
+
+	window.addEventListener('impress:stepenter', function() {
+        var eff = ['bounceIn', 'bounce', 'tada'];
+        $('.step.active strong').each(function() {
+            var name = eff[Math.floor((Math.random() * eff.length))];
+            $(this).addClass('animated ' + name);
+        });
+	});
+	window.addEventListener('impress:stepenter', function() {
+	  $('.step.past strong')
+        .removeClass('animated bounceIn bounce tada');
+	});
+	window.addEventListener('impress:stepenter', function() {
+	  $('.step.future strong')
+        .removeClass('animated bounce bounceIn tada');
+	});
+
+//$('.step strong').each(function () {
+//    $(this).replaceWith( "<span style='display:block' class='strong'>" + $(this).html() + "</span>" );
+//});
+
 

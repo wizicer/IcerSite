@@ -60,13 +60,14 @@ body {
     line-height: 1;
     font-family: 'PT Sans', sans-serif;
     min-height: 740px;
+    color: #063467;
     background: #d7d7d7;
-    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#f0f0f0), to(#bebebe));
-    background: -webkit-radial-gradient(#f0f0f0, #bebebe);
-    background: -moz-radial-gradient(#f0f0f0, #bebebe);
-    background: -ms-radial-gradient(#f0f0f0, #bebebe);
-    background: -o-radial-gradient(#f0f0f0, #bebebe);
-    background: radial-gradient(#f0f0f0, #bebebe);
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#4fd4ff), to(#0862bb));
+    background: -webkit-radial-gradient(#4fd4ff,#0862bb);
+    background: -moz-radial-gradient(#4fd4ff,#0862bb);
+    background: -ms-radial-gradient(#4fd4ff,#0862bb);
+    background: -o-radial-gradient(#4fd4ff,#0862bb);
+    background: radial-gradient(#4fd4ff,#0862bb);
 }
 blockquote, q {
     quotes: none;
@@ -89,7 +90,7 @@ a:hover, a:focus, a:target {
 nav {
     z-index: 100;
     position: fixed;
-    width: 150px;
+    width: 100px;
     height: 100%;
     padding-top: 50px;
     & > .me {
@@ -111,7 +112,8 @@ nav {
         background-color: rgba(0, 0, 0, 0.5);
     }
     i {
-        padding-left: 10px;
+        padding-left: 32px;
+        padding-right: 16px;
     }
     :hover {
         margin-left: 0px;
@@ -170,7 +172,14 @@ nav #contact-nav,nav #print {
         text-align: right;
     }
     ul {
-        margin-left: 70px;
+        margin-left: 40px;
+    }
+    strong {
+        display: inline-block;
+        margin: 0px 5px 0px 5px;
+    }
+    code {
+        font-weight: bold;
     }
 }
 .step.active {
@@ -494,13 +503,13 @@ a:hover {
 
 .hint {
     p.mouse {
-        background:url('../arrow.png') 30px 30px no-repeat;
+        background: url('../arrow.png') 30px 30px no-repeat;
         display: inline;
         padding: 20px 40px 20px 150px;
     }
 }
 .navegate {
-    background: url(../navegate.png) no-repeat;
+    background: url('../navegate.png') no-repeat;
     width: 300px;
     height: 91px;
     opacity: 0;

@@ -8,22 +8,18 @@ mixin slide(x,y,r,s,z,rx,ry)
     For the best experience please use the latest **Chrome**, **Safari** or **Firefox** browser.
 nav
   a(href='#name') Icer
-    i.icon-book
+    i.icon-home
   a(href='#education') education
     i.icon-book
-  a(href='#work-experience') work experience
-    i.icon-book
+  a(href='#work-experience') jobs
+    i.icon-suitcase
   a(href='#skills') skills
-    i.icon-book
+    i.icon-thumbs-up
   a(href='#work') work
-    i.icon-book
-  a(href='#side-projects') side projects
-    i.icon-book
+    i.icon-beaker
   //-a#contact-nav(href='#contact')
   //-  i.icon-envelope  
-  a#next(href='#', onclick='impress().next();')
-    i.icon-book
-    | next
+  a(href='#', onclick='impress().next();') next
     i.icon-chevron-right  
 div.navegate
   span.font.doodle-nav navigate
@@ -35,8 +31,8 @@ div.navegate
       | architect & expert on C#
   +slide(1500,1500,90,2)#education
     :markdown
-      * `2009` graduated from **Chongqing Jiaotong University** with **Electric Information Engineering**
-      * `2013` started studying **Embedded development** at **Shanghai Jiaotong University**
+      * `2009` graduated from `Chongqing Jiaotong University` with `Electric Information Engineering`
+      * `2013` started studying `Embedded development` at `Shanghai Jiaotong University`
     h2
       i.icon-book  
       | education
@@ -61,9 +57,9 @@ div.navegate
       | 大学 
   +slide(1500,2000,0,1,-1250,-90)
     :markdown
-        * 发表在《计算机科学》的《复杂背景下视频序列中的人脸定位》;
+        * 发表在**《计算机科学》**的《复杂背景下视频序列中的人脸定位》;
         * 发表在《The International Conference on Sustainable  Development in Building and Environment, Chongqing, China 25-27th,September,2007》的《Face Location in Video Sequence with Complex Background》;
-        * 发表在《材料导报》的《基于数字显微图像处理的水泥粒度分析》
+        * 发表在**《材料导报》**的《基于数字显微图像处理的水泥粒度分析》
     h2
       i.icon-book  
       | 论文
@@ -80,14 +76,28 @@ div.navegate
   +slide(1500,2000,0,1,-2250,-90)
     :markdown
         #### WEBGAME和平世界(基于网页的即时战略游戏)
-        * 项目中职责： 项目管理、系统构架
+        * 项目中职责：**项目管理**、**系统构架**
 
         #### 基于人脸识别的安防监控系统
-        * 项目中职责：系统构架，核心算法设计
+        * 项目中职责：**系统构架**，**核心算法设计**
     h2
       i.icon-book  
       | 项目管理经验 
   +slide(700,1500,90,2)#work-experience
+    ul
+      li
+        a(href='http://www.feinno.com/')
+          img(src='fetion.gif', height=30)
+          | D-Media
+        | &nbsp;in Chongqing, Developer->Leader->Architect->PM
+      li
+        a(href='http://honeywell.com/')
+          img(src='honeywell.jpg', height=40)
+        | &nbsp;in Shanghai, Developer->Architect
+    h2
+      i.icon-building  
+      | work experience
+  +slide(700,2000,0,1,-250,-90)#dmedia-experience
     ul
       li
         a(href='http://www.feinno.com/')
@@ -110,10 +120,24 @@ div.navegate
     h2
       i.icon-star  
       | skills
-  +slide(-2300,1500,90,2).video
+  +slide(-1300,1500,90,2)#works
+    ul
+      li works
+    h2
+      i.icon-star  
+      | works
+  +slide(-1300,2000,0,1,-500,-270)#video
     ul
       li
-        video(id='video', autoplay, muted)
+        video(muted)
+          source#coverVideo(src='video/test.mp4', type='video/mp4')
+    h2
+      i.icon-star  
+      | skills
+  +slide(-1300,2000,0,1,-1500,-270)#video2
+    ul
+      li
+        video(muted)
           source#coverVideo(src='video/test.mp4', type='video/mp4')
     h2
       i.icon-star  
@@ -191,14 +215,12 @@ script
   |  document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
   |}
 script(src='js/impress.js')
-script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
 script(src='js/d3.js')
+script(src='js/skillsdata.js')
 script(src='js/skill.js')
 script
   |if (!window.location.search.match(/print/)) {
   |  impress().init();
-  |  var myVid=document.getElementById("video");
-  |  myVid.autoplay=true;
-  |  myVid.load();
   |}
 
