@@ -285,14 +285,14 @@
 
 
 	window.addEventListener('impress:stepenter', function() {
-	  var v =$('#video.active video')[0];
+	  var v =$('.step.active video')[0];
       if (v!==undefined){
         v.load();
         v.play();
       }
 	});
 	window.addEventListener('impress:stepleave', function() {
-	  var v =$('#video.past video')[0];
+	  var v =$('.step.past video')[0];
       if (v!==undefined){
         v.pause();
       }

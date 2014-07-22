@@ -515,6 +515,10 @@ a:hover .thumb {
   opacity: 1;
   cursor: pointer;
 }
+.impress-on-overview .step.hideoverview,
+.impress-on-overview .step.hidepast {
+  opacity: 0;
+}
 .hint {
   display: none;
   position: fixed;

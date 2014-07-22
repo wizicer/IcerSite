@@ -17,8 +17,6 @@ nav
     i.icon-thumbs-up
   a(href='#works') works
     i.icon-beaker
-  //-a#contact-nav(href='#contact')
-  //-  i.icon-envelope  
   a(href='#', onclick='impress().next();') next
     i.icon-chevron-right  
 div.navegate
@@ -36,7 +34,7 @@ div.navegate
     h2
       i.icon-book  
       | education
-  +step(1500,2000,0,1,-250,-90)
+  +step(1500,2000,0,1,-250,-90).hideoverview
     :markdown
       * 在两届机器人大赛中分别获得个人的**铜牌**和**银牌**  
       * 在两届创新与实践活动全国总决赛中均获得**铜牌**。 
@@ -45,7 +43,7 @@ div.navegate
     h2
       i.icon-book  
       | 高中
-  +step(1500,2000,0,1,-750,-90)
+  +step(1500,2000,0,1,-750,-90).hideoverview
     :markdown
       * 第六届“挑战杯”全国大学生创业设计大赛全国 **铜奖** 
       * 第十届“挑战杯”全国大学生课外学术科技作品竞赛重庆赛区 **一等奖** 
@@ -55,7 +53,7 @@ div.navegate
     h2
       i.icon-book  
       | 大学 
-  +step(1500,2000,0,1,-1250,-90)
+  +step(1500,2000,0,1,-1250,-90).hideoverview
     :markdown
         * 发表在**《计算机科学》**的《复杂背景下视频序列中的人脸定位》;
         * 发表在《The International Conference on Sustainable  Development in Building and Environment, Chongqing, China 25-27th,September,2007》的《Face Location in Video Sequence with Complex Background》;
@@ -63,7 +61,7 @@ div.navegate
     h2
       i.icon-book  
       | 论文
-  +step(1500,2000,0,1,-1750,-90)
+  +step(1500,2000,0,1,-1750,-90).hideoverview
     :markdown
         * 桥梁智能健康监测系统（算法设计，C++）
         * 桥梁裂纹检测系统（图像检测算法设计及优化，C#）
@@ -73,7 +71,7 @@ div.navegate
     h2
       i.icon-book  
       | 参与过的项目
-  +step(1500,2000,0,1,-2250,-90)
+  +step(1500,2000,0,1,-2250,-90).hideoverview
     :markdown
       #### WEBGAME和平世界(基于网页的即时战略游戏)
       * 项目中职责：**项目管理**、**系统构架**
@@ -90,17 +88,17 @@ div.navegate
         | &nbsp;in Chongqing, Intern
       li
         a(href='http://www.feinno.com/')
-          img(src='fetion.gif', height=30)
+          img(src='dmedia/fetion.gif', height=30)
           | D-Media
         | &nbsp;in Chongqing, Developer->Leader->Architect->PM
       li
         a(href='http://honeywell.com/')
-          img(src='honeywell.jpg', height=40)
+          img(src='honeywell/honeywell.jpg', height=40)
         | &nbsp;in Shanghai, Developer->Architect
     h2
       i.icon-building  
       | work experience
-  +step(700,2000,0,1,-250,-90)#dmedia-experience
+  +step(700,2000,0,1,-250,-90)#dmedia-experience.hideoverview
     :markdown
       * `2009.4-2009.11` 开发工程师
         * 高性能Socket USSD服务器
@@ -114,7 +112,7 @@ div.navegate
     h2
       i.icon-building  
       | Personal Progress Data
-  +step(700,2000,0,1,-750,-90)
+  +step(700,2000,0,1,-750,-90).hideoverview
     :markdown
       * 一种彩信文件预览处理方法及装置
       * 一种短彩信数据下发处理系统及方法
@@ -139,7 +137,7 @@ div.navegate
     img(src='dmedia/session_bsy.png')
   +step(1200,y+=1100,90,1,-1250,0,-90).hidepast
     img(src='dmedia/tools_prototypecreator.png')
-  +step(700,2000,0,1,-1250,-90)
+  +step(700,2000,0,1,-1250,-90).hideoverview
     :markdown
       * 完成专利申请**7项**
       * 进行公司内部技术讲座**7次**
@@ -149,16 +147,16 @@ div.navegate
     h2
       i.icon-building  
       | Personal Performance Data
-  +step(700,2000,0,1,250,-90)#honeywell-experience
+  +step(700,2000,0,1,250,-90)#honeywell-experience.hideoverview
     :markdown
       * `2012.5-2013.4` Implementer
-        * 高性能Socket USSD服务器
+        * Chart Enhancement in PlantCruise 
       * `2013.4-2014.7` Architect
-        * 高性能Socket USSD服务器
+        * RTU Software part
     h2
       i.icon-building  
       | Personal Progress Data
-  +step(700,2000,0,1,750,-90)
+  +step(700,2000,0,1,750,-90).hideoverview
     :markdown
       * Auto test on Control builder
       * Basic guide for vSphere
@@ -194,7 +192,7 @@ div.navegate
     img(src='honeywell/session_uiautotest.png')
   +step(1200,y+=1100,90,1,750,0,-90).hidepast
     img(src='honeywell/session_vsphere.png')
-  +step(700,2000,0,1,1250,-90)
+  +step(700,2000,0,1,1250,-90).hideoverview
     :markdown
       * Image Comparer
       * Icer Clearcase Helper
@@ -217,7 +215,7 @@ div.navegate
     img(src='honeywell/tools_smartgenerator2.png')
   +step(1200,y+=1100,90,1,1250,0,-90).hidepast
     img(src='honeywell/tools_xsd2cpp.png')
-  +step(700,2000,0,1,1750,-90)
+  +step(700,2000,0,1,1750,-90).hideoverview
     :markdown
       * Path finding for oil pipe
       * New auto wiring research
@@ -252,7 +250,7 @@ div.navegate
     img(src='honeywell/prototype_rtu3.png')
   +step(1200,y+=1100,90,1,1750,0,-90).hidepast
     img(src='honeywell/prototype_rtu4.png')
-  +step(700,2000,0,1,2250,-90)
+  +step(700,2000,0,1,2250,-90).hideoverview
     :markdown
       * Jenkins
       * Review Board
@@ -284,101 +282,27 @@ div.navegate
     h2
       i.icon-star  
       | skills
-  +step(-1300,1500,90,2)#works
-    ul
-      li works
+  +step(-1500,1500,90,2)#works
+    :markdown
+      * Share
+      * Productivity
+      * Game Development
+      * Explore
+      * Learn new skill
     h2
       i.icon-star  
       | works
-  +step(-1300,2000,0,1,-500,-270)#video.hidepast
-    ul
-      li
-        video(muted)
-          source#coverVideo(src='video/projectormouse.mp4', type='video/mp4')
-    h2
-      i.icon-star  
-      | skills
-  +step(-1300,2000,0,1,-1500,-270)#video2.hidepast
-    ul
-      li
-        video(muted)
-          source#coverVideo(src='video/bell.mp4', type='video/mp4')
-    h2
-      i.icon-star  
-      | skills
-  +step(-1300,2000,0,1,-2500,-270)#video3.hidepast
-    ul
-      li
-        video(muted)
-          source#coverVideo(src='video/face.mp4', type='video/mp4')
-    h2
-      i.icon-star  
-      | skills
-//-  #work.step(data-x='-700', data-y='1500', data-rotate='90', data-scale='2')
-//-    ul
-//-      li
-//-        a(href='http://www.kageetai.net/portfolio/flickr-fixr', target='_blank')
-//-          | Flickr Fixr
-//-          img.thumb(src='http://kageetai.lynx.uberspace.de/wordpress/wp-content/uploads/2012/06/Capture.png', alt='Flickr Fixr')
-//-      li
-//-        a(href='http://www.kageetai.net/portfolio/bored-game', target='_blank')
-//-          | Bored Game
-//-          img.thumb(src='http://www.scirra.com/arcade/images/1185/game-big.jpg', alt='Bored Game')
-//-      li this site using HTML5, CSS3 and SASS with Compass
-//-    h2
-//-      i.icon-laptop  
-//-      | example work
-//-  #side-projects.step(data-x='-1400', data-y='1500', data-rotate='90', data-scale='2')
-//-    ul
-//-      li
-//-        | own website
-//-        a(href='http://kageetai.net/', target='_blank') kageetai.net
-//-      li
-//-        | several smaller website projects currently in development
-//-      li
-//-        | volunteer work at youth organization
-//-        a(href='http://www.jugendmediencamp.de/', target='_blank') Jugendmediencamp
-//-      li
-//-        | movie and web project for young movie project
-//-    h2
-//-      i.icon-tags  
-//-      | side projects
-  #contact.step(data-x='-2000', data-y='1000', data-rotate='0', data-scale='1')
-    ul
-      li
-        a(href='mailto:shuang.liang@honeywell.com', target='_blank') Liang, Icer (E585909)
-    h2
-      i.icon-envelope  
-      | contact me
-  // <div id="overview" class="step" data-x="0" data-y="1000" data-scale="5">&nbsp;</div>
+  -var y=500
+  each p in [ 'albumdownloader.gif', 'battlepainter.png', 'battler.png', 'blueness.png', 'classalerter.png', 'cms.png', 'code.png', 'game.png', 'gameeditor.png', 'issue.png', 'hidefile.png', 'MagicGraph.png', 'netdrive.png', 'peaceworld.jpg', 'pingyu.png', 'clock.jpg']
+    +step(-1500,2000,0,1,y-=1000,-270).hidepast
+      img(src='works/'+p)
+  each p in ['bell.mp4', 'projectormouse.mp4', 'face.mp4']
+    +step(-1500,2000,0,1,y-=1000,-270).hidepast
+      video(muted)
+        source#coverVideo(src='video/'+p, type='video/mp4')
+  +step(0,1000,90,5)#overview
 .hint
   p.mouse Use Arrows or SpaceBar keys to navigate
-//-.menu
-//-  ul
-//-    li
-//-      a.font(href='#slogan')
-//-        | Home
-//-        i.icon-home
-//-    li
-//-      a.font(href='#what')
-//-        | What we Do
-//-        i.icon-code
-//-    li
-//-      a.font(href='#how')
-//-        | How we Do
-//-        i.icon-sitemap
-//-    li
-//-      a.font(href='#tech')
-//-        | Technologies
-//-        i.icon-cogs
-//-    li
-//-      a.font(href='#services')
-//-        | Services
-//-        i.icon-beaker
-//-    li
-//-      a.font(href='#success')
-//-        | Succes Stories
-//-        i.icon-star
 button#next
   span.next
     i.icon-double-angle-right
@@ -387,7 +311,7 @@ script
   |  document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
   |}
 script(src='js/impress.js')
-script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+script(src='js/jquery.min.js')
 script(src='js/d3.js')
 script(src='js/skillsdata.js')
 script(src='js/skill.js')
