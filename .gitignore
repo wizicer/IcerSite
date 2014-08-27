@@ -6,3 +6,5 @@ node_modules/
 public/
 .deploy/
 /source/about/
+old/
+themes/iceman/
