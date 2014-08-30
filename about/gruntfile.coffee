@@ -49,9 +49,6 @@ module.exports = (grunt) ->
         files:
           "index.html": "index.jade"
 
-    clean:
-      main: ['../source/about/']
-
     copy:
       main:
         files: [
@@ -124,7 +121,6 @@ module.exports = (grunt) ->
     "less:prod"
     "jade:prod"
     "uglify:prod"
-    "clean"
     "copy"
   ]
   return
