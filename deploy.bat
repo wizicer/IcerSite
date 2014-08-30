@@ -1,4 +1,5 @@
 @echo off
-hexo generate
-hexo deploy
+call hexo generate
+call hexo deploy
 rd .deploy /s /q
+pause finished.
