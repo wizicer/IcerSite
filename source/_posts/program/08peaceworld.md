@@ -1,6 +1,7 @@
 title: 和平世界
 tags:
 - 游戏
+- 服务器
 categories:
 - 作品
 date: 2008-6-2
