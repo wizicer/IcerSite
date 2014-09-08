@@ -7,7 +7,7 @@ categories:
 date: 2009-11-2
 ---
 
-![](images/classalerter.png)
+{% ghimg /wizicer/IcerSite/devimages/classalerter.png %}
 下载地址:[alerter.rar](download/alerter.rar)
 
 # 软件介绍

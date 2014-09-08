@@ -1,6 +1,7 @@
 mixin step(x,y,r,s,z,rx,ry)
   .step(id=attributes.id, class=attributes.class, data-x=x, data-y=y, data-z=z, data-rotate=r, data-rotate-x=rx, data-rotate-y=ry, data-scale=s)
     block
+- var imgprefix = "https://raw.githubusercontent.com/wizicer/IcerSite/dev/about/"
 .fallback-message
   :markdown
     Your browser **doesn't support the features required**, so you are presented with a simplified version of this site.
@@ -88,12 +89,12 @@ div.navegate
         | &nbsp;in Chongqing, Intern
       li
         a(href='http://www.feinno.com/')
-          img(src='img/dmedia/fetion.gif', height=30)
+          img(src=imgprefix + 'img/dmedia/fetion.gif', height=30)
           | D-Media
         | &nbsp;in Chongqing, Developer->Leader->Architect->PM
       li
         a(href='http://honeywell.com/')
-          img(src='img/honeywell/honeywell.jpg', height=40)
+          img(src=imgprefix + 'img/honeywell/honeywell.jpg', height=40)
         | &nbsp;in Shanghai, Developer->Architect
     h2
       i.icon-building  
@@ -210,7 +211,7 @@ div.navegate
   -var y=500
   each p in [ 'albumdownloader.gif', 'battlepainter.png', 'battler.png', 'blueness.jpg', 'classalerter.png', 'cms.jpg', 'code.png', 'game.png', 'gameeditor.png', 'issue.png', 'hidefile.png', 'MagicGraph.png', 'netdrive.png', 'peaceworld.jpg', 'pingyu.png', 'clock.jpg']
     +step(-1500,2000,0,1,y-=1000,-270).hidepast
-      img(src='img/works/'+p)
+      img(src=imgprefix + 'img/works/'+p)
   +step(0,1000,90,5)#overview
 .hint
   p.mouse Use Arrows or SpaceBar keys to navigate

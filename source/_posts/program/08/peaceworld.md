@@ -10,16 +10,16 @@ date: 2008-6-2
 登陆界面
 -----------------
 
-![](/images/childhood/pw/pwlogin.jpg)
+{% ghimg /wizicer/IcerSite/dev/images/childhood/pw/pwlogin.jpg %}
 
 宣传册
 -----------------
 
-[![](/images/childhood/pw/N1.jpg)](/images/childhood/pw/1.jpg)
-[![](/images/childhood/pw/N2.jpg)](/images/childhood/pw/2.jpg)
+{% ghimg /wizicer/IcerSite/dev/images/childhood/pw/1.jpg %}
+{% ghimg /wizicer/IcerSite/dev/images/childhood/pw/2.jpg %}
 
-[![](/images/childhood/pw/N3.jpg)](/images/childhood/pw/3.jpg)
-[![](/images/childhood/pw/N4.jpg)](/images/childhood/pw/4.jpg)
+{% ghimg /wizicer/IcerSite/dev/images/childhood/pw/3.jpg %}
+{% ghimg /wizicer/IcerSite/dev/images/childhood/pw/4.jpg %}
 
 产品文档
 -----------------

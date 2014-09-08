@@ -54,7 +54,7 @@ module.exports = (grunt) ->
         files: [
           {
             expand: true
-            src: ['css/**', 'js/**', 'font/**', 'img/**']
+            src: ['css/**', 'js/**', 'font/**']
             dest: '../source/about/'
           }
           {
