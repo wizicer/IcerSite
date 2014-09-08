@@ -3,7 +3,7 @@ tags:
 - 小说
 categories:
 - 小时候
-date: 2004-9-2
+date: 2004-2-2
 ---
 
 {% blockquote 冰河魔法师 %}
