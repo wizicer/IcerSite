@@ -1,6 +1,6 @@
 title: 低清晰度下的头像处理比较
 tags:
-- 杂文
+- 论文
 categories:
 - 小时候
 date: 2007-8-30
