@@ -94,3 +94,8 @@ deploy:
   type: github
   repo: https://github.com/wizicer/IcerSite.git
   branch: gh-pages
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 10
