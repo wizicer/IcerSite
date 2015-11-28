@@ -125,3 +125,5 @@ fotorama:
     - { show: "http://s.fotorama.io/1.jpg", thumb: "http://s.fotorama.io/1.jpg" }
     - "http://s.fotorama.io/2.jpg"
 ## http://fotorama.io/
+
+showUpdateDate: false
