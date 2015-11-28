@@ -79,8 +79,8 @@ PowerPoint制作。
 
 界面举例：
 
-{% ghimg /wizicer/IcerSite/dev/images/childhood/homework/image001.jpg %}
-{% ghimg /wizicer/IcerSite/dev/images/childhood/homework/image002.jpg %}
+{% asset_img image001.jpg %}
+{% asset_img image002.jpg %}
 
 注意：1.  考虑界面的友好性。2.    写代码时要注意风格，使代码具有可读性。
 

@@ -10,22 +10,22 @@ date: 2008-6-2
 登陆界面
 -----------------
 
-{% ghimg /wizicer/IcerSite/dev/images/childhood/pw/pwlogin.jpg %}
+{% asset_img pwlogin.jpg %}
 
 宣传册
 -----------------
 
-{% ghimg /wizicer/IcerSite/dev/images/childhood/pw/1.jpg %}
-{% ghimg /wizicer/IcerSite/dev/images/childhood/pw/2.jpg %}
+{% asset_img 1.jpg %}
+{% asset_img 2.jpg %}
 
-{% ghimg /wizicer/IcerSite/dev/images/childhood/pw/3.jpg %}
-{% ghimg /wizicer/IcerSite/dev/images/childhood/pw/4.jpg %}
+{% asset_img 3.jpg %}
+{% asset_img 4.jpg %}
 
 产品文档
 -----------------
 
-* 设计文档精要[[下载](/downloads/childhood/pwdoc.pdf)]
-* 玩法说明[[下载](/downloads/childhood/pwmanual.pdf)]
+* 设计文档精要[[下载](pwdoc.pdf)]
+* 玩法说明[[下载](pwmanual.pdf)]
 
 
 
