@@ -20,6 +20,11 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 permalink_defaults:
+skip_render:
+  - "about/*"
+  - "about/**/*"
+  - "slides/*"
+  - "slides/**/*"
 
 # Directory
 source_dir: source
