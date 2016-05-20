@@ -16,3 +16,12 @@ Omit g to display the number of lines where the pattern matches:
 [Link](http://vim.wikia.com/wiki/Count_number_of_matches_of_a_pattern)
 
 
+## 2015-5-20
+
+Q: pipe content from console output to vim
+A: `vim -`, eg: `ls -la | vim -`
+
+Q: shortcut to exit vim
+A:
+  * `ZZ` save and exit
+  * `ZQ` exit without save
