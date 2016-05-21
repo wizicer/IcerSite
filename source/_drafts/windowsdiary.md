@@ -48,3 +48,11 @@ ftype jarfile="C:\DevTools\jrex86\bin\javaw.exe" -jar "%%1" %%*
 ```
 
 [Link](http://stackoverflow.com/a/30571306/2558077)
+
+## 2016-4-22
+
+### Install pip in windows
+
+Start with `2.7.9`, pip already in python default installation package.
+To use it, just type `python -m pip install {something}`
+
