@@ -1,4 +1,10 @@
-# Linux Diary
+title: Linux Diary
+tags:
+- Linux
+categories:
+- Diary
+date: 2016-5-18
+---
 
 ## 2016-5-18
 

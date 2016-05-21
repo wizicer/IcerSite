@@ -1,4 +1,10 @@
-# VIM Diary
+title: Vim Diary
+tags:
+- Vim
+categories:
+- Diary
+date: 2016-5-20
+---
 
 ## 2015-5-20
 

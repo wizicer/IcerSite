@@ -1,4 +1,10 @@
-# Git Diary
+title: Git Diary
+tags:
+- Git
+categories:
+- Diary
+date: 2016-5-16
+---
 
 ## 2016-5-16
 

@@ -1,4 +1,10 @@
-# CSharp Diary
+title: CSharp Diary
+tags:
+- C#
+categories:
+- Diary
+date: 2016-5-16
+---
 
 ## 2016-5-16
 
@@ -144,22 +150,6 @@ Need to reference `Microsoft.CSharp`
 
 no stable extension so far, only available one is <https://github.com/lukesdm/image-comments> without maintenance for years
 
-## No Answer Questions
-
-### VsVim shortcut key missing in option
-
-No answer found so far on the internet.
-
-### WPF Error: Cannot find governing FrameworkElement or FrameworkContentElement for target element
-
-DataGrid do not inherit DataContext, need to use `dummyElement` and reference it by `ElementName`.
-
-However, if we want to bind/use property of ItemsSource, so far, no way.
-
-### Count `IEnumerable<T>` without knowing T
-
-no answer, maybe it's impossible.
-
 ### should I sign my extension before uploading to VS gallery?
 
 No, many famous extension didn't sign itself.
@@ -179,6 +169,22 @@ Here is the tutorial: <http://www.jeff.wilcox.name/2010/03/vsixcodesigning/>
 4. Then set the command line arguments to /rootsuffix Exp
 
 [Link](http://stackoverflow.com/questions/9281662/how-to-debug-visual-studio-extensions)
+
+## No Answer Questions
+
+### VsVim shortcut key missing in option
+
+No answer found so far on the internet.
+
+### WPF Error: Cannot find governing FrameworkElement or FrameworkContentElement for target element
+
+DataGrid do not inherit DataContext, need to use `dummyElement` and reference it by `ElementName`.
+
+However, if we want to bind/use property of ItemsSource, so far, no way.
+
+### Count `IEnumerable<T>` without knowing T
+
+no answer, maybe it's impossible.
 
 ### UWP with MVVM
 

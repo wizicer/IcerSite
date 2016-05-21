@@ -1,4 +1,10 @@
-# Misc Diary
+title: Misc Diary
+tags:
+- Miscellaneous
+categories:
+- Diary
+date: 2016-5-14
+---
 
 ## 2016-5-14
 

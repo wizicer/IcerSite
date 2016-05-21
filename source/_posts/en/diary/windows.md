@@ -1,4 +1,10 @@
-# Windows Diary
+title: Windows Diary
+tags:
+- Windows
+categories:
+- Diary
+date: 2016-5-4
+---
 
 ## 2016-5-4
 
