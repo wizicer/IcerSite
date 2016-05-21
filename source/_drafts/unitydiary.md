@@ -61,7 +61,7 @@ No way, do it in an image processing software.
    ```cs
    if (Time.time - startTime < duration)
    {
-           CrewControl.transform.position = Vector3.Lerp(startPoint, endPoint, (Time.time - startTime) / duration);
+       CrewControl.transform.position = Vector3.Lerp(startPoint, endPoint, (Time.time - startTime) / duration);
    }
    ```
 	
@@ -79,7 +79,7 @@ Add image inside panel, change its anchor to left (hold shift key), change scale
 
 ### integrate git with unity 3d
 
-Edit -> Project Settings -> Editor
+Edit -> Project Settings -> Editor.
 Set Version Control to meta files. Set Asset Serialization to force text.
 
 [Link](http://stackoverflow.com/questions/18225126/how-to-use-git-for-unity-source-control)
@@ -103,12 +103,12 @@ To add a level to the build settings use the menu `File`->`Build` Settings...
 
 
 1. I add an empty game object. I attach my new script.
-```cs
-public void NextLevelButton(string levelName)
-{
-   SceneManager.LoadScene(levelName);
-}
-```
+   ```cs
+   public void NextLevelButton(string levelName)
+   {
+       SceneManager.LoadScene(levelName);
+   }
+   ```
 2. I associate this game object with my new script to the Button(in the inspector) by: Clicking the
    +(plus) button to add a callback from an object->script->method.
 

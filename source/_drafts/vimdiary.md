@@ -16,7 +16,7 @@
 0. copy diff.vim from installation location to your own customizable location.
 0. modify diff.vim like following:
 
-```patch
+```diff
 diff --git a/syntax/diff.vim b/syntax/diff.vim
 --- a/syntax/diff.vim
 +++ b/syntax/diff.vim
@@ -41,10 +41,15 @@ diff --git a/syntax/diff.vim b/syntax/diff.vim
 To count the number of matches of a pattern, use the substitute command with the n flag. The
 following shows the number of times that pattern matches text in the current buffer:
 
+```
 :%s/pattern//gn
+```
+
 Omit g to display the number of lines where the pattern matches:
 
+```
 :%s/pattern//n
+```
 
 [Link](http://vim.wikia.com/wiki/Count_number_of_matches_of_a_pattern)
 
@@ -105,7 +110,7 @@ endif
 
 ### vim non-greedy search
 
-The non-greedy version of * is `\{-}`. So, simply replace `.*` with `.\{-`
+The non-greedy version of `*` is `\{-}`. So, simply replace `.*` with `.\{-`
 
 [Link](http://vi.stackexchange.com/questions/196/how-to-make-regex-matchers-non-greedy)
 
@@ -132,7 +137,11 @@ autocmd FileType markdown setlocal suffixesadd=.md,.markdown
 Due to bug of Python 2.7.11, workaround:
 
 1. Install other version.
-2. refer to [Link](https://github.com/vim/vim/blob/master/appveyor.yml)
+2. after install execute following command (of course, need admin privilege). refer to [Link](https://github.com/vim/vim/blob/master/appveyor.yml)
+   ```batch
+   reg copy HKLM\SOFTWARE\Python\PythonCore\2.7 HKLM\SOFTWARE\Python\PythonCore\2.7-32 /s /reg:32
+   reg copy HKLM\SOFTWARE\Python\PythonCore\2.7 HKLM\SOFTWARE\Python\PythonCore\2.7-32 /s /reg:64
+   ```
 
 ## No Answer Questions
 

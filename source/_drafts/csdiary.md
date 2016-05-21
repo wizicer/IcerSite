@@ -1,12 +1,5 @@
 # CSharp Diary
 
-## 2016-5-21
-
-### How to restrict team member misuse IoC?
-
-
-
-
 ## 2016-5-16
 
 ### Dependency check(restriction) of csproj
@@ -145,6 +138,12 @@ BindingFlags.NonPublic`
 
 Need to reference `Microsoft.CSharp`
 
+## 2016-4-24
+
+### image comments in VS2015
+
+no stable extension so far, only available one is <https://github.com/lukesdm/image-comments> without maintenance for years
+
 ## No Answer Questions
 
 ### VsVim shortcut key missing in option
@@ -189,8 +188,5 @@ Not fully searched, possible resources:
 * https://github.com/Fody/PropertyChanged
 * https://github.com/Fody/Fody/
 
-## 2016-4-24
+### How to restrict team member misuse IoC?
 
-### image comments in VS2015
-
-no stable extension so far, only available one is <https://github.com/lukesdm/image-comments> without maintenance for years
