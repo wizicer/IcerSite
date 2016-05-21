@@ -3,6 +3,8 @@ tags:
 - Git
 categories:
 - Diary
+description:
+  Diary for git experiences and special scripts
 date: 2016-5-16
 ---
 
@@ -125,7 +127,7 @@ Add following pattern:
 ### git find biggest history
 
 One-liner:
-```
+```sh
 git rev-list --objects --all | grep "$(git verify-pack -v .git/objects/pack/*.idx | sort -k 3 -n | tail -10 | awk '{print$1}')"
 ```
 

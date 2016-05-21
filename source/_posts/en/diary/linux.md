@@ -3,6 +3,8 @@ tags:
 - Linux
 categories:
 - Diary
+description:
+  Diary for Linux stuffs, like bash script, system diagnose
 date: 2016-5-18
 ---
 

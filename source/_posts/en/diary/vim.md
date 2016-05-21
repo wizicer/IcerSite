@@ -3,6 +3,8 @@ tags:
 - Vim
 categories:
 - Diary
+description:
+  Diary for vim, shortcuts or customization to Vim
 date: 2016-5-20
 ---
 
@@ -103,16 +105,18 @@ endif
 
 ### convert VimWiki to markdown using Vim
 
-    * Convert bold: %s/\*\(.*\)\*/**\1**/g
-    * Convert named link: %s/\[\[\(.\{-}\)|\(.\{-}\)\]\]/[\2](\1)/g
-    * Convert link: %s/\[\[\(.\{-}\)\]\]/<\1>/g
-    * Title: 
-      * First: %s/= \(.*\) =/# \1/g
-      * May multiple: %s/=\(.*\)=/#\1/g
-    * Picture: %s/{{\(.\{-}\)}}/![](\1)/g
-    * Fenced code start: %s/{{{class="brush:\(.*\)"/```\1/g
-    * Fenced code end: %s/}}}/```/g
-    * Manual change # ordered list
+```
+* Convert bold: %s/\*\(.*\)\*/**\1**/g
+* Convert named link: %s/\[\[\(.\{-}\)|\(.\{-}\)\]\]/[\2](\1)/g
+* Convert link: %s/\[\[\(.\{-}\)\]\]/<\1>/g
+* Title: 
+  * First: %s/= \(.*\) =/# \1/g
+  * May multiple: %s/=\(.*\)=/#\1/g
+* Picture: %s/{{\(.\{-}\)}}/![](\1)/g
+* Fenced code start: %s/{{{class="brush:\(.*\)"/```\1/g
+* Fenced code end: %s/}}}/```/g
+* Manual change # ordered list
+```
 
 ### vim non-greedy search
 
@@ -144,7 +148,7 @@ Due to bug of Python 2.7.11, workaround:
 
 1. Install other version.
 2. after install execute following command (of course, need admin privilege). refer to [Link](https://github.com/vim/vim/blob/master/appveyor.yml)
-   ```batch
+   ```bat
    reg copy HKLM\SOFTWARE\Python\PythonCore\2.7 HKLM\SOFTWARE\Python\PythonCore\2.7-32 /s /reg:32
    reg copy HKLM\SOFTWARE\Python\PythonCore\2.7 HKLM\SOFTWARE\Python\PythonCore\2.7-32 /s /reg:64
    ```

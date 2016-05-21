@@ -3,6 +3,8 @@ tags:
 - Windows
 categories:
 - Diary
+description:
+  Diary for Windows usage, including batch script or registry tweak
 date: 2016-5-4
 ---
 

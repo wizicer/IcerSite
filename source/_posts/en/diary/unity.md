@@ -3,6 +3,8 @@ tags:
 - Unity
 categories:
 - Diary
+description:
+  Diary for Unity3D, including scripts and editor
 date: 2016-5-14
 ---
 

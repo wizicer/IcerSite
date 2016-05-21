@@ -1,8 +1,11 @@
 title: CSharp Diary
 tags:
 - C#
+- WPF
 categories:
 - Diary
+description:
+  Diary for C#, WPF and .Net
 date: 2016-5-16
 ---
 
