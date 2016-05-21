@@ -160,3 +160,37 @@ However, if we want to bind/use property of ItemsSource, so far, no way.
 ### Count `IEnumerable<T>` without knowing T
 
 no answer, maybe it's impossible.
+
+### should I sign my extension before uploading to VS gallery?
+
+No, many famous extension didn't sign itself.
+
+### what if I want to sign my extension for VS?
+
+Here is the tutorial: <http://www.jeff.wilcox.name/2010/03/vsixcodesigning/>
+
+### debug VS2015 extension project
+
+1. Right click on the project and select Properties
+2. Go to the Debug Tab
+3. Click on the radio button for Start External Program. Point it to the devenv.exe binary.
+   On my machine it's located at
+   C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\devenv.exe
+   On a non x64 machine though you can remove the " (x86)" portion.
+4. Then set the command line arguments to /rootsuffix Exp
+
+[Link](http://stackoverflow.com/questions/9281662/how-to-debug-visual-studio-extensions)
+
+### UWP with MVVM
+
+Not fully searched, possible resources:
+
+* https://blogs.msdn.microsoft.com/johnshews_blog/2015/09/09/a-minimal-mvvm-uwp-app/
+* https://github.com/Fody/PropertyChanged
+* https://github.com/Fody/Fody/
+
+## 2016-4-24
+
+### image comments in VS2015
+
+no stable extension so far, only available one is <https://github.com/lukesdm/image-comments> without maintenance for years

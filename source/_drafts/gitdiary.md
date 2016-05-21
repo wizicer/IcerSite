@@ -42,6 +42,10 @@ whole history, so it keeps two different history copy.
 
 `git log --all -- FILEPATH(wildcard allowed)`
 
+### gitlab wiki TOC
+
+`[[_TOC_]]`, NOTE: preview mode not work.
+
 ## 2016-5-6
 
 ### UNC link in gitlab
@@ -84,6 +88,42 @@ Not possible, because reflog is local only.
 ### How to audit force push in gitlab?
 
 No way, only to `protect` it.
+
+### dot file management with git with proper ignore
+
+Add following pattern:
+```
+.*
+!/.gitignore
+```
+
+[Link](http://stackoverflow.com/questions/8021441/gitignore-hidden-dot-directories)
+
+## 2016-4-24
+
+### word file git diff
+
+1. `.gitattributes` file in root folder of your git project
+```
+*.docx diff=pandoc
+```
+2. `.gitconfig` file in your home folder
+```
+[diff "pandoc"]
+    textconv=pandoc --to=markdown
+    prompt = false
+```
+
+[Link](http://blog.martinfenner.org/2014/08/25/using-microsoft-word-with-git/)
+
+### git find biggest history
+
+One-liner:
+```
+git rev-list --objects --all | grep "$(git verify-pack -v .git/objects/pack/*.idx | sort -k 3 -n | tail -10 | awk '{print$1}')"
+```
+
+[Link](http://stackoverflow.com/questions/10622179/how-to-find-identify-large-files-commits-in-git-history)
 
 ## 2016-4-20
 

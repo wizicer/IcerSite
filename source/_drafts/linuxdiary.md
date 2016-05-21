@@ -15,6 +15,36 @@ Hint: use `-h` for human readable size format
 
 `date -r <filename>`
 
+## 2016-5-9
+
+### Ubuntu X64 Node down?
+
+**Situation:** 
+
+Up for more than 150 days in Hyper-V Virtual machine, Memory up to 2300M, however, no process
+possessed such memory.  User here face similar situation:
+<http://unix.stackexchange.com/questions/259659>
+
+**Solution:** 
+
+Finally restart the virtual machine, and restraint memory size
+
+### How to diagnose memory in linux
+
+* `ps aux --sort rss` [Link](http://alvinalexander.com/linux/unix-linux-process-memory-sort-ps-command-cpu)
+* `free -m`
+
+### bash tab auto completion with case insensitive
+
+```sh
+# If ~./inputrc doesn't exist yet, first include the original /etc/inputrc so we don't override it
+if [ ! -a ~/.inputrc ]; then echo "\$include /etc/inputrc" > ~/.inputrc; fi
+# Add option to ~/.inputrc to enable case-insensitive tab completion
+echo "set completion-ignore-case On" >> ~/.inputrc
+```
+
+[Link](http://askubuntu.com/questions/87061/can-i-make-tab-auto-completion-case-insensitive-in-the-terminal)
+
 ## 2016-4-29
 
 ### cAdvisor or influxdb?
@@ -26,3 +56,8 @@ They can be used in combination, other keyword is `docker-monitor`
 
 `for D in *; do [ -d "${D}"] && my_command; done`
 
+## 2016-4-25
+
+### cross platform link file command.
+
+Very complex: <http://stackoverflow.com/questions/18641864/git-bash-shell-fails-to-create-symbolic-links>

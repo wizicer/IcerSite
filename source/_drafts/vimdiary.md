@@ -77,6 +77,38 @@ Omit g to display the number of lines where the pattern matches:
 
 `1z=`
 
+## 2016-4-25
+
+### use .vim folder in windows
+
+Add following lines to vimrc:
+```vim
+if has('win32') || has('win64')
+  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+endif
+```
+
+[Link](http://stackoverflow.com/questions/5440281/is-it-possible-to-use-a-folder-named-vimfiles-to-replace-vim-in-macvim)
+
+### convert VimWiki to markdown using Vim
+
+    * Convert bold: %s/\*\(.*\)\*/**\1**/g
+    * Convert named link: %s/\[\[\(.\{-}\)|\(.\{-}\)\]\]/[\2](\1)/g
+    * Convert link: %s/\[\[\(.\{-}\)\]\]/<\1>/g
+    * Title: 
+      * First: %s/= \(.*\) =/# \1/g
+      * May multiple: %s/=\(.*\)=/#\1/g
+    * Picture: %s/{{\(.\{-}\)}}/![](\1)/g
+    * Fenced code start: %s/{{{class="brush:\(.*\)"/```\1/g
+    * Fenced code end: %s/}}}/```/g
+    * Manual change # ordered list
+
+### vim non-greedy search
+
+The non-greedy version of * is `\{-}`. So, simply replace `.*` with `.\{-`
+
+[Link](http://vi.stackexchange.com/questions/196/how-to-make-regex-matchers-non-greedy)
+
 ## 2016-4-22
 
 ### go back end of word (go to end of previous word)
