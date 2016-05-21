@@ -1,5 +1,47 @@
 # Git Diary
 
+## 2016-5-16
+
+### check out without change files
+
+`git symbolic-ref HEAD refs/heads/branchname`
+
+### get SHA of first commit in git?
+
+`git rev-list --max-parents=0 HEAD`
+
+## 2016-5-13
+
+### revert commit after push
+
+`git revert`
+
+### unstage all
+
+`git reset`
+
+However, if the repository don't have the first commit, you may want `rm -rf .git && git init`
+
+### why git not track folder?
+
+No answer, however, without folder tracking merge a old branch to another branch which done rename a
+folder may not complete automatically.
+
+## 2016-5-12
+
+### squash all commits to one commit at one point
+
+`No Answer`
+
+The scenario of this question is because some company open source its project without sharing the
+whole history, so it keeps two different history copy.
+
+## 2016-5-9
+
+### find deleted file in history
+
+`git log --all -- FILEPATH(wildcard allowed)`
+
 ## 2016-5-6
 
 ### UNC link in gitlab

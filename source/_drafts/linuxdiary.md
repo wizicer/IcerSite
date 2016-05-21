@@ -1,4 +1,5 @@
 # Linux Diary
+
 ## 2016-5-18
 
 ### disk space shortage and need to find the largest one
@@ -7,6 +8,12 @@
 2. `du -m --max-depth 1 | sort -rn | head -11` to find TOP 10 by size directories
 
 Hint: use `-h` for human readable size format
+
+## 2016-5-18
+
+### get file date
+
+`date -r <filename>`
 
 ## 2016-4-29
 

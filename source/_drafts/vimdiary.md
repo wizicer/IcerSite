@@ -48,6 +48,21 @@ Omit g to display the number of lines where the pattern matches:
 
 [Link](http://vim.wikia.com/wiki/Count_number_of_matches_of_a_pattern)
 
+## 2016-5-10
+
+### color scheme in Vim in ConEmu not work
+
+1. follow [guide](http://conemu.github.io/en/VimXterm.html)
+2. rename/remove `/bin/vim` from git bash which is not supported.
+
+### multiple condition in Vim
+
+`&&`, tip: help expr
+
+### switch case of letter
+
+`~` in visual mode
+
 ## 2016-5-3
 
 ### Perform same operation across buffers
