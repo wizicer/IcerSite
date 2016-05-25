@@ -6,8 +6,88 @@ categories:
 - Diary
 description:
   Diary for C#, WPF and .Net
-date: 2016-5-23
+date: 2016-5-25
 ---
+
+## 2016-5-25
+
+### Error Message: Cannot modify the return value of 'expression' because it is not a variable
+
+Example code which raises the error:
+```cs
+public Point Origin { get; set; }
+
+Origin.X = 10; // fails with CS1612
+```
+
+As a matter of fact, the misuse itself is obviously to who familiar with the character of `struct`
+-- `immutable`. However, the message itself is really confusing.
+
+PS: workaround code
+
+```cs
+Origin = new Point(10, Origin.Y);
+```
+
+## 2016-5-24
+
+### Merge a individual application configure file (AppSettings) to application
+
+**Scenario Description**: for some reason we don't want to modify the main configure file which name
+is `xxx.exe.config`, so we store configures in another file `ConfigurationFile`.
+
+**Failure Trial**
+
+Intuitively, I write following code try to open the extra configure file.
+
+```cs
+var c = ConfigurationManager.OpenExeConfiguration(path);
+```
+
+Whatever path you use until you have `xxx.exe` and `xxx.exe.config` in pair, you will get following
+error:
+
+```
+Exception thrown: 'System.Configuration.ConfigurationErrorsException' in System.Configuration.dll
+
+Additional information: An error occurred loading a configuration file: The parameter 'exePath' is invalid.
+```
+
+**Success Trial**
+
+The key is we have a configure file without its executable exist, how we workaround this issue is
+`new ExeConfigurationFileMap { ExeConfigFilename = Path.Combine(loc, ConfigurationFile) };`
+
+The complete code of merge as followed:
+
+```cs
+private static void MergeAppSettings()
+{
+    var loc = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+    var map = new ExeConfigurationFileMap { ExeConfigFilename = Path.Combine(loc, ConfigurationFile) };
+    var cfg = ConfigurationManager.OpenMappedExeConfiguration(map, ConfigurationUserLevel.None);
+    foreach (KeyValueConfigurationElement item in cfg.AppSettings.Settings)
+    {
+        if (ConfigurationManager.AppSettings[item.Key] == null)
+        {
+            ConfigurationManager.AppSettings[item.Key] = item.Value;
+        }
+    }
+}
+```
+
+### #if DEBUG vs. Conditional("DEBUG")
+
+Extract key information from [this great explanation](http://stackoverflow.com/a/3788719/2558077)
+
+* `#if DEBUG`: The code in here won't even reach the IL on release.
+* `[Conditional("DEBUG")]`: This code will reach the IL, however calls to the method will be omitted
+  unless DEBUG is set when the caller is **compiled**.
+
+**Common Best Practice**
+
+* Use `#if DEBUG` for different variable assignment.
+* Use `[Conditional("DEBUG")]` for method invocation.
 
 ## 2015-5-23
 
@@ -50,7 +130,8 @@ public static Task<T> StartSTATask<T>(Func<T> func)
 
 * `AssemblyVersion` is used for assembly reference.
 * `FileVersion` is used for mark which build the assembly produced.
-* `ProductVersion` is used for marketing, not used in program.
+* `ProductVersion` is used for marketing, not used in program. **Note**: aka
+  `AssemblyInformationalVersion`
 
 eg, version of `mscorlib 2.0.0.0`
 
