@@ -203,6 +203,12 @@ By default, Git uses the system default editor, which is taken from the VISUAL o
 ```
 [jerry@CentOS project]$ git config --global core.editor vim
 ```
+
+```
+[core]
+	editor = "notepad++.exe"
+```
+
 ### Setting default merge tool
 Git does not provide a default merge tool for integrating conflicting changes into your working tree. We can set default merge tool by enabling following settings.
 
