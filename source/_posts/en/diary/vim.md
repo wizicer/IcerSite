@@ -5,10 +5,17 @@ categories:
 - Diary
 description:
   Diary for vim, shortcuts or customization to Vim
-date: 2016-5-20
+date: 2016-5-27
 ---
 
-## 2015-5-20
+## 2016-5-27
+
+### Switch from vertical split to horizontal split
+
+`^w` followed by capital H,J,K or L will move the current window to the far left,bottom,top or right respectively like normal cursor navigation.
+[Link](http://stackoverflow.com/a/7982215/2558077)
+
+## 2016-5-20
 
 ### pipe content from console output to vim
 

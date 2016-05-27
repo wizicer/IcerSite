@@ -5,8 +5,17 @@ categories:
 - Diary
 description:
   Diary for git experiences and special scripts
-date: 2016-5-18
+date: 2016-5-27
 ---
+
+## 2016-5-27
+
+### How to 'blame' a deleted line
+
+```sh
+git log -S <string> path/to/file(wildcard supported)
+git log -G <regex> path/to/file(wildcard supported)
+```
 
 ## 2016-5-18
 
