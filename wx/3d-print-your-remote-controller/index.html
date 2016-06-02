@@ -1,0 +1,414 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>3D打印你的遥控器怎么样？ | 冰河设计 -- 冰河魔法师的自留地</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="冰河魔法师">
+    
+    <meta name="description" content="最近的智能家居之战打得火热，不少热钱都涌入了，相信在智能家居行业打拼的小伙伴们都一定在吭哧吭哧的加油工作吧。不管哪个行业一旦有了一大批热钱进来就会突飞猛进，看看我们现在的手机发展之迅速以及电脑发展之平稳就知道了。
+虽然说身处该行业的小型玩家已经表现出了较大的危机意识，但是仍旧不愿意放弃自己苦心经营多">
+    
+    
+    
+    
+    <link rel="alternate" href="atom.xml" title="冰河设计 -- 冰河魔法师的自留地" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="//img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/images/icer.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/icer.png">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/images/icer.png" alt="冰河设计 -- 冰河魔法师的自留地" title="冰河设计 -- 冰河魔法师的自留地"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="冰河设计 -- 冰河魔法师的自留地">冰河设计 -- 冰河魔法师的自留地</a></h1>
+				<h2 class="blog-motto">架构师，探险者</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">存档</a></li>
+					
+						<li><a href="/tags">标签</a></li>
+					
+						<li><a href="/categories">分类</a></li>
+					
+						<li><a href="http://wiki.icerdesign.com">Wiki</a></li>
+					
+						<li><a href="http://love.icerdesign.com">关于爱</a></li>
+					
+						<li><a href="http://hiyaphoto.com">关于摄影</a></li>
+					
+						<li><a href="/about">关于我</a></li>
+					
+					<li>
+					
+					<form class="search" action="//baidu.com/s" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="wd" autocomplete="off" maxlength="20" placeholder="搜索" />
+                        <input name=tn type=hidden value="bds">
+                        <input name=cl type=hidden value="3">
+                        <input name=ct type=hidden value="2097152">
+						<input type="hidden" name="si" value="icerdesign.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/wx/3d-print-your-remote-controller/" title="3D打印你的遥控器怎么样？" itemprop="url">3D打印你的遥控器怎么样？</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://icerdesign.com" title="冰河魔法师">冰河魔法师</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2014-08-26T16:00:00.000Z" itemprop="datePublished">2014-08-27</time>
+    
+  </p>
+</header>
+
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3D打印你的遥控器怎么样？"><span class="toc-number">1.</span> <span class="toc-text">3D打印你的遥控器怎么样？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#技术分解"><span class="toc-number">2.</span> <span class="toc-text">技术分解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#硬件：遥控器物理结构"><span class="toc-number">2.1.</span> <span class="toc-text">硬件：遥控器物理结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#硬件：电路板"><span class="toc-number">2.2.</span> <span class="toc-text">硬件：电路板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#固件"><span class="toc-number">2.3.</span> <span class="toc-text">固件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#软件：客户端"><span class="toc-number">2.4.</span> <span class="toc-text">软件：客户端</span></a></li></ol></li></ol>
+		</div>
+		
+		<p>最近的智能家居之战打得火热，不少热钱都涌入了，相信在智能家居行业打拼的小伙伴们都一定在吭哧吭哧的加油工作吧。不管哪个行业一旦有了一大批热钱进来就会突飞猛进，看看我们现在的手机发展之迅速以及电脑发展之平稳就知道了。</p>
+<p>虽然说身处该行业的小型玩家已经表现出了较大的危机意识，但是仍旧不愿意放弃自己苦心经营多时的自有领域，这种坚毅是值得夸赞的。</p>
+<p>我这里也不必因为智能家居的火热而不再谈论，相反，看到这个行业领域欣欣向荣的蓬勃发展，还是表示很开心的，真心希望有一天家里自己搭建的智能家居套件可以被市场上成熟普及的套件替换掉。</p>
+<p>前面有发文聊过现在的厂家把传统的按键遥控器给换成了用手机控制，实在是对用户来说不够友好，今天我们来随便想想是否有好的解决方案呢？</p>
+<h2 id="3D打印你的遥控器怎么样？"><a href="#3D打印你的遥控器怎么样？" class="headerlink" title="3D打印你的遥控器怎么样？"></a>3D打印你的遥控器怎么样？</h2><p>不再是臃肿的厂商自带的遥控器，不再有复杂的按钮，不需要放置多个遥控器在客厅，还支持较为复杂的场景模式，唯一需要考虑的就是，每个遥控器上都有哪些按键是常用按键，然后通过3D打印技术，把你自己布局好的遥控器打印出来，组装上量产的电路板，就成为了一个最适合你操作的，你自己独一无二的遥控器。</p>
+<p>相比那些用手机集成各种遥控器功能的应用来说，最大优点有二：一是随时待命，都不用你去启动应用，更不会有烦人的广告或者升级提醒；二是实体按键，非常有手感，不用盯着手机屏幕看。</p>
+<p>或许有人会问，如果要把所有遥控的所有功能都集成到这个自定义的遥控器上来，岂不是又是非常的臃肿？但若不集成上来，又如何操作呢？</p>
+<p>确实是没有必要把所有的功能都集成到这个自己最常用的遥控器上面来，这个上面应该只是所有最常用操作的集成，对于不常用操作，一个是可以用原始遥控器进行，另一个是可以使用之前提到过的类似的手机应用来替代。</p>
+<h2 id="技术分解"><a href="#技术分解" class="headerlink" title="技术分解"></a>技术分解</h2><h3 id="硬件：遥控器物理结构"><a href="#硬件：遥控器物理结构" class="headerlink" title="硬件：遥控器物理结构"></a>硬件：遥控器物理结构</h3><p>将遥控器分解开来，主要有硅胶按键、正面面板，背部面板、前档和电池后盖，除了前档的材料特殊性（红外线透光性极好），其他部件均可使用3D打印生产。</p>
+<p>如果在有一定规模的前提下，部分部件可以形成规格化量产，例如有几个固定大小的尺寸后，可以量产这个大小的背部面板及电池后盖。</p>
+<p>硅胶按键也可以量产部分形状，后期再通过丝印的方式印上花案以示不同的功能。</p>
+<h3 id="硬件：电路板"><a href="#硬件：电路板" class="headerlink" title="硬件：电路板"></a>硬件：电路板</h3><p>由于该款遥控器不需要在遥控器端进行编程操作，故可以使用较为普通的芯片，
+但需要对遥控器进行重编程，即对按键功能进行二次定制，故需要带烧写功能的芯片。</p>
+<h3 id="固件"><a href="#固件" class="headerlink" title="固件"></a>固件</h3><h3 id="软件：客户端"><a href="#软件：客户端" class="headerlink" title="软件：客户端"></a>软件：客户端</h3><p>不过话又说回来，这个东西还真心没有啥技术含量，遥控器的设计的工业设计师的事情，核心芯片是半导体的事情，普通的电路板设计，随便找个小作坊也能轻易做出来，</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/微信/">微信</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/冰河杂谈/">冰河杂谈</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://icerdesign.com/wx/3d-print-your-remote-controller/" data-title="3D打印你的遥控器怎么样？ | 冰河设计 -- 冰河魔法师的自留地" data-tsina="wizicer" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/start-of-2015/" title="2015新的开始">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  2015新的开始</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/wx/quality-guarantee-of-open-source-project/"  title="开源项目是如何保证质量的？">
+ <strong>NEXT:</strong><br/> 
+ <span>开源项目是如何保证质量的？
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3D打印你的遥控器怎么样？"><span class="toc-number">1.</span> <span class="toc-text">3D打印你的遥控器怎么样？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#技术分解"><span class="toc-number">2.</span> <span class="toc-text">技术分解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#硬件：遥控器物理结构"><span class="toc-number">2.1.</span> <span class="toc-text">硬件：遥控器物理结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#硬件：电路板"><span class="toc-number">2.2.</span> <span class="toc-text">硬件：电路板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#固件"><span class="toc-number">2.3.</span> <span class="toc-text">固件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#软件：客户端"><span class="toc-number">2.4.</span> <span class="toc-text">软件：客户端</span></a></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/Diary/" title="Diary">Diary<sup>7</sup></a></li>
+		
+			<li><a href="/categories/作品/" title="作品">作品<sup>3</sup></a></li>
+		
+			<li><a href="/categories/冰河杂谈/" title="冰河杂谈">冰河杂谈<sup>15</sup></a></li>
+		
+			<li><a href="/categories/小时候/" title="小时候">小时候<sup>37</sup></a></li>
+		
+			<li><a href="/categories/架构设计/" title="架构设计">架构设计<sup>0</sup></a></li>
+		
+			<li><a href="/categories/源代码分析/" title="源代码分析">源代码分析<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/C/" title="C#">C#<sup>2</sup></a></li>
+		
+			<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
+		
+			<li><a href="/tags/HTML/" title="HTML">HTML<sup>2</sup></a></li>
+		
+			<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+		
+			<li><a href="/tags/JS/" title="JS">JS<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Javascript/" title="Javascript">Javascript<sup>2</sup></a></li>
+		
+			<li><a href="/tags/Linux/" title="Linux">Linux<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Miscellaneous/" title="Miscellaneous">Miscellaneous<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Unity/" title="Unity">Unity<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Vim/" title="Vim">Vim<sup>1</sup></a></li>
+		
+			<li><a href="/tags/WPF/" title="WPF">WPF<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Windows/" title="Windows">Windows<sup>1</sup></a></li>
+		
+			<li><a href="/tags/下载器/" title="下载器">下载器<sup>1</sup></a></li>
+		
+			<li><a href="/tags/图片/" title="图片">图片<sup>1</sup></a></li>
+		
+			<li><a href="/tags/客户端/" title="客户端">客户端<sup>2</sup></a></li>
+		
+			<li><a href="/tags/小说/" title="小说">小说<sup>7</sup></a></li>
+		
+			<li><a href="/tags/微信/" title="微信">微信<sup>11</sup></a></li>
+		
+			<li><a href="/tags/总结/" title="总结">总结<sup>2</sup></a></li>
+		
+			<li><a href="/tags/日记/" title="日记">日记<sup>4</sup></a></li>
+		
+			<li><a href="/tags/时间管理/" title="时间管理">时间管理<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="introduction">
+	<p class="asidetitle">about</p>
+    <p><b>梁爽</b>，网名<b>冰河魔法师</b>，英文名简称<b>Icer</b>，现就职于霍尼韦尔(中国)，自动化领域工具软件架构师一名，94年接触计算机，99年开始写程序，08年做架构带团队，自此奠定了未来往架构师方向发展的重要目标。虽广泛涉猎各种计算机技术，但因深度熟悉QB、VB、.Net技术而被标记为微软派。</p>
+    <p>架构设计和程序设计本是完全没有高低的两个不同工作，但误解常在，所以不断通过自己的亲身实践让更多人真正的理解架构师这一容易被人误解的工种，并让有志之士走上架构师之路。</p>
+</div>
+
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/wizicer" target="_blank" title="weibo"></a>
+		
+		
+		
+		<a href="https://github.com/wizicer" target="_blank" title="github"></a>
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wizicer/iceman" target="_blank" title="Iceman">Iceman</a> © 2016 
+		
+		<a href="http://icerdesign.com" target="_blank" title="冰河魔法师">冰河魔法师</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+
+<div style="display:none;">
+    <script language="javascript" type="text/javascript" src="http://js.users.51.la/17278963.js">
+    </script>
+</div>
+
+
+
+  </body>
+</html>
+

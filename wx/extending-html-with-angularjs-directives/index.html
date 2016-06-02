@@ -1,0 +1,564 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>使用AngularJS指令扩展HTML语法 | 冰河设计 -- 冰河魔法师的自留地</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="冰河魔法师">
+    
+    <meta name="description" content="译者：冰河魔法师
+原文：Extending HTML with AngularJS Directives
+AngularJS介绍AngularJS是Google推出的Web应用开发框架，它提供了一系列的核心功能，它们不但结合的很好，而且还是按照易于扩展的方式设计的，包括有数据绑定，操作文档对象模型(">
+    
+    
+    
+    
+    <link rel="alternate" href="atom.xml" title="冰河设计 -- 冰河魔法师的自留地" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="//img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/images/icer.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/icer.png">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/images/icer.png" alt="冰河设计 -- 冰河魔法师的自留地" title="冰河设计 -- 冰河魔法师的自留地"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="冰河设计 -- 冰河魔法师的自留地">冰河设计 -- 冰河魔法师的自留地</a></h1>
+				<h2 class="blog-motto">架构师，探险者</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">存档</a></li>
+					
+						<li><a href="/tags">标签</a></li>
+					
+						<li><a href="/categories">分类</a></li>
+					
+						<li><a href="http://wiki.icerdesign.com">Wiki</a></li>
+					
+						<li><a href="http://love.icerdesign.com">关于爱</a></li>
+					
+						<li><a href="http://hiyaphoto.com">关于摄影</a></li>
+					
+						<li><a href="/about">关于我</a></li>
+					
+					<li>
+					
+					<form class="search" action="//baidu.com/s" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="wd" autocomplete="off" maxlength="20" placeholder="搜索" />
+                        <input name=tn type=hidden value="bds">
+                        <input name=cl type=hidden value="3">
+                        <input name=ct type=hidden value="2097152">
+						<input type="hidden" name="si" value="icerdesign.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/wx/extending-html-with-angularjs-directives/" title="使用AngularJS指令扩展HTML语法" itemprop="url">使用AngularJS指令扩展HTML语法</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://icerdesign.com" title="冰河魔法师">冰河魔法师</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2013-07-06T16:00:00.000Z" itemprop="datePublished">2013-07-07</time>
+    
+  </p>
+</header>
+
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AngularJS介绍"><span class="toc-number">1.</span> <span class="toc-text">AngularJS介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AngularJS模块-Module"><span class="toc-number">2.</span> <span class="toc-text">AngularJS模块(Module)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#工程文件组织"><span class="toc-number">3.</span> <span class="toc-text">工程文件组织</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AngularJS指令：为什么要学习如何实现？"><span class="toc-number">4.</span> <span class="toc-text">AngularJS指令：为什么要学习如何实现？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AngularJS指令：如何实现？"><span class="toc-number">5.</span> <span class="toc-text">AngularJS指令：如何实现？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#指令与父作用域-Parent-Scope-的通信"><span class="toc-number">6.</span> <span class="toc-text">指令与父作用域(Parent Scope)的通信</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#公共代码-依赖注入"><span class="toc-number">7.</span> <span class="toc-text">公共代码/依赖注入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#示例"><span class="toc-number">8.</span> <span class="toc-text">示例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Bootstrap折叠指令"><span class="toc-number">8.1.</span> <span class="toc-text">Bootstrap折叠指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Google地图指令"><span class="toc-number">8.2.</span> <span class="toc-text">Google地图指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Wijmo图表指令"><span class="toc-number">8.3.</span> <span class="toc-text">Wijmo图表指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Wijmo表格指令"><span class="toc-number">8.4.</span> <span class="toc-text">Wijmo表格指令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#更多的指令"><span class="toc-number">9.</span> <span class="toc-text">更多的指令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#结论"><span class="toc-number">10.</span> <span class="toc-text">结论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-number">11.</span> <span class="toc-text">参考</span></a></li></ol>
+		</div>
+		
+		<p>译者：<a href="http://icerdesign.com">冰河魔法师</a>
+原文：<a href="http://www.codeproject.com/Articles/607873/Extending-HTML-with-AngularJS-Directives" target="_blank" rel="external">Extending HTML with AngularJS Directives</a></p>
+<h1 id="AngularJS介绍"><a href="#AngularJS介绍" class="headerlink" title="AngularJS介绍"></a>AngularJS介绍</h1><p>AngularJS是Google推出的Web应用开发框架，它提供了一系列的核心功能，它们不但结合的很好，而且还是按照易于扩展的方式设计的，包括有数据绑定，操作文档对象模型(DOM)，路由/视图管理，模块载入等等。</p>
+<p>AngularJS不仅仅只是一个类库，它提供了一套完整的框架，因此它能使你在开发时不用去考虑使用各种其他的类库，同时它是来自开发了Chrome（译者注：当然不要忘记它们家的Chrome Book）的Google，它们一直在为创建下一代Web应用程序而努力（有兴趣可以看看<a href="http://www.polymer-project.org/" target="_blank" rel="external">Polymer</a>项目），我相信在五到十年后，我们不会再使用AngularJS来开发Web应用程序，不过我们一定会使用另外一个与其类似的框架。</p>
+<p>对我来说，AngularJS中最令人兴奋的特性就是可以编写自定义指令(Directive)，自定义指令可以让你用新的标签或者属性来扩展HTML。指令可以跨项目的重复使用，并且和.NET中的自定义控件很像。</p>
+<blockquote>
+<p>译者注：Directive可被翻译为指令，不过因为代码中也会用到该命令，故后文都保留为directive</p>
+</blockquote>
+<p>在本文中包含了基于Bootstrap、Google JavaScript APIs和Wijmo的差不多50个自定义指令的示例。示例都有完整的注释和文档，这应该会是开始写你自己的指令的很好参考。你可以在这里查看<a href="http://demo.componentone.com/wijmo/Angular/AngularExplorer/AngularExplorer" target="_blank" rel="external">线上示例</a>。</p>
+<p>创建指令并裁剪到你所需要程度是非常简单的，所有的指令都是可以在多个项目中被测试、维护和重用的，正确的实现方式可以让你的指令被轻松的重用或增强，甚至都不需要改动一行代码。</p>
+<p>本文主要关注指令，不过在我们进入到正题前，还是让我们快速的过一下AngularJS的基本功能。</p>
+<p>要使用AngularJS，必须在HTML页面中添加引用，并且添加<code>ng-app</code>属性到HTML或者BODY标签上，具体可见如下示例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://code.angularjs.org/angular-1.0.1.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span> <span class="attr">ng-app</span> <span class="attr">ng-init</span>#"<span class="attr">msg</span>  '<span class="attr">hello</span> <span class="attr">world</span>'"&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">ng-model</span>=<span class="string">"msg"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>当AngularJS载入后，它会扫描整个文档中的<code>ng-app</code>属性，这个标签通常都设置为应用程序的主模块？？，一旦<code>ng-app</code>属性被发现了，Angular会处理整个文档，载入主模块及其依赖模块、扫描全文档中的自定义指令以及一系列操作。</p>
+<p>在以上的示例中，<code>ng-init</code>属性为<code>msg</code>变量赋入初值<code>hello world</code>，并且用<code>ng-model</code>属性将这个变量的值绑定到一个输入框元素。用大括号括起来一段文字来表示绑定表达式。AngularJS会计算表达式并在值发生任何变化的时候重新计算并更新至文档中。你可以看这个示例：<a href="http://jsfiddle.net/Wijmo/HvSQQ/" target="_blank" rel="external">http://jsfiddle.net/Wijmo/HvSQQ/</a></p>
+<h1 id="AngularJS模块-Module"><a href="#AngularJS模块-Module" class="headerlink" title="AngularJS模块(Module)"></a>AngularJS模块(Module)</h1><p>模块对象充当了AngularJS应用程序的根(Root)的作用，其中有对象<code>config</code>,<code>controller</code>,<code>factory</code>,<code>filter</code>,<code>directive</code>和一些其他的。</p>
+<p>如果你熟悉.NET并且不熟悉Angular，那么下表中的类比会让你更容易的理解AngularJS中的不同对象：</p>
+<table>
+<thead>
+<tr>
+<th>AngularJS</th>
+<th>.NET</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>module</td>
+<td>Assembly</td>
+<td>应用程序构建块</td>
+</tr>
+<tr>
+<td>controller</td>
+<td>ViewModel</td>
+<td>包含逻辑并暴露给视图(View)</td>
+</tr>
+<tr>
+<td>scope</td>
+<td>DataContext</td>
+<td>提供可以绑定到视图的数据</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>ValueConverter</td>
+<td>在数据真实展现前进行修改</td>
+</tr>
+<tr>
+<td>directive</td>
+<td>Component</td>
+<td>可重用的界面元素</td>
+</tr>
+<tr>
+<td>factory, service</td>
+<td>工具类</td>
+<td>给其他模块元素提供服务</td>
+</tr>
+</tbody>
+</table>
+<p>以下这段代码创建了一个模块，并包含了controller, filter和directive</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myApp = angular.module(<span class="string">"myApp"</span>, []);</span><br><span class="line">myApp.controller(<span class="string">"myCtrl"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>) </span>&#123;</span><br><span class="line">  $scope.msg = <span class="string">"hello world"</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">myApp.filter(<span class="string">"myUpperFilter"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">input</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> input.toUpperCase();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">myApp.directive(<span class="string">"myDctv"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">scope, element, attrs</span>) </span>&#123;</span><br><span class="line">    element.bind(<span class="string">"mouseenter"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      element.css(<span class="string">"background"</span>, <span class="string">"yellow"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    element.bind(<span class="string">"mouseleave"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      element.css(<span class="string">"background"</span>, <span class="string">"none"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>module</code>方法需要传入模块名字和依赖的模块列表。在以上示例中，我们创建的模块不需要依赖任何其他模块，所以传入的空列表。注意依赖列表即便是空的也必须被显式传入，不传的话会导致AngularJS取到上一个命名模块，我们将会在下一章节进一步讨论。</p>
+<p><code>controller</code>方法会暴露<code>$scope</code>对象，通过该对象可以访问controller的所有属性和方法，该对象由Angular管理并传递给view和directive。在以上示例中，这个controller只添加了一个<code>msg</code>属性到scope中去。一个应用程序模块可以有多个controller，每一个都负责一个或多个view，controller并不一定需要是模块的成员，不过最佳实践是使其成为模块成员。</p>
+<p><code>filter</code>方法会返回一个用来修改input的方法，Angular只提供了少量的几个filter，不过你可以添加你自己的，并且是和官方的一样的使用方法。在以上示例中，我们就定义了一个filter用来将字符串全转成大写字母。filter不仅仅可以用来格式化内容，同时还可以修改数组，由AngularJS提供的格式化filter有<code>number</code>,<code>date</code>,<code>currency</code>,<code>uppercase</code>,<code>lowercase</code>，数组filter则有<code>filter</code>,<code>orderBy</code>和<code>limitTo</code>。filter可以带参数，格式为：<code>值 | filter名字 : filter参数1 : filter参数2 ...</code></p>
+<p><code>directive</code>方法的第二个参数同样是返回一个方法，这个方法可以取得一个元素（绑定该指令的元素）并可以根据scope来修改它，在以上示例中，我们分别绑定了两个事件<code>mouseenter</code>和<code>mouseleave</code>用来实现鼠标悬浮时高亮的功能。这是我们的第一个directive，粗略的演示了它能做到什么。AngularJS的directive可以用作属性、元素或甚至是注释，并可嵌套和互通。我们将会在后续的章节理讲到更多。</p>
+<p>这里有使用以上模块的示例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">ng-app</span>#"<span class="attr">myApp</span>" <span class="attr">ng-controller</span>"<span class="attr">myCtrl</span>"&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">ng-model</span>=<span class="string">"msg"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">my-dctv</span> &gt;</span></span><br><span class="line">    &#123;&#123; msg | myUpperFilter &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>你可以在这里查看可运行实例：<a href="http://jsfiddle.net/Wijmo/JKBbV/" target="_blank" rel="external">http://jsfiddle.net/Wijmo/JKBbV/</a></p>
+<p>注意应用模块、controller以及filter的名字都被当作属性的<code>值</code>，它们反映了具体的JavaScript对象，所以它们是区分大小写的。</p>
+<p>而directive的名字，是用作属性的<code>名字</code>，它修饰一个HTML元素，所以它是不区分大小写的，不过AngularJS会将驼峰式命名(camel-cased)转成连字号分隔命名(hyphen-separated)的字符串。所以<code>myDctv</code>就变成了<code>my-dctv</code>。你应该会注意到系统的directive<code>ngApp</code>,<code>ngController</code>和<code>ngModel</code>就变成了<code>ng-app</code>,<code>ng-controller</code>和<code>ng-model</code></p>
+<h1 id="工程文件组织"><a href="#工程文件组织" class="headerlink" title="工程文件组织"></a>工程文件组织</h1><p>AngularJS本来的设计就是可以支持大工程的，工程中可以包含许多模块，将不同的模块放入不同的文件，然后按照你喜欢的方式来管理这些文件。我见过许多项目都是遵循了Brian Ford在其博文<a href="http://briantford.com/blog/huuuuuge-angular-apps.html" target="_blank" rel="external">Building Huuuuuge Apps with AngularJS</a>中描述的规范，一句话说来就是一个模块一个文件，然后按类型归类。因此controller就放在<code>controllers</code>目录中（并命名为<code>XXXCtrl</code>），directive指令就放在<code>directives</code>目录中（并命名为<code>XXXDctv</code></p>
+<p>通常情况，一个标准的项目目录结构如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Root</span><br><span class="line">        default.html</span><br><span class="line">        styles</span><br><span class="line">               app.css</span><br><span class="line">        partials</span><br><span class="line">               home.html</span><br><span class="line">               product.html</span><br><span class="line">               store.html</span><br><span class="line">        scripts</span><br><span class="line">               app.js</span><br><span class="line">               controllers</span><br><span class="line">                       productCtrl.js</span><br><span class="line">                       storeCtrl.js</span><br><span class="line">               directives</span><br><span class="line">                       gridDctv.js</span><br><span class="line">                       chartDctv.js</span><br><span class="line">               filters</span><br><span class="line">                       formatFilter.js</span><br><span class="line">               services</span><br><span class="line">                       dataSvc.js</span><br><span class="line">               vendor</span><br><span class="line">                       angular.js</span><br><span class="line">                       angular.min.js</span><br></pre></td></tr></table></figure>
+<p>比如说如果你想要使用一个模块，那就像如下那样将其定义在<code>app.js</code>文件中：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app.js</span></span><br><span class="line">angular.module(<span class="string">"appModule"</span>, []);</span><br></pre></td></tr></table></figure>
+<p>为了将元素加到模块中去，你需要传入模块名字并获得其实例，之后便可以像以前一样对该实例进行操作，比如说<code>formatFilter.js</code>文件的内容会长成如下样子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// formatFilter.js</span></span><br><span class="line"><span class="comment">// retrieve module by name</span></span><br><span class="line"><span class="keyword">var</span> app = angular.module(<span class="string">"appModule"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// add a filter to the module</span></span><br><span class="line">app.filter(<span class="string">"formatFilter"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">input, format</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Globalize.format(input, format);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;&#125;)</span><br></pre></td></tr></table></figure>
+<p>如果你的应用程序包含了多个模块，请记得为每一个模块指定依赖项，比如说一个应用程序包含<code>app</code>,<code>controls</code>和<code>data</code>三个模块，那我们可以用如下方式进行设置：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app.js (the main application module, depends on "controls" and "data" modules)</span></span><br><span class="line">angular.module(<span class="string">"app"</span>, [ <span class="string">"controls"</span>, <span class="string">"data"</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">// controls.js (the controls module, depends on "data" module)</span></span><br><span class="line">angular.module(<span class="string">"controls"</span>, [ <span class="string">"data"</span> ])</span><br><span class="line"></span><br><span class="line"><span class="comment">// data.js (the data module, no dependencies)</span></span><br><span class="line">angular.module(<span class="string">"data"</span>, [])</span><br></pre></td></tr></table></figure>
+<p>在你的应用程序主页面中需要用<code>ng-app</code>指令来指定主模块，之后AngularJS会自动的将其所有依赖项引入：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">ng-app</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>之后，主页面及其视图(view)就可以使用在那三个模块中已经定义的元素。</p>
+<p>如果您想看使用以上方式组织的相当大的工程实例，请参见<a href="http://demo.componentone.com/wijmo/Angular/AngularExplorer/AngularExplorer" target="_blank" rel="external">线上示例</a></p>
+<p>好了，您已经对AngularJS的基本知识有一定的了解了，是时候开始我们的主题：directive指令，在接下来的章节中我们将讲解一些基本概念并创建一些directive指令，以此来说明它能做到些什么。</p>
+<h1 id="AngularJS指令：为什么要学习如何实现？"><a href="#AngularJS指令：为什么要学习如何实现？" class="headerlink" title="AngularJS指令：为什么要学习如何实现？"></a>AngularJS指令：为什么要学习如何实现？</h1><p>我早先有提过，对我来说directive指令是AngularJS中最令人兴奋的特性，这是因为它的独一无二，在AngularJS中的其他特性大都可以在其他框架中找到。不但如此，能够在纯HTML中创建可重用组件的方式实在是非常的强大。以我对现今的Web应用程序框架的了解，AngularJS的确是唯一一个支持该特性的。</p>
+<p>现在已有一些JavaScript的产品给开发者提供了控件使用，比如说，非常流行的前端框架Bootstrap就能提供样式及一些组件，但问题是，为了使用这些组件，做HTML开发的设计师必须切换到JavaScript模式并编写jQuery代码来激活面板。的确jQuery已经足够简单了，但它依旧需要设计师人工的去和HTML标签同步，这样不但枯燥乏味、容易出错还不宜扩展。</p>
+<p>在AngularJS的主页上有一个将Bootstrap的面板组件包装起来方便使用的简单directive指令。如下，使用directive指令后使得面板更加的方便，同时还可以轻松的复用和分享：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;body ng-app="components"&gt;</span><br><span class="line">  &lt;h3&gt;BootStrap Tab Component&lt;/h3&gt;</span><br><span class="line">  &lt;tabs&gt;</span><br><span class="line">    &lt;pane title="First Tab"&gt;</span><br><span class="line">      &lt;div&gt;This is the content of the first tab.&lt;/div&gt;</span><br><span class="line">    &lt;/pane&gt;</span><br><span class="line">    &lt;pane title="Second Tab"&gt;</span><br><span class="line">      &lt;div&gt;This is the content of the second tab.&lt;/div&gt;</span><br><span class="line">    &lt;/pane&gt;</span><br><span class="line">  &lt;/tabs&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p>你可以在这里查看可运行实例：<a href="http://jsfiddle.net/Wijmo/ywUYQ/" target="_blank" rel="external">http://jsfiddle.net/Wijmo/ywUYQ/</a></p>
+<p>你可以看到除开有<code>&lt;tabs&gt;</code>和<code>&lt;pane&gt;</code>这样的directive命令标签之外，这页就像一个普通的HTML。所以做HTML开发的设计师根本就不用写任何的JS代码，当然这个需要有人提前将directive命令写出来，不过这个一旦写出来后就可以到处重用而不用改代码的。</p>
+<p>正因为directive指令如此的有用且并不是那么难写，所以已经有很多人将热门的类库都搬过来了。比如说，AngularJS团队就已经为Bootstrap创建了一系列的directive指令：<a href="http://angular-ui.github.io/bootstrap/" target="_blank" rel="external">UI Bootstrap</a>；ComponentOne也将自己Wijmo库写成了directive指令：<a href="http://wijmo.com/angularjs-components-preview/" target="_blank" rel="external">Wijmo Library</a>；还有一些为jQueryUI编写的：<a href="https://github.com/wlepinski/angularjs-jqueryui" target="_blank" rel="external">jQueryUI widgets</a></p>
+<p>诶？等等，如果已经有这么多已经做好了的directive指令可以直接使用，为什么我们还要学会去如何创建？这的确是个好问题，我想有以下几个理由让你需要继续学习：</p>
+<ul>
+<li><strong>有可能你需要的directive指令还暂无人实现</strong> 。有可能你想使用的类库正好还没人实现了，而你也不想等着别人实现。当然也可能是你不喜欢别人的实现方式，或者你想改进它。</li>
+<li><strong>你自己可能会有特殊的需求</strong> 。比如说你在一个金融企业工作，需要在许多应用程序中都使用某一种固定样式的表单，这个表单可能是一个datagrid，并使用特定的方式下载、编辑、验证和回传数据，我想很难会有在你们公司之外的人会创建一个类似的功能给你直接使用。不过你可以自己创建一个自定义directive指令，并让同组的HTML设计师来像如下那样使用：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">ng-app</span>=<span class="string">"abcFinance"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h3</span>&gt;</span>Offshore Investment Summary<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">abc-investment-form</span></span><br><span class="line">    <span class="attr">customer</span>=<span class="string">"currentCustomer"</span></span><br><span class="line">    <span class="attr">country</span>=<span class="string">"currentCountry"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">abc-investment-form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>directive指令<code>abcInvectmentForm</code>可以被一致的重用到很多应用程序。我们只要统一的维护directive指令，根据新的业务需求修改后便可以很容易的反映到所有应用程序上去。</p>
+<p>好了，读到这里我想你一定是想知道如何实现，并迫不及待的想知道如何实现的，OK，我们开始吧。</p>
+<h1 id="AngularJS指令：如何实现？"><a href="#AngularJS指令：如何实现？" class="headerlink" title="AngularJS指令：如何实现？"></a>AngularJS指令：如何实现？</h1><p>在文章开头演示的directive指令非常的简单，仅仅引向了一个方法，而一个典型的directive指令则包含更多的元素：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// create directive module (or retrieve existing module)</span></span><br><span class="line"><span class="keyword">var</span> m = angular.module(<span class="string">"myApp"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// create the "my-dir" directive </span></span><br><span class="line">myApp.directive(<span class="string">"myDir"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    restrict: <span class="string">"E"</span>,        <span class="comment">// directive is an Element (not Attribute)</span></span><br><span class="line">    scope: &#123;              <span class="comment">// set up directive's isolated scope</span></span><br><span class="line">      name: <span class="string">"@"</span>,          <span class="comment">// name var passed by value (string, one-way)</span></span><br><span class="line">      amount: <span class="string">"="</span>,        <span class="comment">// amount var passed by reference (two-way)</span></span><br><span class="line">      save: <span class="string">"&amp;"</span>           <span class="comment">// save event</span></span><br><span class="line">    &#125;,</span><br><span class="line">    template:             <span class="comment">// replacement HTML (can use our scope vars here)</span></span><br><span class="line">      <span class="string">"&lt;div&gt;"</span> +</span><br><span class="line">      <span class="string">"  &#123;&#123;name&#125;&#125;: &lt;input ng-model='amount' /&gt;"</span> +</span><br><span class="line">      <span class="string">"  &lt;button ng-click='save()'&gt;Save&lt;/button&gt;"</span> +</span><br><span class="line">      <span class="string">"&lt;/div&gt;"</span>,</span><br><span class="line">    replace: <span class="literal">true</span>,        <span class="comment">// replace original markup with template</span></span><br><span class="line">    transclude: <span class="literal">false</span>,    <span class="comment">// do not copy original HTML content</span></span><br><span class="line">    controller: [ <span class="string">"$scope"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123; …  &#125;],</span><br><span class="line">    link: <span class="function"><span class="keyword">function</span> (<span class="params">scope, element, attrs, controller</span>) </span>&#123;…&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>注意directive指令的命名规则：<code>my</code>前缀可比作是命名空间(namespace)，所以如果应用程序使用了来自不同模块的directive指令，我们可以很容易知道是在哪里定义的。当然这并非要求，不过这是让项目更容易理解的推荐实践。</p>
+<p><code>directive</code>构造器需要返回一个有许多属性的对象，在AngularJS的站点上都有完整的文档，不过内容都比较精简，所以我还是在这里尽我可能的解释一下： </p>
+<ul>
+<li><code>restrict</code>: 决定directive指令是否可以用在HTML中，可选项有”A”,”E”,”C”,”M”，分别代表属性(Attribute)、元素(Element)、类(Class)、注释(Comment)，默认为”A”属性。在这里我们更关心元素，因为我们需要创建类似于<code>tab</code>这样的元素(标签)。</li>
+<li><code>scope</code>: 创建一个仅属于directive指令的独立作用域，作用域变量是以directive指令的属性方式传入的。当我们创建可复用组件的时候，不应去依赖父作用域（ <em>译者注：说白了，就是按照创建静态方法的方式把变量传入，不要用全局变量就可以了</em> ），于是独立作用域的作用就非常重要了。<code>scope</code>作用域对象定义了作用域变量（局部变量）的名字和类型，在示例中定义了三种作用域变量（局部变量）<ul>
+<li><code>name: &quot;@&quot; (单向值类型)</code>: @符号标明这个变量是传递值类型的，directive指令可以从其调用者那里获得具体值并使用，但是却不能改变其调用者那里的值，因此是独立的，这个是用得最频繁的一种类型。</li>
+<li><code>amount: &quot;#&quot; (双向引用类型)</code>: 符号标明这个变量是传递引用类型的，directive指令不但可以从其调用者那里获得具体值，同时还可以改变其值，并反映到父作用域中。通常情况会在directive指令需要修改父作用域中值的时候（比如说编辑器控件），或者需要传入的值是复杂类型不易序列化为字符串，或者是值结构很复杂以致序列化为字符串的开销很大。</li>
+<li><code>save: &quot;&amp;&quot; (表达式)</code>: &amp;符号标明该变量保存一个在父作用域上下文(Context)中执行的表达式，它让directive指令可以执行具体动作（ <em>译者注：其实就是回调函数</em> ）</li>
+</ul>
+</li>
+<li><code>template</code>: 用来替换原始标签的模板字符串，原始标签内的东西会被完全替换掉，而模板中使用的变量需存在于独立作用域，在这里你可以写一些类似于宏的指令。不过可能大多数情况在这个字段里可能只有一个空的<code>&lt;div&gt;</code>，然后再由下面会讨论到的<code>link</code>方法来生成内容。</li>
+<li><code>replace</code>: 决定是否要用上面定义的模板来替换原始的标签，默认值是<code>false</code>，表示保留原标签并将模板的内容附加在其后。</li>
+<li><code>transclude</code>: 决定是否复制原始标签之间的内容。例如在前文中的tab指令的标签内还有其他的HTML内容，就设为了true，否则若其间完全没有HTML内容，那就设为flase或者直接就忽略它让其保持默认值。</li>
+<li><code>link</code>: 这个方法包含了directive指令的主要逻辑，是用来操作DOM、监听事件等，它有如下参数<ul>
+<li><code>scope</code>: 关联到directive指令的独立作用域，默认所有其中的变量均为<code>undefined</code>，所以就需要在程序逻辑中监听变量变化的事件。</li>
+<li><code>element</code>: 关联到包含本directive指令的DOM元素，<code>link</code>方法默认使用<code>jQuery</code>操作元素（若无<code>jQuery</code>加载，则默认载入Angular自带的<code>jqLite</code>）</li>
+<li><code>controller</code>: 在有嵌套directive指令的情况，该参数会提供子directive指令的引用，这样两级的directive指令就可以互相通信了。我们之前讨论过的<code>tab</code>directive指令应该能让你更容易理解：<a href="http://jsfiddle.net/Wijmo/ywUYQ/" target="_blank" rel="external">http://jsfiddle.net/Wijmo/ywUYQ/</a></li>
+</ul>
+</li>
+</ul>
+<p>注意当<code>link</code>方法被调用的时候，作用域中值类型(“@”)是还没有初始化的，如果你希望在后来某个时间点当变量发生变化的时候得到通知那就应该使用<code>scope.$watch</code>命令，这个将会在下一节中讨论。</p>
+<p>如果你到现在还没能熟悉directive指令，那么深入理解的最好方式就是亲自尝试一下编写代码，你可以在这里尝试：<a href="http://jsfiddle.net/Wijmo/LyJ2T/" target="_blank" rel="external">http://jsfiddle.net/Wijmo/LyJ2T/</a></p>
+<p>在上面的示例中，定义了一个controller及其三个成员<code>customerName</code>, <code>creadit</code>和<code>save</code>。还定义了一个和本节示例中差不多的directive命令，在独立作用域中有三个成员<code>name</code>, <code>amount</code>和<code>save</code>。而HTML部分则向你展示了如何在标准HTML中使用directive指令。你可以使者修改HTML标签、独立作用域中的变量、模板等等。尝试之后，你应该会对directive指令如何工作有较为深刻的认识了。</p>
+<h1 id="指令与父作用域-Parent-Scope-的通信"><a href="#指令与父作用域-Parent-Scope-的通信" class="headerlink" title="指令与父作用域(Parent Scope)的通信"></a>指令与父作用域(Parent Scope)的通信</h1><p>之前我们也已经粗略的提到过direcitve指令有自己的独立作用域，因此它们能在不同的工程中重复使用并根据不同的父作用域改变其内容。我们接下来就讨论一下不同的作用域之间是如何通信的。</p>
+<p>我们假设你在directive指令中定义了如下的独立作用域：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">scope: &#123;              <span class="comment">// set up directive's isolated scope</span></span><br><span class="line">  name: <span class="string">"@"</span>,          <span class="comment">// name var passed by value (string, one-way)</span></span><br><span class="line">  amount: <span class="string">"="</span>,        <span class="comment">// amount var passed by reference (two-way)</span></span><br><span class="line">  save: <span class="string">"&amp;"</span>           <span class="comment">// save command</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>并且directive指令是按照如下方式使用的：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">my-dir</span></span><br><span class="line">  <span class="attr">name</span>=<span class="string">"&#123;&#123;customerName&#125;&#125;"</span></span><br><span class="line">  <span class="attr">amount</span>=<span class="string">"customerCredit"</span></span><br><span class="line">  <span class="attr">save</span>=<span class="string">"saveCustomer()"</span></span><br><span class="line">/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>你应该注意到<code>name</code>属性的内容是由大括号括上的，而<code>amount</code>则不是，这是因为<code>name</code>是传递的值类型。若无大括号，则会将字符串<code>customerName</code>传递进去，使用大括号就是告诉AngularJS先计算其值再将其传入，相似的，因为<code>amount</code>是引用类型，所以不需要写大括号。</p>
+<p>在directive指令内部可以很轻松的通过<code>scope</code>对象读取相应变量值：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = scope.name;</span><br><span class="line"><span class="keyword">var</span> amount = scope.amount;</span><br></pre></td></tr></table></figure>
+<p>以上两句代码可以立即获得相应变量值，在其父作用域中改变了对应变量值，在此处也无法获得其最新值。为了获得值改变的通知，我们可以使用<code>scope.$watch</code>方法进行监听，该方法的定义如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scope.$watch(watchExpression, listenerFunction, objectEquality);</span><br></pre></td></tr></table></figure>
+<p><code>watchExpression</code>是你需要监听的变量（我们这里就是<code>name</code>和<code>amount</code>），<code>listenerFunction</code>是在监听变量被修改后触发执行的方法，这个方法将会负责根据最新值更新directive指令。</p>
+<p>最后一个参数<code>objectEquality</code>决定AngularJS是否要比较变量的新老值，如果设为true，那么AngularJS将会深度比较新老值（遍历数据结构比较，而非仅仅比较引用是否一致）。当变量为引用类型(“=”)时，这会非常重要，比如说变量是个复杂类型，将其设为true就会使得<code>listenerFunction</code>被调用前先执行深度比较，即便引用并没有发生变化（大部分情况我们都仅是修改复杂类型中的个别属性，故引用是没有发生变化的）</p>
+<p>好，回到我们的示例，你可以像如下的方式监听变量的变化：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">scope.$watch(<span class="string">"name"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">newValue, oldValue, srcScope</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// handle the new value of "name"</span></span><br><span class="line">&#125;);</span><br><span class="line">scope.$watch(<span class="string">"amount"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">newValue, oldValue, srcScope</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// handle the new value of "amount"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>注意<code>listernerFunction</code>方法分别传入了新旧值，以及scope对象，通常情况scope都用不到，毕竟新值已经可以直接读取，不过有些时候还是需要了解其他变量的情况。有一种特殊情况，在初始化的时候新老值会是一样的。</p>
+<p>在我们的示例中，<code>amount</code>变量是引用类型，其父作用域很有可能也会像我们这里一样监听着其变化。</p>
+<p>大多数情况，你都不需要专门为此做什么，当用户交互或者程序执行让值改变时，AngularJS会自动检测到变化。不过也有例外，AngularJS是无法检测到由DOM事件、setTimeout、XHR或是三方库产生的变化，在这种时候，我们需要手动的调用<code>scope.$apply</code>方法，这个会广播给所有监听者。</p>
+<p>假设我们有一个方法<code>updateAmount</code>会做一些计算并修改amount属性，我们会这样写代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">updateAmount</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// update the amount value</span></span><br><span class="line">  scope.amount = scope.amount * <span class="number">1.12</span>;</span><br><span class="line">  <span class="comment">// inform listeners of the change</span></span><br><span class="line">  <span class="keyword">if</span> (!scope.$$phase) scope.$apply(<span class="string">"amount"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>scope.$$phase</code>变量是由AngularJS管理的，标明是否正在更新scope变量，通过判断其值来避免在更新过程中调用<code>$apply</code>方法。</p>
+<p>一句话说就是<code>scope.$watch</code>接收变化通知，<code>scope.$apply</code>发出变化通知（不过一般用不到）</p>
+<p>还是那句老话，学习的最好方式是实践，你可以在这里<a href="http://jsfiddle.net/Wijmo/aX7PY/" target="_blank" rel="external">http://jsfiddle.net/Wijmo/aX7PY/</a>尝试一下，这个示例定义了一个controller和一个directive指令，其中都有方法会改变数组中的数据，并且都会监听和发出<code>apply</code>请求，你可以试着将<code>scope.$watch</code>和<code>scope.$apply</code>注释掉看看效果。</p>
+<h1 id="公共代码-依赖注入"><a href="#公共代码-依赖注入" class="headerlink" title="公共代码/依赖注入"></a>公共代码/依赖注入</h1><p>有时候你会需要编写公共代码以供多个directive指令调用，当然，你绝对不会希望把代码复制多份来使用，所以我们有必要把公共代码集合到一起并统一暴露给所有directive指令使用。</p>
+<p>你可以通过<code>factory</code>模块来实现，在如下代码中我们定义了一个名为<code>myUtil</code>的模块：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// the module</span></span><br><span class="line"><span class="keyword">var</span> app = angular.module(<span class="string">"app"</span>, []);</span><br><span class="line"></span><br><span class="line"><span class="comment">// utilities shared by all directives</span></span><br><span class="line">app.factory(<span class="string">"myUtil"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="comment">// watch for changes in scope variables</span></span><br><span class="line">    <span class="comment">// call update function when all have been initialized</span></span><br><span class="line">    watchScope: <span class="function"><span class="keyword">function</span> (<span class="params">scope, props, updateFn, updateOnTimer</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> cnt = props.length;</span><br><span class="line">      angular.forEach(props, <span class="function"><span class="keyword">function</span> (<span class="params">prop</span>) </span>&#123;</span><br><span class="line">        scope.$watch(prop, <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">          <span class="keyword">if</span> (--cnt &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (updateOnTimer) &#123;</span><br><span class="line">              <span class="keyword">if</span> (scope.updateTimeout) clearTimeout(scope.updateTimeout);</span><br><span class="line">              scope.updateTimeout = setTimeout(updateFn, <span class="number">50</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              updateFn();</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// change the value of a scope variable and notify listeners</span></span><br><span class="line">    apply: <span class="function"><span class="keyword">function</span> (<span class="params">scope, prop, value</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (scope[prop] != value) &#123;</span><br><span class="line">        scope[prop] = value;</span><br><span class="line">        <span class="keyword">if</span> (!scope.$$phase) scope.$apply(prop);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  )</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>在上述的<code>myUtil</code>模块中包含两个方法：</p>
+<ul>
+<li><code>watchScope</code>: 监听一系列的变量变化，在其变化时回调<code>updateFn</code>方法，并能排除directive指令初始化的情况，同时还支持超时时间以保证回调更新不会过于频繁</li>
+<li><code>apply</code>: 修改变量并使用<code>scope.$apply</code>机制通知AngularJS系统(只有新旧值不同时才执行)</li>
+</ul>
+<p>我们可以以如下方式使用刚才定义的方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">app.directive(<span class="string">"myDir"</span>, [<span class="string">"$rootScope"</span>, <span class="string">"myUtil"</span>, </span><br><span class="line">               <span class="function"><span class="keyword">function</span> (<span class="params">$rootScope,   myUtil</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    restrict: <span class="string">"E"</span>,</span><br><span class="line">    scope: &#123;</span><br><span class="line">      v1: <span class="string">"@"</span>, v2: <span class="string">"@"</span>, v3: <span class="string">"@"</span>, v4: <span class="string">"@"</span>, v5: <span class="string">"@"</span>, v6: <span class="string">"@"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    template: <span class="string">"&lt;div/&gt;"</span>,</span><br><span class="line">    link: <span class="function"><span class="keyword">function</span> (<span class="params">scope, element, attrs</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> ctr = <span class="number">0</span>,</span><br><span class="line">          arr = [<span class="string">"v1"</span>, <span class="string">"v2"</span>, <span class="string">"v3"</span>, <span class="string">"v4"</span>, <span class="string">"v5"</span>, <span class="string">"v6"</span>];</span><br><span class="line">      myUtil.watchScope(scope, arr, updateFn);</span><br><span class="line">      <span class="function"><span class="keyword">function</span> <span class="title">updateFn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"# updating my-dir "</span> + ++ctr);</span><br><span class="line">        <span class="comment">// modify DOM here</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;]);</span><br></pre></td></tr></table></figure>
+<p>由此可以看出，我们可简单的添加一个myUtil的<code>factory</code>模块，于是其所有方法都可以被directive指令调用了。</p>
+<p>你可以在这里查看可运行实例：<a href="http://jsfiddle.net/Wijmo/GJm9M/" target="_blank" rel="external">http://jsfiddle.net/Wijmo/GJm9M/</a></p>
+<p>尽管看上去很简单，AngularJS内部却有不少机制在确保可以这样简单的完成工作，它会检查directive指令，发现有”myUtil”参数，然后根据这个名字去找到对应的<code>factory</code>模块，接着就将引用注入进去。依赖注入是一个大主题，这里就不细究了，有兴趣可以看看<a href="http://docs.angularjs.org/guide/di" target="_blank" rel="external">AngularJS的文档</a></p>
+<p>正式因为依赖注入是依靠名字来进行的，于是在浓缩(minification)代码的时候会有些问题。当你准备浓缩代码并用于生产环境的时候，缩减代码工具对变量的自动更名会破坏正常的依赖注入。为了解决这个问题，AngularJS允许你使用字符串数组的方式定义模块元素。在上面这个示例里，你可以注意到在真正的方法构造前有两个字符串，这个会使得AngularJS以字符串的方式去寻找对应的模块。</p>
+<blockquote>
+<p><strong>特别注意:</strong> 如果你准备对你的directive指令做浓缩，你必须在所有direcitive指令或controller需要带参数的地方以字符串数组申明的方式进行。这个情况并没有被很好的记入官方文档。在<a href="http://angularjs.org/#components-js" target="_blank" rel="external">AngularJS首页</a>的Bootstrap的tab示例并没有被浓缩，不过这个是浓缩过的：<a href="http://jsfiddle.net/Wijmo/ywUYQ/" target="_blank" rel="external">http://jsfiddle.net/Wijmo/ywUYQ/</a></p>
+</blockquote>
+<p>对于<code>factory</code>多说一句，在AngularJS中还有另外三个理念差不多的类型：<code>provider</code>, <code>service</code>和<code>value</code>，它们的区别非常的微小，至少我是从开始Angular就一直使用<code>factory</code>，还一直没有找到使用其他类型的需求。</p>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><h2 id="Bootstrap折叠指令"><a href="#Bootstrap折叠指令" class="headerlink" title="Bootstrap折叠指令"></a>Bootstrap折叠指令</h2><h2 id="Google地图指令"><a href="#Google地图指令" class="headerlink" title="Google地图指令"></a>Google地图指令</h2><h2 id="Wijmo图表指令"><a href="#Wijmo图表指令" class="headerlink" title="Wijmo图表指令"></a>Wijmo图表指令</h2><h2 id="Wijmo表格指令"><a href="#Wijmo表格指令" class="headerlink" title="Wijmo表格指令"></a>Wijmo表格指令</h2><h1 id="更多的指令"><a href="#更多的指令" class="headerlink" title="更多的指令"></a>更多的指令</h1><h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Javascript/">Javascript</a><a href="/tags/HTML/">HTML</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/冰河杂谈/">冰河杂谈</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://icerdesign.com/wx/extending-html-with-angularjs-directives/" data-title="使用AngularJS指令扩展HTML语法 | 冰河设计 -- 冰河魔法师的自留地" data-tsina="wizicer" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/wx/writing-with-markdown-in-wechat/" title="在微信公众平台上用Markdown写作">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  在微信公众平台上用Markdown写作</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/wx/five-great-net-framework-4-5-features/"  title=".Net 4.5 的五项强大新特性">
+ <strong>NEXT:</strong><br/> 
+ <span>.Net 4.5 的五项强大新特性
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AngularJS介绍"><span class="toc-number">1.</span> <span class="toc-text">AngularJS介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AngularJS模块-Module"><span class="toc-number">2.</span> <span class="toc-text">AngularJS模块(Module)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#工程文件组织"><span class="toc-number">3.</span> <span class="toc-text">工程文件组织</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AngularJS指令：为什么要学习如何实现？"><span class="toc-number">4.</span> <span class="toc-text">AngularJS指令：为什么要学习如何实现？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AngularJS指令：如何实现？"><span class="toc-number">5.</span> <span class="toc-text">AngularJS指令：如何实现？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#指令与父作用域-Parent-Scope-的通信"><span class="toc-number">6.</span> <span class="toc-text">指令与父作用域(Parent Scope)的通信</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#公共代码-依赖注入"><span class="toc-number">7.</span> <span class="toc-text">公共代码/依赖注入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#示例"><span class="toc-number">8.</span> <span class="toc-text">示例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Bootstrap折叠指令"><span class="toc-number">8.1.</span> <span class="toc-text">Bootstrap折叠指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Google地图指令"><span class="toc-number">8.2.</span> <span class="toc-text">Google地图指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Wijmo图表指令"><span class="toc-number">8.3.</span> <span class="toc-text">Wijmo图表指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Wijmo表格指令"><span class="toc-number">8.4.</span> <span class="toc-text">Wijmo表格指令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#更多的指令"><span class="toc-number">9.</span> <span class="toc-text">更多的指令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#结论"><span class="toc-number">10.</span> <span class="toc-text">结论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-number">11.</span> <span class="toc-text">参考</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/Diary/" title="Diary">Diary<sup>7</sup></a></li>
+		
+			<li><a href="/categories/作品/" title="作品">作品<sup>3</sup></a></li>
+		
+			<li><a href="/categories/冰河杂谈/" title="冰河杂谈">冰河杂谈<sup>15</sup></a></li>
+		
+			<li><a href="/categories/小时候/" title="小时候">小时候<sup>37</sup></a></li>
+		
+			<li><a href="/categories/架构设计/" title="架构设计">架构设计<sup>0</sup></a></li>
+		
+			<li><a href="/categories/源代码分析/" title="源代码分析">源代码分析<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/C/" title="C#">C#<sup>2</sup></a></li>
+		
+			<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
+		
+			<li><a href="/tags/HTML/" title="HTML">HTML<sup>2</sup></a></li>
+		
+			<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+		
+			<li><a href="/tags/JS/" title="JS">JS<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Javascript/" title="Javascript">Javascript<sup>2</sup></a></li>
+		
+			<li><a href="/tags/Linux/" title="Linux">Linux<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Miscellaneous/" title="Miscellaneous">Miscellaneous<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Unity/" title="Unity">Unity<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Vim/" title="Vim">Vim<sup>1</sup></a></li>
+		
+			<li><a href="/tags/WPF/" title="WPF">WPF<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Windows/" title="Windows">Windows<sup>1</sup></a></li>
+		
+			<li><a href="/tags/下载器/" title="下载器">下载器<sup>1</sup></a></li>
+		
+			<li><a href="/tags/图片/" title="图片">图片<sup>1</sup></a></li>
+		
+			<li><a href="/tags/客户端/" title="客户端">客户端<sup>2</sup></a></li>
+		
+			<li><a href="/tags/小说/" title="小说">小说<sup>7</sup></a></li>
+		
+			<li><a href="/tags/微信/" title="微信">微信<sup>11</sup></a></li>
+		
+			<li><a href="/tags/总结/" title="总结">总结<sup>2</sup></a></li>
+		
+			<li><a href="/tags/日记/" title="日记">日记<sup>4</sup></a></li>
+		
+			<li><a href="/tags/时间管理/" title="时间管理">时间管理<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="introduction">
+	<p class="asidetitle">about</p>
+    <p><b>梁爽</b>，网名<b>冰河魔法师</b>，英文名简称<b>Icer</b>，现就职于霍尼韦尔(中国)，自动化领域工具软件架构师一名，94年接触计算机，99年开始写程序，08年做架构带团队，自此奠定了未来往架构师方向发展的重要目标。虽广泛涉猎各种计算机技术，但因深度熟悉QB、VB、.Net技术而被标记为微软派。</p>
+    <p>架构设计和程序设计本是完全没有高低的两个不同工作，但误解常在，所以不断通过自己的亲身实践让更多人真正的理解架构师这一容易被人误解的工种，并让有志之士走上架构师之路。</p>
+</div>
+
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/wizicer" target="_blank" title="weibo"></a>
+		
+		
+		
+		<a href="https://github.com/wizicer" target="_blank" title="github"></a>
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wizicer/iceman" target="_blank" title="Iceman">Iceman</a> © 2016 
+		
+		<a href="http://icerdesign.com" target="_blank" title="冰河魔法师">冰河魔法师</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+
+<div style="display:none;">
+    <script language="javascript" type="text/javascript" src="http://js.users.51.la/17278963.js">
+    </script>
+</div>
+
+
+
+  </body>
+</html>
+

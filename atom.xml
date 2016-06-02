@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>冰河设计 -- 冰河魔法师的自留地</title>
+  <subtitle>架构师，探险者</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://icerdesign.com/"/>
+  <updated>2016-05-21T09:07:16.785Z</updated>
+  <id>http://icerdesign.com/</id>
+  
+  <author>
+    <name>冰河魔法师</name>
+    <email>support@icerdesign.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vim Diary</title>
+    <link href="http://icerdesign.com/en/diary/vim/"/>
+    <id>http://icerdesign.com/en/diary/vim/</id>
+    <published>2016-05-19T16:00:00.000Z</published>
+    <updated>2016-05-21T09:07:16.785Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;2015-5-20&quot;&gt;&lt;a href=&quot;#2015-5-20&quot; class=&quot;headerlink&quot; title=&quot;2015-5-20&quot;&gt;&lt;/a&gt;2015-5-20&lt;/h2&gt;&lt;h3 id=&quot;pipe-content-from-console-output-to-vim&quot;&gt;&lt;a href=&quot;#pipe-content-from-console-output-to-vim&quot; class=&quot;headerlink&quot; title=&quot;pipe content from console output to vim&quot;&gt;&lt;/a&gt;pipe content from console output to vim&lt;/h3&gt;&lt;p&gt;&lt;code&gt;vim -&lt;/code&gt;, eg: &lt;code&gt;ls -la | vim -&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;shortcut-to-exit-vim&quot;&gt;&lt;a href=&quot;#shortcut-to-exit-vim&quot; class=&quot;headerlink&quot; title=&quot;shortcut to exit vim&quot;&gt;&lt;/a&gt;shortcut to exit vim&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ZZ&lt;/code&gt; save and exit&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ZQ&lt;/code&gt; exit without save&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Highlight-changes-in-unified-diff&quot;&gt;&lt;a href=&quot;#Highlight-changes-in-unified-diff&quot; class=&quot;headerlink&quot; title=&quot;Highlight changes in unified diff&quot;&gt;&lt;/a&gt;Highlight changes in unified diff&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;copy diff.vim from installation location to your own customizable location.&lt;/li&gt;
+&lt;li&gt;modify diff.vim like following:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight diff&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;diff --git a/syntax/diff.vim b/syntax/diff.vim&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;--- a/syntax/diff.vim&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;+++ b/syntax/diff.vim&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@@ -366,9 +366,9 @@ hi def link diffBDiffer		Constant&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; hi def link diffIsA		Constant&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; hi def link diffNoEOL		Constant&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; hi def link diffCommon		Constant&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;deletion&quot;&gt;-hi def link diffRemoved		Special&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;addition&quot;&gt;+hi def link diffRemoved		Error&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; hi def link diffChanged		PreProc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;deletion&quot;&gt;-hi def link diffAdded		Identifier&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;addition&quot;&gt;+hi def link diffAdded		Todo&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; hi def link diffLine		Statement&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; hi def link diffSubname		PreProc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; hi def link diffComment		Comment&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;2016-5-19&quot;&gt;&lt;a href=&quot;#2016-5-19&quot; class=&quot;headerlink&quot; title=&quot;2016-5-19&quot;&gt;&lt;/a&gt;2016-5-19&lt;/h2&gt;&lt;h3 id=&quot;Count-number-of-matches-of-a-pattern&quot;&gt;&lt;a href=&quot;#Count-number-of-matches-of-a-pattern&quot; class=&quot;headerlink&quot; title=&quot;Count number of matches of a pattern&quot;&gt;&lt;/a&gt;Count number of matches of a pattern&lt;/h3&gt;&lt;p&gt;To count the number of matches of a pattern, use the substitute command with the n flag. The
+following shows the number of times that pattern matches text in the current buffer:&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;:%s/pattern//gn&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Omit g to display the number of lines where the pattern matches:&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;:%s/pattern//n&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&quot;http://vim.wikia.com/wiki/Count_number_of_matches_of_a_pattern&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2016-5-10&quot;&gt;&lt;a href=&quot;#2016-5-10&quot; class=&quot;headerlink&quot; title=&quot;2016-5-10&quot;&gt;&lt;/a&gt;2016-5-10&lt;/h2&gt;&lt;h3 id=&quot;color-scheme-in-Vim-in-ConEmu-not-work&quot;&gt;&lt;a href=&quot;#color-scheme-in-Vim-in-ConEmu-not-work&quot; class=&quot;headerlink&quot; title=&quot;color scheme in Vim in ConEmu not work&quot;&gt;&lt;/a&gt;color scheme in Vim in ConEmu not work&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;follow &lt;a href=&quot;http://conemu.github.io/en/VimXterm.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;rename/remove &lt;code&gt;/bin/vim&lt;/code&gt; from git bash which is not supported.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;multiple-condition-in-Vim&quot;&gt;&lt;a href=&quot;#multiple-condition-in-Vim&quot; class=&quot;headerlink&quot; title=&quot;multiple condition in Vim&quot;&gt;&lt;/a&gt;multiple condition in Vim&lt;/h3&gt;&lt;p&gt;&lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;, tip: help expr&lt;/p&gt;
+&lt;h3 id=&quot;switch-case-of-letter&quot;&gt;&lt;a href=&quot;#switch-case-of-letter&quot; class=&quot;headerlink&quot; title=&quot;switch case of letter&quot;&gt;&lt;/a&gt;switch case of letter&lt;/h3&gt;&lt;p&gt;&lt;code&gt;~&lt;/code&gt; in visual mode&lt;/p&gt;
+&lt;h2 id=&quot;2016-5-3&quot;&gt;&lt;a href=&quot;#2016-5-3&quot; class=&quot;headerlink&quot; title=&quot;2016-5-3&quot;&gt;&lt;/a&gt;2016-5-3&lt;/h2&gt;&lt;h3 id=&quot;Perform-same-operation-across-buffers&quot;&gt;&lt;a href=&quot;#Perform-same-operation-across-buffers&quot; class=&quot;headerlink&quot; title=&quot;Perform same operation across buffers&quot;&gt;&lt;/a&gt;Perform same operation across buffers&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;store operation in macro &lt;code&gt;a&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;[OPTIONAL] &lt;code&gt;set nomore&lt;/code&gt; to avoid interruption during processing&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:bufdo execute &amp;quot;norma! @a&amp;quot; | update&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;2016-4-29&quot;&gt;&lt;a href=&quot;#2016-4-29&quot; class=&quot;headerlink&quot; title=&quot;2016-4-29&quot;&gt;&lt;/a&gt;2016-4-29&lt;/h2&gt;&lt;h3 id=&quot;Pick-the-first-spell-suggestion&quot;&gt;&lt;a href=&quot;#Pick-the-first-spell-suggestion&quot; class=&quot;headerlink&quot; title=&quot;Pick the first spell suggestion&quot;&gt;&lt;/a&gt;Pick the first spell suggestion&lt;/h3&gt;&lt;p&gt;&lt;code&gt;1z=&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2016-4-25&quot;&gt;&lt;a href=&quot;#2016-4-25&quot; class=&quot;headerlink&quot; title=&quot;2016-4-25&quot;&gt;&lt;/a&gt;2016-4-25&lt;/h2&gt;&lt;h3 id=&quot;use-vim-folder-in-windows&quot;&gt;&lt;a href=&quot;#use-vim-folder-in-windows&quot; class=&quot;headerlink&quot; title=&quot;use .vim folder in windows&quot;&gt;&lt;/a&gt;use .vim folder in windows&lt;/h3&gt;&lt;p&gt;Add following lines to vimrc:
+&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;has&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;win32&#39;&lt;/span&gt;) || &lt;span class=&quot;built_in&quot;&gt;has&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;win64&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;set&lt;/span&gt; runtimepath=$HOME/.&lt;span class=&quot;keyword&quot;&gt;vim&lt;/span&gt;,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.&lt;span class=&quot;keyword&quot;&gt;vim&lt;/span&gt;/after&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;endif&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/5440281/is-it-possible-to-use-a-folder-named-vimfiles-to-replace-vim-in-macvim&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;convert-VimWiki-to-markdown-using-Vim&quot;&gt;&lt;a href=&quot;#convert-VimWiki-to-markdown-using-Vim&quot; class=&quot;headerlink&quot; title=&quot;convert VimWiki to markdown using Vim&quot;&gt;&lt;/a&gt;convert VimWiki to markdown using Vim&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;* Convert bold: %s/\*\(.*\)\*/**\1**/g&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;* Convert named link: %s/\[\[\(.\&amp;#123;-&amp;#125;\)|\(.\&amp;#123;-&amp;#125;\)\]\]/[\2](\1)/g&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;* Convert link: %s/\[\[\(.\&amp;#123;-&amp;#125;\)\]\]/&amp;lt;\1&amp;gt;/g&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;* Title: &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  * First: %s/= \(.*\) =/# \1/g&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  * May multiple: %s/=\(.*\)=/#\1/g&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;* Picture: %s/&amp;#123;&amp;#123;\(.\&amp;#123;-&amp;#125;\)&amp;#125;&amp;#125;/![](\1)/g&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;* Fenced code start: %s/&amp;#123;&amp;#123;&amp;#123;class=&amp;quot;brush:\(.*\)&amp;quot;/```\1/g&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;* Fenced code end: %s/&amp;#125;&amp;#125;&amp;#125;/```/g&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;* Manual change # ordered list&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;vim-non-greedy-search&quot;&gt;&lt;a href=&quot;#vim-non-greedy-search&quot; class=&quot;headerlink&quot; title=&quot;vim non-greedy search&quot;&gt;&lt;/a&gt;vim non-greedy search&lt;/h3&gt;&lt;p&gt;The non-greedy version of &lt;code&gt;*&lt;/code&gt; is &lt;code&gt;\{-}&lt;/code&gt;. So, simply replace &lt;code&gt;.*&lt;/code&gt; with &lt;code&gt;.\{-&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://vi.stackexchange.com/questions/196/how-to-make-regex-matchers-non-greedy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2016-4-22&quot;&gt;&lt;a href=&quot;#2016-4-22&quot; class=&quot;headerlink&quot; title=&quot;2016-4-22&quot;&gt;&lt;/a&gt;2016-4-22&lt;/h2&gt;&lt;h3 id=&quot;go-back-end-of-word-go-to-end-of-previous-word&quot;&gt;&lt;a href=&quot;#go-back-end-of-word-go-to-end-of-previous-word&quot; class=&quot;headerlink&quot; title=&quot;go back end of word (go to end of previous word)&quot;&gt;&lt;/a&gt;go back end of word (go to end of previous word)&lt;/h3&gt;&lt;p&gt;Use &lt;code&gt;ge&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2016-4-21&quot;&gt;&lt;a href=&quot;#2016-4-21&quot; class=&quot;headerlink&quot; title=&quot;2016-4-21&quot;&gt;&lt;/a&gt;2016-4-21&lt;/h2&gt;&lt;h3 id=&quot;gf-with-auto-file-extension-especially-in-wiki-markdown&quot;&gt;&lt;a href=&quot;#gf-with-auto-file-extension-especially-in-wiki-markdown&quot; class=&quot;headerlink&quot; title=&quot;gf with auto file extension, especially in wiki markdown&quot;&gt;&lt;/a&gt;&lt;code&gt;gf&lt;/code&gt; with auto file extension, especially in wiki markdown&lt;/h3&gt;&lt;p&gt;Put following in vimrc&lt;/p&gt;
+&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;autocmd&lt;/span&gt; FileType markdown &lt;span class=&quot;keyword&quot;&gt;setlocal&lt;/span&gt; suffixesadd=.md,.markdown&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;2016-4-20&quot;&gt;&lt;a href=&quot;#2016-4-20&quot; class=&quot;headerlink&quot; title=&quot;2016-4-20&quot;&gt;&lt;/a&gt;2016-4-20&lt;/h2&gt;&lt;h3 id=&quot;Voom-plugin-with-error-python’s-site-module-could-not-be-loaded&quot;&gt;&lt;a href=&quot;#Voom-plugin-with-error-python’s-site-module-could-not-be-loaded&quot; class=&quot;headerlink&quot; title=&quot;Voom plugin with error: python’s site module could not be loaded&quot;&gt;&lt;/a&gt;Voom plugin with error: python’s site module could not be loaded&lt;/h3&gt;&lt;p&gt;Due to bug of Python 2.7.11, workaround:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Install other version.&lt;/li&gt;
+&lt;li&gt;after install execute following command (of course, need admin privilege). refer to &lt;a href=&quot;https://github.com/vim/vim/blob/master/appveyor.yml&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Link&lt;/a&gt;&lt;figure class=&quot;highlight bat&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;reg &lt;span class=&quot;built_in&quot;&gt;copy&lt;/span&gt; HKLM\SOFTWARE\Python\PythonCore\&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;7&lt;/span&gt; HKLM\SOFTWARE\Python\PythonCore\&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;32&lt;/span&gt; /s /reg:&lt;span class=&quot;number&quot;&gt;32&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;reg &lt;span class=&quot;built_in&quot;&gt;copy&lt;/span&gt; HKLM\SOFTWARE\Python\PythonCore\&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;7&lt;/span&gt; HKLM\SOFTWARE\Python\PythonCore\&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;32&lt;/span&gt; /s /reg:&lt;span class=&quot;number&quot;&gt;64&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;No-Answer-Questions&quot;&gt;&lt;a href=&quot;#No-Answer-Questions&quot; class=&quot;headerlink&quot; title=&quot;No Answer Questions&quot;&gt;&lt;/a&gt;No Answer Questions&lt;/h2&gt;&lt;h3 id=&quot;Convert-Space-Separated-to-CamelCase&quot;&gt;&lt;a href=&quot;#Convert-Space-Separated-to-CamelCase&quot; class=&quot;headerlink&quot; title=&quot;Convert Space Separated to CamelCase&quot;&gt;&lt;/a&gt;Convert &lt;code&gt;Space Separated&lt;/code&gt; to CamelCase&lt;/h3&gt;&lt;p&gt;No answer.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      Diary for vim, shortcuts or customization to Vim
+    
+    </summary>
+    
+      <category term="Diary" scheme="http://icerdesign.com/categories/Diary/"/>
+    
+    
+      <category term="Vim" scheme="http://icerdesign.com/tags/Vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux Diary</title>
+    <link href="http://icerdesign.com/en/diary/linux/"/>
+    <id>http://icerdesign.com/en/diary/linux/</id>
+    <published>2016-05-17T16:00:00.000Z</published>
+    <updated>2016-05-21T09:04:49.146Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;2016-5-18&quot;&gt;&lt;a href=&quot;#2016-5-18&quot; class=&quot;headerlink&quot; title=&quot;2016-5-18&quot;&gt;&lt;/a&gt;2016-5-18&lt;/h2&gt;&lt;h3 id=&quot;disk-space-shortage-and-need-to-find-the-largest-one&quot;&gt;&lt;a href=&quot;#disk-space-shortage-and-need-to-find-the-largest-one&quot; class=&quot;headerlink&quot; title=&quot;disk space shortage and need to find the largest one&quot;&gt;&lt;/a&gt;disk space shortage and need to find the largest one&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;df&lt;/code&gt; to roughly find largest mount&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;du -m --max-depth 1 | sort -rn | head -11&lt;/code&gt; to find TOP 10 by size directories&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Hint: use &lt;code&gt;-h&lt;/code&gt; for human readable size format&lt;/p&gt;
+&lt;h2 id=&quot;2016-5-18-1&quot;&gt;&lt;a href=&quot;#2016-5-18-1&quot; class=&quot;headerlink&quot; title=&quot;2016-5-18&quot;&gt;&lt;/a&gt;2016-5-18&lt;/h2&gt;&lt;h3 id=&quot;get-file-date&quot;&gt;&lt;a href=&quot;#get-file-date&quot; class=&quot;headerlink&quot; title=&quot;get file date&quot;&gt;&lt;/a&gt;get file date&lt;/h3&gt;&lt;p&gt;&lt;code&gt;date -r &amp;lt;filename&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2016-5-9&quot;&gt;&lt;a href=&quot;#2016-5-9&quot; class=&quot;headerlink&quot; title=&quot;2016-5-9&quot;&gt;&lt;/a&gt;2016-5-9&lt;/h2&gt;&lt;h3 id=&quot;Ubuntu-X64-Node-down&quot;&gt;&lt;a href=&quot;#Ubuntu-X64-Node-down&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu X64 Node down?&quot;&gt;&lt;/a&gt;Ubuntu X64 Node down?&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Situation:&lt;/strong&gt; &lt;/p&gt;
+&lt;p&gt;Up for more than 150 days in Hyper-V Virtual machine, Memory up to 2300M, however, no process
+possessed such memory.  User here face similar situation:
+&lt;a href=&quot;http://unix.stackexchange.com/questions/259659&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://unix.stackexchange.com/questions/259659&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Solution:&lt;/strong&gt; &lt;/p&gt;
+&lt;p&gt;Finally restart the virtual machine, and restraint memory size&lt;/p&gt;
+&lt;h3 id=&quot;How-to-diagnose-memory-in-linux&quot;&gt;&lt;a href=&quot;#How-to-diagnose-memory-in-linux&quot; class=&quot;headerlink&quot; title=&quot;How to diagnose memory in linux&quot;&gt;&lt;/a&gt;How to diagnose memory in linux&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ps aux --sort rss&lt;/code&gt; &lt;a href=&quot;http://alvinalexander.com/linux/unix-linux-process-memory-sort-ps-command-cpu&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;free -m&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;bash-tab-auto-completion-with-case-insensitive&quot;&gt;&lt;a href=&quot;#bash-tab-auto-completion-with-case-insensitive&quot; class=&quot;headerlink&quot; title=&quot;bash tab auto completion with case insensitive&quot;&gt;&lt;/a&gt;bash tab auto completion with case insensitive&lt;/h3&gt;&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# If ~./inputrc doesn&#39;t exist yet, first include the original /etc/inputrc so we don&#39;t override it&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; [ ! &lt;span class=&quot;_&quot;&gt;-a&lt;/span&gt; ~/.inputrc ]; &lt;span class=&quot;keyword&quot;&gt;then&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;\$include /etc/inputrc&quot;&lt;/span&gt; &amp;gt; ~/.inputrc; &lt;span class=&quot;keyword&quot;&gt;fi&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Add option to ~/.inputrc to enable case-insensitive tab completion&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;set completion-ignore-case On&quot;&lt;/span&gt; &amp;gt;&amp;gt; ~/.inputrc&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&quot;http://askubuntu.com/questions/87061/can-i-make-tab-auto-completion-case-insensitive-in-the-terminal&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2016-4-29&quot;&gt;&lt;a href=&quot;#2016-4-29&quot; class=&quot;headerlink&quot; title=&quot;2016-4-29&quot;&gt;&lt;/a&gt;2016-4-29&lt;/h2&gt;&lt;h3 id=&quot;cAdvisor-or-influxdb&quot;&gt;&lt;a href=&quot;#cAdvisor-or-influxdb&quot; class=&quot;headerlink&quot; title=&quot;cAdvisor or influxdb?&quot;&gt;&lt;/a&gt;cAdvisor or influxdb?&lt;/h3&gt;&lt;p&gt;cAdvisor has very basic function, while influxdb is only a database.
+They can be used in combination, other keyword is &lt;code&gt;docker-monitor&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;for-each-directory-in-bash&quot;&gt;&lt;a href=&quot;#for-each-directory-in-bash&quot; class=&quot;headerlink&quot; title=&quot;for each directory in bash&quot;&gt;&lt;/a&gt;for each directory in bash&lt;/h3&gt;&lt;p&gt;&lt;code&gt;for D in *; do [ -d &amp;quot;${D}&amp;quot;] &amp;amp;&amp;amp; my_command; done&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2016-4-25&quot;&gt;&lt;a href=&quot;#2016-4-25&quot; class=&quot;headerlink&quot; title=&quot;2016-4-25&quot;&gt;&lt;/a&gt;2016-4-25&lt;/h2&gt;&lt;h3 id=&quot;cross-platform-link-file-command&quot;&gt;&lt;a href=&quot;#cross-platform-link-file-command&quot; class=&quot;headerlink&quot; title=&quot;cross platform link file command.&quot;&gt;&lt;/a&gt;cross platform link file command.&lt;/h3&gt;&lt;p&gt;Very complex: &lt;a href=&quot;http://stackoverflow.com/questions/18641864/git-bash-shell-fails-to-create-symbolic-links&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://stackoverflow.com/questions/18641864/git-bash-shell-fails-to-create-symbolic-links&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2016-4-20&quot;&gt;&lt;a href=&quot;#2016-4-20&quot; class=&quot;headerlink&quot; title=&quot;2016-4-20&quot;&gt;&lt;/a&gt;2016-4-20&lt;/h2&gt;&lt;h3 id=&quot;Bash-execute-next-command-even-error&quot;&gt;&lt;a href=&quot;#Bash-execute-next-command-even-error&quot; class=&quot;headerlink&quot; title=&quot;Bash execute next command even error?&quot;&gt;&lt;/a&gt;Bash execute next command even error?&lt;/h3&gt;&lt;p&gt;use &lt;code&gt;||&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;move-all-files-to-subfolder-without-error-in-linux&quot;&gt;&lt;a href=&quot;#move-all-files-to-subfolder-without-error-in-linux&quot; class=&quot;headerlink&quot; title=&quot;move all files to subfolder without error in linux&quot;&gt;&lt;/a&gt;move all files to subfolder without error in linux&lt;/h3&gt;&lt;p&gt;No simple solution, one way is to use &lt;code&gt;||&lt;/code&gt; ignore all error&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      Diary for Linux stuffs, like bash script, system diagnose
+    
+    </summary>
+    
+      <category term="Diary" scheme="http://icerdesign.com/categories/Diary/"/>
+    
+    
+      <category term="Linux" scheme="http://icerdesign.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git Diary</title>
+    <link href="http://icerdesign.com/en/diary/git/"/>
+    <id>http://icerdesign.com/en/diary/git/</id>
+    <published>2016-05-15T16:00:00.000Z</published>
+    <updated>2016-05-21T09:03:39.842Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;2016-5-16&quot;&gt;&lt;a href=&quot;#2016-5-16&quot; class=&quot;headerlink&quot; title=&quot;2016-5-16&quot;&gt;&lt;/a&gt;2016-5-16&lt;/h2&gt;&lt;h3 id=&quot;check-out-without-change-files&quot;&gt;&lt;a href=&quot;#check-out-without-change-files&quot; class=&quot;headerlink&quot; title=&quot;check out without change files&quot;&gt;&lt;/a&gt;check out without change files&lt;/h3&gt;&lt;p&gt;&lt;code&gt;git symbolic-ref HEAD refs/heads/branchname&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;get-SHA-of-first-commit-in-git&quot;&gt;&lt;a href=&quot;#get-SHA-of-first-commit-in-git&quot; class=&quot;headerlink&quot; title=&quot;get SHA of first commit in git?&quot;&gt;&lt;/a&gt;get SHA of first commit in git?&lt;/h3&gt;&lt;p&gt;&lt;code&gt;git rev-list --max-parents=0 HEAD&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2016-5-13&quot;&gt;&lt;a href=&quot;#2016-5-13&quot; class=&quot;headerlink&quot; title=&quot;2016-5-13&quot;&gt;&lt;/a&gt;2016-5-13&lt;/h2&gt;&lt;h3 id=&quot;revert-commit-after-push&quot;&gt;&lt;a href=&quot;#revert-commit-after-push&quot; class=&quot;headerlink&quot; title=&quot;revert commit after push&quot;&gt;&lt;/a&gt;revert commit after push&lt;/h3&gt;&lt;p&gt;&lt;code&gt;git revert&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;unstage-all&quot;&gt;&lt;a href=&quot;#unstage-all&quot; class=&quot;headerlink&quot; title=&quot;unstage all&quot;&gt;&lt;/a&gt;unstage all&lt;/h3&gt;&lt;p&gt;&lt;code&gt;git reset&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;However, if the repository don’t have the first commit, you may want &lt;code&gt;rm -rf .git &amp;amp;&amp;amp; git init&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;why-git-not-track-folder&quot;&gt;&lt;a href=&quot;#why-git-not-track-folder&quot; class=&quot;headerlink&quot; title=&quot;why git not track folder?&quot;&gt;&lt;/a&gt;why git not track folder?&lt;/h3&gt;&lt;p&gt;No answer, however, without folder tracking merge a old branch to another branch which done rename a
+folder may not complete automatically.&lt;/p&gt;
+&lt;h2 id=&quot;2016-5-12&quot;&gt;&lt;a href=&quot;#2016-5-12&quot; class=&quot;headerlink&quot; title=&quot;2016-5-12&quot;&gt;&lt;/a&gt;2016-5-12&lt;/h2&gt;&lt;h3 id=&quot;squash-all-commits-to-one-commit-at-one-point&quot;&gt;&lt;a href=&quot;#squash-all-commits-to-one-commit-at-one-point&quot; class=&quot;headerlink&quot; title=&quot;squash all commits to one commit at one point&quot;&gt;&lt;/a&gt;squash all commits to one commit at one point&lt;/h3&gt;&lt;p&gt;&lt;code&gt;No Answer&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The scenario of this question is because some company open source its project without sharing the
+whole history, so it keeps two different history copy.&lt;/p&gt;
+&lt;h2 id=&quot;2016-5-9&quot;&gt;&lt;a href=&quot;#2016-5-9&quot; class=&quot;headerlink&quot; title=&quot;2016-5-9&quot;&gt;&lt;/a&gt;2016-5-9&lt;/h2&gt;&lt;h3 id=&quot;find-deleted-file-in-history&quot;&gt;&lt;a href=&quot;#find-deleted-file-in-history&quot; class=&quot;headerlink&quot; title=&quot;find deleted file in history&quot;&gt;&lt;/a&gt;find deleted file in history&lt;/h3&gt;&lt;p&gt;&lt;code&gt;git log --all -- FILEPATH(wildcard allowed)&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;gitlab-wiki-TOC&quot;&gt;&lt;a href=&quot;#gitlab-wiki-TOC&quot; class=&quot;headerlink&quot; title=&quot;gitlab wiki TOC&quot;&gt;&lt;/a&gt;gitlab wiki TOC&lt;/h3&gt;&lt;p&gt;&lt;code&gt;[[_TOC_]]&lt;/code&gt;, NOTE: preview mode not work.&lt;/p&gt;
+&lt;h2 id=&quot;2016-5-6&quot;&gt;&lt;a href=&quot;#2016-5-6&quot; class=&quot;headerlink&quot; title=&quot;2016-5-6&quot;&gt;&lt;/a&gt;2016-5-6&lt;/h2&gt;&lt;h3 id=&quot;UNC-link-in-gitlab&quot;&gt;&lt;a href=&quot;#UNC-link-in-gitlab&quot; class=&quot;headerlink&quot; title=&quot;UNC link in gitlab&quot;&gt;&lt;/a&gt;UNC link in gitlab&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;file://///.....&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;2016-5-4&quot;&gt;&lt;a href=&quot;#2016-5-4&quot; class=&quot;headerlink&quot; title=&quot;2016-5-4&quot;&gt;&lt;/a&gt;2016-5-4&lt;/h2&gt;&lt;h3 id=&quot;push-tag&quot;&gt;&lt;a href=&quot;#push-tag&quot; class=&quot;headerlink&quot; title=&quot;push tag&quot;&gt;&lt;/a&gt;push tag&lt;/h3&gt;&lt;p&gt;&lt;code&gt;git push --follow-tags&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2016-4-29&quot;&gt;&lt;a href=&quot;#2016-4-29&quot; class=&quot;headerlink&quot; title=&quot;2016-4-29&quot;&gt;&lt;/a&gt;2016-4-29&lt;/h2&gt;&lt;h3 id=&quot;Delete-remote-branch&quot;&gt;&lt;a href=&quot;#Delete-remote-branch&quot; class=&quot;headerlink&quot; title=&quot;Delete remote branch&quot;&gt;&lt;/a&gt;Delete remote branch&lt;/h3&gt;&lt;p&gt;&lt;code&gt;git push origin :branchname&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Error-src-refspec-…-matches-more-than-one&quot;&gt;&lt;a href=&quot;#Error-src-refspec-…-matches-more-than-one&quot; class=&quot;headerlink&quot; title=&quot;Error: src refspec … matches more than one&quot;&gt;&lt;/a&gt;Error: src refspec … matches more than one&lt;/h3&gt;&lt;p&gt;Root cause is same name of branch and tag appears, usually we remove the conflicting tag to avoid
+the confliction.&lt;/p&gt;
+&lt;h2 id=&quot;2016-4-25&quot;&gt;&lt;a href=&quot;#2016-4-25&quot; class=&quot;headerlink&quot; title=&quot;2016-4-25&quot;&gt;&lt;/a&gt;2016-4-25&lt;/h2&gt;&lt;h3 id=&quot;produce-patch-file&quot;&gt;&lt;a href=&quot;#produce-patch-file&quot; class=&quot;headerlink&quot; title=&quot;produce patch file&quot;&gt;&lt;/a&gt;produce patch file&lt;/h3&gt;&lt;p&gt;&lt;code&gt;git diff commit[..commit] &amp;gt;xxx.patch&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;reflog-of-gitlab&quot;&gt;&lt;a href=&quot;#reflog-of-gitlab&quot; class=&quot;headerlink&quot; title=&quot;reflog of gitlab&quot;&gt;&lt;/a&gt;&lt;code&gt;reflog&lt;/code&gt; of gitlab&lt;/h3&gt;&lt;p&gt;Not supported in gitlab, github supported via API.&lt;/p&gt;
+&lt;h3 id=&quot;Find-reflog-of-remote-repo&quot;&gt;&lt;a href=&quot;#Find-reflog-of-remote-repo&quot; class=&quot;headerlink&quot; title=&quot;Find reflog of remote repo.&quot;&gt;&lt;/a&gt;Find reflog of remote repo.&lt;/h3&gt;&lt;p&gt;Not possible, because reflog is local only.&lt;/p&gt;
+&lt;h3 id=&quot;How-to-audit-force-push-in-gitlab&quot;&gt;&lt;a href=&quot;#How-to-audit-force-push-in-gitlab&quot; class=&quot;headerlink&quot; title=&quot;How to audit force push in gitlab?&quot;&gt;&lt;/a&gt;How to audit force push in gitlab?&lt;/h3&gt;&lt;p&gt;No way, only to &lt;code&gt;protect&lt;/code&gt; it.&lt;/p&gt;
+&lt;h3 id=&quot;dot-file-management-with-git-with-proper-ignore&quot;&gt;&lt;a href=&quot;#dot-file-management-with-git-with-proper-ignore&quot; class=&quot;headerlink&quot; title=&quot;dot file management with git with proper ignore&quot;&gt;&lt;/a&gt;dot file management with git with proper ignore&lt;/h3&gt;&lt;p&gt;Add following pattern:
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;.*&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;!/.gitignore&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/8021441/gitignore-hidden-dot-directories&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2016-4-24&quot;&gt;&lt;a href=&quot;#2016-4-24&quot; class=&quot;headerlink&quot; title=&quot;2016-4-24&quot;&gt;&lt;/a&gt;2016-4-24&lt;/h2&gt;&lt;h3 id=&quot;word-file-git-diff&quot;&gt;&lt;a href=&quot;#word-file-git-diff&quot; class=&quot;headerlink&quot; title=&quot;word file git diff&quot;&gt;&lt;/a&gt;word file git diff&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;.gitattributes&lt;/code&gt; file in root folder of your git project&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;*.docx diff=pandoc&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;.gitconfig&lt;/code&gt; file in your home folder&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[diff &amp;quot;pandoc&amp;quot;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    textconv=pandoc --to=markdown&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    prompt = false&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.martinfenner.org/2014/08/25/using-microsoft-word-with-git/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;git-find-biggest-history&quot;&gt;&lt;a href=&quot;#git-find-biggest-history&quot; class=&quot;headerlink&quot; title=&quot;git find biggest history&quot;&gt;&lt;/a&gt;git find biggest history&lt;/h3&gt;&lt;p&gt;One-liner:
+&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git rev-list --objects --all | grep &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;variable&quot;&gt;$(git verify-pack -v .git/objects/pack/*.idx | sort -k 3 -n | tail -10 | awk &#39;&amp;#123;print$1&amp;#125;&#39;)&lt;/span&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/10622179/how-to-find-identify-large-files-commits-in-git-history&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2016-4-20&quot;&gt;&lt;a href=&quot;#2016-4-20&quot; class=&quot;headerlink&quot; title=&quot;2016-4-20&quot;&gt;&lt;/a&gt;2016-4-20&lt;/h2&gt;&lt;h3 id=&quot;Move-files-to-sub-folder-with-history&quot;&gt;&lt;a href=&quot;#Move-files-to-sub-folder-with-history&quot; class=&quot;headerlink&quot; title=&quot;Move files to sub folder with history&quot;&gt;&lt;/a&gt;Move files to sub folder with history&lt;/h3&gt;&lt;p&gt;use &lt;code&gt;filter-branch --tree-filter&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Merge-two-repository&quot;&gt;&lt;a href=&quot;#Merge-two-repository&quot; class=&quot;headerlink&quot; title=&quot;Merge two repository&quot;&gt;&lt;/a&gt;Merge two repository&lt;/h3&gt;&lt;p&gt;Directly merge them, you may want use &lt;code&gt;filter-branch&lt;/code&gt; if subdirectory needed.&lt;/p&gt;
+&lt;h2 id=&quot;No-Answer-Questions&quot;&gt;&lt;a href=&quot;#No-Answer-Questions&quot; class=&quot;headerlink&quot; title=&quot;No Answer Questions&quot;&gt;&lt;/a&gt;No Answer Questions&lt;/h2&gt;&lt;h3 id=&quot;Find-orphan-pages-in-gitlab-wiki&quot;&gt;&lt;a href=&quot;#Find-orphan-pages-in-gitlab-wiki&quot; class=&quot;headerlink&quot; title=&quot;Find orphan pages in gitlab wiki&quot;&gt;&lt;/a&gt;Find orphan pages in gitlab wiki&lt;/h3&gt;</content>
+    
+    <summary type="html">
+    
+      Diary for git experiences and special scripts
+    
+    </summary>
+    
+      <category term="Diary" scheme="http://icerdesign.com/categories/Diary/"/>
+    
+    
+      <category term="Git" scheme="http://icerdesign.com/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSharp Diary</title>
+    <link href="http://icerdesign.com/en/diary/cs/"/>
+    <id>http://icerdesign.com/en/diary/cs/</id>
+    <published>2016-05-15T16:00:00.000Z</published>
+    <updated>2016-05-21T08:58:15.435Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;2016-5-16&quot;&gt;&lt;a href=&quot;#2016-5-16&quot; class=&quot;headerlink&quot; title=&quot;2016-5-16&quot;&gt;&lt;/a&gt;2016-5-16&lt;/h2&gt;&lt;h3 id=&quot;Dependency-check-restriction-of-csproj&quot;&gt;&lt;a href=&quot;#Dependency-check-restriction-of-csproj&quot; class=&quot;headerlink&quot; title=&quot;Dependency check(restriction) of csproj&quot;&gt;&lt;/a&gt;Dependency check(restriction) of csproj&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;still cannot achieved by using code anlysis&lt;/li&gt;
+&lt;li&gt;use &lt;code&gt;.Net Architecture Checker&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;2016-5-12&quot;&gt;&lt;a href=&quot;#2016-5-12&quot; class=&quot;headerlink&quot; title=&quot;2016-5-12&quot;&gt;&lt;/a&gt;2016-5-12&lt;/h2&gt;&lt;h3 id=&quot;AssemblyVersion-vs-FileVersion-vs-ProductVersion&quot;&gt;&lt;a href=&quot;#AssemblyVersion-vs-FileVersion-vs-ProductVersion&quot; class=&quot;headerlink&quot; title=&quot;AssemblyVersion vs FileVersion vs ProductVersion&quot;&gt;&lt;/a&gt;&lt;code&gt;AssemblyVersion&lt;/code&gt; vs &lt;code&gt;FileVersion&lt;/code&gt; vs &lt;code&gt;ProductVersion&lt;/code&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;AssemblyVersion&lt;/code&gt; is used for assembly reference.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;FileVersion&lt;/code&gt; is used for mark which build the assembly produced.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ProductVersion&lt;/code&gt; is used for marketing, not used in program.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;eg, version of &lt;code&gt;mscorlib 2.0.0.0&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;AssemblyVersion&lt;/code&gt;: 2.0.0.0&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;FileVersion&lt;/code&gt;: 2.0.50727.3521&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ProductVersion&lt;/code&gt;: 2.0.50727.3521&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Error-raised-by-xaml-does-not-have-a-resource-identifier-by-the-uri&quot;&gt;&lt;a href=&quot;#Error-raised-by-xaml-does-not-have-a-resource-identifier-by-the-uri&quot; class=&quot;headerlink&quot; title=&quot;Error raised by xaml: does not have a resource identifier by the uri&quot;&gt;&lt;/a&gt;Error raised by xaml: &lt;code&gt;does not have a resource identifier by the uri&lt;/code&gt;&lt;/h3&gt;&lt;p&gt;Scenario is when try to load two different version of assemblies.(same code with different Assembly
+Version) &lt;/p&gt;
+&lt;p&gt;It’s limitation to Xaml generator. Workaround:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;put &lt;code&gt;&amp;lt;AssemblyVersion&amp;gt;&lt;/code&gt; in &lt;code&gt;.csproj&lt;/code&gt; file.&lt;/li&gt;
+&lt;li&gt;use build parameter.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;Error-xceed-wpf-toolkit-aerolite-in-xaml-when-use-xceed&quot;&gt;&lt;a href=&quot;#Error-xceed-wpf-toolkit-aerolite-in-xaml-when-use-xceed&quot; class=&quot;headerlink&quot; title=&quot;Error xceed.wpf.toolkit.aerolite in xaml when use xceed&quot;&gt;&lt;/a&gt;Error &lt;code&gt;xceed.wpf.toolkit.aerolite&lt;/code&gt; in xaml when use xceed&lt;/h3&gt;&lt;p&gt;Ignore it, as it’s internal mechanism to try to load it.&lt;/p&gt;
+&lt;h3 id=&quot;LoadFile-vs-LoadFrom-in-Assembly&quot;&gt;&lt;a href=&quot;#LoadFile-vs-LoadFrom-in-Assembly&quot; class=&quot;headerlink&quot; title=&quot;LoadFile vs LoadFrom in Assembly&quot;&gt;&lt;/a&gt;&lt;code&gt;LoadFile&lt;/code&gt; vs &lt;code&gt;LoadFrom&lt;/code&gt; in &lt;code&gt;Assembly&lt;/code&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;LoadFrom&lt;/code&gt;, default action when .Net load assembly, load only once for same identity even in two
+location with different meta data.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LoadFile&lt;/code&gt;, load exactly what was requested, and would not load dependency.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Dynamic-Module-Assembly&quot;&gt;&lt;a href=&quot;#Dynamic-Module-Assembly&quot; class=&quot;headerlink&quot; title=&quot;Dynamic Module(Assembly)?&quot;&gt;&lt;/a&gt;Dynamic Module(Assembly)?&lt;/h3&gt;&lt;p&gt;Use &lt;code&gt;AssemblyBuilder&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2016-5-11&quot;&gt;&lt;a href=&quot;#2016-5-11&quot; class=&quot;headerlink&quot; title=&quot;2016-5-11&quot;&gt;&lt;/a&gt;2016-5-11&lt;/h2&gt;&lt;h3 id=&quot;Task-Run-is-not-available-and-error-doesn-39-t-contain-a-definition-for-39-GetAwaiter-39-in-Task-Factory-StartNew&quot;&gt;&lt;a href=&quot;#Task-Run-is-not-available-and-error-doesn-39-t-contain-a-definition-for-39-GetAwaiter-39-in-Task-Factory-StartNew&quot; class=&quot;headerlink&quot; title=&quot;Task.Run is not available and error doesn&amp;#39;t contain a definition for &amp;#39;GetAwaiter&amp;#39; in Task.Factory.StartNew&quot;&gt;&lt;/a&gt;&lt;code&gt;Task.Run&lt;/code&gt; is not available and error &lt;code&gt;doesn&amp;#39;t contain a definition for &amp;#39;GetAwaiter&amp;#39;&lt;/code&gt; in &lt;code&gt;Task.Factory.StartNew&lt;/code&gt;&lt;/h3&gt;&lt;p&gt;&lt;code&gt;Task.Run&lt;/code&gt; is available since .Net 4.5 and this error would disappear after switched target to 4.5&lt;/p&gt;
+&lt;h3 id=&quot;async-WPF-click-event-for-CPU-intensive-operation&quot;&gt;&lt;a href=&quot;#async-WPF-click-event-for-CPU-intensive-operation&quot; class=&quot;headerlink&quot; title=&quot;async WPF click event for CPU intensive operation&quot;&gt;&lt;/a&gt;async WPF click event for CPU intensive operation&lt;/h3&gt;&lt;p&gt;Lesson learned:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Don’t use async/await in .Net 4.0.&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;Task.Run&lt;/code&gt; to replace the CPU intensive code.&lt;/li&gt;
+&lt;li&gt;Need to manually fire &lt;code&gt;PropertyChanged&lt;/code&gt; event for ViewModel.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;async-linq&quot;&gt;&lt;a href=&quot;#async-linq&quot; class=&quot;headerlink&quot; title=&quot;async linq?&quot;&gt;&lt;/a&gt;async linq?&lt;/h3&gt;&lt;p&gt;In a word, linq was not designed to be asynced.&lt;/p&gt;
+&lt;h3 id=&quot;Side-effects-of-Serializable&quot;&gt;&lt;a href=&quot;#Side-effects-of-Serializable&quot; class=&quot;headerlink&quot; title=&quot;Side effects of [Serializable]&quot;&gt;&lt;/a&gt;Side effects of &lt;code&gt;[Serializable]&lt;/code&gt;&lt;/h3&gt;&lt;p&gt;No, because it’s &lt;code&gt;Attribute&lt;/code&gt; which only read by some program runtime.&lt;/p&gt;
+&lt;h3 id=&quot;Caliburn-Micro-PropertyChangedBase-not-Serializable-Even-mark-as-Serializable-who-inherit-it&quot;&gt;&lt;a href=&quot;#Caliburn-Micro-PropertyChangedBase-not-Serializable-Even-mark-as-Serializable-who-inherit-it&quot; class=&quot;headerlink&quot; title=&quot;Caliburn.Micro PropertyChangedBase not Serializable. (Even mark as Serializable who inherit it)&quot;&gt;&lt;/a&gt;Caliburn.Micro &lt;code&gt;PropertyChangedBase&lt;/code&gt; not Serializable. (Even mark as Serializable who inherit it)&lt;/h3&gt;&lt;p&gt;It marks with &lt;code&gt;[DataContract]&lt;/code&gt;, maybe mark field with &lt;code&gt;[DataMember]&lt;/code&gt; can fix this(not test).&lt;/p&gt;
+&lt;h3 id=&quot;Cannot-be-Serializable-who-implement-INotifyPropertyChanged&quot;&gt;&lt;a href=&quot;#Cannot-be-Serializable-who-implement-INotifyPropertyChanged&quot; class=&quot;headerlink&quot; title=&quot;Cannot be Serializable who implement INotifyPropertyChanged&quot;&gt;&lt;/a&gt;Cannot be Serializable who implement INotifyPropertyChanged&lt;/h3&gt;&lt;p&gt;Because the event, change it to:&lt;/p&gt;
+&lt;figure class=&quot;highlight cs&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[field:NonSerializable]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;event&lt;/span&gt; ChangedEventHandler PropertyChanged;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Performance-AppDomain-vs-Process&quot;&gt;&lt;a href=&quot;#Performance-AppDomain-vs-Process&quot; class=&quot;headerlink&quot; title=&quot;Performance: AppDomain vs Process&quot;&gt;&lt;/a&gt;Performance: AppDomain vs Process&lt;/h3&gt;&lt;p&gt;No comparison found, however, obviously AppDomain should be much faster than process which not
+involving a lot of system resource allocation.&lt;/p&gt;
+&lt;h2 id=&quot;2016-5-9&quot;&gt;&lt;a href=&quot;#2016-5-9&quot; class=&quot;headerlink&quot; title=&quot;2016-5-9&quot;&gt;&lt;/a&gt;2016-5-9&lt;/h2&gt;&lt;h3 id=&quot;Ignore-first-time-SelectionChanged-event&quot;&gt;&lt;a href=&quot;#Ignore-first-time-SelectionChanged-event&quot; class=&quot;headerlink&quot; title=&quot;Ignore first time SelectionChanged event&quot;&gt;&lt;/a&gt;Ignore first time SelectionChanged event&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;use variable to lock&lt;/li&gt;
+&lt;li&gt;use &lt;code&gt;Loaded&lt;/code&gt; event to wire SelectionChanged event.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;2016-5-4&quot;&gt;&lt;a href=&quot;#2016-5-4&quot; class=&quot;headerlink&quot; title=&quot;2016-5-4&quot;&gt;&lt;/a&gt;2016-5-4&lt;/h2&gt;&lt;h3 id=&quot;shortcut-to-navigate-in-Peek-Definition&quot;&gt;&lt;a href=&quot;#shortcut-to-navigate-in-Peek-Definition&quot; class=&quot;headerlink&quot; title=&quot;shortcut to navigate in Peek Definition&quot;&gt;&lt;/a&gt;shortcut to navigate in Peek Definition&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;Shift&lt;/kbd&gt;+&lt;kbd&gt;Esc&lt;/kbd&gt;: Jump Between&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Alt&lt;/kbd&gt;+[&lt;kbd&gt;-&lt;/kbd&gt;/&lt;kbd&gt;+&lt;/kbd&gt;]: Navigate between definition window&lt;/li&gt;
+&lt;li&gt;[&lt;kbd&gt;Shift&lt;/kbd&gt;+]&lt;kbd&gt;F8&lt;/kbd&gt;: navigate between multiple results&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Annotate-a-file-in-VS2015-git-blame&quot;&gt;&lt;a href=&quot;#Annotate-a-file-in-VS2015-git-blame&quot; class=&quot;headerlink&quot; title=&quot;Annotate a file in VS2015(git blame)&quot;&gt;&lt;/a&gt;Annotate a file in VS2015(git blame)&lt;/h3&gt;&lt;p&gt;Right click file in solution, &lt;code&gt;Annotate&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2016-4-29&quot;&gt;&lt;a href=&quot;#2016-4-29&quot; class=&quot;headerlink&quot; title=&quot;2016-4-29&quot;&gt;&lt;/a&gt;2016-4-29&lt;/h2&gt;&lt;h3 id=&quot;Select-All-design-pattern-with-post-selection-events-single-or-multiple-confirmation&quot;&gt;&lt;a href=&quot;#Select-All-design-pattern-with-post-selection-events-single-or-multiple-confirmation&quot; class=&quot;headerlink&quot; title=&quot;Select-All design pattern with post-selection events (single or multiple confirmation)&quot;&gt;&lt;/a&gt;Select-All design pattern with post-selection events (single or multiple confirmation)&lt;/h3&gt;&lt;p&gt;Differentiate Select-All and Single-Select by event source/args.&lt;/p&gt;
+&lt;h2 id=&quot;2016-4-27&quot;&gt;&lt;a href=&quot;#2016-4-27&quot; class=&quot;headerlink&quot; title=&quot;2016-4-27&quot;&gt;&lt;/a&gt;2016-4-27&lt;/h2&gt;&lt;h3 id=&quot;How-to-add-strong-name-to-dll-sign-a-dll&quot;&gt;&lt;a href=&quot;#How-to-add-strong-name-to-dll-sign-a-dll&quot; class=&quot;headerlink&quot; title=&quot;How to add strong name to dll(sign a dll)?&quot;&gt;&lt;/a&gt;How to add strong name to dll(sign a dll)?&lt;/h3&gt;&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ildasm.exe xxx.dll /out:xxx.il&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ilasm.exe xxx.il /dll /key=xxx.snk /output=xxx-signed.dll&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;2016-4-25&quot;&gt;&lt;a href=&quot;#2016-4-25&quot; class=&quot;headerlink&quot; title=&quot;2016-4-25&quot;&gt;&lt;/a&gt;2016-4-25&lt;/h2&gt;&lt;h3 id=&quot;protected-internal-in-C&quot;&gt;&lt;a href=&quot;#protected-internal-in-C&quot; class=&quot;headerlink&quot; title=&quot;protected internal in C#?&quot;&gt;&lt;/a&gt;&lt;code&gt;protected internal&lt;/code&gt; in C#?&lt;/h3&gt;&lt;p&gt;&lt;code&gt;protected internal&lt;/code&gt; means &lt;code&gt;protected&lt;/code&gt; &lt;strong&gt;OR&lt;/strong&gt; &lt;code&gt;internal&lt;/code&gt;.
+In order to make it protected &lt;strong&gt;AND&lt;/strong&gt; internal, mark parent as &lt;code&gt;internal&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Unit-test-DateTime-Now&quot;&gt;&lt;a href=&quot;#Unit-test-DateTime-Now&quot; class=&quot;headerlink&quot; title=&quot;Unit test DateTime.Now&quot;&gt;&lt;/a&gt;Unit test &lt;code&gt;DateTime.Now&lt;/code&gt;&lt;/h3&gt;&lt;p&gt;Only way is use agent.&lt;/p&gt;
+&lt;h3 id=&quot;Set-value-of-internal-private-fields-properties-via-dynamic&quot;&gt;&lt;a href=&quot;#Set-value-of-internal-private-fields-properties-via-dynamic&quot; class=&quot;headerlink&quot; title=&quot;Set value of internal/private fields/properties via dynamic&quot;&gt;&lt;/a&gt;Set value of internal/private fields/properties via dynamic&lt;/h3&gt;&lt;p&gt;It’s impossible to set value through dynamic, instead, use reflection with &lt;code&gt;BindingFlags.Instance |
+BindingFlags.NonPublic&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Error-CS0656-after-used-dynamic&quot;&gt;&lt;a href=&quot;#Error-CS0656-after-used-dynamic&quot; class=&quot;headerlink&quot; title=&quot;Error CS0656 after used dynamic&quot;&gt;&lt;/a&gt;Error &lt;code&gt;CS0656&lt;/code&gt; after used dynamic&lt;/h3&gt;&lt;p&gt;Need to reference &lt;code&gt;Microsoft.CSharp&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2016-4-24&quot;&gt;&lt;a href=&quot;#2016-4-24&quot; class=&quot;headerlink&quot; title=&quot;2016-4-24&quot;&gt;&lt;/a&gt;2016-4-24&lt;/h2&gt;&lt;h3 id=&quot;image-comments-in-VS2015&quot;&gt;&lt;a href=&quot;#image-comments-in-VS2015&quot; class=&quot;headerlink&quot; title=&quot;image comments in VS2015&quot;&gt;&lt;/a&gt;image comments in VS2015&lt;/h3&gt;&lt;p&gt;no stable extension so far, only available one is &lt;a href=&quot;https://github.com/lukesdm/image-comments&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/lukesdm/image-comments&lt;/a&gt; without maintenance for years&lt;/p&gt;
+&lt;h3 id=&quot;should-I-sign-my-extension-before-uploading-to-VS-gallery&quot;&gt;&lt;a href=&quot;#should-I-sign-my-extension-before-uploading-to-VS-gallery&quot; class=&quot;headerlink&quot; title=&quot;should I sign my extension before uploading to VS gallery?&quot;&gt;&lt;/a&gt;should I sign my extension before uploading to VS gallery?&lt;/h3&gt;&lt;p&gt;No, many famous extension didn’t sign itself.&lt;/p&gt;
+&lt;h3 id=&quot;what-if-I-want-to-sign-my-extension-for-VS&quot;&gt;&lt;a href=&quot;#what-if-I-want-to-sign-my-extension-for-VS&quot; class=&quot;headerlink&quot; title=&quot;what if I want to sign my extension for VS?&quot;&gt;&lt;/a&gt;what if I want to sign my extension for VS?&lt;/h3&gt;&lt;p&gt;Here is the tutorial: &lt;a href=&quot;http://www.jeff.wilcox.name/2010/03/vsixcodesigning/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.jeff.wilcox.name/2010/03/vsixcodesigning/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;debug-VS2015-extension-project&quot;&gt;&lt;a href=&quot;#debug-VS2015-extension-project&quot; class=&quot;headerlink&quot; title=&quot;debug VS2015 extension project&quot;&gt;&lt;/a&gt;debug VS2015 extension project&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Right click on the project and select Properties&lt;/li&gt;
+&lt;li&gt;Go to the Debug Tab&lt;/li&gt;
+&lt;li&gt;Click on the radio button for Start External Program. Point it to the devenv.exe binary.
+On my machine it’s located at
+C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\devenv.exe
+On a non x64 machine though you can remove the “ (x86)” portion.&lt;/li&gt;
+&lt;li&gt;Then set the command line arguments to /rootsuffix Exp&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/9281662/how-to-debug-visual-studio-extensions&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;No-Answer-Questions&quot;&gt;&lt;a href=&quot;#No-Answer-Questions&quot; class=&quot;headerlink&quot; title=&quot;No Answer Questions&quot;&gt;&lt;/a&gt;No Answer Questions&lt;/h2&gt;&lt;h3 id=&quot;VsVim-shortcut-key-missing-in-option&quot;&gt;&lt;a href=&quot;#VsVim-shortcut-key-missing-in-option&quot; class=&quot;headerlink&quot; title=&quot;VsVim shortcut key missing in option&quot;&gt;&lt;/a&gt;VsVim shortcut key missing in option&lt;/h3&gt;&lt;p&gt;No answer found so far on the internet.&lt;/p&gt;
+&lt;h3 id=&quot;WPF-Error-Cannot-find-governing-FrameworkElement-or-FrameworkContentElement-for-target-element&quot;&gt;&lt;a href=&quot;#WPF-Error-Cannot-find-governing-FrameworkElement-or-FrameworkContentElement-for-target-element&quot; class=&quot;headerlink&quot; title=&quot;WPF Error: Cannot find governing FrameworkElement or FrameworkContentElement for target element&quot;&gt;&lt;/a&gt;WPF Error: Cannot find governing FrameworkElement or FrameworkContentElement for target element&lt;/h3&gt;&lt;p&gt;DataGrid do not inherit DataContext, need to use &lt;code&gt;dummyElement&lt;/code&gt; and reference it by &lt;code&gt;ElementName&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;However, if we want to bind/use property of ItemsSource, so far, no way.&lt;/p&gt;
+&lt;h3 id=&quot;Count-IEnumerable-lt-T-gt-without-knowing-T&quot;&gt;&lt;a href=&quot;#Count-IEnumerable-lt-T-gt-without-knowing-T&quot; class=&quot;headerlink&quot; title=&quot;Count IEnumerable&amp;lt;T&amp;gt; without knowing T&quot;&gt;&lt;/a&gt;Count &lt;code&gt;IEnumerable&amp;lt;T&amp;gt;&lt;/code&gt; without knowing T&lt;/h3&gt;&lt;p&gt;no answer, maybe it’s impossible.&lt;/p&gt;
+&lt;h3 id=&quot;UWP-with-MVVM&quot;&gt;&lt;a href=&quot;#UWP-with-MVVM&quot; class=&quot;headerlink&quot; title=&quot;UWP with MVVM&quot;&gt;&lt;/a&gt;UWP with MVVM&lt;/h3&gt;&lt;p&gt;Not fully searched, possible resources:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/johnshews_blog/2015/09/09/a-minimal-mvvm-uwp-app/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://blogs.msdn.microsoft.com/johnshews_blog/2015/09/09/a-minimal-mvvm-uwp-app/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Fody/PropertyChanged&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/Fody/PropertyChanged&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Fody/Fody/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/Fody/Fody/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;How-to-restrict-team-member-misuse-IoC&quot;&gt;&lt;a href=&quot;#How-to-restrict-team-member-misuse-IoC&quot; class=&quot;headerlink&quot; title=&quot;How to restrict team member misuse IoC?&quot;&gt;&lt;/a&gt;How to restrict team member misuse IoC?&lt;/h3&gt;</content>
+    
+    <summary type="html">
+    
+      Diary for C#, WPF and .Net
+    
+    </summary>
+    
+      <category term="Diary" scheme="http://icerdesign.com/categories/Diary/"/>
+    
+    
+      <category term="C#" scheme="http://icerdesign.com/tags/C/"/>
+    
+      <category term="WPF" scheme="http://icerdesign.com/tags/WPF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Unity Diary</title>
+    <link href="http://icerdesign.com/en/diary/unity/"/>
+    <id>http://icerdesign.com/en/diary/unity/</id>
+    <published>2016-05-13T16:00:00.000Z</published>
+    <updated>2016-05-21T09:06:43.867Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;2016-5-14&quot;&gt;&lt;a href=&quot;#2016-5-14&quot; class=&quot;headerlink&quot; title=&quot;2016-5-14&quot;&gt;&lt;/a&gt;2016-5-14&lt;/h2&gt;&lt;h3 id=&quot;make-2d-object-glow-when-event-fires&quot;&gt;&lt;a href=&quot;#make-2d-object-glow-when-event-fires&quot; class=&quot;headerlink&quot; title=&quot;make 2d object glow when event fires&quot;&gt;&lt;/a&gt;make 2d object glow when event fires&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;use shader to calculate glow shadow (very complex)&lt;/li&gt;
+&lt;li&gt;visible/invisible or change color of a substrate/glow layer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;change-opacity-of-GameObject&quot;&gt;&lt;a href=&quot;#change-opacity-of-GameObject&quot; class=&quot;headerlink&quot; title=&quot;change opacity of GameObject&quot;&gt;&lt;/a&gt;change opacity of GameObject&lt;/h3&gt;&lt;p&gt;&lt;code&gt;[GameObject].SetActive(false);&lt;/code&gt; another way is to disable renderer of that object.&lt;/p&gt;
+&lt;h3 id=&quot;change-opacity-or-something-else-frame-by-frame&quot;&gt;&lt;a href=&quot;#change-opacity-or-something-else-frame-by-frame&quot; class=&quot;headerlink&quot; title=&quot;change opacity or something else frame by frame.&quot;&gt;&lt;/a&gt;change opacity or something else frame by frame.&lt;/h3&gt;&lt;p&gt;Use animation. Don’t use code.&lt;/p&gt;
+&lt;h3 id=&quot;unity-not-support-C-6-0&quot;&gt;&lt;a href=&quot;#unity-not-support-C-6-0&quot; class=&quot;headerlink&quot; title=&quot;unity  not support C# 6.0?&quot;&gt;&lt;/a&gt;unity  not support C# 6.0?&lt;/h3&gt;&lt;p&gt;Yes, only C# 4.0 supported.&lt;/p&gt;
+&lt;h3 id=&quot;call-function-in-another-script-of-another-gameobject&quot;&gt;&lt;a href=&quot;#call-function-in-another-script-of-another-gameobject&quot; class=&quot;headerlink&quot; title=&quot;call function in another script of another gameobject&quot;&gt;&lt;/a&gt;call function in another script of another gameobject&lt;/h3&gt;&lt;p&gt;Just use the type of that script as a field, and bind with the gameobject which has this type of script as component.&lt;/p&gt;
+&lt;h3 id=&quot;how-to-edit-prefab&quot;&gt;&lt;a href=&quot;#how-to-edit-prefab&quot; class=&quot;headerlink&quot; title=&quot;how to edit prefab?&quot;&gt;&lt;/a&gt;how to edit prefab?&lt;/h3&gt;&lt;p&gt;Some things you can add by clicking on the prefab and adding items using the Component menu. For
+more involved changes, drag the prefab into the scene, make whatever changes are necessary (ignore
+the message about breaking the prefab link), and when done, select Apply Changes to Prefab from the
+GameObject menu. Then delete the prefab from the scene.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://answers.unity3d.com/questions/17976/edit-source-prefab-change-position-or-add-new-game.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Link&lt;/a&gt; &lt;/p&gt;
+&lt;h3 id=&quot;MouseDown-event-not-fire&quot;&gt;&lt;a href=&quot;#MouseDown-event-not-fire&quot; class=&quot;headerlink&quot; title=&quot;MouseDown event not fire?&quot;&gt;&lt;/a&gt;MouseDown event not fire?&lt;/h3&gt;&lt;p&gt;Need Box Collider to detect this type of event.&lt;/p&gt;
+&lt;h3 id=&quot;MouseDown-event-not-fire-after-add-one-statement-inside-another-object&quot;&gt;&lt;a href=&quot;#MouseDown-event-not-fire-after-add-one-statement-inside-another-object&quot; class=&quot;headerlink&quot; title=&quot;MouseDown event not fire after add one statement inside another object.&quot;&gt;&lt;/a&gt;MouseDown event not fire after add one statement inside another object.&lt;/h3&gt;&lt;p&gt;Didn’t find why, however, set location at &lt;code&gt;Start()&lt;/code&gt; workaround this issue, maybe it’s a bug.&lt;/p&gt;
+&lt;h3 id=&quot;replace-texture-from-jpg-to-png&quot;&gt;&lt;a href=&quot;#replace-texture-from-jpg-to-png&quot; class=&quot;headerlink&quot; title=&quot;replace texture from jpg to png&quot;&gt;&lt;/a&gt;replace texture from jpg to png&lt;/h3&gt;&lt;p&gt;So far as I know, no way.&lt;/p&gt;
+&lt;h3 id=&quot;replace-pure-color-backgrounds-as-transparent&quot;&gt;&lt;a href=&quot;#replace-pure-color-backgrounds-as-transparent&quot; class=&quot;headerlink&quot; title=&quot;replace pure color backgrounds as transparent?&quot;&gt;&lt;/a&gt;replace pure color backgrounds as transparent?&lt;/h3&gt;&lt;p&gt;No way, do it in an image processing software.&lt;/p&gt;
+&lt;h3 id=&quot;move-object-gradually&quot;&gt;&lt;a href=&quot;#move-object-gradually&quot; class=&quot;headerlink&quot; title=&quot;move object gradually?&quot;&gt;&lt;/a&gt;move object gradually?&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Use iTween&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Set use&lt;/p&gt;
+&lt;figure class=&quot;highlight cs&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;startPoint = CrewControl.transform.position;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;startTime = Time.time;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;endPoint = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.transform.position;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Update use &lt;/p&gt;
+&lt;figure class=&quot;highlight cs&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (Time.time - startTime &amp;lt; duration)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    CrewControl.transform.position = Vector3.Lerp(startPoint, endPoint, (Time.time - startTime) / duration);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;error-“no-model-is-available-for-preview”-when-previewing-animation&quot;&gt;&lt;a href=&quot;#error-“no-model-is-available-for-preview”-when-previewing-animation&quot; class=&quot;headerlink&quot; title=&quot;error “no model is available for preview” when previewing animation&quot;&gt;&lt;/a&gt;error “no model is available for preview” when previewing animation&lt;/h3&gt;&lt;p&gt;Drag and drop the model source file into the animation preview window. &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://answers.unity3d.com/questions/374149/how-do-i-set-or-change-the-default-preview-model-f.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Link&lt;/a&gt; &lt;/p&gt;
+&lt;h3 id=&quot;make-health-bar-in-unity3d-5-which-is-using-new-GUI-system&quot;&gt;&lt;a href=&quot;#make-health-bar-in-unity3d-5-which-is-using-new-GUI-system&quot; class=&quot;headerlink&quot; title=&quot;make health bar in unity3d 5 (which is using new GUI system)&quot;&gt;&lt;/a&gt;make health bar in unity3d 5 (which is using new GUI system)&lt;/h3&gt;&lt;p&gt;Add image inside panel, change its anchor to left (hold shift key), change scale programmatically&lt;/p&gt;
+&lt;h2 id=&quot;2016-5-6&quot;&gt;&lt;a href=&quot;#2016-5-6&quot; class=&quot;headerlink&quot; title=&quot;2016-5-6&quot;&gt;&lt;/a&gt;2016-5-6&lt;/h2&gt;&lt;h3 id=&quot;integrate-git-with-unity-3d&quot;&gt;&lt;a href=&quot;#integrate-git-with-unity-3d&quot; class=&quot;headerlink&quot; title=&quot;integrate git with unity 3d&quot;&gt;&lt;/a&gt;integrate git with unity 3d&lt;/h3&gt;&lt;p&gt;Edit -&amp;gt; Project Settings -&amp;gt; Editor.
+Set Version Control to meta files. Set Asset Serialization to force text.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/18225126/how-to-use-git-for-unity-source-control&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;And download &lt;a href=&quot;https://raw.githubusercontent.com/github/gitignore/master/Unity.gitignore&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://raw.githubusercontent.com/github/gitignore/master/Unity.gitignore&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;cannot-open-script-with-VS2015&quot;&gt;&lt;a href=&quot;#cannot-open-script-with-VS2015&quot; class=&quot;headerlink&quot; title=&quot;cannot open script with VS2015.&quot;&gt;&lt;/a&gt;cannot open script with VS2015.&lt;/h3&gt;&lt;p&gt;Detail can be found in editor.log located under C:\Users\xxx\AppData\Local\Unity\Editor\Editor.log
+Identified as a bug in community forum. Workaround is restart.&lt;/p&gt;
+&lt;p&gt;Found it may because last VS start failed and not close properly. Kill it in task manager first and try again.&lt;/p&gt;
+&lt;h3 id=&quot;showing-Load-‘name’-1-couldn’t-be-loaded-because-it-has-not-been-added-to-the-built-settings&quot;&gt;&lt;a href=&quot;#showing-Load-‘name’-1-couldn’t-be-loaded-because-it-has-not-been-added-to-the-built-settings&quot; class=&quot;headerlink&quot; title=&quot;showing Load ‘name’ (-1) couldn’t be loaded because it has not been added to the built settings&quot;&gt;&lt;/a&gt;showing Load ‘name’ (-1) couldn’t be loaded because it has not been added to the built settings&lt;/h3&gt;&lt;p&gt;To add a level to the build settings use the menu &lt;code&gt;File&lt;/code&gt;-&amp;gt;&lt;code&gt;Build&lt;/code&gt; Settings…&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://answers.unity3d.com/questions/1011691/showing-load-name-1-couldnt-be-loaded-because-it-h.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;button-to-change-scene-programmatically&quot;&gt;&lt;a href=&quot;#button-to-change-scene-programmatically&quot; class=&quot;headerlink&quot; title=&quot;button to change scene programmatically&quot;&gt;&lt;/a&gt;button to change scene programmatically&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;I add an empty game object. I attach my new script.&lt;/p&gt;
+&lt;figure class=&quot;highlight cs&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;NextLevelButton&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;string&lt;/span&gt; levelName&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    SceneManager.LoadScene(levelName);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I associate this game object with my new script to the Button(in the inspector) by: Clicking the
++(plus) button to add a callback from an object-&amp;gt;script-&amp;gt;method.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&quot;http://answers.unity3d.com/questions/836635/can-ui-buttons-load-scenes.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;MonoBehaviour-lifecycle&quot;&gt;&lt;a href=&quot;#MonoBehaviour-lifecycle&quot; class=&quot;headerlink&quot; title=&quot;MonoBehaviour lifecycle&quot;&gt;&lt;/a&gt;MonoBehaviour lifecycle&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://docs.unity3d.com/Manual/ExecutionOrder.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://docs.unity3d.com/Manual/ExecutionOrder.html&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;glow-an-object-when-mouse-hover&quot;&gt;&lt;a href=&quot;#glow-an-object-when-mouse-hover&quot; class=&quot;headerlink&quot; title=&quot;glow an object when mouse hover&quot;&gt;&lt;/a&gt;glow an object when mouse hover&lt;/h3&gt;&lt;p&gt;get Renderer and change its &lt;code&gt;material.color&lt;/code&gt; when OnMouseEnter/Over/Exit event
+Refer to &lt;a href=&quot;http://docs.unity3d.com/ScriptReference/MonoBehaviour.OnMouseEnter.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://docs.unity3d.com/ScriptReference/MonoBehaviour.OnMouseEnter.html&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      Diary for Unity3D, including scripts and editor
+    
+    </summary>
+    
+      <category term="Diary" scheme="http://icerdesign.com/categories/Diary/"/>
+    
+    
+      <category term="Unity" scheme="http://icerdesign.com/tags/Unity/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Misc Diary</title>
+    <link href="http://icerdesign.com/en/diary/misc/"/>
+    <id>http://icerdesign.com/en/diary/misc/</id>
+    <published>2016-05-13T16:00:00.000Z</published>
+    <updated>2016-05-21T09:05:32.026Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;2016-5-14&quot;&gt;&lt;a href=&quot;#2016-5-14&quot; class=&quot;headerlink&quot; title=&quot;2016-5-14&quot;&gt;&lt;/a&gt;2016-5-14&lt;/h2&gt;&lt;h3 id=&quot;XnView-replace-background-with-transparent-color&quot;&gt;&lt;a href=&quot;#XnView-replace-background-with-transparent-color&quot; class=&quot;headerlink&quot; title=&quot;XnView replace background with transparent color&quot;&gt;&lt;/a&gt;XnView replace background with transparent color&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Step 1: Determine the transparent colour&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In some images, the background colour is different to all the other colours and it’s obvious which
+is the background colour. But in some images it might be not so obvious. &lt;/p&gt;
+&lt;p&gt;In this case you can use the colour info to determine the index of the background colour: &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Select menu “View &amp;gt; Display Colour Information” The mouse cursor’s shape will change to a
+pipette. Also next to the mouse cursor, the index, the RGB colour and Hex value of the colour
+will be displayed. &lt;/li&gt;
+&lt;li&gt;Move the mouse cursor to an area for your image which is the background. &lt;/li&gt;
+&lt;li&gt;Now remember the index of the colour which ranges from 0..255 &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Step 2: Set the transparent colour&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Now that you have reduced size and set reduced colour depth of your image, you finally set the
+transparent colour of your image.&lt;/p&gt;
+&lt;p&gt;For setting the transparent colour (assuming that XnView and your image are still open) &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open the “Colour map” dialog using menu “Image &amp;gt; Edit colour map” &lt;/li&gt;
+&lt;li&gt;Click onto the colour with the index that you have determined above in Step 3.). &lt;/li&gt;
+&lt;li&gt;If you have used an odd colour (e.g. magenta) as background, double click onto the selected
+colour. Now you can change the colour of your transparent colour to whichever colour you like
+(actually it doesn’t matter much, since the colour will be transparent in real life.). &lt;/li&gt;
+&lt;li&gt;Set the checkbox “Use transparent colour” &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Note: Make sure you first perform b.) and then d.), otherwise the transparent colour will not be
+set properly.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://newsgroup.xnview.com/viewtopic.php?t=5595&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2016-5-9&quot;&gt;&lt;a href=&quot;#2016-5-9&quot; class=&quot;headerlink&quot; title=&quot;2016-5-9&quot;&gt;&lt;/a&gt;2016-5-9&lt;/h2&gt;&lt;h3 id=&quot;find-binddn-of-ldap&quot;&gt;&lt;a href=&quot;#find-binddn-of-ldap&quot; class=&quot;headerlink&quot; title=&quot;find binddn of ldap&quot;&gt;&lt;/a&gt;find binddn of ldap&lt;/h3&gt;&lt;p&gt;&lt;code&gt;dsquery user -name Ja*&lt;/code&gt; &lt;a href=&quot;http://serverfault.com/questions/130543/how-can-i-figure-out-my-ldap-connection-string&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;test-ldap&quot;&gt;&lt;a href=&quot;#test-ldap&quot; class=&quot;headerlink&quot; title=&quot;test ldap?&quot;&gt;&lt;/a&gt;test ldap?&lt;/h3&gt;&lt;p&gt;Only way is to use a tool.&lt;/p&gt;
+&lt;h2 id=&quot;2016-5-5&quot;&gt;&lt;a href=&quot;#2016-5-5&quot; class=&quot;headerlink&quot; title=&quot;2016-5-5&quot;&gt;&lt;/a&gt;2016-5-5&lt;/h2&gt;&lt;h3 id=&quot;Vim-in-textarea-in-browser&quot;&gt;&lt;a href=&quot;#Vim-in-textarea-in-browser&quot; class=&quot;headerlink&quot; title=&quot;Vim in textarea in browser&quot;&gt;&lt;/a&gt;Vim in textarea in browser&lt;/h3&gt;&lt;p&gt;Extension &lt;code&gt;wasavi&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2016-4-28&quot;&gt;&lt;a href=&quot;#2016-4-28&quot; class=&quot;headerlink&quot; title=&quot;2016-4-28&quot;&gt;&lt;/a&gt;2016-4-28&lt;/h2&gt;&lt;h3 id=&quot;UAC-default-vs-not-dim&quot;&gt;&lt;a href=&quot;#UAC-default-vs-not-dim&quot; class=&quot;headerlink&quot; title=&quot;UAC default vs not dim&quot;&gt;&lt;/a&gt;UAC &lt;code&gt;default&lt;/code&gt; vs &lt;code&gt;not dim&lt;/code&gt;&lt;/h3&gt;&lt;p&gt;&lt;code&gt;not dim&lt;/code&gt; means no secure desktop launched, it’s highly risky that already a malware on your PC.&lt;/p&gt;
+&lt;h2 id=&quot;2016-4-27&quot;&gt;&lt;a href=&quot;#2016-4-27&quot; class=&quot;headerlink&quot; title=&quot;2016-4-27&quot;&gt;&lt;/a&gt;2016-4-27&lt;/h2&gt;&lt;h3 id=&quot;Import-export-settings-of-BeyondCompare-with-command-line&quot;&gt;&lt;a href=&quot;#Import-export-settings-of-BeyondCompare-with-command-line&quot; class=&quot;headerlink&quot; title=&quot;Import/export settings of BeyondCompare with command line&quot;&gt;&lt;/a&gt;Import/export settings of BeyondCompare with command line&lt;/h3&gt;&lt;p&gt;No such command line support, however, we can simply overwrite the setting file.&lt;/p&gt;
+&lt;h3 id=&quot;Merge-two-OneNote-pages&quot;&gt;&lt;a href=&quot;#Merge-two-OneNote-pages&quot; class=&quot;headerlink&quot; title=&quot;Merge two OneNote pages&quot;&gt;&lt;/a&gt;Merge two OneNote pages&lt;/h3&gt;&lt;p&gt;Sadly, no convenience way.&lt;/p&gt;
+&lt;h2 id=&quot;2016-4-26&quot;&gt;&lt;a href=&quot;#2016-4-26&quot; class=&quot;headerlink&quot; title=&quot;2016-4-26&quot;&gt;&lt;/a&gt;2016-4-26&lt;/h2&gt;&lt;h3 id=&quot;wrong-spell-check-in-OneNote-–-appears-full-of-red-lines&quot;&gt;&lt;a href=&quot;#wrong-spell-check-in-OneNote-–-appears-full-of-red-lines&quot; class=&quot;headerlink&quot; title=&quot;wrong spell check in OneNote – appears full of red lines&quot;&gt;&lt;/a&gt;wrong spell check in OneNote – appears full of red lines&lt;/h3&gt;&lt;p&gt;OneNote -&amp;gt; Review -&amp;gt; Language -&amp;gt; Set Spell Checker -&amp;gt; proper language&lt;/p&gt;
+&lt;h2 id=&quot;2016-4-25&quot;&gt;&lt;a href=&quot;#2016-4-25&quot; class=&quot;headerlink&quot; title=&quot;2016-4-25&quot;&gt;&lt;/a&gt;2016-4-25&lt;/h2&gt;&lt;h3 id=&quot;how-to-uninstall-all-dependency-no-longer-available-in-package-json&quot;&gt;&lt;a href=&quot;#how-to-uninstall-all-dependency-no-longer-available-in-package-json&quot; class=&quot;headerlink&quot; title=&quot;how to uninstall all dependency no longer available in package.json&quot;&gt;&lt;/a&gt;how to uninstall all dependency no longer available in package.json&lt;/h3&gt;&lt;p&gt;&lt;code&gt;npm prune&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;hexo-break-line-even-without-an-empty-line&quot;&gt;&lt;a href=&quot;#hexo-break-line-even-without-an-empty-line&quot; class=&quot;headerlink&quot; title=&quot;hexo break line even without an empty line&quot;&gt;&lt;/a&gt;hexo break line even without an empty line&lt;/h3&gt;&lt;p&gt;Set in &lt;code&gt;_config.yml&lt;/code&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;marked:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  breaks: false&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/hexojs/hexo-renderer-marked&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2016-4-22&quot;&gt;&lt;a href=&quot;#2016-4-22&quot; class=&quot;headerlink&quot; title=&quot;2016-4-22&quot;&gt;&lt;/a&gt;2016-4-22&lt;/h2&gt;&lt;h3 id=&quot;separate-MultiProg-compiler-from-itself&quot;&gt;&lt;a href=&quot;#separate-MultiProg-compiler-from-itself&quot; class=&quot;headerlink&quot; title=&quot;separate MultiProg compiler from itself&quot;&gt;&lt;/a&gt;separate MultiProg compiler from itself&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;eCLR.dll&lt;/code&gt; is compiled as managed CPP with lots of unsafe compiler option.&lt;/li&gt;
+&lt;li&gt;the program is generated under project folder with &lt;code&gt;.exe&lt;/code&gt; extension.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;eCLR.dll&lt;/code&gt; start process &lt;code&gt;/eCLR/CIL-Compiler&lt;/code&gt; to compile from project to binary using method
+named LinkImage.  (with uncertainty)&lt;/li&gt;
+&lt;li&gt;Execute &lt;code&gt;/eCLR/CIL-Compiler/____.exe ___/res/___.exe&lt;/code&gt; would generate &lt;code&gt;___.img&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;Supported-language-syntax-highlighting-of-gitlab-github&quot;&gt;&lt;a href=&quot;#Supported-language-syntax-highlighting-of-gitlab-github&quot; class=&quot;headerlink&quot; title=&quot;Supported language(syntax) highlighting of gitlab/github&quot;&gt;&lt;/a&gt;Supported language(syntax) highlighting of gitlab/github&lt;/h3&gt;&lt;p&gt;Github use linguist as Parser.&lt;/p&gt;
+&lt;h2 id=&quot;2016-4-21&quot;&gt;&lt;a href=&quot;#2016-4-21&quot; class=&quot;headerlink&quot; title=&quot;2016-4-21&quot;&gt;&lt;/a&gt;2016-4-21&lt;/h2&gt;&lt;h3 id=&quot;Markdown-table-with-multi-line-cell&quot;&gt;&lt;a href=&quot;#Markdown-table-with-multi-line-cell&quot; class=&quot;headerlink&quot; title=&quot;Markdown table with multi-line cell&quot;&gt;&lt;/a&gt;Markdown table with multi-line cell&lt;/h3&gt;&lt;p&gt;Markdown not support it and so did some famous enhancement of original markdown,
+use following workaround:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Use &lt;code&gt;&amp;lt;BR /&amp;gt;&lt;/code&gt; or directly HTML code.&lt;/li&gt;
+&lt;li&gt;Consider re-organize content to get rid of multi-line content.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;No-Answer-Questions&quot;&gt;&lt;a href=&quot;#No-Answer-Questions&quot; class=&quot;headerlink&quot; title=&quot;No Answer Questions&quot;&gt;&lt;/a&gt;No Answer Questions&lt;/h2&gt;&lt;h3 id=&quot;Markdown-preprocessor&quot;&gt;&lt;a href=&quot;#Markdown-preprocessor&quot; class=&quot;headerlink&quot; title=&quot;Markdown preprocessor&quot;&gt;&lt;/a&gt;Markdown preprocessor&lt;/h3&gt;&lt;p&gt;Could try ejs&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      Diary for other miscellaneous stuffs
+    
+    </summary>
+    
+      <category term="Diary" scheme="http://icerdesign.com/categories/Diary/"/>
+    
+    
+      <category term="Miscellaneous" scheme="http://icerdesign.com/tags/Miscellaneous/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows Diary</title>
+    <link href="http://icerdesign.com/en/diary/windows/"/>
+    <id>http://icerdesign.com/en/diary/windows/</id>
+    <published>2016-05-03T16:00:00.000Z</published>
+    <updated>2016-05-21T09:07:47.643Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;2016-5-4&quot;&gt;&lt;a href=&quot;#2016-5-4&quot; class=&quot;headerlink&quot; title=&quot;2016-5-4&quot;&gt;&lt;/a&gt;2016-5-4&lt;/h2&gt;&lt;h3 id=&quot;restart-network-adapter&quot;&gt;&lt;a href=&quot;#restart-network-adapter&quot; class=&quot;headerlink&quot; title=&quot;restart network adapter?&quot;&gt;&lt;/a&gt;restart network adapter?&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wmic path win32_networkadapter where NetConnectionID=&amp;quot;Wireless Network Connection&amp;quot; call disable&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;wmic path win32_networkadapter where NetConnectionID=&amp;quot;Wireless Network Connection&amp;quot; call enable&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;require-administrator-privilege-at-startup-of-batch-script&quot;&gt;&lt;a href=&quot;#require-administrator-privilege-at-startup-of-batch-script&quot; class=&quot;headerlink&quot; title=&quot;require administrator privilege at startup of batch script?&quot;&gt;&lt;/a&gt;require administrator privilege at startup of batch script?&lt;/h3&gt;&lt;p&gt;put following script at the beginning of the batch file.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;:: BatchGotAdmin&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;:-------------------------------------&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;REM  --&amp;gt; Check for permissions&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt;nul 2&amp;gt;&amp;amp;1 &amp;quot;%SYSTEMROOT%\system32\cacls.exe&amp;quot; &amp;quot;%SYSTEMROOT%\system32\config\system&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;REM --&amp;gt; If error flag set, we do not have admin.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;if &amp;apos;%errorlevel%&amp;apos; NEQ &amp;apos;0&amp;apos; (&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    echo Requesting administrative privileges...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    goto UACPrompt&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;) else ( goto gotAdmin )&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;:UACPrompt&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    echo Set UAC = CreateObject^(&amp;quot;Shell.Application&amp;quot;^) &amp;gt; &amp;quot;%temp%\getadmin.vbs&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    set params = %*:&amp;quot;=&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    echo UAC.ShellExecute &amp;quot;cmd.exe&amp;quot;, &amp;quot;/c %~s0 %params%&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;runas&amp;quot;, 1 &amp;gt;&amp;gt; &amp;quot;%temp%\getadmin.vbs&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;quot;%temp%\getadmin.vbs&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    del &amp;quot;%temp%\getadmin.vbs&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    exit /B&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;:gotAdmin&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    pushd &amp;quot;%CD%&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    CD /D &amp;quot;%~dp0&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;:--------------------------------------&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Double-click-jar-file-to-execute-in-windows&quot;&gt;&lt;a href=&quot;#Double-click-jar-file-to-execute-in-windows&quot; class=&quot;headerlink&quot; title=&quot;Double click .jar file to execute in windows&quot;&gt;&lt;/a&gt;Double click .jar file to execute in windows&lt;/h3&gt;&lt;p&gt;Execute following script with admin privilege.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;assoc .jar=jarfile&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ftype jarfile=&amp;quot;C:\DevTools\jrex86\bin\javaw.exe&amp;quot; -jar &amp;quot;%%1&amp;quot; %%*&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/a/30571306/2558077&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2016-4-22&quot;&gt;&lt;a href=&quot;#2016-4-22&quot; class=&quot;headerlink&quot; title=&quot;2016-4-22&quot;&gt;&lt;/a&gt;2016-4-22&lt;/h2&gt;&lt;h3 id=&quot;Install-pip-in-windows&quot;&gt;&lt;a href=&quot;#Install-pip-in-windows&quot; class=&quot;headerlink&quot; title=&quot;Install pip in windows&quot;&gt;&lt;/a&gt;Install pip in windows&lt;/h3&gt;&lt;p&gt;Start with &lt;code&gt;2.7.9&lt;/code&gt;, pip already in python default installation package.
+To use it, just type &lt;code&gt;python -m pip install {something}&lt;/code&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      Diary for Windows usage, including batch script or registry tweak
+    
+    </summary>
+    
+      <category term="Diary" scheme="http://icerdesign.com/categories/Diary/"/>
+    
+    
+      <category term="Windows" scheme="http://icerdesign.com/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2015落下帷幕</title>
+    <link href="http://icerdesign.com/end-of-2015/"/>
+    <id>http://icerdesign.com/end-of-2015/</id>
+    <published>2015-12-30T16:00:00.000Z</published>
+    <updated>2016-05-09T21:48:53.333Z</updated>
+    
+    <content type="html">&lt;p&gt;嗯，到总结2015年的时候了。&lt;/p&gt;
+&lt;p&gt;今年发生了几件大事情，装修好并搬进新家了，女儿已经开口说话了，老婆辞职在家带小孩加做自己喜欢的事情了。&lt;/p&gt;
+&lt;h2 id=&quot;工具&quot;&gt;&lt;a href=&quot;#工具&quot; class=&quot;headerlink&quot; title=&quot;工具&quot;&gt;&lt;/a&gt;工具&lt;/h2&gt;&lt;p&gt;今年家里添置了一系列的电子设备，比较满意的有以下几项：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Surface Pro 3: 不管从哪一方面来看，它的出现都为我的生活带来了不少便利，尤其在班车上，
+不管是看书、做笔记、整理资料还是看电影，都能发挥出它相当大的价值。&lt;/li&gt;
+&lt;li&gt;Lumia 1520: 大屏手机，这个大小一开始还真不习惯，虽然确实因为我不愿折腾Android，又不喜欢iOS系统，
+只有WP可选，但是还是不得不说在配上Win10这个操作系统后，确实还蛮不错的。&lt;/li&gt;
+&lt;li&gt;NAS: 为了可以做更多的尝试，特意将以前的Atom核的NAS升级为I5核的版本，配上16G内存，500G固态硬盘，
+9T的数据盘（含备份盘），感觉非常舒服，可以同时完全流畅的跑7个虚拟机，用来配合我不同的家庭服务，
+以及时不时的创建虚拟机来做各种新奇的实验。&lt;/li&gt;
+&lt;li&gt;Dell U2414H: 戴尔的专业级显示器，有当时全球最窄边框显示器的称号，不过我其实想买的是它的Daisy Chain功能，
+就是可以将SP3的DP接口串接至下级显示器，这样可以让我的SP3不用再额外插接DP连线，
+只要放上Dock就可以享受双显示器了。不过可惜的是在微软六月份推送了BIOS更新后，这个功能就不正常了，
+时不时的会断，再到后来干脆就完全不能使用了。于是这个显示器就权当作欣赏了。&lt;/li&gt;
+&lt;li&gt;游戏主机: 原线的I5主机被征用做NAS了，于是就配了一台新的四代I5作为老婆的工作电脑，我的游戏电脑了，
+并且首次花大价钱购买了价值1600的NVIDIA 950显卡，有史以来最贵的显卡了，当然我知道在网友眼中，
+这个才刚入门而已。在同价位的760和950中，还是毫不犹豫的选择了950，因为其低功耗，
+能做到日常使用显卡风扇不用转动的程度。&lt;/li&gt;
+&lt;li&gt;UPS: 有一段时间不知道为什么，偶尔的会跳闸，我实在是心疼我的NAS，就给配了一个，遭遇过一次凌晨断电，
+查看日志发现我这小容量的UPS居然也能坚持一个多小时。&lt;/li&gt;
+&lt;li&gt;固态硬盘: 去年年底尝试着购买一块固态硬盘，刚开始使用的瞬间便被震撼到了，于是今年连买了五块，
+将家里除开已经自然用上固态硬盘的SP3之外的三台电脑以及公司的两台电脑都换上了固态硬盘，
+突然感觉自己进入了新时代，一种土豪之感油然而生。&lt;/li&gt;
+&lt;li&gt;Canon 5DMark III: 其实我不拍照，但这个设备为我带来的好处，实在是令人受益匪浅，自从有了它，
+摄影师老婆再也不在我耳边提它的名字了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;今年使用了一些蛮不错的软件，其中蛮值得推荐有以下几个：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Word 2016: 沾公司的光，参与微软HUP计划，70元人民币买的，
+前一版本的最大区别是在SP3上可以轻松的使用手写笔了。&lt;/li&gt;
+&lt;li&gt;ConEmu: 在windows下类似于linux下tmux的工具，绝对是命令行爱好者的必备。&lt;/li&gt;
+&lt;li&gt;Chocolatey: Windows下的包管理工具，可惜局域网内基本上无用，不过在外企的网络环境，
+用来安装新电脑，确实异常方便，尤其是时不时需要重装系统的虚拟机。&lt;/li&gt;
+&lt;li&gt;Sumatra PDF: 异常小巧的PDF阅读工具，支持自动刷新。&lt;/li&gt;
+&lt;li&gt;Latex: 写论文的利器，写出来的公式、算法、文字自然而然的就变得高大上了（与word版本比）。&lt;/li&gt;
+&lt;li&gt;JPEGView: 非常小巧的图片查看工具，其实本来不应该需要它的，但是Win10去掉了以前非常方便的支持自动刷新的图片查看工具，
+使得我不得不寻找一个可以替代的能自动刷新的工具，于是就是它了，不过缺点也挺明显的，配置无法自动保存。&lt;/li&gt;
+&lt;li&gt;mRemoteNG: 这个是使用VB.Net开发的开源项目，用来管理大量的远程连接的，可以帮助记住密码，确实很方便。&lt;/li&gt;
+&lt;li&gt;Visual Studio 2015: 拥有蛮多不错的改进，但是对于深度.Net开发者来说，还是能感受到其中许多的不足，
+作为一款受众极其广泛的，在功能和稳定性远超各种IDE的前提下，其扩展性也已经直逼Eclipse了，真的是难能可贵呢。&lt;/li&gt;
+&lt;li&gt;Docker: 鼎鼎大名的容器工具，可以在同一台机器（虚拟机）有效的隔离各个应用，
+让我在同一台电脑上跑了gitlab、redmine和apache，稳定性总体还行，但是运行大约百天以来，
+在五十多天的时候出现过一次无法复原的死机，相比另外一台纯跑node应用的服务器来说（百天完全无罢工），稳定性还是欠佳。&lt;/li&gt;
+&lt;li&gt;gitlab: 同样是鼎鼎大名的，对于建立内部流程来说，确实很好，但是我也在考虑对于非关键（非不可泄漏）数据，
+可以直接购买外部的类似工具，以便免去维护成本。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;游戏开发&quot;&gt;&lt;a href=&quot;#游戏开发&quot; class=&quot;headerlink&quot; title=&quot;游戏开发&quot;&gt;&lt;/a&gt;游戏开发&lt;/h2&gt;&lt;p&gt;从去年开始就在贯彻执行不做游戏这一思想，不过今年在年中的时候又思绪乱飘，胡乱的思考了如何做游戏，
+幸而及时打住，没有在这个上面耗费过多的时间。
+老婆说游戏开发就如我的初恋般，萦绕心头难以消散，甚至鼓励我转而走上游戏开发的道路，
+但是我也深知我已经离开游戏开发前线太久了，技术的更替，核心的转变，已经使我很难在保持收入的转入游戏开发了。
+不管怎么说，我始终是得放下游戏开发，才能更好的在专业方面更加的深入。&lt;/p&gt;
+&lt;p&gt;放下吧，或许十年后，在我赢得财务自由时能够重拾游戏开发这一旧爱，现在得专心了。&lt;/p&gt;
+&lt;h2 id=&quot;Javascript&quot;&gt;&lt;a href=&quot;#Javascript&quot; class=&quot;headerlink&quot; title=&quot;Javascript&quot;&gt;&lt;/a&gt;Javascript&lt;/h2&gt;&lt;p&gt;今年有幸可以将去年摩拳擦掌想要尝试的JavaScript正式的用在一个规模中等偏小的项目上了，虽说规模不大，
+但是架构设计都是按照中等偏大的项目设计的，去年本想开的坑，也因为有了这个项目的存在，而彻底沦为一个坑了。&lt;/p&gt;
+&lt;p&gt;今年深入尝试了CoffeeScript+Angular1.4，互联网真是瞬息万变，现在看来，这个组合已经有些落后了，
+如果下一个机会来临我会考虑使用TypeScript+Angular2.0。&lt;/p&gt;
+&lt;p&gt;不过今年得到一个对我来说非常重要的结论（如果你正好是.Net开发者，说不定这个结论对你一样重要），
+仅仅看当前的Nodejs开发环境，对于企业应用来说，前端使用Angular作为富客户端，而后端使用C#/F#，
+可以得到比较好的性能和可维护性的提升。虽说我已经通过多个项目证明了Nodejs的稳定性确实不错，
+不过开发支持工具还是显得比较有限，使得性能调优、跟踪调试等可视化编程手段无法施展拳脚，
+这将无法降低Nodejs项目的成本。&lt;/p&gt;
+&lt;h2 id=&quot;C-Net&quot;&gt;&lt;a href=&quot;#C-Net&quot; class=&quot;headerlink&quot; title=&quot;C#/.Net&quot;&gt;&lt;/a&gt;C#/.Net&lt;/h2&gt;&lt;p&gt;今年即便微软多次发威新品不断，但是似乎也没办法改变大部分HR和猎头认为C#是过时的语言的现状，
+最终导致C#程序员在招聘网站上表现的不如其他语言类型的程序员那样有价值。
+想起以前有位同学死活不想学C#，认为这个语言太简单了，工具也太方便了，未来会没有价值。
+从明面上看来似乎他的选择是对的，但这是基于程序员的思路来看的，假如我是老板，
+我当然会选择能够以最便宜的价格创造更多价值的东西了，所以即便作为多语言爱好者，
+我仍旧愿意让我的公司使用C#/.Net。&lt;/p&gt;
+&lt;p&gt;在使用别的语言时，常会看到许多由于其语言特性产生的设计模式，
+以前常常盼望着其中一些蛮不错的特性能够早日应用到C#上，可喜的是，
+这些特性真的眼看着就一个一个的出现在C#上了，而且今年微软大量的开源了核心项目，
+相信这一定能够更大幅度的提高C#这门语言及.Net平台的成熟度，
+作为.Net架构师我是非常欣慰的，
+同时也真心的希望能看到更多的开发人员选择C#作为其重要的开发语言.Net作为其开发平台。&lt;/p&gt;
+&lt;h2 id=&quot;结论&quot;&gt;&lt;a href=&quot;#结论&quot; class=&quot;headerlink&quot; title=&quot;结论&quot;&gt;&lt;/a&gt;结论&lt;/h2&gt;&lt;p&gt;想说的总是很多，但仍旧不得不在此打住，一句话总结今年：
+过得尚且不错，缺乏让自己自豪的亮点，虽非蹉跎度日，但仍旧有潜力需要挖掘。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;嗯，到总结2015年的时候了。&lt;/p&gt;
+&lt;p&gt;今年发生了几件大事情，装修好并搬进新家了，女儿已经开口说话了，老婆辞职在家带小孩加做自己喜欢的事情了。&lt;/p&gt;
+&lt;h2 id=&quot;工具&quot;&gt;&lt;a href=&quot;#工具&quot; class=&quot;headerlink&quot; title=&quot;工具&quot;&gt;&lt;/
+    
+    </summary>
+    
+      <category term="冰河杂谈" scheme="http://icerdesign.com/categories/%E5%86%B0%E6%B2%B3%E6%9D%82%E8%B0%88/"/>
+    
+    
+      <category term="杂文" scheme="http://icerdesign.com/tags/%E6%9D%82%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo-admin - 静态博客的后台管理程序[JS]</title>
+    <link href="http://icerdesign.com/code/hexo-admin/"/>
+    <id>http://icerdesign.com/code/hexo-admin/</id>
+    <published>2015-02-22T16:00:00.000Z</published>
+    <updated>2016-05-09T21:48:53.333Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;基本信息&quot;&gt;&lt;a href=&quot;#基本信息&quot; class=&quot;headerlink&quot; title=&quot;基本信息&quot;&gt;&lt;/a&gt;基本信息&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;名字：&lt;a href=&quot;http://jaredly.github.io/hexo-admin/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hexo-admin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;版本：0.1.3&lt;/li&gt;
+&lt;li&gt;开源协议：ISC&lt;/li&gt;
+&lt;li&gt;说明：静态博客hexo的专用后台管理程序&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这个主要是找来给我老婆使用的，因为她不懂程序，也不打算懂得如何push/pull，能劝说她加入到markdown的行列已经是非常不易的了，所以找来这个后台程序配合上我帮她搭建的&lt;a href=&quot;http://hiyaphoto.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hexo博客&lt;/a&gt;，让她可以方便直观的编辑后台文章。&lt;/p&gt;
+&lt;p&gt;用下来总体感觉还不错，不过缺少一些重要功能，于是我在自己&lt;a href=&quot;https://github.com/wizicer/hexo-admin&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;wizicer的fork&lt;/a&gt;上面加了删除功能，不过因为当时遭遇到hexo本身的一个编辑过程会出现大量posts重复的bug，没时间把问题解决完，故也没有把更新PR过去。&lt;/p&gt;
+&lt;p&gt;另外，图片相关功能也是相当弱的，基本上都是在另外地方先传好图片（用的七牛）再贴过来的。作者给自己提了一个issue就是改进图片上传功能，不过还是open状态。&lt;/p&gt;
+&lt;p&gt;还有一个较为严重的问题就是编辑页面标题会产生新页面（并产生重复）而不是改名，(&lt;em&gt;edit:不过刚才看了一下最新的repo情况，貌似最新的&lt;a href=&quot;https://github.com/jaredly/hexo-admin/commit/2b5f8529585fc2a6e9afe451f36af6e355a88e66&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;0.2.0&lt;/a&gt;修复了，尚未测试了。&lt;/em&gt;)&lt;/p&gt;
+&lt;h1 id=&quot;依赖情况&quot;&gt;&lt;a href=&quot;#依赖情况&quot; class=&quot;headerlink&quot; title=&quot;依赖情况&quot;&gt;&lt;/a&gt;依赖情况&lt;/h1&gt;&lt;h2 id=&quot;框架组件&quot;&gt;&lt;a href=&quot;#框架组件&quot; class=&quot;headerlink&quot; title=&quot;框架组件&quot;&gt;&lt;/a&gt;框架组件&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/body-parser&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;body-parser&lt;/a&gt;: 用于解析http请求的正文(body)部分的中间件，不支持multipart的正文（主要用作上传文件使用）。server中必备组件之一，这类型的组件，最近我倾向于使用&lt;a href=&quot;https://www.npmjs.org/package/busboy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;busboy&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/serve-static&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;serve-static&lt;/a&gt;: 顾名思义，用于伺服静态文件的组件。在本程序中主要是伺服图片样式等静态文件。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/react&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;react&lt;/a&gt;: facebook出的一种UI框架，所以通常会是MVC中的V部分&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/react-router&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;react-router&lt;/a&gt;: 专为react设计的路由库，和react合并使用，成为MVC中的C部分&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;基本组件&quot;&gt;&lt;a href=&quot;#基本组件&quot; class=&quot;headerlink&quot; title=&quot;基本组件&quot;&gt;&lt;/a&gt;基本组件&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/es6-promise&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;es6-promise&lt;/a&gt;: 轻量级的异步代码管理组件，将异步执行的代码拥有同步代码的阅读体验。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/lodash&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;lodash&lt;/a&gt;: 比&lt;a href=&quot;https://www.npmjs.com/package/underscore&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;underscore&lt;/a&gt;功能更加丰富的库，基本使用方法都是一样的，顾名思义也知道这个是后出来希望替代其前辈的基本类库，主要是为js带来一系列函数式编程体验的扩展方法。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/marked&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;marked&lt;/a&gt;: 一个markdown解析库，自称效率极高。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;点睛组件&quot;&gt;&lt;a href=&quot;#点睛组件&quot; class=&quot;headerlink&quot; title=&quot;点睛组件&quot;&gt;&lt;/a&gt;点睛组件&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/moment&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;moment&lt;/a&gt;: 功能丰富的用于操作日期时间的库，可以方便的将时间转换成适合人类阅读的样式（例如：30分钟前）。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/code-mirror&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;code-mirror&lt;/a&gt;: 非常著名的在线代码编辑器，在本程序中主要用于markdown的高亮。需要注意的是在npm上面，该组件已经更名为&lt;a href=&quot;https://www.npmjs.com/package/codemirror&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;codemirror&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/superagent&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;superagent&lt;/a&gt;: 使用流式接口(Fluent API)的优雅且功能丰富的HTTP操作（Ajax）组件。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/superagent-browserify&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;superagent-browserify&lt;/a&gt;: 使得superagent可以和&lt;a href=&quot;https://www.npmjs.com/package/browserify&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;browserify&lt;/a&gt;一起工作的封装。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/reactify&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;reactify&lt;/a&gt;: 使得转换JSX的功能（主要用在React框架中的一种文件格式）可以和&lt;a href=&quot;https://www.npmjs.com/package/browserify&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;browserify&lt;/a&gt;一起工作的封装，本工程中主要用于制作demo站点。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;样式组件&quot;&gt;&lt;a href=&quot;#样式组件&quot; class=&quot;headerlink&quot; title=&quot;样式组件&quot;&gt;&lt;/a&gt;样式组件&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://necolas.github.io/normalize.css/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;normalize.css&lt;/a&gt;: 初始化页面样式的基础样式，专为HTML5优化&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://fortawesome.github.io/Font-Awesome/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;font-awesome&lt;/a&gt;: 极其丰富且易用的图标集&lt;/li&gt;
+&lt;li&gt;字体：&lt;a href=&quot;http://www.google.com/fonts/specimen/Open+Sans&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OpenSans&lt;/a&gt;，&lt;a href=&quot;http://www.google.com/fonts/specimen/Inconsolata&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Inconsolata&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;其他组件&quot;&gt;&lt;a href=&quot;#其他组件&quot; class=&quot;headerlink&quot; title=&quot;其他组件&quot;&gt;&lt;/a&gt;其他组件&lt;/h2&gt;&lt;p&gt;必须要提到的是&lt;a href=&quot;http://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;是其正常运行的根本，安装方法请参照&lt;a href=&quot;http://jaredly.github.io/hexo-admin/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hexo-admin&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;另外一个必须提到的是&lt;a href=&quot;https://github.com/lacymorrow/casper&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Casper&lt;/a&gt;主题，样式文件&lt;code&gt;/www/css/screen.css&lt;/code&gt;就是出自此主题。&lt;/p&gt;
+&lt;h1 id=&quot;开发方法&quot;&gt;&lt;a href=&quot;#开发方法&quot; class=&quot;headerlink&quot; title=&quot;开发方法&quot;&gt;&lt;/a&gt;开发方法&lt;/h1&gt;&lt;p&gt;原作者提供了makefile，不过对于windows用户来说，这个貌似不太友好，虽然有omake，cygwin等可选，反正结果就是我都没有用，所以我在自己&lt;a href=&quot;https://github.com/wizicer/hexo-admin&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;wizicer的fork&lt;/a&gt;上面改成使用grunt了。&lt;/p&gt;
+&lt;p&gt;如果你使用原作者的方式，那就是如下命令：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;npm test&lt;/code&gt;: 运行测试方法，不过该工程没有一个测试用例，且该命令会告诉你该命令不存在。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npm prepublish&lt;/code&gt;: 启动预发布状态，主要就是编译一下less文件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果你使用&lt;a href=&quot;https://github.com/wizicer/hexo-admin&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;wizicer的fork&lt;/a&gt;，那就是如下命令：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;grunt&lt;/code&gt;: 以开发状态启动，会监控磁盘文件变化。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;grunt pub&lt;/code&gt;: 编译文件，准备发布。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;五分钟带你熟悉源代码&quot;&gt;&lt;a href=&quot;#五分钟带你熟悉源代码&quot; class=&quot;headerlink&quot; title=&quot;五分钟带你熟悉源代码&quot;&gt;&lt;/a&gt;五分钟带你熟悉源代码&lt;/h1&gt;&lt;p&gt;(视频晚点添加)&lt;/p&gt;
+&lt;h1 id=&quot;总结评分&quot;&gt;&lt;a href=&quot;#总结评分&quot; class=&quot;headerlink&quot; title=&quot;总结评分&quot;&gt;&lt;/a&gt;总结评分&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;评分为1-5分，5分最高&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;代码清晰度： 3&lt;/li&gt;
+&lt;li&gt;适宜维护度： 1&lt;/li&gt;
+&lt;li&gt;弱化依赖度： 3&lt;/li&gt;
+&lt;li&gt;系统稳定度： 1&lt;/li&gt;
+&lt;li&gt;作者维护度： 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;注意：此评分为冰河魔法师一家之言，仅供参考&lt;/em&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;基本信息&quot;&gt;&lt;a href=&quot;#基本信息&quot; class=&quot;headerlink&quot; title=&quot;基本信息&quot;&gt;&lt;/a&gt;基本信息&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;名字：&lt;a href=&quot;http://jaredly.github.io/hexo-admin/&quot; target
+    
+    </summary>
+    
+      <category term="源代码分析" scheme="http://icerdesign.com/categories/%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="Hexo" scheme="http://icerdesign.com/tags/Hexo/"/>
+    
+      <category term="JS" scheme="http://icerdesign.com/tags/JS/"/>
+    
+      <category term="视频" scheme="http://icerdesign.com/tags/%E8%A7%86%E9%A2%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2015新的开始</title>
+    <link href="http://icerdesign.com/start-of-2015/"/>
+    <id>http://icerdesign.com/start-of-2015/</id>
+    <published>2015-02-15T16:00:00.000Z</published>
+    <updated>2016-05-09T21:48:53.364Z</updated>
+    
+    <content type="html">&lt;p&gt;年纪也不小了，就不再说感慨的话语了，总结起来就是：2014过得还行，不过一些不足之处也应该在2015年提高一下。&lt;/p&gt;
+&lt;h1 id=&quot;2014&quot;&gt;&lt;a href=&quot;#2014&quot; class=&quot;headerlink&quot; title=&quot;2014&quot;&gt;&lt;/a&gt;2014&lt;/h1&gt;&lt;p&gt;2014年是个忙碌年，工作上探索了许多有意思的可能性，个人学习上，更是对js有了更加深入的理解；2014年也是丰收年，女儿出生了，房子买了，在公司也升职了。&lt;/p&gt;
+&lt;p&gt;2014年初的时候，定下来的全年计划是专注工业控制方面，也开了个大坑——&lt;a href=&quot;http://cloud2plant.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;cloud2plant.com&lt;/a&gt;，试图将云计算安全地带到工业领域。PLC的基本原型是有了，HMI设计器的基本原型也有了，DCS的原型设计也有了，恩，感觉万事俱备，好像只要有哪个有钱的老板投入个100万，一年后就能看到不错的进展进入下一轮融资了一样。&lt;/p&gt;
+&lt;p&gt;不过这些现在都只能想想而已了。&lt;/p&gt;
+&lt;p&gt;因为我到处去推销我的想法，当然也包括我任职的公司这边，现在公司这边想把我这个思路扩展下去，于是我就停下来了。因为不想和公司在这些技术方面有纠纷，虽然以前做的事情和公司是同一行业，但是我完全使用自己的时间开发设计，再使用我自己的人脉和方式去向人推销获得反馈修正，不管怎么说，都是我的完全自主权，等哪天我不在公司任职了，我就再找一个合伙人，将这套产品进行打造包装上市。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;（脑内吐槽：说的简单，你以为工业产品就这么简单，别人公司那么多有经验的人，投入上千万都打造不出来，你有什么本事打造出来呢？）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;其实我的理由也很简单，从项目规模来说，这个项目远远没有我以前成功项目的规模大，其中最复杂的模块，其复杂程度和我以前的某个成功项目的复杂程度是相当的，这就是我的信心来源。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;（脑内吐槽：扯那么多，你现在又不做了）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;虽然说确实现在暂时不做了，但是我对于在公司里面能够将这个项目真正的发扬光大，做成我自己所期望样子却没有什么信心，因为在公司，尤其是这种五百强的大公司，各种制约因素实在太多，项目越小越好，项目越大，阻力也就越大了。不管怎么说，决定不再用业余时间弄这个了，所以2015年也就不会再专注在工业控制方向了。&lt;/p&gt;
+&lt;h1 id=&quot;2015&quot;&gt;&lt;a href=&quot;#2015&quot; class=&quot;headerlink&quot; title=&quot;2015&quot;&gt;&lt;/a&gt;2015&lt;/h1&gt;&lt;p&gt;其实我个人一直蛮想往游戏开发方向去的，可惜没有机会进入游戏公司，今年参加过几次游戏开发类活动后，发现我其实已经离这个领域越来越远了，既然如此，就鼓起劲放弃这条道路吧，这个其实也是2014年初做的决定，基本上还是很好的执行下来了，2015年坚持啦。&lt;/p&gt;
+&lt;p&gt;毕竟人生已经进入到奔三的阶段了，想说没有生活压力还真是难，于是乎总是时不时的会想要赚钱，但是很快又被自己否定了，这样来来回回好几次，感觉自己也真够折腾的。&lt;/p&gt;
+&lt;p&gt;不管怎么样，后来也算是想通了，要想赚大钱，那一定得在一个领域里深入钻研，而深入钻研一个领域并不代表你就一定能在这个领域里赚到大钱。&lt;/p&gt;
+&lt;p&gt;最近也看到各种渠道热转的一篇关于80后运气不佳的文章，同样也在想，对我们来说无外乎就四种组合：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;做赚钱的自己喜欢的事情&lt;/li&gt;
+&lt;li&gt;做不赚钱的自己喜欢的事情&lt;/li&gt;
+&lt;li&gt;做赚钱的自己不喜欢的事情&lt;/li&gt;
+&lt;li&gt;做不赚钱的自己不喜欢的事情&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最后一种在还有机会选择的情况下相信没人愿意做，能做到第一种当然一定也是在有机会选择的情况下必选的，那么我们就只能对比究竟是“做不赚钱的自己喜欢的事情”开心一些还是“做赚钱的自己不喜欢的事情”开心一些了。&lt;/p&gt;
+&lt;p&gt;可能每位读者都会心中有自己的答案，每个人都会有自己的侧重点，所有才有丰富多彩的人类社会嘛。不管怎么样，我是更倾向于做自己喜欢的事情。如此一来，对我来说就简单，倾向的是前面两个，那么我只要追逐内心，做自己喜欢的事情就好了，赚不赚钱就只能留给运气了。&lt;/p&gt;
+&lt;p&gt;不过问题来了，我究竟最喜欢做什么事情呢？&lt;/p&gt;
+&lt;p&gt;从94年接触电脑起，确实已经经历了太多，编程方面从QB/VB/ASP/Pascal/Delphi/ASM/C/C++/C#已经用了一圈了，网页方面Flash/HTML/JS/HTML5/PS也是一大圈了，连运维方面也是因为自己的多个网站缘故，经历了许多，突然一想，完全是按照打造&lt;code&gt;全栈工程师&lt;/code&gt;的要求进行培养的。&lt;/p&gt;
+&lt;p&gt;经历的多了，也就意味着未来的选择多了，再加上现在的顾虑也多了，反倒自己很难做出选择了。&lt;/p&gt;
+&lt;h1 id=&quot;结论&quot;&gt;&lt;a href=&quot;#结论&quot; class=&quot;headerlink&quot; title=&quot;结论&quot;&gt;&lt;/a&gt;结论&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;没有方向比方向错了再调整方向更加可怕&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;因为那是连行动的信心都没有，会导致哪怕未来方向对了，也不敢前进了。&lt;/p&gt;
+&lt;p&gt;所以2015，我的业余时间就专注在js的学习，或许就和10年前刚开始正式学习C#一样，先做一个论坛+CMS入手吧，将基本功能都走一遍。好吧，我有开一坑了——&lt;a href=&quot;https://github.com/wizicer/nodepress&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;nodepress&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;目标就是能像我用C#一样熟练的使用js，达到js架构师的级别，让js成为我继VB和C#后第三门能够被称之为精通的语言。并且将js里面好的部分带回到.Net生态中来。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;年纪也不小了，就不再说感慨的话语了，总结起来就是：2014过得还行，不过一些不足之处也应该在2015年提高一下。&lt;/p&gt;
+&lt;h1 id=&quot;2014&quot;&gt;&lt;a href=&quot;#2014&quot; class=&quot;headerlink&quot; title=&quot;2014&quot;&gt;&lt;/a&gt;2014&lt;/h1&gt;&lt;
+    
+    </summary>
+    
+      <category term="冰河杂谈" scheme="http://icerdesign.com/categories/%E5%86%B0%E6%B2%B3%E6%9D%82%E8%B0%88/"/>
+    
+    
+      <category term="杂文" scheme="http://icerdesign.com/tags/%E6%9D%82%E6%96%87/"/>
+    
+  </entry>
+  
+</feed>

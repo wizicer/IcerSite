@@ -1,0 +1,430 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>架构师的必杀技——代码重写 | 冰河设计 -- 冰河魔法师的自留地</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="冰河魔法师">
+    
+    <meta name="description" content="作为软件开发者的你，一定听说过重构一词，在我们平时的开发生活中，为了使代码更加易于理解和处理一些代码编写过程中没有注意到的问题，我们会相当频繁的对我们的代码进行重构处理。不过今天我在这里不是想讲该如何重构，或者我们为什么要做重构，如果你的确有这方面的需求你可以查看《重构：改善既有代码的设计》这本书。">
+    
+    
+    
+    
+    <link rel="alternate" href="atom.xml" title="冰河设计 -- 冰河魔法师的自留地" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="//img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/images/icer.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/icer.png">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/images/icer.png" alt="冰河设计 -- 冰河魔法师的自留地" title="冰河设计 -- 冰河魔法师的自留地"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="冰河设计 -- 冰河魔法师的自留地">冰河设计 -- 冰河魔法师的自留地</a></h1>
+				<h2 class="blog-motto">架构师，探险者</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">存档</a></li>
+					
+						<li><a href="/tags">标签</a></li>
+					
+						<li><a href="/categories">分类</a></li>
+					
+						<li><a href="http://wiki.icerdesign.com">Wiki</a></li>
+					
+						<li><a href="http://love.icerdesign.com">关于爱</a></li>
+					
+						<li><a href="http://hiyaphoto.com">关于摄影</a></li>
+					
+						<li><a href="/about">关于我</a></li>
+					
+					<li>
+					
+					<form class="search" action="//baidu.com/s" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="wd" autocomplete="off" maxlength="20" placeholder="搜索" />
+                        <input name=tn type=hidden value="bds">
+                        <input name=cl type=hidden value="3">
+                        <input name=ct type=hidden value="2097152">
+						<input type="hidden" name="si" value="icerdesign.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/wx/unique-skill-of-architect-code-rewrite/" title="架构师的必杀技——代码重写" itemprop="url">架构师的必杀技——代码重写</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://icerdesign.com" title="冰河魔法师">冰河魔法师</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2014-03-17T16:00:00.000Z" itemprop="datePublished">2014-03-18</time>
+    
+  </p>
+</header>
+
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一般有些什么原因会导致需要重写"><span class="toc-number">1.</span> <span class="toc-text">一般有些什么原因会导致需要重写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我们应为重写提前做好什么准备"><span class="toc-number">2.</span> <span class="toc-text">我们应为重写提前做好什么准备</span></a></li></ol>
+		</div>
+		
+		<p>作为软件开发者的你，一定听说过<code>重构</code>一词，在我们平时的开发生活中，为了使代码更加易于理解和处理一些代码编写过程中没有注意到的问题，我们会相当频繁的对我们的代码进行重构处理。不过今天我在这里不是想讲该如何重构，或者我们为什么要做重构，如果你的确有这方面的需求你可以查看<a href="http://book.douban.com/subject/1229923/" target="_blank" rel="external">《重构：改善既有代码的设计》</a>这本书。</p>
+<p>今天我想讲的是<code>重写</code>，这是我作为一名入门级架构师屡试不爽的必杀技，在这里分享给你。</p>
+<p>其实从思想和技法上来说，重写应该可以归类为重构，但有一点不同的，就是重构<strong>需要熟悉</strong>遗留代码，而重写<strong>不需要熟悉</strong>遗留代码。</p>
+<blockquote>
+<p>代码是有生命力的，他会随着时间的推移，逐渐的老去，失去活力。</p>
+</blockquote>
+<p>写出一段好的代码，他的生命力将会很长（何谓好的代码，其实有很多讨论，例如应用<code>SOLID</code>原则编写代码，这个就不在这里讨论了），但无论如何，他始终是有生命周期的，终将有老去和失去活力的一天，当那一天到来，我们应该决定推翻重做还是任由其自生自灭？</p>
+<p>而且在团队合作中，本来可能以你个人的素养，你可以做到代码永世长青，但是你无法避免你的团队成员破坏你代码的生命力，当然有一个很好的实践——只有代码库的Owner才能签入代码，任何由其他人完成的代码都需要由Owner亲自审核后，亲自签入，故他可以在签入前，保证这段代码的素质是符合自己的，但这对Owner的要求高，且若需要在短时间内开发大型工程就会有极大的局限，Github上的代码几乎都是用这种方式管理的，甚至像Linux这类源代码也是用这种模式进行管理的。</p>
+<p>若非上面那种实践，设想你处于一个水平参差不齐的团队，每个人负责一个模块的开发，系统上线进入维护阶段后，某人离职后发现其设计的模块复杂且不易理解，有极大的难度让后续人员去理解并进行修改，这个时候再来考虑重写？</p>
+<p>我知道你的疑问，一定会觉得这样是不是成本更高，风险更加不易控制，若你是在这件事情已经发生后才开始考虑重写这件事情，那不用想了，一定是成本很高，且风险极大，这种时候的确不建议轻易下结论重写。</p>
+<blockquote>
+<p>于是，我之所以写这篇文章便是希望你能在发生这件事情之前就做好准备。</p>
+</blockquote>
+<p>我们首先来分析一下，一般都会有些什么情况会导致重写是必须发生的。</p>
+<h2 id="一般有些什么原因会导致需要重写"><a href="#一般有些什么原因会导致需要重写" class="headerlink" title="一般有些什么原因会导致需要重写"></a>一般有些什么原因会导致需要重写</h2><ul>
+<li>一个没有经验的开发者，他的一部分低素质代码进入了代码库，导致后期难以维护</li>
+<li>一个简单的模块通过多次<code>打补丁</code>的方式，变得异常复杂，以致后期难以维护</li>
+<li>自己在早期由于对系统或者业务的理解不彻底，出现当时的设计无法充分满足客户需求的情况</li>
+<li>一个复杂的模块被发现有异常情况，其遗留代码不易被理解，同时该模块开发人员已无法找到</li>
+</ul>
+<p><strong>注解</strong>：所谓<code>打补丁</code>的方式，是指你在发现未被框架预先考虑到的异常情况出现后，通过判断特定情况给予特殊处理的方式让程序得以正常的方式。这种处理方式的潜在危害就是你不知道还会有多少个这种特殊情况存在。</p>
+<p>我们是不是应该在这个时间到来之前，提前做一点什么准备呢？</p>
+<h2 id="我们应为重写提前做好什么准备"><a href="#我们应为重写提前做好什么准备" class="headerlink" title="我们应为重写提前做好什么准备"></a>我们应为重写提前做好什么准备</h2><ul>
+<li><strong>充分定义好接口</strong>，将每个模块的接口定义好，接口之间不应有强耦合，对于大部分情况均可参考典型的Rest风格设计，接口应尽量避免与特殊的应用场景配合，使得接口的调用必须遵循某种非直观意识的调用规则。</li>
+<li><strong>缩小模块范围</strong>，使每个模块的范围减少，可以起到简化接口及减少重写工作量的作用。</li>
+<li><strong>对接口做好自动测试</strong>，TDD的好处在本文就不详细阐述了，它是重构的重要根基，也同样是重写的重要根基。</li>
+<li><strong>使用新技术频繁重构</strong>，注意这里是<code>重构</code>，这一条看起来好像和我们的标题偏了，但其实不然，毕竟重写也是我们要尽量避免发生的事情，只不过是绝对没有办法完全避免的事情，故经常使用新技术重构系统，使得代码更加精简，有利于代码生命力的延续，避免重写这种高成本事件的发生。</li>
+</ul>
+<blockquote>
+<p>末了，我还是得再强调一下，我的观点<strong>不是</strong>要让大家去经常重写代码，而是希望能够让大家认识到，一定会有不得不重写代码的可能性，尤其是在水平参差不齐的团队中，所以提前为这种可能性做好准备，绝对比临时抱佛脚强上很多倍。</p>
+</blockquote>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/微信/">微信</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/冰河杂谈/">冰河杂谈</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://icerdesign.com/wx/unique-skill-of-architect-code-rewrite/" data-title="架构师的必杀技——代码重写 | 冰河设计 -- 冰河魔法师的自留地" data-tsina="wizicer" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/wx/interview-with-xiaochengzi/" title="软件人做工控访谈系列——小橙子公寓">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  软件人做工控访谈系列——小橙子公寓</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/wx/bluetooth-4/"  title="蓝牙4.0，你跟上了吗？">
+ <strong>NEXT:</strong><br/> 
+ <span>蓝牙4.0，你跟上了吗？
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一般有些什么原因会导致需要重写"><span class="toc-number">1.</span> <span class="toc-text">一般有些什么原因会导致需要重写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我们应为重写提前做好什么准备"><span class="toc-number">2.</span> <span class="toc-text">我们应为重写提前做好什么准备</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/Diary/" title="Diary">Diary<sup>7</sup></a></li>
+		
+			<li><a href="/categories/作品/" title="作品">作品<sup>3</sup></a></li>
+		
+			<li><a href="/categories/冰河杂谈/" title="冰河杂谈">冰河杂谈<sup>15</sup></a></li>
+		
+			<li><a href="/categories/小时候/" title="小时候">小时候<sup>37</sup></a></li>
+		
+			<li><a href="/categories/架构设计/" title="架构设计">架构设计<sup>0</sup></a></li>
+		
+			<li><a href="/categories/源代码分析/" title="源代码分析">源代码分析<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/C/" title="C#">C#<sup>2</sup></a></li>
+		
+			<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
+		
+			<li><a href="/tags/HTML/" title="HTML">HTML<sup>2</sup></a></li>
+		
+			<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+		
+			<li><a href="/tags/JS/" title="JS">JS<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Javascript/" title="Javascript">Javascript<sup>2</sup></a></li>
+		
+			<li><a href="/tags/Linux/" title="Linux">Linux<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Miscellaneous/" title="Miscellaneous">Miscellaneous<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Unity/" title="Unity">Unity<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Vim/" title="Vim">Vim<sup>1</sup></a></li>
+		
+			<li><a href="/tags/WPF/" title="WPF">WPF<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Windows/" title="Windows">Windows<sup>1</sup></a></li>
+		
+			<li><a href="/tags/下载器/" title="下载器">下载器<sup>1</sup></a></li>
+		
+			<li><a href="/tags/图片/" title="图片">图片<sup>1</sup></a></li>
+		
+			<li><a href="/tags/客户端/" title="客户端">客户端<sup>2</sup></a></li>
+		
+			<li><a href="/tags/小说/" title="小说">小说<sup>7</sup></a></li>
+		
+			<li><a href="/tags/微信/" title="微信">微信<sup>11</sup></a></li>
+		
+			<li><a href="/tags/总结/" title="总结">总结<sup>2</sup></a></li>
+		
+			<li><a href="/tags/日记/" title="日记">日记<sup>4</sup></a></li>
+		
+			<li><a href="/tags/时间管理/" title="时间管理">时间管理<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="introduction">
+	<p class="asidetitle">about</p>
+    <p><b>梁爽</b>，网名<b>冰河魔法师</b>，英文名简称<b>Icer</b>，现就职于霍尼韦尔(中国)，自动化领域工具软件架构师一名，94年接触计算机，99年开始写程序，08年做架构带团队，自此奠定了未来往架构师方向发展的重要目标。虽广泛涉猎各种计算机技术，但因深度熟悉QB、VB、.Net技术而被标记为微软派。</p>
+    <p>架构设计和程序设计本是完全没有高低的两个不同工作，但误解常在，所以不断通过自己的亲身实践让更多人真正的理解架构师这一容易被人误解的工种，并让有志之士走上架构师之路。</p>
+</div>
+
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/wizicer" target="_blank" title="weibo"></a>
+		
+		
+		
+		<a href="https://github.com/wizicer" target="_blank" title="github"></a>
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wizicer/iceman" target="_blank" title="Iceman">Iceman</a> © 2016 
+		
+		<a href="http://icerdesign.com" target="_blank" title="冰河魔法师">冰河魔法师</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+
+<div style="display:none;">
+    <script language="javascript" type="text/javascript" src="http://js.users.51.la/17278963.js">
+    </script>
+</div>
+
+
+
+  </body>
+</html>
+

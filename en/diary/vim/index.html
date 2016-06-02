@@ -1,0 +1,435 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Vim Diary | 冰河设计 -- 冰河魔法师的自留地</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="冰河魔法师">
+    
+    <meta name="description" itemprop="description" content="Diary for vim, shortcuts or customization to Vim">
+    
+    
+    
+    
+    <link rel="alternate" href="atom.xml" title="冰河设计 -- 冰河魔法师的自留地" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="//img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/images/icer.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/icer.png">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/images/icer.png" alt="冰河设计 -- 冰河魔法师的自留地" title="冰河设计 -- 冰河魔法师的自留地"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="冰河设计 -- 冰河魔法师的自留地">冰河设计 -- 冰河魔法师的自留地</a></h1>
+				<h2 class="blog-motto">架构师，探险者</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">存档</a></li>
+					
+						<li><a href="/tags">标签</a></li>
+					
+						<li><a href="/categories">分类</a></li>
+					
+						<li><a href="http://wiki.icerdesign.com">Wiki</a></li>
+					
+						<li><a href="http://love.icerdesign.com">关于爱</a></li>
+					
+						<li><a href="http://hiyaphoto.com">关于摄影</a></li>
+					
+						<li><a href="/about">关于我</a></li>
+					
+					<li>
+					
+					<form class="search" action="//baidu.com/s" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="wd" autocomplete="off" maxlength="20" placeholder="搜索" />
+                        <input name=tn type=hidden value="bds">
+                        <input name=cl type=hidden value="3">
+                        <input name=ct type=hidden value="2097152">
+						<input type="hidden" name="si" value="icerdesign.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/en/diary/vim/" title="Vim Diary" itemprop="url">Vim Diary</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://icerdesign.com" title="冰河魔法师">冰河魔法师</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-05-19T16:00:00.000Z" itemprop="datePublished">2016-05-20</time>
+    
+  </p>
+</header>
+
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2015-5-20"><span class="toc-number">1.</span> <span class="toc-text">2015-5-20</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pipe-content-from-console-output-to-vim"><span class="toc-number">1.1.</span> <span class="toc-text">pipe content from console output to vim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shortcut-to-exit-vim"><span class="toc-number">1.2.</span> <span class="toc-text">shortcut to exit vim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Highlight-changes-in-unified-diff"><span class="toc-number">1.3.</span> <span class="toc-text">Highlight changes in unified diff</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2016-5-19"><span class="toc-number">2.</span> <span class="toc-text">2016-5-19</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Count-number-of-matches-of-a-pattern"><span class="toc-number">2.1.</span> <span class="toc-text">Count number of matches of a pattern</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2016-5-10"><span class="toc-number">3.</span> <span class="toc-text">2016-5-10</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#color-scheme-in-Vim-in-ConEmu-not-work"><span class="toc-number">3.1.</span> <span class="toc-text">color scheme in Vim in ConEmu not work</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#multiple-condition-in-Vim"><span class="toc-number">3.2.</span> <span class="toc-text">multiple condition in Vim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#switch-case-of-letter"><span class="toc-number">3.3.</span> <span class="toc-text">switch case of letter</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2016-5-3"><span class="toc-number">4.</span> <span class="toc-text">2016-5-3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Perform-same-operation-across-buffers"><span class="toc-number">4.1.</span> <span class="toc-text">Perform same operation across buffers</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2016-4-29"><span class="toc-number">5.</span> <span class="toc-text">2016-4-29</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Pick-the-first-spell-suggestion"><span class="toc-number">5.1.</span> <span class="toc-text">Pick the first spell suggestion</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2016-4-25"><span class="toc-number">6.</span> <span class="toc-text">2016-4-25</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#use-vim-folder-in-windows"><span class="toc-number">6.1.</span> <span class="toc-text">use .vim folder in windows</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#convert-VimWiki-to-markdown-using-Vim"><span class="toc-number">6.2.</span> <span class="toc-text">convert VimWiki to markdown using Vim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vim-non-greedy-search"><span class="toc-number">6.3.</span> <span class="toc-text">vim non-greedy search</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2016-4-22"><span class="toc-number">7.</span> <span class="toc-text">2016-4-22</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#go-back-end-of-word-go-to-end-of-previous-word"><span class="toc-number">7.1.</span> <span class="toc-text">go back end of word (go to end of previous word)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2016-4-21"><span class="toc-number">8.</span> <span class="toc-text">2016-4-21</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gf-with-auto-file-extension-especially-in-wiki-markdown"><span class="toc-number">8.1.</span> <span class="toc-text">gf with auto file extension, especially in wiki markdown</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2016-4-20"><span class="toc-number">9.</span> <span class="toc-text">2016-4-20</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Voom-plugin-with-error-python’s-site-module-could-not-be-loaded"><span class="toc-number">9.1.</span> <span class="toc-text">Voom plugin with error: python’s site module could not be loaded</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#No-Answer-Questions"><span class="toc-number">10.</span> <span class="toc-text">No Answer Questions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Convert-Space-Separated-to-CamelCase"><span class="toc-number">10.1.</span> <span class="toc-text">Convert Space Separated to CamelCase</span></a></li></ol></li></ol>
+		</div>
+		
+		<h2 id="2015-5-20"><a href="#2015-5-20" class="headerlink" title="2015-5-20"></a>2015-5-20</h2><h3 id="pipe-content-from-console-output-to-vim"><a href="#pipe-content-from-console-output-to-vim" class="headerlink" title="pipe content from console output to vim"></a>pipe content from console output to vim</h3><p><code>vim -</code>, eg: <code>ls -la | vim -</code></p>
+<h3 id="shortcut-to-exit-vim"><a href="#shortcut-to-exit-vim" class="headerlink" title="shortcut to exit vim"></a>shortcut to exit vim</h3><ul>
+<li><code>ZZ</code> save and exit</li>
+<li><code>ZQ</code> exit without save</li>
+</ul>
+<h3 id="Highlight-changes-in-unified-diff"><a href="#Highlight-changes-in-unified-diff" class="headerlink" title="Highlight changes in unified diff"></a>Highlight changes in unified diff</h3><ol>
+<li>copy diff.vim from installation location to your own customizable location.</li>
+<li>modify diff.vim like following:</li>
+</ol>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">diff --git a/syntax/diff.vim b/syntax/diff.vim</span><br><span class="line"><span class="comment">--- a/syntax/diff.vim</span></span><br><span class="line"><span class="comment">+++ b/syntax/diff.vim</span></span><br><span class="line">@@ -366,9 +366,9 @@ hi def link diffBDiffer		Constant</span><br><span class="line"> hi def link diffIsA		Constant</span><br><span class="line"> hi def link diffNoEOL		Constant</span><br><span class="line"> hi def link diffCommon		Constant</span><br><span class="line"><span class="deletion">-hi def link diffRemoved		Special</span></span><br><span class="line"><span class="addition">+hi def link diffRemoved		Error</span></span><br><span class="line"> hi def link diffChanged		PreProc</span><br><span class="line"><span class="deletion">-hi def link diffAdded		Identifier</span></span><br><span class="line"><span class="addition">+hi def link diffAdded		Todo</span></span><br><span class="line"> hi def link diffLine		Statement</span><br><span class="line"> hi def link diffSubname		PreProc</span><br><span class="line"> hi def link diffComment		Comment</span><br></pre></td></tr></table></figure>
+<h2 id="2016-5-19"><a href="#2016-5-19" class="headerlink" title="2016-5-19"></a>2016-5-19</h2><h3 id="Count-number-of-matches-of-a-pattern"><a href="#Count-number-of-matches-of-a-pattern" class="headerlink" title="Count number of matches of a pattern"></a>Count number of matches of a pattern</h3><p>To count the number of matches of a pattern, use the substitute command with the n flag. The
+following shows the number of times that pattern matches text in the current buffer:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s/pattern//gn</span><br></pre></td></tr></table></figure>
+<p>Omit g to display the number of lines where the pattern matches:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s/pattern//n</span><br></pre></td></tr></table></figure>
+<p><a href="http://vim.wikia.com/wiki/Count_number_of_matches_of_a_pattern" target="_blank" rel="external">Link</a></p>
+<h2 id="2016-5-10"><a href="#2016-5-10" class="headerlink" title="2016-5-10"></a>2016-5-10</h2><h3 id="color-scheme-in-Vim-in-ConEmu-not-work"><a href="#color-scheme-in-Vim-in-ConEmu-not-work" class="headerlink" title="color scheme in Vim in ConEmu not work"></a>color scheme in Vim in ConEmu not work</h3><ol>
+<li>follow <a href="http://conemu.github.io/en/VimXterm.html" target="_blank" rel="external">guide</a></li>
+<li>rename/remove <code>/bin/vim</code> from git bash which is not supported.</li>
+</ol>
+<h3 id="multiple-condition-in-Vim"><a href="#multiple-condition-in-Vim" class="headerlink" title="multiple condition in Vim"></a>multiple condition in Vim</h3><p><code>&amp;&amp;</code>, tip: help expr</p>
+<h3 id="switch-case-of-letter"><a href="#switch-case-of-letter" class="headerlink" title="switch case of letter"></a>switch case of letter</h3><p><code>~</code> in visual mode</p>
+<h2 id="2016-5-3"><a href="#2016-5-3" class="headerlink" title="2016-5-3"></a>2016-5-3</h2><h3 id="Perform-same-operation-across-buffers"><a href="#Perform-same-operation-across-buffers" class="headerlink" title="Perform same operation across buffers"></a>Perform same operation across buffers</h3><ol>
+<li>store operation in macro <code>a</code></li>
+<li>[OPTIONAL] <code>set nomore</code> to avoid interruption during processing</li>
+<li><code>:bufdo execute &quot;norma! @a&quot; | update</code></li>
+</ol>
+<h2 id="2016-4-29"><a href="#2016-4-29" class="headerlink" title="2016-4-29"></a>2016-4-29</h2><h3 id="Pick-the-first-spell-suggestion"><a href="#Pick-the-first-spell-suggestion" class="headerlink" title="Pick the first spell suggestion"></a>Pick the first spell suggestion</h3><p><code>1z=</code></p>
+<h2 id="2016-4-25"><a href="#2016-4-25" class="headerlink" title="2016-4-25"></a>2016-4-25</h2><h3 id="use-vim-folder-in-windows"><a href="#use-vim-folder-in-windows" class="headerlink" title="use .vim folder in windows"></a>use .vim folder in windows</h3><p>Add following lines to vimrc:
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">has</span>(<span class="string">'win32'</span>) || <span class="built_in">has</span>(<span class="string">'win64'</span>)</span><br><span class="line">  <span class="keyword">set</span> runtimepath=$HOME/.<span class="keyword">vim</span>,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.<span class="keyword">vim</span>/after</span><br><span class="line"><span class="keyword">endif</span></span><br></pre></td></tr></table></figure></p>
+<p><a href="http://stackoverflow.com/questions/5440281/is-it-possible-to-use-a-folder-named-vimfiles-to-replace-vim-in-macvim" target="_blank" rel="external">Link</a></p>
+<h3 id="convert-VimWiki-to-markdown-using-Vim"><a href="#convert-VimWiki-to-markdown-using-Vim" class="headerlink" title="convert VimWiki to markdown using Vim"></a>convert VimWiki to markdown using Vim</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">* Convert bold: %s/\*\(.*\)\*/**\1**/g</span><br><span class="line">* Convert named link: %s/\[\[\(.\&#123;-&#125;\)|\(.\&#123;-&#125;\)\]\]/[\2](\1)/g</span><br><span class="line">* Convert link: %s/\[\[\(.\&#123;-&#125;\)\]\]/&lt;\1&gt;/g</span><br><span class="line">* Title: </span><br><span class="line">  * First: %s/= \(.*\) =/# \1/g</span><br><span class="line">  * May multiple: %s/=\(.*\)=/#\1/g</span><br><span class="line">* Picture: %s/&#123;&#123;\(.\&#123;-&#125;\)&#125;&#125;/![](\1)/g</span><br><span class="line">* Fenced code start: %s/&#123;&#123;&#123;class=&quot;brush:\(.*\)&quot;/```\1/g</span><br><span class="line">* Fenced code end: %s/&#125;&#125;&#125;/```/g</span><br><span class="line">* Manual change # ordered list</span><br></pre></td></tr></table></figure>
+<h3 id="vim-non-greedy-search"><a href="#vim-non-greedy-search" class="headerlink" title="vim non-greedy search"></a>vim non-greedy search</h3><p>The non-greedy version of <code>*</code> is <code>\{-}</code>. So, simply replace <code>.*</code> with <code>.\{-</code></p>
+<p><a href="http://vi.stackexchange.com/questions/196/how-to-make-regex-matchers-non-greedy" target="_blank" rel="external">Link</a></p>
+<h2 id="2016-4-22"><a href="#2016-4-22" class="headerlink" title="2016-4-22"></a>2016-4-22</h2><h3 id="go-back-end-of-word-go-to-end-of-previous-word"><a href="#go-back-end-of-word-go-to-end-of-previous-word" class="headerlink" title="go back end of word (go to end of previous word)"></a>go back end of word (go to end of previous word)</h3><p>Use <code>ge</code></p>
+<h2 id="2016-4-21"><a href="#2016-4-21" class="headerlink" title="2016-4-21"></a>2016-4-21</h2><h3 id="gf-with-auto-file-extension-especially-in-wiki-markdown"><a href="#gf-with-auto-file-extension-especially-in-wiki-markdown" class="headerlink" title="gf with auto file extension, especially in wiki markdown"></a><code>gf</code> with auto file extension, especially in wiki markdown</h3><p>Put following in vimrc</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">autocmd</span> FileType markdown <span class="keyword">setlocal</span> suffixesadd=.md,.markdown</span><br></pre></td></tr></table></figure>
+<h2 id="2016-4-20"><a href="#2016-4-20" class="headerlink" title="2016-4-20"></a>2016-4-20</h2><h3 id="Voom-plugin-with-error-python’s-site-module-could-not-be-loaded"><a href="#Voom-plugin-with-error-python’s-site-module-could-not-be-loaded" class="headerlink" title="Voom plugin with error: python’s site module could not be loaded"></a>Voom plugin with error: python’s site module could not be loaded</h3><p>Due to bug of Python 2.7.11, workaround:</p>
+<ol>
+<li>Install other version.</li>
+<li>after install execute following command (of course, need admin privilege). refer to <a href="https://github.com/vim/vim/blob/master/appveyor.yml" target="_blank" rel="external">Link</a><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">reg <span class="built_in">copy</span> HKLM\SOFTWARE\Python\PythonCore\<span class="number">2</span>.<span class="number">7</span> HKLM\SOFTWARE\Python\PythonCore\<span class="number">2</span>.<span class="number">7</span>-<span class="number">32</span> /s /reg:<span class="number">32</span></span><br><span class="line">reg <span class="built_in">copy</span> HKLM\SOFTWARE\Python\PythonCore\<span class="number">2</span>.<span class="number">7</span> HKLM\SOFTWARE\Python\PythonCore\<span class="number">2</span>.<span class="number">7</span>-<span class="number">32</span> /s /reg:<span class="number">64</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="No-Answer-Questions"><a href="#No-Answer-Questions" class="headerlink" title="No Answer Questions"></a>No Answer Questions</h2><h3 id="Convert-Space-Separated-to-CamelCase"><a href="#Convert-Space-Separated-to-CamelCase" class="headerlink" title="Convert Space Separated to CamelCase"></a>Convert <code>Space Separated</code> to CamelCase</h3><p>No answer.</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Vim/">Vim</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Diary/">Diary</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://icerdesign.com/en/diary/vim/" data-title="Vim Diary | 冰河设计 -- 冰河魔法师的自留地" data-tsina="wizicer" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/en/diary/linux/"  title="Linux Diary">
+ <strong>NEXT:</strong><br/> 
+ <span>Linux Diary
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2015-5-20"><span class="toc-number">1.</span> <span class="toc-text">2015-5-20</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pipe-content-from-console-output-to-vim"><span class="toc-number">1.1.</span> <span class="toc-text">pipe content from console output to vim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shortcut-to-exit-vim"><span class="toc-number">1.2.</span> <span class="toc-text">shortcut to exit vim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Highlight-changes-in-unified-diff"><span class="toc-number">1.3.</span> <span class="toc-text">Highlight changes in unified diff</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2016-5-19"><span class="toc-number">2.</span> <span class="toc-text">2016-5-19</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Count-number-of-matches-of-a-pattern"><span class="toc-number">2.1.</span> <span class="toc-text">Count number of matches of a pattern</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2016-5-10"><span class="toc-number">3.</span> <span class="toc-text">2016-5-10</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#color-scheme-in-Vim-in-ConEmu-not-work"><span class="toc-number">3.1.</span> <span class="toc-text">color scheme in Vim in ConEmu not work</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#multiple-condition-in-Vim"><span class="toc-number">3.2.</span> <span class="toc-text">multiple condition in Vim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#switch-case-of-letter"><span class="toc-number">3.3.</span> <span class="toc-text">switch case of letter</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2016-5-3"><span class="toc-number">4.</span> <span class="toc-text">2016-5-3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Perform-same-operation-across-buffers"><span class="toc-number">4.1.</span> <span class="toc-text">Perform same operation across buffers</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2016-4-29"><span class="toc-number">5.</span> <span class="toc-text">2016-4-29</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Pick-the-first-spell-suggestion"><span class="toc-number">5.1.</span> <span class="toc-text">Pick the first spell suggestion</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2016-4-25"><span class="toc-number">6.</span> <span class="toc-text">2016-4-25</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#use-vim-folder-in-windows"><span class="toc-number">6.1.</span> <span class="toc-text">use .vim folder in windows</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#convert-VimWiki-to-markdown-using-Vim"><span class="toc-number">6.2.</span> <span class="toc-text">convert VimWiki to markdown using Vim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vim-non-greedy-search"><span class="toc-number">6.3.</span> <span class="toc-text">vim non-greedy search</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2016-4-22"><span class="toc-number">7.</span> <span class="toc-text">2016-4-22</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#go-back-end-of-word-go-to-end-of-previous-word"><span class="toc-number">7.1.</span> <span class="toc-text">go back end of word (go to end of previous word)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2016-4-21"><span class="toc-number">8.</span> <span class="toc-text">2016-4-21</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gf-with-auto-file-extension-especially-in-wiki-markdown"><span class="toc-number">8.1.</span> <span class="toc-text">gf with auto file extension, especially in wiki markdown</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2016-4-20"><span class="toc-number">9.</span> <span class="toc-text">2016-4-20</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Voom-plugin-with-error-python’s-site-module-could-not-be-loaded"><span class="toc-number">9.1.</span> <span class="toc-text">Voom plugin with error: python’s site module could not be loaded</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#No-Answer-Questions"><span class="toc-number">10.</span> <span class="toc-text">No Answer Questions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Convert-Space-Separated-to-CamelCase"><span class="toc-number">10.1.</span> <span class="toc-text">Convert Space Separated to CamelCase</span></a></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/Diary/" title="Diary">Diary<sup>7</sup></a></li>
+		
+			<li><a href="/categories/作品/" title="作品">作品<sup>3</sup></a></li>
+		
+			<li><a href="/categories/冰河杂谈/" title="冰河杂谈">冰河杂谈<sup>15</sup></a></li>
+		
+			<li><a href="/categories/小时候/" title="小时候">小时候<sup>37</sup></a></li>
+		
+			<li><a href="/categories/架构设计/" title="架构设计">架构设计<sup>0</sup></a></li>
+		
+			<li><a href="/categories/源代码分析/" title="源代码分析">源代码分析<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/C/" title="C#">C#<sup>2</sup></a></li>
+		
+			<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
+		
+			<li><a href="/tags/HTML/" title="HTML">HTML<sup>2</sup></a></li>
+		
+			<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+		
+			<li><a href="/tags/JS/" title="JS">JS<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Javascript/" title="Javascript">Javascript<sup>2</sup></a></li>
+		
+			<li><a href="/tags/Linux/" title="Linux">Linux<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Miscellaneous/" title="Miscellaneous">Miscellaneous<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Unity/" title="Unity">Unity<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Vim/" title="Vim">Vim<sup>1</sup></a></li>
+		
+			<li><a href="/tags/WPF/" title="WPF">WPF<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Windows/" title="Windows">Windows<sup>1</sup></a></li>
+		
+			<li><a href="/tags/下载器/" title="下载器">下载器<sup>1</sup></a></li>
+		
+			<li><a href="/tags/图片/" title="图片">图片<sup>1</sup></a></li>
+		
+			<li><a href="/tags/客户端/" title="客户端">客户端<sup>2</sup></a></li>
+		
+			<li><a href="/tags/小说/" title="小说">小说<sup>7</sup></a></li>
+		
+			<li><a href="/tags/微信/" title="微信">微信<sup>11</sup></a></li>
+		
+			<li><a href="/tags/总结/" title="总结">总结<sup>2</sup></a></li>
+		
+			<li><a href="/tags/日记/" title="日记">日记<sup>4</sup></a></li>
+		
+			<li><a href="/tags/时间管理/" title="时间管理">时间管理<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="introduction">
+	<p class="asidetitle">about</p>
+    <p><b>梁爽</b>，网名<b>冰河魔法师</b>，英文名简称<b>Icer</b>，现就职于霍尼韦尔(中国)，自动化领域工具软件架构师一名，94年接触计算机，99年开始写程序，08年做架构带团队，自此奠定了未来往架构师方向发展的重要目标。虽广泛涉猎各种计算机技术，但因深度熟悉QB、VB、.Net技术而被标记为微软派。</p>
+    <p>架构设计和程序设计本是完全没有高低的两个不同工作，但误解常在，所以不断通过自己的亲身实践让更多人真正的理解架构师这一容易被人误解的工种，并让有志之士走上架构师之路。</p>
+</div>
+
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/wizicer" target="_blank" title="weibo"></a>
+		
+		
+		
+		<a href="https://github.com/wizicer" target="_blank" title="github"></a>
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wizicer/iceman" target="_blank" title="Iceman">Iceman</a> © 2016 
+		
+		<a href="http://icerdesign.com" target="_blank" title="冰河魔法师">冰河魔法师</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+
+<div style="display:none;">
+    <script language="javascript" type="text/javascript" src="http://js.users.51.la/17278963.js">
+    </script>
+</div>
+
+
+
+  </body>
+</html>
+
