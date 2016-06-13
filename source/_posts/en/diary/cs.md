@@ -6,8 +6,173 @@ categories:
 - Diary
 description:
   Diary for C#, WPF and .Net
-date: 2016-6-10
+date: 2016-6-13
 ---
+
+## 2016-6-13
+
+### Use Roslyn to generate semantic code
+
+Scenario: I have made some utilities to generate C# code, however, I just utilize literal string
+with string.format, which is not good enough after Roslyn come out. So I tried to generate semantic
+code using Roslyn.
+
+Step 1. Tried Code from [this link](http://stackoverflow.com/a/27856370/2558077),
+however, there is a error:
+
+```
+Error	CS0246	The type or namespace name 'CustomWorkspace' could not be found
+```
+
+According to [this link](https://github.com/dotnet/roslyn/issues/2614) modify code as follow:
+```diff
+- var cw = new CustomWorkspace();
++ var cw = new AdhocWorkspace();
+```
+
+Another type `Formatter` cannot be found which resolve by importing `Microsoft.CodeAnalysis.CSharp.Workspaces`.
+
+Credit to [this link](https://github.com/dotnet/roslyn/tree/master/src/Workspaces/CSharp/Portable/Formatting)
+
+Finally the first working code look like this:
+
+```cs
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Formatting;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.Formatting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var consoleWriteLine = SyntaxFactory.MemberAccessExpression(
+      SyntaxKind.SimpleMemberAccessExpression,
+      SyntaxFactory.IdentifierName("Console"),
+      name: SyntaxFactory.IdentifierName("WriteLine"));
+
+            var arguments = SyntaxFactory.ArgumentList(
+                SyntaxFactory.SeparatedList(
+                    new[]
+                    {
+              SyntaxFactory.Argument (
+                  SyntaxFactory.LiteralExpression (
+                      SyntaxKind.StringLiteralExpression,
+                      SyntaxFactory.Literal (@"""Goodbye everyone!""", "Goodbye everyone!")))
+                    }));
+
+            var consoleWriteLineStatement = SyntaxFactory.ExpressionStatement(SyntaxFactory.InvocationExpression(consoleWriteLine, arguments));
+
+            var voidType = SyntaxFactory.ParseTypeName("void");
+            var method = SyntaxFactory.MethodDeclaration(voidType, "Method").WithBody(SyntaxFactory.Block(consoleWriteLineStatement));
+
+            var intType = SyntaxFactory.ParseTypeName("int");
+            var getterBody = SyntaxFactory.ReturnStatement(SyntaxFactory.DefaultExpression(intType));
+            var getter = SyntaxFactory.AccessorDeclaration(SyntaxKind.GetAccessorDeclaration, SyntaxFactory.Block(getterBody));
+            var property = SyntaxFactory.PropertyDeclaration(intType, "Property").WithAccessorList(SyntaxFactory.AccessorList(SyntaxFactory.SingletonList(getter)));
+
+            var @class = SyntaxFactory.ClassDeclaration("MyClass").WithMembers(SyntaxFactory.List(new MemberDeclarationSyntax[] { method, property }));
+
+            var cw = new AdhocWorkspace();
+            cw.Options.WithChangedOption(CSharpFormattingOptions.IndentBraces, true);
+            var formattedCode = Formatter.Format(@class, cw);
+
+            Console.WriteLine(formattedCode.ToFullString());
+        }
+    }
+}
+```
+
+## 2016-6-12
+
+### Prefix spaces for each line in a string
+
+My code generator requires to generate code with right indentation, so I need to prefix spaces for
+each line of a string. After google the world, there isn't a out-of-box solution for me to use,
+finally I came up with my own solution:
+
+```cs
+internal static string Indent(this string content, int level = 1) => string.Join(Environment.NewLine, content
+    .Split(new[] { "\r\n" }, StringSplitOptions.None)
+    .Select(_ => $"{(_ == string.Empty ? string.Empty : new string(' ', level * 4))}{_}")
+    .ToArray());
+```
+
+Usage like this:
+
+```cs
+var result = str.Indent();
+```
+
+### Ternary(?:) condition returning method(delegate) not compile.
+
+I'm facing the same situation like [this link](http://stackoverflow.com/q/6015747/2558077).
+
+Here is the reproductive code with solution:
+
+```cs
+private static void Test()
+{
+    var c = true;
+
+    // The following line provokes a compiler error:
+    // "Type of conditional expression cannot be determined because there is 
+    // no implicit conversion between 'method group' and 'method group".
+    //var d = c ? a : b;
+
+    // Instead, following code work as expected.
+    var d = c ? (Func<bool>)a : b;
+}
+
+private static bool a()
+{
+    return true;
+}
+
+private static bool b()
+{
+    return false;
+}
+```
+
+However, before I got this simple solution, I worked on another solution and find out it gain better
+visibility and maintainability.
+
+Take a look:
+
+```cs
+var genDict = new Dictionary<ClassTypeEnum, Func<string, string, string>>
+{
+    [ClassTypeEnum.FirstLevel] = GenFirstLevelClass,
+    [ClassTypeEnum.Array] = GenArrayClass,
+    [ClassTypeEnum.Standard] = GenStandardClass,
+};
+var genType = isFirstLevelClass ? ClassTypeEnum.FirstLevel : (isArrayClass ? ClassTypeEnum.Array : ClassTypeEnum.Standard);
+output += genDict[genType](classname, content).Indent();
+```
+
+The signature of `GenFirstLevelClass`, `GenArrayClass` and `GenStandardClass` are like following:
+
+```cs
+private static string GenStandardClass(string classname, string content)
+```
+
+Here is the version which workaround this issue.
+
+```cs
+var gen = isFirstLevelClass ? GenFirstLevelClass : (isArrayClass ? GenArrayClass : (Func<string, string, string>)GenStandardClass);
+output += gen(classname, content).Indent();
+```
+
+How do you think?
 
 ## 2016-6-10
 
