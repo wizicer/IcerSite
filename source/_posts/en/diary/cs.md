@@ -34,7 +34,7 @@ Another type `Formatter` cannot be found which resolve by importing `Microsoft.C
 
 Credit to [this link](https://github.com/dotnet/roslyn/tree/master/src/Workspaces/CSharp/Portable/Formatting)
 
-Finally the first working code look like this:
+Finally the first working code look like this (with little refactoring):
 
 ```cs
 using Microsoft.CodeAnalysis;
@@ -47,6 +47,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace ConsoleApplication1
 {
@@ -54,33 +55,30 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            var consoleWriteLine = SyntaxFactory.MemberAccessExpression(
-      SyntaxKind.SimpleMemberAccessExpression,
-      SyntaxFactory.IdentifierName("Console"),
-      name: SyntaxFactory.IdentifierName("WriteLine"));
+            var consoleWriteLine = MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, IdentifierName("Console"), name: IdentifierName("WriteLine"));
 
-            var arguments = SyntaxFactory.ArgumentList(
-                SyntaxFactory.SeparatedList(
+            var arguments = ArgumentList(
+                SeparatedList(
                     new[]
                     {
-              SyntaxFactory.Argument (
-                  SyntaxFactory.LiteralExpression (
-                      SyntaxKind.StringLiteralExpression,
-                      SyntaxFactory.Literal (@"""Goodbye everyone!""", "Goodbye everyone!")))
+                        Argument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal(@"""Goodbye everyone!""", "Goodbye everyone!")))
                     }));
 
-            var consoleWriteLineStatement = SyntaxFactory.ExpressionStatement(SyntaxFactory.InvocationExpression(consoleWriteLine, arguments));
+            var consoleWriteLineStatement = ExpressionStatement(InvocationExpression(consoleWriteLine, arguments));
 
-            var voidType = SyntaxFactory.ParseTypeName("void");
-            var method = SyntaxFactory.MethodDeclaration(voidType, "Method").WithBody(SyntaxFactory.Block(consoleWriteLineStatement));
+            var voidType = PredefinedType(Token(SyntaxKind.VoidKeyword));
 
-            var intType = SyntaxFactory.ParseTypeName("int");
-            var getterBody = SyntaxFactory.ReturnStatement(SyntaxFactory.DefaultExpression(intType));
-            var getter = SyntaxFactory.AccessorDeclaration(SyntaxKind.GetAccessorDeclaration, SyntaxFactory.Block(getterBody));
-            var property = SyntaxFactory.PropertyDeclaration(intType, "Property").WithAccessorList(SyntaxFactory.AccessorList(SyntaxFactory.SingletonList(getter)));
+            var intType = PredefinedType(Token(SyntaxKind.IntKeyword));
+            var getterBody = ReturnStatement(DefaultExpression(intType));
+            var getter = AccessorDeclaration(SyntaxKind.GetAccessorDeclaration, Block(getterBody));
 
-            var @class = SyntaxFactory.ClassDeclaration("MyClass").WithMembers(SyntaxFactory.List(new MemberDeclarationSyntax[] { method, property }));
+            var @class = ClassDeclaration("MyClass")
+                .AddMembers(MethodDeclaration(voidType, "Method")
+                    .WithBody(Block(consoleWriteLineStatement)))
+                .AddMembers(PropertyDeclaration(intType, "Property")
+                    .WithAccessorList(AccessorList(SingletonList(getter))));
 
+            // generate code
             var cw = new AdhocWorkspace();
             cw.Options.WithChangedOption(CSharpFormattingOptions.IndentBraces, true);
             var formattedCode = Formatter.Format(@class, cw);
@@ -88,8 +86,25 @@ namespace ConsoleApplication1
             Console.WriteLine(formattedCode.ToFullString());
         }
     }
+
 }
 ```
+
+It's really verbose, if I convert my generator code to something like this, the visibility and
+maintainability must be dropped so much that I cannot afford. Here is a very great
+[article](http://blog.comealive.io/Syntax-Factory-Vs-Parse-Text/) compared Roslyn Syntaxfactory with
+ParseText. For TL;DRs, here is the conclusion:
+
+> * When convenience and ease of maintenance is relatively most important, use ParseText
+> * To be certain about the generated tree structure - use SyntaxFactory
+> * To generate just one expression - SyntaxFactory for precision and correct type, and because
+>   ParseText may have too little context to identify tokens and nodes in an isolated line of code.
+>   SyntaxFactory.ParseExpression may also be used to parse an individual line of code.
+> * To interpret arbitrary C# file - use ParseText
+> * To interpret arbitrary string and build just one expression - use SyntaxFactory.ParseExpression or
+>   use ParseText with CSharpParseOptions.WithKind(SourceCodeKind.Script).
+
+For my case, I choose to use ParseText.
 
 ## 2016-6-12
 
