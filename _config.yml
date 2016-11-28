@@ -1,8 +1,6 @@
-markdown: rdiscount
-highlighter: pygments
+markdown: kramdown
 permalink: /:year/:month/:day/:title.html
 name: "rusty shutter"
-markdown: rdiscount
 
 author: "wayne"
 atom-baseurl: "http://lhzhang.com"
