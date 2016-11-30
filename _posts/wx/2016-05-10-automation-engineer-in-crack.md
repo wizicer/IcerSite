@@ -1,4 +1,5 @@
-﻿title: 夹缝中的工控软件人
+﻿---
+title: 夹缝中的工控软件人
 tags:
 - 微信
 categories:

@@ -1,13 +1,14 @@
+---
 title: 冰河专用考研日程计划执行器
 tags:
 - 时间管理
 - 客户端
 categories:
-- 作品
+- program
 date: 2009-11-2
 ---
 
-{% asset_img classalerter.png %}
+![](classalerter.png)
 下载地址:[alerter.rar](download/alerter.rar)
 
 # 软件介绍

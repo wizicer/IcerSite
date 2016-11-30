@@ -3,7 +3,6 @@ title: 低清晰度下的头像处理比较
 tags:
 - 论文
 categories:
-- p
 - childhoods
 date: 2007-8-30
 ---

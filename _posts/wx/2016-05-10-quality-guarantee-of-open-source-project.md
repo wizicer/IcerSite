@@ -1,4 +1,5 @@
-﻿title: 开源项目是如何保证质量的？
+﻿---
+title: 开源项目是如何保证质量的？
 tags:
 - 微信
 categories:

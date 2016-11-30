@@ -1,6 +1,6 @@
 markdown: kramdown
 highlighter: rouge
-permalink: /:categories/:title/
+permalink: /p/:categories/:title/
 name: "冰河小站"
 
 author: "冰河魔法师"

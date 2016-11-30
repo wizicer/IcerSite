@@ -1,25 +1,26 @@
+---
 title: 和平世界
 tags:
 - 游戏
 - 服务器
 categories:
-- 作品
+- program
 date: 2008-6-2
 ---
 
 登陆界面
 -----------------
 
-{% asset_img pwlogin.jpg %}
+![](pwlogin.jpg)
 
 宣传册
 -----------------
 
-{% asset_img 1.jpg %}
-{% asset_img 2.jpg %}
+![](1.jpg)
+![](2.jpg)
 
-{% asset_img 3.jpg %}
-{% asset_img 4.jpg %}
+![](3.jpg)
+![](4.jpg)
 
 产品文档
 -----------------
