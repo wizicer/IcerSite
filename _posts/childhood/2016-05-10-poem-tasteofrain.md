@@ -3,7 +3,7 @@ title: 下雨的味道
 tags:
 - 诗歌
 categories:
-- 小时候
+- childhoods
 date: 2009-8-23
 ---
 

@@ -3,7 +3,7 @@ title: 第一百零一次初恋[前篇]
 tags:
 - 小说
 categories:
-- 小时候
+- childhoods
 date: 2006-9-2
 ---
 

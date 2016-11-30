@@ -3,7 +3,7 @@ title: 你在哪儿啊，姐姐
 tags:
 - 诗歌
 categories:
-- 小时候
+- childhoods
 date: 2002-6-2
 ---
 

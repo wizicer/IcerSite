@@ -3,7 +3,7 @@ title: 追逐
 tags:
 - 诗歌
 categories:
-- 小时候
+- childhoods
 date: 2005-10-2
 ---
 

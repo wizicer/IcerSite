@@ -3,7 +3,7 @@ title: 执着·远去的少年
 tags:
 - 诗歌
 categories:
-- 小时候
+- childhoods
 date: 2003-9-2
 ---
 

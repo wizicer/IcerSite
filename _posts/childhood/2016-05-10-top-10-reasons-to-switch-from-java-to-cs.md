@@ -3,7 +3,7 @@ title: 从Java转到C#的十个重要原因
 tags:
 - C#
 categories:
-- 小时候
+- childhoods
 date: 2006-8-15
 ---
 
