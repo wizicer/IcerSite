@@ -7,8 +7,6 @@ categories:
 date: 2006-8-15
 ---
 
-> *老文章预警：注意看日期，这个是非常古老的文章，里面提到的东西可能会过于幼稚或已经过时，请注意分辨。*
-
 * 原作：Will Wagers
 * 原文：<http://www.csharphelp.com/archives4/archive664.html>
 * 翻译：冰河魔法师 - ~~C\#代码中心[CCSharp.Net]~~

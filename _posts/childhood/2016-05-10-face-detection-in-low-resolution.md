@@ -7,8 +7,6 @@ categories:
 date: 2007-8-30
 ---
 
-> *老文章预警：注意看日期，这个是非常古老的文章，里面提到的东西可能会过于幼稚或已经过时，请注意分辨。*
-
 ![](face-detection-01.jpg)
 ![](face-detection-02.jpg)
 ![](face-detection-03.jpg)
