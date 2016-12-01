@@ -40,34 +40,34 @@ behavior should be rename the page.
 
 ## Framework Components
 
-* [body-parser]: middleware to parse body of http request，not support multipart bodies (used in
+* [body-parser] : middleware to parse body of http request，not support multipart bodies (used in
   upload file). One of you must have component in server development. Recently, I prefer using
   [busboy].
-* [serve-static]: easy to understand by its name, serve static files in server. It used to serve
+* [serve-static] : easy to understand by its name, serve static files in server. It used to serve
   image and style files.
-* [react]: very famous UI framework maintained by Facebook, it acts as View in MVC architecture.
-* [react-router]: router library for react, it acts as Controller in MVC architecture.
+* [react] : very famous UI framework maintained by Facebook, it acts as View in MVC architecture.
+* [react-router] : router library for react, it acts as Controller in MVC architecture.
 
 ## Basic Components
 
-* [es6-promise]: lightweight library for organizing asynchronous, with its help, you can write
+* [es6-promise] : lightweight library for organizing asynchronous, with its help, you can write
   asynchronous code like writing synchronous code.
-* [lodash]: a library like [underscore] with more function，the basic usage is same.
-* [lodash]: 比[underscore]功能更加丰富的库，基本使用方法都是一样的，顾名思义也知道这个是后出来希望替代其前辈的基本类库，主要是为js带来一系列函数式编程体验的扩展方法。
-* [marked]: 一个markdown解析库，自称效率极高。
+* [lodash] : a library like [underscore] with more function，the basic usage is same.
+* [lodash] : 比[underscore]功能更加丰富的库，基本使用方法都是一样的，顾名思义也知道这个是后出来希望替代其前辈的基本类库，主要是为js带来一系列函数式编程体验的扩展方法。
+* [marked] : 一个markdown解析库，自称效率极高。
 
 ## Special Components
 
-* [moment]: 功能丰富的用于操作日期时间的库，可以方便的将时间转换成适合人类阅读的样式（例如：30分钟前）。
-* [code-mirror]: 非常著名的在线代码编辑器，在本程序中主要用于markdown的高亮。需要注意的是在npm上面，该组件已经更名为[codemirror]。
-* [superagent]: 使用流式接口(Fluent API)的优雅且功能丰富的HTTP操作（Ajax）组件。
-* [superagent-browserify]: 使得superagent可以和[browserify]一起工作的封装。
-* [reactify]: 使得转换JSX的功能（主要用在React框架中的一种文件格式）可以和[browserify]一起工作的封装，本工程中主要用于制作demo站点。
+* [moment] : 功能丰富的用于操作日期时间的库，可以方便的将时间转换成适合人类阅读的样式（例如：30分钟前）。
+* [code-mirror] : 非常著名的在线代码编辑器，在本程序中主要用于markdown的高亮。需要注意的是在npm上面，该组件已经更名为[codemirror]。
+* [superagent] : 使用流式接口(Fluent API)的优雅且功能丰富的HTTP操作（Ajax）组件。
+* [superagent-browserify] : 使得superagent可以和[browserify]一起工作的封装。
+* [reactify] : 使得转换JSX的功能（主要用在React框架中的一种文件格式）可以和[browserify]一起工作的封装，本工程中主要用于制作demo站点。
 
 ## Style
 
-* [normalize.css]: 初始化页面样式的基础样式，专为HTML5优化
-* [font-awesome]: 极其丰富且易用的图标集
+* [normalize.css] : 初始化页面样式的基础样式，专为HTML5优化
+* [font-awesome] : 极其丰富且易用的图标集
 * Font：[OpenSans]，[Inconsolata]
 
 ## Other Components

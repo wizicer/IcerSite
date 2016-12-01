@@ -27,27 +27,27 @@ date: 2015-02-23
 # 依赖情况
 
 ## 框架组件
-* [body-parser]: 用于解析http请求的正文(body)部分的中间件，不支持multipart的正文（主要用作上传文件使用）。server中必备组件之一，这类型的组件，最近我倾向于使用[busboy]。
-* [serve-static]: 顾名思义，用于伺服静态文件的组件。在本程序中主要是伺服图片样式等静态文件。
-* [react]: facebook出的一种UI框架，所以通常会是MVC中的V部分
-* [react-router]: 专为react设计的路由库，和react合并使用，成为MVC中的C部分
+* [body-parser] : 用于解析http请求的正文(body)部分的中间件，不支持multipart的正文（主要用作上传文件使用）。server中必备组件之一，这类型的组件，最近我倾向于使用[busboy]。
+* [serve-static] : 顾名思义，用于伺服静态文件的组件。在本程序中主要是伺服图片样式等静态文件。
+* [react] : facebook出的一种UI框架，所以通常会是MVC中的V部分
+* [react-router] : 专为react设计的路由库，和react合并使用，成为MVC中的C部分
 
 ## 基本组件
-* [es6-promise]: 轻量级的异步代码管理组件，将异步执行的代码拥有同步代码的阅读体验。
-* [lodash]: 比[underscore]功能更加丰富的库，基本使用方法都是一样的，顾名思义也知道这个是后出来希望替代其前辈的基本类库，主要是为js带来一系列函数式编程体验的扩展方法。
-* [marked]: 一个markdown解析库，自称效率极高。
+* [es6-promise] : 轻量级的异步代码管理组件，将异步执行的代码拥有同步代码的阅读体验。
+* [lodash] : 比[underscore]功能更加丰富的库，基本使用方法都是一样的，顾名思义也知道这个是后出来希望替代其前辈的基本类库，主要是为js带来一系列函数式编程体验的扩展方法。
+* [marked] : 一个markdown解析库，自称效率极高。
 
 ## 点睛组件
-* [moment]: 功能丰富的用于操作日期时间的库，可以方便的将时间转换成适合人类阅读的样式（例如：30分钟前）。
-* [code-mirror]: 非常著名的在线代码编辑器，在本程序中主要用于markdown的高亮。需要注意的是在npm上面，该组件已经更名为[codemirror]。
-* [superagent]: 使用流式接口(Fluent API)的优雅且功能丰富的HTTP操作（Ajax）组件。
-* [superagent-browserify]: 使得superagent可以和[browserify]一起工作的封装。
-* [reactify]: 使得转换JSX的功能（主要用在React框架中的一种文件格式）可以和[browserify]一起工作的封装，本工程中主要用于制作demo站点。
+* [moment] : 功能丰富的用于操作日期时间的库，可以方便的将时间转换成适合人类阅读的样式（例如：30分钟前）。
+* [code-mirror] : 非常著名的在线代码编辑器，在本程序中主要用于markdown的高亮。需要注意的是在npm上面，该组件已经更名为[codemirror]。
+* [superagent] : 使用流式接口(Fluent API)的优雅且功能丰富的HTTP操作（Ajax）组件。
+* [superagent-browserify] : 使得superagent可以和[browserify]一起工作的封装。
+* [reactify] : 使得转换JSX的功能（主要用在React框架中的一种文件格式）可以和[browserify]一起工作的封装，本工程中主要用于制作demo站点。
 
 ## 样式组件
 
-* [normalize.css]: 初始化页面样式的基础样式，专为HTML5优化
-* [font-awesome]: 极其丰富且易用的图标集
+* [normalize.css] : 初始化页面样式的基础样式，专为HTML5优化
+* [font-awesome] : 极其丰富且易用的图标集
 * 字体：[OpenSans]，[Inconsolata]
 
 ## 其他组件
