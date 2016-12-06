@@ -1,12 +1,22 @@
 markdown: kramdown
 highlighter: rouge
-permalink: none
+permalink: /p/:categories/:title/
 name: "冰河小站"
 
 author: "冰河魔法师"
 atom-baseurl: "http://blog.wizicer.com"
 
 la51_analytics: 17278963
+oldarticlenotice:
+  formeryear: 2009
+  birthyear: 1986
+
+defaults:
+  -
+    scope:
+      path: "_posts"
+    values:
+      layout: "post"
 
 navigations:
   - title: Archive
