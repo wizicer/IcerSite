@@ -28,10 +28,8 @@ $link-hover-color: #AD3B61;
   @include min-screen(800px) { width: 750px; }
 }
 
-* { margin: 0; padding: 0; }
 body { font-size: 14px; font-family: #{$font}; color: #555; background-color: $background-color; -webkit-font-smoothing: antialiased; }
 ol, ul { list-style-position: inside; }
-li { padding: .2em 0; }
 hr { width: 4em; border: none; border-top: 1px dashed #d0d0d0; border-bottom: 1px dashed #f9f9f9; }
 .center { text-align: center; }
 ::selection { color: #fff; background-color: #333; }
@@ -78,6 +76,8 @@ header {
 }
 
 ul.listing {
+  margin: 0;
+  padding: 0;
   margin-top: 1em;
   li {
     list-style-type:none;
@@ -103,7 +103,17 @@ article {
     .tags a { @extend a; color: #999999; padding: .25em; }
   }
 
-  .post { img { max-width: 100%; display: block; margin: .5em auto; } }
+  .post { 
+    img { max-width: 100%; display: block; margin: .5em auto; }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      th, td {
+        border: 1px solid black;
+        padding: 0px 10px;
+      }
+    }
+  }
 
   .comment { margin: 3em 0; }
   .divider {
