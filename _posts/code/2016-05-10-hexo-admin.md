@@ -4,6 +4,8 @@ tags:
 - Hexo
 - JS
 - 视频
+lang: zh
+ref: hexo-admin
 categories:
 - 源代码分析
 date: 2015-02-23

@@ -2,6 +2,8 @@
 title: about
 layout: page
 permalink: about.html
+ref: index
+lang: en
 ---
 
 a

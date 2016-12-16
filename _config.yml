@@ -14,9 +14,10 @@ oldarticlenotice:
 defaults:
   -
     scope:
-      path: "_posts"
+      type: "posts"
     values:
       layout: "post"
+      lang: "zh"
 
 navigations:
   - title: Archive

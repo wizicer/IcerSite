@@ -239,4 +239,7 @@ footer {
   .like-wrapper .like-button.liked:hover {
     color: #999; }
 
+.en:lang(en), .jp:lang(jp), .zh:lang(zh) {
+  font-weight: bold; }
+
 /*# sourceMappingURL=style.css.map */

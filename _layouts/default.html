@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html lang="{{page.lang}}">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="{{ site.author }}" />
@@ -27,6 +27,7 @@
           {% for nav in site.navigations %}
           <span><a title="{{ nav.title }}" href="{{ nav.href }}"><i class="{{ nav.class }}"></i></a></span>
           {% endfor %}
+          {% include navlang.html %}
         </nav>
       </header>
       <div id="content">

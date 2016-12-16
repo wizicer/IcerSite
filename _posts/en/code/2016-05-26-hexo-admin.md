@@ -3,6 +3,8 @@ title: hexo-admin - An Admin Interface for Hexo[JS]
 tags:
 - Hexo
 - JS
+lang: en
+ref: hexo-admin
 categories:
 - Code Analysis
 date: 2015-05-27

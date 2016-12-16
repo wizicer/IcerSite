@@ -1,0 +1,25 @@
+{% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
+{% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
+{% assign indexpages=site.pages | where:"ref", "index" | sort: 'lang' %}
+{% assign tt = posts.size + pages.length %}
+
+<span>|</span>
+{% if tt > 0 %}
+    {% for post in posts %}
+    <span>
+        <a href="{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}</a>
+    </span>
+    {% endfor %}
+
+    {% for page in pages %}
+    <span>
+        <a href="{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a>
+    </span>
+    {% endfor %}
+{% else %}
+    {% for page in indexpages %}
+    <span>
+        <a href="{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a>
+    </span>
+    {% endfor %}
+{% endif %}
