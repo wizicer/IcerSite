@@ -10,6 +10,14 @@
     <title>{{ site.data.t[page.lang].title }}</title>
     {% endif %}
     <link rel="shortcut icon" href="/favicon.ico">
+    {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
+    {% for post in posts %}
+      <link rel="alternate" hreflang="{{ post.lang }}" href="{{ post.url }}" />
+    {% endfor %}
+    {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
+    {% for page in pages %}
+      <link rel="alternate" hreflang="{{ page.lang }}" href="{{ page.url }}" />
+    {% endfor %}
     <link href="/atom.xml" rel="alternate" title="{{ site.data.t[page.lang].title }}" type="application/atom+xml" />
     <link rel="stylesheet" href="/media/3rd/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/media/css/style.css">
