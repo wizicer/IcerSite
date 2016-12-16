@@ -1,0 +1,10 @@
+<div>
+  <div class="divider"></div>
+  <ul class="listing main-listing">
+    <li class="listing-seperator">{{ site.data.t[page.lang].recentarticle }}</li>
+  {% for post in site.posts limit: 5 %}
+  {% include postitem.html post=post %}
+  {% endfor %}
+    <li class="listing-seperator"><a href="/archive.html">{{ site.data.t[page.lang].archivelink }}</a></li>
+  </ul>
+</div>

@@ -82,7 +82,17 @@ ul.listing {
   li {
     list-style-type:none;
     padding: 0;
-    &.listing-item { a { padding: .2em 0 .2em 2em; } time { color: #999; } &:hover { background-color: #f9f9f9; } }
+    &.listing-item {
+      a { padding: .2em 0 .2em 2em; }
+      time { color: #999; }
+      &:hover { background-color: #f9f9f9; }
+      .language {
+        border-radius: 3px;
+        background: #bbb;
+        padding: 1px 4px;
+        font-size: smaller;
+      }
+    }
     &.listing-seperator { font-family: #{$label-font}; &:before { content: "⭠ "; color: #ccc; } }
   }
 }

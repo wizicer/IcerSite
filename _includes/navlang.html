@@ -1,10 +1,9 @@
 {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
 {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
-{% assign indexpages=site.pages | where:"ref", "index" | sort: 'lang' %}
-{% assign tt = posts.size + pages.length %}
+{% assign tt = posts.size | plus: pages.size %}
 
 <span>|</span>
-{% if tt > 0 %}
+{% if tt > 1 %}
     {% for post in posts %}
     <span>
         <a href="{{ post.url }}" class="{{ post.lang }}">{{ site.data.t[page.lang].langname }}</a>
@@ -17,6 +16,7 @@
     </span>
     {% endfor %}
 {% else %}
+    {% assign indexpages=site.pages | where:"ref", "index" | sort: 'lang' %}
     {% for page in indexpages %}
     <span>
         <a href="{{ page.url }}" class="{{ page.lang }}">{{ site.data.t[page.lang].langname }}</a>

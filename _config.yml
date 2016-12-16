@@ -11,7 +11,14 @@ oldarticlenotice:
   formeryear: 2009
   birthyear: 1986
 
+include: ['_pages']
+
 defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
   -
     scope:
       type: "posts"

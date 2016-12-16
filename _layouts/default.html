@@ -32,8 +32,8 @@
           <h1><a title="{{ site.data.t[page.lang].title }}" class="" href="/">{{ site.data.t[page.lang].title }}</a></h1>
         </div>
         <nav>
-          {% for nav in site.navigations %}
-          <span><a title="{{ site.data.t[page.lang].navigations[nav.title] }}" href="{{ nav.href }}"><i class="{{ nav.class }}"></i></a></span>
+          {% for nav in site.data.t[page.lang].navigations %}
+          <span><a title="{{ nav.title }}" href="{{ nav.href }}"><i class="{{ nav.class }}"></i></a></span>
           {% endfor %}
           {% include navlang.html %}
         </nav>
@@ -44,7 +44,7 @@
       <footer>
         <div>
           {% assign first_post = site.posts | last %}
-          &copy; {{ first_post.date | date: "%Y" }} ~ {{ site.time | date: "%Y" }} {{ site.author }} | powered by jekyll | theme based on <a href="http://lhzhang.com" title="sext vi">sext vi</a>
+          &copy; {{ first_post.date | date: "%Y" }} ~ {{ site.time | date: "%Y" }} {{ site.data.t[page.lang].author }} | {{ site.data.t[page.lang].footer.poweredby }} jekyll | {{ site.data.t[page.lang].footer.themedby }} <a href="http://lhzhang.com" title="sext vi">sext vi</a>
         </div>
       </footer>
     </div> <!-- main -->

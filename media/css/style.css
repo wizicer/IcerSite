@@ -130,6 +130,11 @@ ul.listing {
       color: #999; }
     ul.listing li.listing-item:hover {
       background-color: #f9f9f9; }
+    ul.listing li.listing-item .language {
+      border-radius: 3px;
+      background: #bbb;
+      padding: 1px 4px;
+      font-size: smaller; }
     ul.listing li.listing-seperator {
       font-family: Hiragino Sans GB, Microsoft YaHei, sans-serif; }
       ul.listing li.listing-seperator:before {

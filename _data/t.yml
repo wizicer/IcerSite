@@ -1,31 +1,65 @@
 zh:
+  langname: 中
   title: 冰河小站
   description: Écrivez une super description de votre nouveau site ici. Vous pouvez modifier cette ligne dans _config.yml. Elle apparaîtra dans la balise meta description (pour les résultats sur Google) et dans le fil RSS feed.xml.
   index: about.html
   author: 冰河魔法师
   navigations:
-    Archive: 存档
-    Tags: 标签
-    About: 关于
-    Gallery: 摄影
-    Subscribe: 订阅
+    - title: 存档
+      class: fa fa-list-ul
+      href: /archive.html
+    - title: 标签
+      class: fa fa-tags
+      href: /tags.html
+    - title: 关于
+      class: fa fa-user
+      href: /about.html
+    - title: 摄影
+      class: fa fa-film
+      href: http://hiyaphoto.com
+    - title: 订阅
+      class: fa fa-rss
+      href: /atom.xml
   oldarticlenotice:
     part1: 老文章预警：该文写于作者
     part2: 岁，里面提到的东西可能会过于幼稚或已经过时，请注意分辨。
-  langname: 中
+  recentarticle: 最近的文章
+  archivelink: 过去的存档
+  footer:
+    poweredby: 本博客使用
+    themedby: 主题基于
+  postlanguagetip:
+    en: 英文
 en:
+  langname: en
   title: WizIcer's blog
   description: Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
   index:
   author: WizIcer
   navigations:
-    Archive: Archive
-    Tags: Tags
-    About: About
-    Gallery: Gallery
-    Subscribe: Subscribe
+    - title: Archive
+      class: fa fa-list-ul
+      href: /archive-en.html
+    - title: Tags
+      class: fa fa-tags
+      href: /tags-en.html
+    - title: About
+      class: fa fa-user
+      href: /about-en.html
+    - title: Gallery
+      class: fa fa-film
+      href: http://hiyaphoto.com
+    - title: Subscribe
+      class: fa fa-rss
+      href: /atom.xml
   oldarticlenotice:
     part1: Old Article Notice：this article written by author when he is 
     part2:  years old, something inside may already out of date.
-  langname: en
+  recentarticle: Recent Articles
+  archivelink: Old Articles
+  footer:
+    poweredby: powered by
+    themedby: theme based on
+  postlanguagetip:
+    zh: Chinese
 
