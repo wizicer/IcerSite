@@ -4,7 +4,7 @@ layout: default
 
 <article>
   <section class="title">
-    <h2>{{ page.title }} </h2>
+    <h2>{{ page.title }}</h2>
   </section>
   <section class="meta">
   <span class="time">
@@ -22,7 +22,7 @@ layout: default
   {% if site.oldarticlenotice and year < site.oldarticlenotice.formeryear %}
   <section class="notice">
     <blockquote>
-      <p><em>老文章预警：该文写于作者{{ year | minus: site.oldarticlenotice.birthyear }}岁，里面提到的东西可能会过于幼稚或已经过时，请注意分辨。</em></p>
+      <p><em>{{ site.data.t[page.lang].oldarticlenotice.part1 }}{{ year | minus: site.oldarticlenotice.birthyear }}{{ site.data.t[page.lang].oldarticlenotice.part1 }}</em></p>
     </blockquote>
   </section>
   {% endif %}

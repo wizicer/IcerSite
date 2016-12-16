@@ -11,12 +11,20 @@ oldarticlenotice:
   formeryear: 2009
   birthyear: 1986
 
+include: ['_pages']
+
 defaults:
   -
     scope:
-      path: "_posts"
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      type: "posts"
     values:
       layout: "post"
+      lang: "zh"
 
 navigations:
   - title: Archive
