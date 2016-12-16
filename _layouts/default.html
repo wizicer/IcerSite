@@ -2,15 +2,15 @@
 <html lang="{{page.lang}}">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="author" content="{{ site.author }}" />
+    <meta name="author" content="{{ site.data.t[page.lang].author }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     {% if page.title %}
     <title>{{ page.title }}</title>
     {% else %}
-    <title>{{ site.name }}</title>
+    <title>{{ site.data.t[page.lang].title }}</title>
     {% endif %}
     <link rel="shortcut icon" href="/favicon.ico">
-    <link href="/atom.xml" rel="alternate" title="{{ site.name }}" type="application/atom+xml" />
+    <link href="/atom.xml" rel="alternate" title="{{ site.data.t[page.lang].title }}" type="application/atom+xml" />
     <link rel="stylesheet" href="/media/3rd/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/media/css/style.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
@@ -21,11 +21,11 @@
     <div id="main" role="main">
       <header>
         <div id="header">
-          <h1><a title="{{ site.name }}" class="" href="/">{{ site.name }}</a></h1>
+          <h1><a title="{{ site.data.t[page.lang].title }}" class="" href="/">{{ site.data.t[page.lang].title }}</a></h1>
         </div>
         <nav>
           {% for nav in site.navigations %}
-          <span><a title="{{ nav.title }}" href="{{ nav.href }}"><i class="{{ nav.class }}"></i></a></span>
+          <span><a title="{{ site.data.t[page.lang].navigations[nav.title] }}" href="{{ nav.href }}"><i class="{{ nav.class }}"></i></a></span>
           {% endfor %}
           {% include navlang.html %}
         </nav>

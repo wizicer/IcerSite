@@ -7,19 +7,19 @@
 {% if tt > 0 %}
     {% for post in posts %}
     <span>
-        <a href="{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}</a>
+        <a href="{{ post.url }}" class="{{ post.lang }}">{{ site.data.t[page.lang].langname }}</a>
     </span>
     {% endfor %}
 
     {% for page in pages %}
     <span>
-        <a href="{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a>
+        <a href="{{ page.url }}" class="{{ page.lang }}">{{ site.data.t[page.lang].langname }}</a>
     </span>
     {% endfor %}
 {% else %}
     {% for page in indexpages %}
     <span>
-        <a href="{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a>
+        <a href="{{ page.url }}" class="{{ page.lang }}">{{ site.data.t[page.lang].langname }}</a>
     </span>
     {% endfor %}
 {% endif %}
