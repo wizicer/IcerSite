@@ -32,8 +32,8 @@
           <h1><a title="{{ site.data.t[page.lang].title }}" class="" href="/">{{ site.data.t[page.lang].title }}</a></h1>
         </div>
         <nav>
-          {% for nav in site.data.t[page.lang].navigations %}
-          <span><a title="{{ nav.title }}" href="{{ nav.href }}"><i class="{{ nav.class }}"></i></a></span>
+          {% for nav in site.data.t[page.lang].navigations %}{% assign http = nav.href | slice: 0, 4 %}
+            <span><a title="{{ nav.title }}" href="{{ nav.href }}"{% if http == "http" %} target="_blank"{% endif %}><i class="{{ nav.class }}"></i></a></span>
           {% endfor %}
           {% include navlang.html %}
         </nav>
