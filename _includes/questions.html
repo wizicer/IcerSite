@@ -1,0 +1,11 @@
+<ul class="listing">
+{% for question in site.questions %}
+  {% capture y %}{{question.date | date:"%Y"}}{% endcapture %}
+  {% if year != y %}
+    {% assign year = y %}
+    <li class="listing-seperator">{{ y }}</li>
+  {% endif %}
+  {% include questionitem.html question=question %}
+{% endfor %}
+</ul>
+

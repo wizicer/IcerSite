@@ -8,15 +8,15 @@ zh:
     - title: 存档
       class: fa fa-list-ul
       href: /archive.html
-    - title: 标签
-      class: fa fa-tags
-      href: /tags.html
+    - title: 问答
+      class: fa fa-question
+      href: /questions.html
     - title: 关于
       class: fa fa-user
       href: /about.html
-    - title: 摄影
+    - title: 项目
       class: fa fa-film
-      href: http://hiyaphoto.com
+      href: /projects.html
     - title: 订阅
       class: fa fa-rss
       href: /atom.xml
@@ -40,15 +40,15 @@ en:
     - title: Archive
       class: fa fa-list-ul
       href: /archive-en.html
-    - title: Tags
-      class: fa fa-tags
-      href: /tags-en.html
+    - title: Questions
+      class: fa fa-question
+      href: /questions-en.html
     - title: About
       class: fa fa-user
       href: /about-en.html
-    - title: Gallery
+    - title: Project
       class: fa fa-film
-      href: http://hiyaphoto.com
+      href: /projects-en.html
     - title: Subscribe
       class: fa fa-rss
       href: /atom.xml
