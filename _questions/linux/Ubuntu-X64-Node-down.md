@@ -3,6 +3,10 @@ title: Ubuntu X64 Node down?
 date: 2016-5-9
 ---
 
+Just restart
+
+<!--more-->
+
 **Situation:** 
 
 Up for more than 150 days in Hyper-V Virtual machine, Memory up to 2300M, however, no process

@@ -27,7 +27,15 @@ layout: default
   </section>
   {% endif %}
   <section class="post">
-  {{ content }}
+{% if content contains '<!--more-->' %}
+For TL;DR:
+  {{ content | split:'<!--more-->' | first }}
+
+Long Version:
+  {{ content | split:'<!--more-->' | last }}
+{% else %}
+  {{content}}
+{% endif %}
   </section>
   <div class="divider">
     <span>
