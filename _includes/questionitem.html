@@ -1,15 +1,15 @@
-<li class="listing-item">
-  <time datetime="{{ question.date | date:"%Y-%m-%d" }}">{{ question.date | date:"%Y-%m-%d" }}</time>
-  <a href="{{ question.url }}" title="{{ question.title }}"{% if question.lang != page.lang %} lang="{{ question.lang }}"{% endif %}>{{ question.title }}</a>
-  {% if site.data.t[page.lang].postlanguagetip[question.lang] %}
-  <span class='language'>{{ site.data.t[page.lang].postlanguagetip[question.lang] }}</span>
-  {% endif %}
-  <div>
-{% if question.content contains '<!--more-->' %}
-  {{ question.content | split:'<!--more-->' | first }}
-{% elsif question.excerpt == question.content %}
-  {{question.excerpt}}
-{% endif %}
+<div class="card">
+  <img src="http://lorempixel.com/80/80/sports/" alt="user">
+  <div class="text">
+    <h3>
+      <a href="{{ question.url }}" title="{{ question.title }}" {% if question.lang != page.lang %} lang="{{ question.lang }}"{% endif %}>{{ question.title }}</a>
+      {% if site.data.t[page.lang].postlanguagetip[question.lang] %}<span class='language'>{{ site.data.t[page.lang].postlanguagetip[question.lang] }}</span> {% endif %}
+      <time datetime="{{ question.date | date:" %Y-%m-%d " }}">{{ question.date | date:"%Y-%m-%d" }}</time>
+    </h3>
+    {% if question.content contains '<!--more-->' %}
+      {{ question.content | split:'<!--more-->' | first }}
+    {% elsif question.excerpt == question.content %}
+      {{question.excerpt}}
+    {% endif %}
   </div>
-</li>
-
+</div>
