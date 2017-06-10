@@ -201,10 +201,27 @@ footer {
       margin-bottom: 0px;
     }
   }
-  img {
-    padding: 5px;
+  .circle {
+    margin: 5px;
     float: right;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
+    font-size: 15px;
+    color: #fff;
+    line-height: 50px;
+    text-align: center;
+    background: #99CC99;
+  }
+  .language {
+    border-radius: 3px;
+    background: #bbb;
+    padding: 1px 4px;
+    font-size: smaller;
+  }
+  time {
+    font-size: 9pt;
+    color: #bbb;
   }
 }
 

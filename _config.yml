@@ -34,3 +34,4 @@ defaults:
     values:
       layout: "question"
       lang: "en"
+      showall: true

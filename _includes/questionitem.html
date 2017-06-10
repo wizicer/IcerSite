@@ -1,15 +1,21 @@
 <div class="card">
-  <img src="http://lorempixel.com/80/80/sports/" alt="user">
+  <div class="circle">{{ question.category }}</div>
   <div class="text">
     <h3>
-      <a href="{{ question.url }}" title="{{ question.title }}" {% if question.lang != page.lang %} lang="{{ question.lang }}"{% endif %}>{{ question.title }}</a>
-      {% if site.data.t[page.lang].postlanguagetip[question.lang] %}<span class='language'>{{ site.data.t[page.lang].postlanguagetip[question.lang] }}</span> {% endif %}
+      {{ question.title }}
       <time datetime="{{ question.date | date:" %Y-%m-%d " }}">{{ question.date | date:"%Y-%m-%d" }}</time>
     </h3>
+    {% capture more %}
+      <a href="{{ question.url }}" title="{{ question.title }}" {% if question.lang != page.lang %} lang="{{ question.lang }}"{% endif %}>{{site.data.t[page.lang].questionmore}} <i class="fa fa-arrow-circle-o-right"></i></a>
+      {% if site.data.t[page.lang].postlanguagetip[question.lang] %}<span class='language'>{{ site.data.t[page.lang].postlanguagetip[question.lang] }}</span> {% endif %}
+    {% endcapture %}
     {% if question.content contains '<!--more-->' %}
       {{ question.content | split:'<!--more-->' | first }}
-    {% elsif question.excerpt == question.content %}
-      {{question.excerpt}}
+      {{ more }}
+    {% elsif question.showall %}
+      {{question.content}}
+    {% else %}
+      {{ more }}
     {% endif %}
   </div>
 </div>

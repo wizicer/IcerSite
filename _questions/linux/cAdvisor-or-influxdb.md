@@ -1,6 +1,8 @@
 ---
 title: cAdvisor or influxdb?
 date: 2016-4-29
+lang: en
+category: Linux
 ---
 
 cAdvisor has very basic function, while influxdb is only a database.
