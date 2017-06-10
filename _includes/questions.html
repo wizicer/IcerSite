@@ -1,3 +1,4 @@
-{% for question in site.questions %}
+{% assign sorted = (site.questions | sort: 'date') | reverse %}
+{% for question in sorted %}
   {% include questionitem.html question=question %}
 {% endfor %}
