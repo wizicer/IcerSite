@@ -1,10 +1,28 @@
 <div>
   <div class="divider"></div>
   <ul class="listing main-listing">
-    <li class="listing-seperator">{{ site.data.t[page.lang].recentarticle }}</li>
-  {% for post in site.posts limit: 5 %}
-  {% include postitem.html post=post %}
-  {% endfor %}
-    <li class="listing-seperator"><a href="/archive.html">{{ site.data.t[page.lang].archivelink }}</a></li>
+    <li class="listing-seperator">{{ site.data.t[page.lang].index.archive.recent }}</li>
+    {% for post in site.posts limit: 5 %}
+      {% include postitem.html post=post %}
+    {% endfor %}
+    <li class="listing-seperator"><a href="{{ site.data.t[page.lang].index.archive.oldlink }}">{{ site.data.t[page.lang].index.archive.oldtext }}</a></li>
+  </ul>
+  <ul class="listing main-listing">
+    <li class="listing-seperator">{{ site.data.t[page.lang].index.questions.recent }}</li>
+    {% assign sorted = (site.questions | sort: 'date') | reverse %}
+    {% for question in sorted limit: 2 %}
+      {% include questionitem.html question=question %}
+    {% endfor %}
+    <li class="listing-seperator"><a href="{{ site.data.t[page.lang].index.questions.oldlink }}">{{ site.data.t[page.lang].index.questions.oldtext }}</a></li>
+  </ul>
+  <div class="container">
+    <div class="row">
+    {% for project in site.data.projects limit: 3 %}
+      {% include projectitem.html project=project %}
+    {% endfor %}
+    </div>
+  </div>
+  <ul class="listing main-listing">
+    <li class="listing-seperator"><a href="{{ site.data.t[page.lang].index.projects.oldlink }}">{{ site.data.t[page.lang].index.projects.oldtext }}</a></li>
   </ul>
 </div>

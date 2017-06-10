@@ -1,0 +1,9 @@
+<div class="col-4">
+  <h3>
+    <a href="{{ project.url }}" title="{{ project.title }}" {% if project.lang != page.lang %} lang="{{ project.lang }}"{% endif %}>{{ project.subject }}</a>
+    {% if site.data.t[page.lang].postlanguagetip[project.lang] %}<span class='language'>{{ site.data.t[page.lang].postlanguagetip[project.lang] }}</span> {% endif %}
+  </h3>
+  <p>
+  {{project.description}}
+  </p>
+</div>
