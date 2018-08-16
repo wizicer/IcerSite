@@ -22,7 +22,7 @@ layout: default
   {% if site.oldarticlenotice and year < site.oldarticlenotice.formeryear %}
   <section class="notice">
     <blockquote>
-      <p><em>{{ site.data.t[page.lang].oldarticlenotice.part1 }}{{ year | minus: site.oldarticlenotice.birthyear }}{{ site.data.t[page.lang].oldarticlenotice.part1 }}</em></p>
+      <p><em>{{ site.data.t[page.lang].oldarticlenotice.part1 }}{{ year | minus: site.oldarticlenotice.birthyear }}{{ site.data.t[page.lang].oldarticlenotice.part2 }}</em></p>
     </blockquote>
   </section>
   {% endif %}
