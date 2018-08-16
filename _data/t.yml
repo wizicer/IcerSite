@@ -4,6 +4,9 @@ zh:
   titlehref: /
   description: 冰河魔法师的自留地
   index:
+    notice: 
+      text: English version available
+      url: /index-en.html
     archive:
       recent: 最近的文章
       oldtext: 过去的存档
@@ -48,6 +51,9 @@ en:
   titlehref: /index-en.html
   description: Everything worth written
   index:
+    notice: 
+      text: 点击此处切换至中文版
+      url: /index.html
     archive:
       recent: Recent Articles
       oldtext: Old Articles
