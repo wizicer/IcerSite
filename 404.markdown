@@ -5,5 +5,7 @@ permalink: 404.html
 ---
 
 Nothing found :(
+<br />好像你迷路了？
 
-But you still can have a [look around](/index.html)
+But you still can have a [look around](/index-en.html)
+<br />不哭，我们回到[首页](/index.html)重来。
