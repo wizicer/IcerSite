@@ -37,3 +37,19 @@ defaults:
       layout: "question"
       lang: "en"
       showall: true
+
+plugins:
+- jekyll-paginate-v2
+
+pagination:
+  enabled: true
+  debug: false
+  collection: 'questions'
+  per_page: 10
+  title: ':title - :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  trail: 
+    before: 3
+    after: 5

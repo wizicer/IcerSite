@@ -3,7 +3,20 @@
 {% assign tt = posts.size | plus: pages.size %}
 
 <span>|</span>
-{% if tt > 1 %}
+{% if paginator %}
+    {% comment %} hack {% endcomment %}
+    {% assign url = 'questions' %}
+    {% assign langs = "en|zh" | split: "|" %}
+    {% for lang in langs %}
+    <span>
+      {% if lang=='zh' %}
+        <a href="/{{ url }}" class="{{ lang }}">{{ site.data.t[lang].langname }}</a>
+      {% else %}
+        <a href="/{{ url }}-{{lang}}" class="{{ lang }}">{{ site.data.t[lang].langname }}</a>
+      {% endif %}
+    </span>
+    {% endfor %}
+{% elsif tt > 1 %}
     {% for post in posts %}
     <span>
         <a href="{{ post.url }}" class="{{ post.lang }}">{{ site.data.t[page.lang].langname }}</a>

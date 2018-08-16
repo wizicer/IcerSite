@@ -14,7 +14,7 @@ zh:
     questions:
       recent: 最近的问答
       oldtext: 过去的问答
-      oldlink: /questions.html
+      oldlink: /questions
     projects:
       recent: 最近的项目
       oldtext: 过去的项目
@@ -26,7 +26,7 @@ zh:
       href: /archive.html
     - title: 问答
       class: fa fa-question
-      href: /questions.html
+      href: /questions
     - title: 关于
       class: fa fa-user
       href: /about.html
@@ -39,7 +39,10 @@ zh:
   oldarticlenotice:
     part1: 老文章预警：该文写于作者
     part2: 岁，里面提到的东西可能会过于幼稚或已经过时，请注意分辨。
-  questionmore: 更多
+  question:
+    more: 更多
+    prev: "&laquo; 前"
+    next: "后 &raquo;"
   footer:
     poweredby: 本站使用
     themedby: 主题基于
@@ -61,7 +64,7 @@ en:
     questions:
       recent: Recent Questions
       oldtext: Old Questions
-      oldlink: /questions-en.html
+      oldlink: /questions-en
     projects:
       recent: Recent Projects
       oldtext: Old Projects
@@ -73,7 +76,7 @@ en:
       href: /archive-en.html
     - title: Questions
       class: fa fa-question
-      href: /questions-en.html
+      href: /questions-en
     - title: About
       class: fa fa-user
       href: /about-en.html
@@ -86,7 +89,10 @@ en:
   oldarticlenotice:
     part1: Old Article Notice：this article written by author when he is 
     part2:  years old, something inside may already out of date.
-  questionmore: More
+  question:
+    more: More
+    prev: "&laquo; Prev"
+    next: "Next &raquo;"
   footer:
     poweredby: powered by
     themedby: theme based on

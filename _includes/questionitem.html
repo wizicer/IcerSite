@@ -6,7 +6,7 @@
       <time datetime="{{ question.date | date:" %Y-%m-%d " }}">{{ question.date | date:"%Y-%m-%d" }}</time>
     </h3>
     {% capture more %}
-      <a href="{{ question.url }}" title="{{ question.title }}" {% if question.lang != page.lang %} lang="{{ question.lang }}"{% endif %}>{{site.data.t[page.lang].questionmore}} <i class="fa fa-arrow-circle-o-right"></i></a>
+      <a href="{{ question.url }}" title="{{ question.title }}" {% if question.lang != page.lang %} lang="{{ question.lang }}"{% endif %}>{{site.data.t[page.lang].question.more}} <i class="fa fa-arrow-circle-o-right"></i></a>
       {% if site.data.t[page.lang].postlanguagetip[question.lang] %}<span class='language'>{{ site.data.t[page.lang].postlanguagetip[question.lang] }}</span> {% endif %}
     {% endcapture %}
     {% if question.content contains '<!--more-->' %}
