@@ -3,11 +3,13 @@
   url: https://github.com/wizicer/scripts
   author: 老冰法师
   icon: github
+  lang: en
 - subject: dotvim
   description: vimÉcrivez une super description de votre nouveau site ici. Vous pouvez modifier cette ligne dans _config.yml. Elle apparaîtra dans la balise meta description (pour les résultats sur Google) et dans le fil RSS feed.xml.
   url: https://github.com/wizicer/dotvim
   author: 老冰法师
   icon: github
+  lang: zh
 - subject: dotvim
   description: vimÉcrivez une super description de votre nouveau site ici. Vous pouvez modifier cette ligne dans _config.yml. Elle apparaîtra dans la balise meta description (pour les résultats sur Google) et dans le fil RSS feed.xml.
   url: https://github.com/wizicer/dotvim

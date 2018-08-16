@@ -1,7 +1,9 @@
 <div class="container">
 <div class="row">
 {% for project in site.data.projects %}
-  {% include projectitem.html project=project %}
+  {% if project.lang == page.lang %}
+    {% include projectitem.html project=project %}
+  {% endif %}
 {% endfor %}
 </div>
 </div>
