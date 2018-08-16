@@ -2,7 +2,7 @@ markdown: kramdown
 highlighter: rouge
 permalink: /p/:categories/:title/
 
-atom-baseurl: "http://blog.wizicer.com"
+atom-baseurl: "http://icerdesign.com"
 
 la51_analytics: 17278963
 oldarticlenotice:
@@ -15,6 +15,8 @@ collections:
   questions:
     output: true
     permalink: /:collection/:path/
+
+highlighter: none
 
 defaults:
   -

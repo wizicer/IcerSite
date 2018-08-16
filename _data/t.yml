@@ -1,8 +1,8 @@
 zh:
   langname: 中
-  title: 老冰小站
+  title: 冰河设计
   titlehref: /
-  description: Écrivez une super description de votre nouveau site ici. Vous pouvez modifier cette ligne dans _config.yml. Elle apparaîtra dans la balise meta description (pour les résultats sur Google) et dans le fil RSS feed.xml.
+  description: 冰河魔法师的自留地
   index:
     archive:
       recent: 最近的文章
@@ -16,7 +16,7 @@ zh:
       recent: 最近的项目
       oldtext: 过去的项目
       oldlink: /projects.html
-  author: 老冰法师
+  author: 冰河魔法师
   navigations:
     - title: 存档
       class: fa fa-list-ul
@@ -46,7 +46,7 @@ en:
   langname: en
   title: Icer's blog
   titlehref: /index-en.html
-  description: Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+  description: Everything worth written
   index:
     archive:
       recent: Recent Articles
