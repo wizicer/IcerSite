@@ -6,5 +6,3 @@ category: Git
 ---
 
 Directly merge them, you may want use `filter-branch` if subdirectory needed.
-
-## No Answer Questions

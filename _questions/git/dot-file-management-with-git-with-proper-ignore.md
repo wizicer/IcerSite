@@ -6,7 +6,7 @@ category: Git
 ---
 
 Add following pattern:
-```
+```git
 .*
 !/.gitignore
 ```

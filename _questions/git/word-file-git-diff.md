@@ -10,7 +10,7 @@ category: Git
 *.docx diff=pandoc
 ```
 2. `.gitconfig` file in your home folder
-```
+```ini
 [diff "pandoc"]
     textconv=pandoc --to=markdown
     prompt = false
