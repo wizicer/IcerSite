@@ -1,32 +1,6 @@
 ---
-layout: default
+layout: post
 ---
-
-<article>
-  <section class="title">
-    <h2>{{ page.title }}</h2>
-  </section>
-  <section class="meta">
-  <span class="time">
-    <time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date:"%Y-%m-%d" }}</time>
-  </span>
-  {% if page.tags %}
-  <span class="tags">
-    {% for tag in page.tags %}
-    <a href="/tags.html#{{ tag }}" title="{{ tag }}">#{{ tag }}</a>
-    {% endfor %}
-  </span>
-  {% endif %}
-  </section>
-  {% assign year = page.date | date:"%Y" | times: 1 %}
-  {% if site.oldarticlenotice and year < site.oldarticlenotice.formeryear %}
-  <section class="notice">
-    <blockquote>
-      <p><em>{{ site.data.t[page.lang].oldarticlenotice.part1 }}{{ year | minus: site.oldarticlenotice.birthyear }}{{ site.data.t[page.lang].oldarticlenotice.part1 }}</em></p>
-    </blockquote>
-  </section>
-  {% endif %}
-  <section class="post">
 {% if content contains '<!--more-->' %}
 For TL;DR:
   {{ content | split:'<!--more-->' | first }}
@@ -36,21 +10,3 @@ Long Version:
 {% else %}
   {{content}}
 {% endif %}
-  </section>
-  <div class="divider">
-    <span>
-    {% if page.previous %}
-    <a href="{{ page.previous.url }}"><i class="fa fa-chevron-left"></i></a>
-    {% else %}
-    <i class="fa fa-circle"></i>
-    {% endif %}
-    </span>
-    <span>
-    {% if page.next %}
-    <a href="{{ page.next.url }}"><i class="fa fa-chevron-right"></i></a>
-    {% else %}
-    <i class="fa fa-circle"></i>
-    {% endif %}
-    </span>
-  </div>
-</article>
