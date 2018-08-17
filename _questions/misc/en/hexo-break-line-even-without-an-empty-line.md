@@ -1,5 +1,6 @@
 ---
 title: "hexo break line even without an empty line"
+ref: "hexo break line even without an empty line"
 date: 2016-4-22
 lang: en
 category: Misc

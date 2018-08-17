@@ -1,5 +1,6 @@
 ---
 title: "use .vim folder in windows"
+ref: "use .vim folder in windows"
 date: 2016-4-25
 lang: en
 category: Vim

@@ -1,5 +1,6 @@
 ---
 title: "Use Roslyn to generate semantic code"
+ref: "Use Roslyn to generate semantic code"
 date: 2016-6-12
 lang: en
 category: C#

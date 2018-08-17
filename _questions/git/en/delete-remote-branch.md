@@ -1,5 +1,6 @@
 ---
 title: "Delete remote branch"
+ref: "Delete remote branch"
 date: 2016-4-29
 lang: en
 category: Git

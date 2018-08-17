@@ -1,5 +1,6 @@
 ---
 title: "`reflog` of gitlab"
+ref: "`reflog` of gitlab"
 date: 2016-4-25
 lang: en
 category: Git

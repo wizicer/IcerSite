@@ -1,5 +1,6 @@
 ---
 title: "image comments in VS2015"
+ref: "image comments in VS2015"
 date: 2016-4-24
 lang: en
 category: C#

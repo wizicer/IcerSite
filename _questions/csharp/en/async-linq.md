@@ -1,5 +1,6 @@
 ---
 title: "async linq?"
+ref: "async linq?"
 date: 2016-5-11
 lang: en
 category: C#

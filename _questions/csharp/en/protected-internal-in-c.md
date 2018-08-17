@@ -1,5 +1,6 @@
 ---
 title: "`protected internal` in C#?"
+ref: "`protected internal` in C#?"
 date: 2016-4-25
 lang: en
 category: C#

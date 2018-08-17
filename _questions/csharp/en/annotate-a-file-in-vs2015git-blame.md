@@ -1,5 +1,6 @@
 ---
 title: "Annotate a file in VS2015(git blame)"
+ref: "Annotate a file in VS2015(git blame)"
 date: 2016-4-29
 lang: en
 category: C#

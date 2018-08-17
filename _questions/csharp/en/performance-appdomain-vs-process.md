@@ -1,5 +1,6 @@
 ---
 title: "Performance: AppDomain vs Process"
+ref: "Performance: AppDomain vs Process"
 date: 2016-5-9
 lang: en
 category: C#

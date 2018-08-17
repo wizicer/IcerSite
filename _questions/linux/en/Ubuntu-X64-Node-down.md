@@ -1,5 +1,6 @@
 ---
 title: Ubuntu X64 Node down?
+ref: Ubuntu X64 Node down?
 date: 2016-5-9
 lang: en
 category: Linux

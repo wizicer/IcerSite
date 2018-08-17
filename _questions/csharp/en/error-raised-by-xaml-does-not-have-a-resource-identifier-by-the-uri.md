@@ -1,5 +1,6 @@
 ---
 title: "Error raised by xaml: `does not have a resource identifier by the uri`"
+ref: "Error raised by xaml: `does not have a resource identifier by the uri`"
 date: 2016-5-12
 lang: en
 category: C#

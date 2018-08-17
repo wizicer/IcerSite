@@ -1,5 +1,6 @@
 ---
 title: "require administrator privilege at startup of batch script?"
+ref: "require administrator privilege at startup of batch script?"
 date: 2016-5-4
 lang: en
 category: Windows

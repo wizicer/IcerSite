@@ -1,5 +1,6 @@
 ---
 title: "squash all commits to one commit at one point"
+ref: "squash all commits to one commit at one point"
 date: 2016-5-9
 lang: en
 category: Git

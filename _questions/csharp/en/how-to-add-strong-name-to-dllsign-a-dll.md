@@ -1,5 +1,6 @@
 ---
 title: "How to add strong name to dll(sign a dll)?"
+ref: "How to add strong name to dll(sign a dll)?"
 date: 2016-4-25
 lang: en
 category: C#

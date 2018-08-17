@@ -1,5 +1,6 @@
 ---
 title: "Dependency check(restriction) of csproj"
+ref: "Dependency check(restriction) of csproj"
 date: 2016-5-12
 lang: en
 category: C#

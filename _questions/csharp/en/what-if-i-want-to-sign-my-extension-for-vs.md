@@ -1,5 +1,6 @@
 ---
 title: "what if I want to sign my extension for VS?"
+ref: "what if I want to sign my extension for VS?"
 date: 2016-4-24
 lang: en
 category: C#

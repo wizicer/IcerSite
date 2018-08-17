@@ -1,5 +1,6 @@
 ---
 title: "Count number of matches of a pattern"
+ref: "Count number of matches of a pattern"
 date: 2016-5-10
 lang: en
 category: Vim

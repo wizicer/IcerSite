@@ -1,5 +1,6 @@
 ---
 title: "debug VS2015 extension project"
+ref: "debug VS2015 extension project"
 date: 2016-4-24
 lang: en
 category: C#

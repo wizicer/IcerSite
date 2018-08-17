@@ -1,5 +1,6 @@
 ---
 title: "PowerPoint not scale properly on high resolution monitor"
+ref: "PowerPoint not scale properly on high resolution monitor"
 date: 2016-5-4
 lang: en
 category: Windows

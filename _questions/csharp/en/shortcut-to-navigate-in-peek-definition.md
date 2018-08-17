@@ -1,5 +1,6 @@
 ---
 title: "shortcut to navigate in Peek Definition"
+ref: "shortcut to navigate in Peek Definition"
 date: 2016-5-4
 lang: en
 category: C#

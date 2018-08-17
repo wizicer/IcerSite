@@ -1,5 +1,6 @@
 ---
 title: "XnView replace background with transparent color"
+ref: "XnView replace background with transparent color"
 date: 2016-5-9
 lang: en
 category: Misc

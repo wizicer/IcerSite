@@ -1,5 +1,6 @@
 ---
 title: "Move files to sub folder with history"
+ref: "Move files to sub folder with history"
 date: 2016-4-20
 lang: en
 category: Git

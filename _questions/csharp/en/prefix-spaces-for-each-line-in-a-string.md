@@ -1,5 +1,6 @@
 ---
 title: "Prefix spaces for each line in a string"
+ref: "Prefix spaces for each line in a string"
 date: 2016-6-12
 lang: en
 category: C#

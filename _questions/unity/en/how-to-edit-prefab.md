@@ -1,5 +1,6 @@
 ---
 title: how to edit prefab?
+ref: how to edit prefab?
 date: 2016-5-14
 lang: en
 category: Unity

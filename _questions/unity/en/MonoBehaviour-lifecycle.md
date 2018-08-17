@@ -1,5 +1,6 @@
 ---
 title: MonoBehaviour lifecycle
+ref: MonoBehaviour lifecycle
 date: 2016-5-6
 lang: en
 category: Unity

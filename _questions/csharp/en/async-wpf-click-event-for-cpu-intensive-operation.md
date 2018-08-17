@@ -1,5 +1,6 @@
 ---
 title: "async WPF click event for CPU intensive operation"
+ref: "async WPF click event for CPU intensive operation"
 date: 2016-5-11
 lang: en
 category: C#

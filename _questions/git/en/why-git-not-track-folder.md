@@ -1,5 +1,6 @@
 ---
 title: "why git not track folder?"
+ref: "why git not track folder?"
 date: 2016-5-12
 lang: en
 category: Git

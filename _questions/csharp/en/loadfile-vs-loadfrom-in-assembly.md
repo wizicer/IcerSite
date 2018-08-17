@@ -1,5 +1,6 @@
 ---
 title: "`LoadFile` vs `LoadFrom` in `Assembly`"
+ref: "`LoadFile` vs `LoadFrom` in `Assembly`"
 date: 2016-5-12
 lang: en
 category: C#

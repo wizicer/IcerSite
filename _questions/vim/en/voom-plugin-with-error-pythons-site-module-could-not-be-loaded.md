@@ -1,5 +1,6 @@
 ---
 title: "Voom plugin with error: python's site module could not be loaded"
+ref: "Voom plugin with error: python's site module could not be loaded"
 date: 2016-4-20
 lang: en
 category: Vim

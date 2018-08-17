@@ -1,5 +1,6 @@
 ---
 title: button to change scene programmatically
+ref: button to change scene programmatically
 date: 2016-5-6
 lang: en
 category: Unity

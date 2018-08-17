@@ -1,5 +1,6 @@
 ---
 title: "Ternary(?:) condition returning method(delegate) not compile."
+ref: "Ternary(?:) condition returning method(delegate) not compile."
 date: 2016-6-10
 lang: en
 category: C#

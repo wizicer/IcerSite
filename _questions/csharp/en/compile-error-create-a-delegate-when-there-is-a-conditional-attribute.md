@@ -1,5 +1,6 @@
 ---
 title: "Compile Error: Create a delegate when there is a conditional attribute"
+ref: "Compile Error: Create a delegate when there is a conditional attribute"
 date: 2016-5-27
 lang: en
 category: C#

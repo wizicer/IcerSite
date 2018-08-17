@@ -1,5 +1,6 @@
 ---
 title: "Markdown table with multi-line cell"
+ref: "Markdown table with multi-line cell"
 date: 2016-4-21
 lang: en
 category: Misc

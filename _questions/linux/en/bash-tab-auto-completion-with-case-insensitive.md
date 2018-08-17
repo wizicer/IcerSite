@@ -1,5 +1,6 @@
 ---
 title: bash tab auto completion with case insensitive
+ref: bash tab auto completion with case insensitive
 date: 2016-5-9
 lang: en
 category: Linux

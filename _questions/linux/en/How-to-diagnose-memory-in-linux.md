@@ -1,5 +1,6 @@
 ---
 title: How to diagnose memory in linux
+ref: How to diagnose memory in linux
 date: 2016-5-9
 lang: en
 category: Linux

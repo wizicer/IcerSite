@@ -1,5 +1,6 @@
 ---
 title: cannot open script with VS2015.
+ref: cannot open script with VS2015.
 date: 2016-5-6
 lang: en
 category: Unity

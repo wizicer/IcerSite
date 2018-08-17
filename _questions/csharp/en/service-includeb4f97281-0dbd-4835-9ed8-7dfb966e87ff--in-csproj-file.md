@@ -1,5 +1,6 @@
 ---
 title: "&lt;Service Include=\"{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}\" /&gt; in csproj file"
+ref: "&lt;Service Include=\"{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}\" /&gt; in csproj file"
 date: 2016-5-25
 lang: en
 category: C#

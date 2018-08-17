@@ -1,5 +1,6 @@
 ---
 title: integrate git with unity 3d
+ref: integrate git with unity 3d
 date: 2016-5-6
 lang: en
 category: Unity

@@ -1,5 +1,6 @@
 ---
 title: error "no model is available for preview" when previewing animation
+ref: error "no model is available for preview" when previewing animation
 date: 2016-5-14
 lang: en
 category: Unity

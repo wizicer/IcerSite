@@ -1,5 +1,6 @@
 ---
 title: "find binddn of ldap"
+ref: "find binddn of ldap"
 date: 2016-5-9
 lang: en
 category: Misc

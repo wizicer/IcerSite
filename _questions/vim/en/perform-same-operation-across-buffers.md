@@ -1,5 +1,6 @@
 ---
 title: "Perform same operation across buffers"
+ref: "Perform same operation across buffers"
 date: 2016-4-29
 lang: en
 category: Vim

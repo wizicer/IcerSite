@@ -1,5 +1,6 @@
 ---
 title: make 2d object glow when event fires
+ref: make 2d object glow when event fires
 date: 2016-5-14
 lang: en
 category: Unity

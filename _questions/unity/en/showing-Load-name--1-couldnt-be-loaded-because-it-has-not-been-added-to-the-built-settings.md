@@ -1,5 +1,6 @@
 ---
 title: showing Load 'name' (-1) couldn't be loaded because it has not been added to the built settings
+ref: showing Load 'name' (-1) couldn't be loaded because it has not been added to the built settings
 date: 2016-5-6
 lang: en
 category: Unity

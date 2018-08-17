@@ -1,5 +1,6 @@
 ---
 title: "Double click .jar file to execute in windows"
+ref: "Double click .jar file to execute in windows"
 date: 2016-4-22
 lang: en
 category: Windows

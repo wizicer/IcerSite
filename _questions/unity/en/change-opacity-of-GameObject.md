@@ -1,5 +1,6 @@
 ---
 title: change opacity of GameObject
+ref: change opacity of GameObject
 date: 2016-5-14
 lang: en
 category: Unity

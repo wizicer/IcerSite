@@ -1,5 +1,6 @@
 ---
 title: "Error: src refspec ... matches more than one"
+ref: "Error: src refspec ... matches more than one"
 date: 2016-4-25
 lang: en
 category: Git

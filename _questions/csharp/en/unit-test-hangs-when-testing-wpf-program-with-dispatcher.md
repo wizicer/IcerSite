@@ -1,5 +1,6 @@
 ---
 title: "Unit test hangs when testing WPF program with `Dispatcher`"
+ref: "Unit test hangs when testing WPF program with `Dispatcher`"
 date: 2016-5-27
 lang: en
 category: C#

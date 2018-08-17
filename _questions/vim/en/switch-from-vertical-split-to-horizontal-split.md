@@ -1,5 +1,6 @@
 ---
 title: "Switch from vertical split to horizontal split"
+ref: "Switch from vertical split to horizontal split"
 date: 2016-5-20
 lang: en
 category: Vim

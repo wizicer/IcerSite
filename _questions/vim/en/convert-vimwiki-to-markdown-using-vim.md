@@ -1,5 +1,6 @@
 ---
 title: "convert VimWiki to markdown using Vim"
+ref: "convert VimWiki to markdown using Vim"
 date: 2016-4-25
 lang: en
 category: Vim

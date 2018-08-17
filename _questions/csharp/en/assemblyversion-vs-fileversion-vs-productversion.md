@@ -1,5 +1,6 @@
 ---
 title: "`AssemblyVersion` vs `FileVersion` vs `ProductVersion`"
+ref: "`AssemblyVersion` vs `FileVersion` vs `ProductVersion`"
 date: 2016-5-12
 lang: en
 category: C#

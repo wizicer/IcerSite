@@ -1,5 +1,6 @@
 ---
 title: "Ignore first time SelectionChanged event"
+ref: "Ignore first time SelectionChanged event"
 date: 2016-5-4
 lang: en
 category: C#

@@ -1,5 +1,6 @@
 ---
 title: "Cannot be Serializable who implement INotifyPropertyChanged"
+ref: "Cannot be Serializable who implement INotifyPropertyChanged"
 date: 2016-5-11
 lang: en
 category: C#

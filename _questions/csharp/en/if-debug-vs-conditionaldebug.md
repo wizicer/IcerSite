@@ -1,5 +1,6 @@
 ---
 title: "#if DEBUG vs. Conditional(\"DEBUG\")"
+ref: "#if DEBUG vs. Conditional(\"DEBUG\")"
 date: 2015-5-23
 lang: en
 category: C#

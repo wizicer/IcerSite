@@ -1,5 +1,6 @@
 ---
 title: "Highlight changes in unified diff"
+ref: "Highlight changes in unified diff"
 date: 2016-5-19
 lang: en
 category: Vim

@@ -1,5 +1,6 @@
 ---
 title: "Side effects of `[Serializable]`"
+ref: "Side effects of `[Serializable]`"
 date: 2016-5-11
 lang: en
 category: C#

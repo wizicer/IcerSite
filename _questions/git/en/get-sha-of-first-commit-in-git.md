@@ -1,5 +1,6 @@
 ---
 title: "get SHA of first commit in git?"
+ref: "get SHA of first commit in git?"
 date: 2016-5-13
 lang: en
 category: Git

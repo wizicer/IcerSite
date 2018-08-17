@@ -1,6 +1,7 @@
 {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
 {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
-{% assign tt = posts.size | plus: pages.size %}
+{% assign questions=site.questions | where:"ref", page.ref | sort: 'lang' %}
+{% assign tt = posts.size | plus: pages.size | plus: questions.size %}
 
 <span>|</span>
 {% if tt > 1 %}
@@ -13,6 +14,12 @@
     {% for page in pages %}
     <span>
         <a href="{{ page.url }}" class="{{ page.lang }}">{{ site.data.t[page.lang].langname }}</a>
+    </span>
+    {% endfor %}
+
+    {% for question in questions %}
+    <span>
+        <a href="{{ question.url }}" class="{{ question.lang }}">{{ site.data.t[question.lang].langname }}</a>
     </span>
     {% endfor %}
 {% else %}

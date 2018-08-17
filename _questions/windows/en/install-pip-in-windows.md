@@ -1,5 +1,6 @@
 ---
 title: "Install pip in windows"
+ref: "Install pip in windows"
 date: 2016-4-22
 lang: en
 category: Windows

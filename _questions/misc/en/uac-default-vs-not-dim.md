@@ -1,5 +1,6 @@
 ---
 title: "UAC `default` vs `not dim`"
+ref: "UAC `default` vs `not dim`"
 date: 2016-4-27
 lang: en
 category: Misc

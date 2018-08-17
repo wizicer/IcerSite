@@ -1,5 +1,6 @@
 ---
 title: "unstage all"
+ref: "unstage all"
 date: 2016-5-13
 lang: en
 category: Git

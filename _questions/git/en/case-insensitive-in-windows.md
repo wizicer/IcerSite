@@ -1,5 +1,6 @@
 ---
 title: "case-insensitive in windows"
+ref: "case-insensitive in windows"
 date: 2016-5-16
 lang: en
 category: Git

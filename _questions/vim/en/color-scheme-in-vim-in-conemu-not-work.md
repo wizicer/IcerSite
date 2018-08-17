@@ -1,5 +1,6 @@
 ---
 title: "color scheme in Vim in ConEmu not work"
+ref: "color scheme in Vim in ConEmu not work"
 date: 2016-5-10
 lang: en
 category: Vim

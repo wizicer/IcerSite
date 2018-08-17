@@ -1,5 +1,6 @@
 ---
 title: "restart network adapter?"
+ref: "restart network adapter?"
 date: 2016-5-4
 lang: en
 category: Windows

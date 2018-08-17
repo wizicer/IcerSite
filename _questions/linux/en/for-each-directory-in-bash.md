@@ -1,5 +1,6 @@
 ---
 title: for each directory in bash
+ref: for each directory in bash
 date: 2016-4-29
 lang: en
 category: Linux

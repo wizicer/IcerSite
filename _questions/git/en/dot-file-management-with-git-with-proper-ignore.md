@@ -1,5 +1,6 @@
 ---
 title: "dot file management with git with proper ignore"
+ref: "dot file management with git with proper ignore"
 date: 2016-4-24
 lang: en
 category: Git

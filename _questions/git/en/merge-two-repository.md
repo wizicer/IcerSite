@@ -1,5 +1,6 @@
 ---
 title: "Merge two repository"
+ref: "Merge two repository"
 date: 2016-4-20
 lang: en
 category: Git

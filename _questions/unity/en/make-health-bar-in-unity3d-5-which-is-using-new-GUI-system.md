@@ -1,5 +1,6 @@
 ---
 title: make health bar in unity3d 5 (which is using new GUI system)
+ref: make health bar in unity3d 5 (which is using new GUI system)
 date: 2016-5-14
 lang: en
 category: Unity

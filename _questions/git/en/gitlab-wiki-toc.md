@@ -1,5 +1,6 @@
 ---
 title: "gitlab wiki TOC"
+ref: "gitlab wiki TOC"
 date: 2016-5-6
 lang: en
 category: Git

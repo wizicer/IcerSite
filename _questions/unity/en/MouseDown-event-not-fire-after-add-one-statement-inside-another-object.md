@@ -1,5 +1,6 @@
 ---
 title: MouseDown event not fire after add one statement inside another object.
+ref: MouseDown event not fire after add one statement inside another object.
 date: 2016-5-14
 lang: en
 category: Unity

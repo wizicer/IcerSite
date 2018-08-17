@@ -1,5 +1,6 @@
 ---
 title: "How to 'blame' a deleted line"
+ref: "How to 'blame' a deleted line"
 date: 2016-5-18
 lang: en
 category: Git

@@ -1,5 +1,6 @@
 ---
 title: "Merge a individual application configure file (AppSettings) to application"
+ref: "Merge a individual application configure file (AppSettings) to application"
 date: 2016-5-24
 lang: en
 category: C#

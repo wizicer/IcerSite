@@ -1,5 +1,6 @@
 ---
 title: "Event during DragMove?"
+ref: "Event during DragMove?"
 date: 2016-5-31
 lang: en
 category: C#

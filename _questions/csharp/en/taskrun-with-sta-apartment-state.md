@@ -1,5 +1,6 @@
 ---
 title: "`Task.Run` with STA apartment state"
+ref: "`Task.Run` with STA apartment state"
 date: 2016-5-16
 lang: en
 category: C#

@@ -1,5 +1,6 @@
 ---
 title: cross platform link file command.
+ref: cross platform link file command.
 date: 2016-4-25
 lang: en
 category: Linux

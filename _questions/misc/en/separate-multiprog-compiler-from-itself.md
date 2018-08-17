@@ -1,5 +1,6 @@
 ---
 title: "separate MultiProg compiler from itself"
+ref: "separate MultiProg compiler from itself"
 date: 2016-4-22
 lang: en
 category: Misc
