@@ -43,6 +43,7 @@ zh:
     more: 更多
     prev: "&laquo; 前"
     next: "后 &raquo;"
+    notice: <a href="/questions-en">查看英文版问答</a>
   footer:
     poweredby: 本站使用
     themedby: 主题基于
@@ -93,6 +94,7 @@ en:
     more: More
     prev: "&laquo; Prev"
     next: "Next &raquo;"
+    notice: <a href="/questions">View QAs in Chinese</a>
   footer:
     poweredby: powered by
     themedby: theme based on

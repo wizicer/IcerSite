@@ -36,6 +36,7 @@ defaults:
     values:
       layout: "question"
       lang: "en"
+      locale: "en"
       showall: true
 
 plugins:

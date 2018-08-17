@@ -1,3 +1,9 @@
+{% comment %} notice {% endcomment %}
+<blockquote>
+  {{ site.data.t[page.lang].question.notice }}
+</blockquote>
+
+{% comment %} pagination {% endcomment %}
 {% if paginator.total_pages > 1 %}
 <div class="pagination">
   {% if paginator.previous_page %}
@@ -24,6 +30,7 @@
 </div>
 {% endif %}
 
+{% comment %} main list {% endcomment %}
 {% assign sorted = (paginator.posts | sort: 'date') | reverse %}
 {% for question in sorted %}
   {% include questionitem.html question=question %}
