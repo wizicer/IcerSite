@@ -3,62 +3,8 @@
   {{ site.data.t[page.lang].question.notice }}
 </blockquote>
 
-{% comment %} pagination {% endcomment %}
-{% if paginator.total_pages > 1 %}
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{site.data.t[page.lang].question.prev}}</a>
-  {% else %}
-    <span>{{site.data.t[page.lang].question.prev}}</span>
-  {% endif %}
-
-{% if paginator.page_trail %}
-  {% for trail in paginator.page_trail %}
-    {% if page.url == trail.path %}
-      <em>{{ page.pagination_info.curr_page }}</em>
-    {% else %}
-      <a href="{{ trail.path | prepend: site.baseurl }}" title="{{trail.title}}">{{ trail.num }}</a>
-    {% endif %}
-  {% endfor %}
-{% endif %}
-
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{site.data.t[page.lang].question.next}}</a>
-  {% else %}
-    <span>{{site.data.t[page.lang].question.next}}</span>
-  {% endif %}
-</div>
-{% endif %}
-
 {% comment %} main list {% endcomment %}
-{% assign sorted = (paginator.posts | sort: 'date') | reverse %}
+{% assign sorted = (site.questions | sort: 'date') | reverse %}
 {% for question in sorted %}
   {% include questionitem.html question=question %}
 {% endfor %}
-
-{% comment %} repeat once more {% endcomment %}
-{% if paginator.total_pages > 1 %}
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{site.data.t[page.lang].question.prev}}</a>
-  {% else %}
-    <span>{{site.data.t[page.lang].question.prev}}</span>
-  {% endif %}
-
-{% if paginator.page_trail %}
-  {% for trail in paginator.page_trail %}
-    {% if page.url == trail.path %}
-      <em>{{ page.pagination_info.curr_page }}</em>
-    {% else %}
-      <a href="{{ trail.path | prepend: site.baseurl }}" title="{{trail.title}}">{{ trail.num }}</a>
-    {% endif %}
-  {% endfor %}
-{% endif %}
-
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{site.data.t[page.lang].question.next}}</a>
-  {% else %}
-    <span>{{site.data.t[page.lang].question.next}}</span>
-  {% endif %}
-</div>
-{% endif %}
