@@ -14,9 +14,9 @@
   </ul>
   <ul class="listing main-listing">
     <li class="listing-seperator">{{ site.data.t[page.lang].index.questions.recent }}</li>
-    {% assign sorted = (site.questions | sort: 'date') | reverse %}
+    {% assign sorted = (site.questions | where: 'lang', page.lang | sort: 'date') | reverse %}
     {% for question in sorted limit: 2 %}
-      {% include questionitem.html question=question %}
+      {% include questioncard.html question=question %}
     {% endfor %}
     <li class="listing-seperator"><a href="{{ site.data.t[page.lang].index.questions.oldlink }}">{{ site.data.t[page.lang].index.questions.oldtext }}</a></li>
   </ul>

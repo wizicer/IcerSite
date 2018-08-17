@@ -3,8 +3,19 @@
   {{ site.data.t[page.lang].question.notice }}
 </blockquote>
 
-{% comment %} main list {% endcomment %}
-{% assign sorted = (site.questions | sort: 'date') | reverse %}
-{% for question in sorted %}
-  {% include questionitem.html question=question %}
+{% assign category = site.questions | where: 'lang', page.lang | group_by: 'category' %}
+{% for item in category %}
+  <h2>{{item.name}}</h2>
+    {% assign questions = site.questions | where: 'lang', page.lang | where: 'category', item.name %} 
+    {% for question in questions %}
+      <div class="tab">
+        <input id="tab-{{question.id}}" type="checkbox" name="tabs">
+        <label for="tab-{{question.id}}">{{question.title}}</label>
+        <div class="tab-content">
+          <p>
+            {% include questionitem.html question=question %}
+          </p>
+        </div>
+      </div>
+    {% endfor %}
 {% endfor %}
