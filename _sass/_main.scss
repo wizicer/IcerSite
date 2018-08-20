@@ -106,7 +106,6 @@ ul.listing {
 
 article {
   margin: 2em 0;
-  p { padding: .7em 0; }
   .title {
     font-family: #{$label-font};
     a { @extend a; color: #777; }
