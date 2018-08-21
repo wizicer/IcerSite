@@ -90,8 +90,7 @@ ul.listing {
     list-style-type:none;
     padding: 0;
     &.listing-item {
-      a { padding: .2em 0 .2em 2em; }
-      time { color: #999; }
+      time { color: #999; padding: .2em 2em .2em 0; }
       &:hover { background-color: #f9f9f9; }
       .language {
         border-radius: 3px;
