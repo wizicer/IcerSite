@@ -1,6 +1,7 @@
 ---
 title: 我为什么不买比特币
 tags:
+- 杂文
 - 微信
 categories:
 - 冰河杂谈

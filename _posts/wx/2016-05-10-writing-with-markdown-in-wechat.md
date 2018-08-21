@@ -1,6 +1,7 @@
 ---
 title: 在微信公众平台上用Markdown写作
 tags:
+- 技术
 - 微信
 categories:
 - 冰河杂谈

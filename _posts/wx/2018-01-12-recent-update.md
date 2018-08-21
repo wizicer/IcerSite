@@ -1,6 +1,7 @@
 ---
 title: 海南度假后更新
 tags:
+- 杂文
 - 微信
 categories:
 - 冰河杂谈

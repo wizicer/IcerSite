@@ -1,6 +1,7 @@
 ---
 title: 夹缝中的工控软件人
 tags:
+- 杂谈
 - 微信
 categories:
 - 冰河杂谈

@@ -1,8 +1,8 @@
 ---
 title: hexo-admin - An Admin Interface for Hexo[JS]
 tags:
+- Javascript
 - Hexo
-- JS
 lang: en
 ref: hexo-admin
 categories:

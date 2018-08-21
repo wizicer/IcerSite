@@ -1,6 +1,7 @@
 ---
 title: 开源项目挣钱实用手册
 tags:
+- 杂文
 - 微信
 categories:
 - 冰河杂谈

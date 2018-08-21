@@ -1,7 +1,7 @@
 ---
 title: .Net 4.5 的五项强大新特性
 tags:
-- Javascript
+- C#
 - HTML
 categories:
 - 冰河杂谈

@@ -1,6 +1,7 @@
 ---
 title: 校内相册批量下载器V1.11 BUILD0512
 tags:
+- 作品展示
 - 下载器
 - 客户端
 categories:

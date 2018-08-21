@@ -1,6 +1,7 @@
 ---
 title: 开源项目是如何保证质量的？
 tags:
+- 杂文
 - 微信
 categories:
 - 冰河杂谈

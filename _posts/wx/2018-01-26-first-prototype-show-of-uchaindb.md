@@ -1,6 +1,7 @@
 ---
 title: 优链数据库原型首次展示
 tags:
+- 区块链
 - 微信
 categories:
 - 冰河杂谈

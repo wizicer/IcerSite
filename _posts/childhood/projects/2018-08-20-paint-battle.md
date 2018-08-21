@@ -1,7 +1,7 @@
 ---
-title: 作品展示——[PvP]画笔大战
+title: "[PvP]画笔大战"
 tags:
-- 作品
+- 作品展示
 categories:
 - childhoods
 date: 2004-5-31

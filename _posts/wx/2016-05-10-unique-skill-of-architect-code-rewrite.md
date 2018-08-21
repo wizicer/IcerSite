@@ -1,6 +1,7 @@
 ---
 title: 架构师的必杀技——代码重写
 tags:
+- 架构
 - 微信
 categories:
 - 冰河杂谈

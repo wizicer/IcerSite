@@ -1,7 +1,7 @@
 ---
-title: 作品展示——[RPG]魔法中学院
+title: "[RPG]魔法中学院"
 tags:
-- 作品
+- 作品展示
 categories:
 - childhoods
 date: 2005-8-31

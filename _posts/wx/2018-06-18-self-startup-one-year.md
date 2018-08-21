@@ -1,6 +1,7 @@
 ---
 title: 创业一年的一点感悟
 tags:
+- 杂文
 - 微信
 categories:
 - 冰河杂谈

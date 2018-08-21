@@ -1,7 +1,7 @@
 ---
-title: 作品展示——图标大战
+title: 图标大战
 tags:
-- 作品
+- 作品展示
 categories:
 - childhoods
 date: 2008-5-31

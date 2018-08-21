@@ -1,9 +1,8 @@
 ---
 title: hexo-admin - 静态博客的后台管理程序[JS]
 tags:
+- Javascript
 - Hexo
-- JS
-- 视频
 lang: zh
 ref: hexo-admin
 categories:

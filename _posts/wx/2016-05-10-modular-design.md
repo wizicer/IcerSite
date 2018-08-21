@@ -1,6 +1,7 @@
 ---
 title: 模块化设计
 tags:
+- 杂文
 - 微信
 categories:
 - 冰河杂谈

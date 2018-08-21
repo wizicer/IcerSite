@@ -1,6 +1,7 @@
 ---
 title: 3D打印你的遥控器怎么样？
 tags:
+- 杂文
 - 微信
 categories:
 - 冰河杂谈

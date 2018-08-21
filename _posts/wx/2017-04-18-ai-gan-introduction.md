@@ -1,6 +1,7 @@
 ---
 title: 图说GAN：机器学习之生成式对抗网络
 tags:
+- 技术
 - 微信
 categories:
 - 冰河杂谈

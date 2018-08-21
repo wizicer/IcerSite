@@ -1,7 +1,7 @@
 ---
 title: 本科毕业设计
 tags:
-- 作品
+- 作品展示
 categories:
 - childhoods
 date: 2009-5-21
