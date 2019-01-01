@@ -16,8 +16,8 @@ zh:
       oldtext: 过去的问答
       oldlink: /questions.html
     projects:
-      recent: 最近的项目
-      oldtext: 过去的项目
+      recent: 推荐项目
+      oldtext: 更多项目
       oldlink: /projects.html
   author: 冰河魔法师
   navigations:
@@ -67,8 +67,8 @@ en:
       oldtext: Old Questions
       oldlink: /questions-en.html
     projects:
-      recent: Recent Projects
-      oldtext: Old Projects
+      recent: Projects
+      oldtext: More Projects
       oldlink: /projects-en.html
   author: Icer
   navigations:
