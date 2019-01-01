@@ -13,6 +13,9 @@ ref: about
 架构设计和程序设计本是完全没有高低的两个不同工作，但误解常在，
 所以不断通过自己的亲身实践让更多人真正的理解架构师这一容易被人误解的工种，并让有志之士走上架构师之路。
 
+### 关于爱
+
+关于爱，请查看<a href="http://love.icerdesign.com/" target="_blank">这里 <i class="fa fa-external-link"></i></a>
 
 ### 履历
 
