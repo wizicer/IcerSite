@@ -42,6 +42,8 @@ zh:
   question:
     more: 更多
     notice: <a href="/questions-en">查看英文版问答</a>
+  project:
+    link: 了解更多
   footer:
     poweredby: 本站使用
     themedby: 主题基于
@@ -91,6 +93,8 @@ en:
   question:
     more: More
     notice: <a href="/questions">View QAs in Chinese</a>
+  project:
+    link: Detail
   footer:
     poweredby: powered by
     themedby: theme based on
