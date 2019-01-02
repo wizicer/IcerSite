@@ -20,6 +20,8 @@
     {% endfor %}
     <li class="listing-seperator"><a href="{{ site.data.t[page.lang].index.questions.oldlink }}">{{ site.data.t[page.lang].index.questions.oldtext }}</a></li>
   </ul>
+  <ul class="listing main-listing">
+    <li class="listing-seperator">{{ site.data.t[page.lang].index.projects.recent }}</li>
   <div class="container">
     <div class="row">
     {% assign projects = site.data.projects | where: "lang", page.lang %}
@@ -30,7 +32,6 @@
     {% endfor %}
     </div>
   </div>
-  <ul class="listing main-listing">
     <li class="listing-seperator"><a href="{{ site.data.t[page.lang].index.projects.oldlink }}">{{ site.data.t[page.lang].index.projects.oldtext }}</a></li>
   </ul>
 </div>
