@@ -417,3 +417,27 @@ $breakpoint-large: 60em; // 960px
     padding-top: 3px;
   }
 }
+
+.language-notice {
+	position: relative;
+	background: #f8f8f8;
+	border-radius: .4em;
+  padding: 3px 10px;
+  max-width: 400px;
+  margin-top: -25px;
+  float: right;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-bottom-color: #f8f8f8;
+    border-top: 0;
+    margin-left: -20px;
+    margin-top: -20px;
+  }
+}
