@@ -403,6 +403,8 @@ $breakpoint-large: 60em; // 960px
     list-style: none;
     margin: 0;
     padding-left: 0;
+    z-index: 3;
+    border: 1px dashed #ccc;
   }
 
   &:hover > ul, ul:hover {
@@ -415,6 +417,7 @@ $breakpoint-large: 60em; // 960px
     clear: both;
     width: 100%;
     padding-top: 3px;
+    background: #f8f8f8;
   }
 }
 
