@@ -1,0 +1,11 @@
+---
+title: 转向
+layout: default
+permalink: /wx/diy-a-plc/
+lang: zh
+---
+
+{% assign posts=site.posts | where:"ref", "diy-a-plc" | where: 'lang', page.lang %}
+<script>
+    window.location.replace("{{posts.first.url}}");
+</script>

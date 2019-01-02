@@ -1,0 +1,11 @@
+---
+title: 转向
+layout: default
+permalink: /code/hexo-admin/
+lang: zh
+---
+
+{% assign posts=site.posts | where:"ref", "hexo-admin" | where: 'lang', page.lang %}
+<script>
+    window.location.replace("{{posts.first.url}}");
+</script>

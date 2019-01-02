@@ -8,7 +8,6 @@ ref: hexo-admin
 categories:
 - 源代码分析
 date: 2015-02-23
-permalink: /code/hexo-admin/
 ---
 
 # 基本信息
