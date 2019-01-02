@@ -70,6 +70,7 @@ header {
     position: relative;
     top: 1em;
     span { margin: .5em; }
+    span.active a { color: $link-color; }
     a {
       font-family: #{$label-font}; color: #ccc;
     }
