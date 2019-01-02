@@ -40,9 +40,19 @@
           </h1>
         </div>
         <nav>
-          {% for nav in site.data.t[page.lang].navigations %}{% assign http = nav.href | slice: 0, 4 %}
-            <span><a title="{{ nav.title }}" href="{{ nav.href }}"{% if http == "http" %} target="_blank"{% endif %}><i class="{{ nav.class }}"></i></a></span>
+          {% assign navs = site.data.t[page.lang].navigations | where_exp:"item", "item.other == undefined" %}
+          {% assign othernavs = site.data.t[page.lang].navigations | where: "other", true %}
+          {% for nav in navs %}{% assign http = nav.href | slice: 0, 4 %}
+            <span><a title="{{ nav.title }}" href="{{ nav.href }}"{% if http == "http" %} target="_blank"{% endif %}><i class="fa fa-{{ nav.icon }}"></i></a></span>
           {% endfor %}
+          <span id="nav-other">
+            <i class="fa fa-external-link"></i>
+            <ul class="dropdown">
+            {% for nav in othernavs %}
+              <li><a href="{{ nav.href }}"{% if nav.target %} target="{{nav.target}}"{% endif %}><i class="fa fa-fw fa-{{nav.icon}}"></i> {{nav.title}}</a></li>
+            {% endfor %}
+            </ul>
+          </span>
           {% include navlang.html %}
         </nav>
       </header>

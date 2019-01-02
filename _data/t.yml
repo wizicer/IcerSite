@@ -22,20 +22,32 @@ zh:
   author: 冰河魔法师
   navigations:
     - title: 存档
-      class: fa fa-list-ul
+      icon: list-ul
       href: /archive.html
     - title: 问答
-      class: fa fa-question
+      icon: question
       href: /questions.html
     - title: 关于
-      class: fa fa-user
+      icon: user
       href: /about.html
     - title: 项目
-      class: fa fa-film
+      icon: film
       href: /projects.html
     - title: 订阅
-      class: fa fa-rss
+      icon: rss
       href: /atom.xml
+      other: true
+      target: _blank
+    - title: 关于爱
+      icon: heart
+      href: http://love.icerdesign.com
+      other: true
+      target: _blank
+    - title: 关于摄影
+      icon: camera
+      href: http://www.hiyaphoto.com
+      other: true
+      target: _blank
   oldarticlenotice:
     part1: 老文章预警：该文写于作者
     part2: 岁，里面提到的东西可能会过于幼稚或已经过时，请注意分辨。
@@ -73,20 +85,32 @@ en:
   author: Icer
   navigations:
     - title: Archive
-      class: fa fa-list-ul
+      icon: list-ul
       href: /archive-en.html
     - title: Questions
-      class: fa fa-question
+      icon: question
       href: /questions-en.html
     - title: About
-      class: fa fa-user
+      icon: user
       href: /about-en.html
     - title: Project
-      class: fa fa-film
+      icon: film
       href: /projects-en.html
     - title: Subscribe
-      class: fa fa-rss
+      icon: rss
+      other: true
+      target: _blank
       href: /atom.xml
+    - title: Love
+      icon: heart
+      href: http://love.icerdesign.com
+      other: true
+      target: _blank
+    - title: Photos
+      icon: camera
+      href: http://www.hiyaphoto.com
+      other: true
+      target: _blank
   oldarticlenotice:
     part1: Old Article Notice：this article written by author when he is 
     part2:  years old, something inside may already out of date.
