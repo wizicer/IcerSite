@@ -1,0 +1,11 @@
+---
+title: 转向
+layout: default
+permalink: /wx/writing-with-markdown-in-wechat/
+lang: zh
+---
+
+{% assign posts=site.posts | where:"ref", "writing-with-markdown-in-wechat" | where: 'lang', page.lang %}
+<script>
+    window.location.replace("{{posts.first.url}}");
+</script>
