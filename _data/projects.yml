@@ -1,3 +1,10 @@
+- subject: 《区块链系统实现》
+  description: 本书里详细的带领大家通过亲自编写一个类比特币的区块链程序， 再编写一个类以太坊的区块链程序，最终结合这个过程中学到的经验， 编写了一个区块链数据库程序
+  url: https://book.uchaindb.com
+  author: 冰河魔法师
+  icon: github
+  lang: zh
+
 - subject: 优链数据库客户端(ngx)
   description: 优链数据库的客户端，可以连接并查看优链数据库上的数据库及区块链信息
   url: https://github.com/uchaindb/UClient
