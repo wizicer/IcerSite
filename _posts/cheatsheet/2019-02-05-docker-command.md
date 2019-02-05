@@ -7,7 +7,7 @@ categories:
 date: 2019-2-5
 ---
 
-> **此列表不断更新中**
+> **此列表不断更新中**，最后更新于2019-2-5
 
 ## 执行命令
 
@@ -56,4 +56,17 @@ $ docker-compose exec container_name command
 $ docker-compose exec container_name sh -c 'echo a && echo b' 
 ```
 
+## 进入Windows版Docker的命令行
 
+在使用Windows版Docker时，其实在Hyper-V上运行了一个订制后的Linux，其使用的是LinuxKit发布版本，
+但鉴于这个Linux并非时完整的发行版，因此功能是受限的，其实很少是有需要直接进入的。
+不过真要是有这个需求，就用以下命令即可。
+
+```bash
+docker run -it --rm --privileged --pid=host justincormack/nsenter1
+```
+
+#### 参考
+
+* <https://www.bretfisher.com/getting-a-shell-in-the-docker-for-windows-vm/>
+* [nsenter](https://github.com/justincormack/nsenter1)
