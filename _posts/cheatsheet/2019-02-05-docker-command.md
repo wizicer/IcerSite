@@ -150,3 +150,30 @@ $ docker save <image> | bzip2 | pv | \
 #### 参考
 
 * <https://stackoverflow.com/questions/23935141/how-to-copy-docker-images-from-one-host-to-another-without-via-repository>
+
+
+## 清理空间
+
+Docker用久了后，很容易出现空间占用过多的问题，通过以下不同的方式进行清理
+
+### 删除不再使用的镜像
+
+通常情况，如果拉取了很多镜像，尤其是在本地多次编译过镜像时尤为突出，
+可以使用以下命令删除这些没有被使用的镜像。
+
+```bash
+$ docker rmi $(docker images -q --filter "dangling=true")
+```
+
+### 删除已经停止的容器
+
+已经停止的容器，而没有打算保留其状态，也是可以被删除的。
+
+```bash
+$ docker rm `docker ps --no-trunc -aq`
+```
+
+#### 参考
+
+* <https://gist.github.com/ngpestelos/4fc2e31e19f86b9cf10b> 
+* <http://stackoverflow.com/questions/17236796/how-to-remove-old-docker-containers> 
