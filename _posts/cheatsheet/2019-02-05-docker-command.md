@@ -177,3 +177,39 @@ $ docker rm `docker ps --no-trunc -aq`
 
 * <https://gist.github.com/ngpestelos/4fc2e31e19f86b9cf10b> 
 * <http://stackoverflow.com/questions/17236796/how-to-remove-old-docker-containers> 
+
+## Proxy on ubuntu
+
+对于`Ubuntu 16.04 LTS`系统，可以使用内置的`systemd`，步骤如下：
+
+1. 建立目录:
+
+```bash
+$ mkdir /etc/systemd/system/docker.service.d
+```
+
+2. 创建 `/etc/systemd/system/docker.service.d/http-proxy.conf` 文件，内容如下:
+
+```bash
+[Service]
+Environment="HTTP_PROXY=https://web-proxy.corp.xxxxxx.com:8080/"
+Environment="HTTPS_PROXY=https://web-proxy.corp.xxxxxx.com:8080/"
+Environment="NO_PROXY=localhost,127.0.0.1,localaddress,.localdomain.com"
+```
+
+3. 应用变化:
+
+```bash
+$ systemctl daemon-reload
+```
+
+4. 重启docker:
+
+```bash
+$ systemctl restart docker
+```
+
+#### 参考
+
+* <https://stackoverflow.com/questions/26550360/docker-ubuntu-behind-proxy> 
+
