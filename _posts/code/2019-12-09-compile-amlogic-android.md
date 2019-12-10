@@ -10,8 +10,6 @@ categories:
 date: 2019-12-10
 ---
 
-# Compile Android with AMLogic
-
 Source code downloaded from <http://www.bee-link.com/forum.php?mod=viewthread&tid=48307&extra=page%3D1>
 
 Referenced following guide:
