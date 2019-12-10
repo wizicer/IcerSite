@@ -19,6 +19,10 @@ Referenced following guide:
 * <http://openlinux.amlogic.com/Docs/Common/How_to_build_compiled_server>
 * <https://source.android.com/setup/build/initializing>
 
+## Operating System
+
+Install fresh `Ubuntu 18.04 x64`.
+
 ## Prepare environment
 
 You could ignore this step as it just avoid git warnings flood log.
@@ -64,3 +68,4 @@ $ cd s922x
 $ ./s922x
 ```
 
+Output file location: `out/target/product/galilei/`
