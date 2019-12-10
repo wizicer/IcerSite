@@ -21,9 +21,11 @@ Referenced following guide:
 
 ## Prepare environment
 
+You could ignore this step as it just avoid git warnings flood log.
+
 ```sh
-$ git config --global user.name Icer
-$ git config --global user.email liangshuang@uchaindb.com
+$ git config --global user.name xxx
+$ git config --global user.email xxx@xxx.com
 ```
 
 ## Install go
@@ -37,6 +39,10 @@ $ gvm use go1.13
 
 ## Install dependences
 
+Dependences download address:
+* <https://releases.linaro.org/archive/13.11/components/toolchain/binaries/>
+* <https://releases.linaro.org/components/toolchain/binaries/6.3-2017.02/arm-linux-gnueabihf/>
+
 ```sh
 $ sudo apt-get remove openjdk-* icedtea-*
 $ sudo apt-get install git ccache lzop bison gperf build-essential zip curl zlib1g-dev g++-multilib python-networkx libxml2-utils bzip2 libbz2-dev libghc-bzlib-dev squashfs-tools pngcrush liblz4-tool optipng libc6-dev-i386 gcc-multilib libssl-dev gnupg flex lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev xsltproc unzip python-pip python-dev libffi-dev libxml2-dev libxslt1-dev libjpeg8-dev openjdk-8-jdk
@@ -49,6 +55,8 @@ $ sudo mv gcc-linaro-6.3.1-2017.02-x86_64_arm-linux-gnueabihf /opt
 ```
 
 ## Start compile
+
+Extract and build image.
 
 ```sh
 $ tar -zxf GT-King_SDK.tar.gz
