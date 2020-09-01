@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="冰河魔法师" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <title>Bluetooth 4</title>
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="/atom.xml" rel="alternate" title="冰河设计" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/3rd/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/3rd/pygments/github.css">
+  </head>
+  <body>
+    <div id="main" role="main">
+      <header>
+        <div id="header">
+          <h1>
+            <a title="冰河设计" class="" href="/">冰河设计</a>
+            <p class="description">冰河魔法师的自留地</p>
+          </h1>
+        </div>
+        <nav>
+          
+          
+          
+            <span><a title="存档" href="/archive.html"><i class="fa fa-list-ul"></i></a></span>
+          
+            <span><a title="问答" href="/questions.html"><i class="fa fa-question"></i></a></span>
+          
+            <span><a title="关于" href="/about.html"><i class="fa fa-user"></i></a></span>
+          
+            <span><a title="项目" href="/projects.html"><i class="fa fa-film"></i></a></span>
+          
+          <span id="nav-other">
+            <i class="fa fa-external-link"></i>
+            <ul class="dropdown">
+            
+              <li><a href="/atom.xml" target="_blank"><i class="fa fa-fw fa-rss"></i> 订阅</a></li>
+            
+              <li><a href="http://love.icerdesign.com" target="_blank"><i class="fa fa-fw fa-heart"></i> 关于爱</a></li>
+            
+              <li><a href="http://www.hiyaphoto.com" target="_blank"><i class="fa fa-fw fa-camera"></i> 关于摄影</a></li>
+            
+            </ul>
+          </span>
+          
+
+
+
+
+<span>|</span>
+
+    
+    
+    <span>
+        <a href="/index-en.html" class="en">en</a>
+    </span>
+    
+    <span>
+        <a href="/index.html" class="zh">中</a>
+    </span>
+    
+
+
+        </nav>
+      </header>
+      <div id="content">
+      <article>
+  <section class="title">
+    <h2>Bluetooth 4</h2>
+  </section>
+  <section class="meta">
+  <span class="time">
+    <time datetime="2016-05-10">2016-05-10</time>
+  </span>
+  
+  <span class="tags">
+    
+  </span>
+  
+  </section>
+  
+  
+  <section class="post">
+  <p>今天主要和大家聊一下蓝牙4.0，首先解释几个名词：</p>
+
+<ul>
+  <li><code class="highlighter-rouge">BLE</code>：Bluetooth Low Energy</li>
+  <li><code class="highlighter-rouge">SoC</code>：System on Chip</li>
+</ul>
+
+<h2 id="蓝牙40更新了什么">蓝牙4.0更新了什么？</h2>
+<p>更新项目到还是挺多的，不过我这里就只列一下我感觉到的值得重视的更新项目：</p>
+
+<ul>
+  <li>更低的电源消耗，一颗纽扣电池可供<code class="highlighter-rouge">待机</code>一两年</li>
+  <li>传输距离更远，理论距离比之前的10－20m提高到了100m</li>
+</ul>
+
+<p>好吧，和同学聊了一下这个方案，认为在通信的时候耗电量还是有点大，当时误认为<code class="highlighter-rouge">CC2400</code>系列只需要<code class="highlighter-rouge">1.7mW</code>的功率，但查阅资料后发现，那个是待机功率，而不是传输时候的功率。根据<code class="highlighter-rouge">CC2540</code>的官方手册数据，传输数据的时候需要约<code class="highlighter-rouge">20mA</code>，按照使用<code class="highlighter-rouge">3.3V</code>的电压来看，传输数据需要<code class="highlighter-rouge">66mW</code>，与CC2400系列比起来，功耗几乎相当，不过带宽的确大了很多，所以在此可以看出，他不但没有耗电量过大的问题，还的确拥有不小的优势。</p>
+
+<p>当然使用蓝牙方案的话，还有另外一个好处，就是较为通用，可以不用额外的设备，靠移动设备本身配备的蓝牙功能便可以连接上来，因此如果我们的设备需要应用在生活场景中，甚至本身就常常需要与便携设备打交道，那么应该就不用疑问了，使用蓝牙方案吧。</p>
+
+<h2 id="cc25402541能给我们带来什么">CC2540/2541能给我们带来什么？</h2>
+<p>CC2540是一种SoC方案，包含了一些基本的元素：</p>
+
+<ul>
+  <li>一颗8051的MCU</li>
+  <li>12位ADC</li>
+  <li>扩展的128k/256k Flash</li>
+</ul>
+
+<p>对我来说，吸引力最大的还是那一颗8051的芯，尤其是还加上了扩展的内存，让我们可以存储相对较长的程序，所以对于很多情况来说，可以大幅度的简化外围设计。</p>
+
+<p><strong>一点点补充</strong>：其实运行在2.4G频率上的低功耗解决方案也还是不少，不过这一次之所以这么关注这款蓝牙芯片，主要还是因为可以很好的和便携设备结合起来。</p>
+
+<h2 id="我们畅想一下拿这个可以做什么">我们畅想一下拿这个可以做什么？</h2>
+
+<p>好了，最后到了最开心的时刻了，就是畅想我们能够拿这款芯片来做什么，其实在上一期文章中已经畅想过新的工业自动化车间的无屏幕尝试，这篇文章其实也就是受到当时的无屏幕实践的驱动，试图寻找一款适合具体实施的芯片。</p>
+
+<p>其实在家居控制里面这个也是有很好的可行性的，比如对于我来说，我现在就特别需要这么一个功能：晚上超过十点尚未熄灯，那就每隔十分钟报时一次以催促睡觉。若使用这款芯片的话，可以考虑接一个光敏电阻作为传感器，将信号发至主机，主机接收信号后根据时间判断操控音箱进行报时操作。</p>
+
+<p>现在很多的可穿戴设备都是已经用上这样的解决方案了，例如各种计步器、手环、健康监控设备，估计未来会有更大一批的设备都会使用这套方案与你手中的平板手机进行互动。</p>
+
+<p><img src="5-band.jpg" alt="" /></p>
+
+  </section>
+  <div class="divider">
+    <span>
+    
+    <a href="/p/automation-engineer-in-crack/"><i class="fa fa-chevron-left"></i></a>
+    
+    </span>
+    <span>
+    
+    <a href="/p/diy-a-plc/"><i class="fa fa-chevron-right"></i></a>
+    
+    </span>
+  </div>
+</article>
+
+      </div>
+      <footer>
+        <div>
+          
+          &copy; 2002 ~ 2020 冰河魔法师 | 本站使用 jekyll | 主题基于 <a href="http://lhzhang.com" title="sext vi">sext vi</a>
+        </div>
+      </footer>
+    </div> <!-- main -->
+    <div style="display:none;">
+      <script language="javascript" type="text/javascript" src="//js.users.51.la/17278963.js"></script>
+      <script language="javascript" type="text/javascript" src="//s22.cnzz.com/z_stat.php?id=1273658393&amp;web_id=1273658393"></script>
+    </div>
+  </body>
+</html>

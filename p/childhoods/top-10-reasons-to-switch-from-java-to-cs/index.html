@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="冰河魔法师" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <title>从Java转到C#的十个重要原因</title>
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="/atom.xml" rel="alternate" title="冰河设计" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/3rd/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/3rd/pygments/github.css">
+  </head>
+  <body>
+    <div id="main" role="main">
+      <header>
+        <div id="header">
+          <h1>
+            <a title="冰河设计" class="" href="/">冰河设计</a>
+            <p class="description">冰河魔法师的自留地</p>
+          </h1>
+        </div>
+        <nav>
+          
+          
+          
+            <span><a title="存档" href="/archive.html"><i class="fa fa-list-ul"></i></a></span>
+          
+            <span><a title="问答" href="/questions.html"><i class="fa fa-question"></i></a></span>
+          
+            <span><a title="关于" href="/about.html"><i class="fa fa-user"></i></a></span>
+          
+            <span><a title="项目" href="/projects.html"><i class="fa fa-film"></i></a></span>
+          
+          <span id="nav-other">
+            <i class="fa fa-external-link"></i>
+            <ul class="dropdown">
+            
+              <li><a href="/atom.xml" target="_blank"><i class="fa fa-fw fa-rss"></i> 订阅</a></li>
+            
+              <li><a href="http://love.icerdesign.com" target="_blank"><i class="fa fa-fw fa-heart"></i> 关于爱</a></li>
+            
+              <li><a href="http://www.hiyaphoto.com" target="_blank"><i class="fa fa-fw fa-camera"></i> 关于摄影</a></li>
+            
+            </ul>
+          </span>
+          
+
+
+
+
+<span>|</span>
+
+    
+    
+    <span>
+        <a href="/index-en.html" class="en">en</a>
+    </span>
+    
+    <span>
+        <a href="/index.html" class="zh">中</a>
+    </span>
+    
+
+
+        </nav>
+      </header>
+      <div id="content">
+      <article>
+  <section class="title">
+    <h2>从Java转到C#的十个重要原因</h2>
+  </section>
+  <section class="meta">
+  <span class="time">
+    <time datetime="2006-08-15">2006-08-15</time>
+  </span>
+  
+  <span class="tags">
+    
+    <a href="/tags.html#C#" title="C#">#C#</a>
+    
+  </span>
+  
+  </section>
+  
+  
+  <section class="notice">
+    <blockquote>
+      <p><em>老文章预警：该文写于作者20岁，里面提到的东西可能会过于幼稚或已经过时，请注意分辨。</em></p>
+    </blockquote>
+  </section>
+  
+  <section class="post">
+  <ul>
+  <li>原作：Will Wagers</li>
+  <li>原文：<a href="http://www.csharphelp.com/archives4/archive664.html">http://www.csharphelp.com/archives4/archive664.html</a></li>
+  <li>翻译：冰河魔法师 - <del>C#代码中心[CCSharp.Net]</del></li>
+  <li>原则：冰河魔法师不喜欢拘泥于文字，均按冰河魔法师自己的理解来翻译，请有能力阅读英文的朋友查看原版文章。</li>
+  <li>版权：版权归原作者所有，转摘请带上翻译人员冰河魔法师<del>[CCSharp.Net]</del>的名字。</li>
+</ul>
+
+<p>为什么一个Java开发者应该转到C#开发上来呢？（排名不分先后）</p>
+
+<p><strong>1、C语言样式（”C Style”）的内存访问</strong></p>
+
+<p>比起在其他的语言中程序员不得不使用API来达到访问制定内存的目的，C#则很好的同意程序员在需要的时候可以使用C语言样式(“C Style”)的内存管理和指针的内存访问。当然，Java以及其他的面向对象编程语言都是明确的否定了此类内存操作。而C#的程序员则可以使用微软提供的<strong>unsafe</strong>关键字来进行此类内存操作。</p>
+
+<p><strong>2、面向组件开发的扩展</strong></p>
+
+<p>C#向他的开发者们展示了他这样一个强大的面向组件开发的语言特性，它支持属性（properties），索引（indexers）, 委托（delegates）, 继承（inheritance）,版本控制（versioning），自定义属性（attributes），在支持这些的同时，它还不需要艰深或者说是古板的命名方式以及一些相关的类。</p>
+
+<p><strong>3、相似</strong></p>
+
+<p>Java开发者会很快地发现C#显得是那么的熟悉和舒服。C#是非常像Java的，当然，C#还支持一些其他的关键字和结构。所以，一个Java程序员可以在一天两天内学会C#这门语言，当然，学习API则是另外一个问题了。</p>
+
+<p><strong>4、交互式的XML Web服务（XML Web services）</strong></p>
+
+<p>C#通过可以从任何一个平台进行聚合的交互式XML Web服务来达到缩短程序开发时间的目的。微软总喜欢将一些技术资料隐藏起来：这点上说来既有好处也有坏处，就像双刃剑。菜鸟开发者往往不能确切的知道或是理解看不到的部分是如何运作的。但是在另一方面，这样却的确提高了生产力。当然，Java开发者也有很多可以选择的IDE，其中不少也在某种程度上对Web服务提供了支持。</p>
+
+<p><strong>5、起重要作用的.NET框架（.NET Framework ）</strong></p>
+
+<p>C#开发者可以很轻松的使用.NET框架——一个丰富的、有线程安全类库的、有数据访问类的、有网络操作类等等的。不过最近，various bridge software开发出了一个可以让Java程序就像访问Java类库一样的访问.NET框架类库的东西。</p>
+
+<p><strong>6、以对象为基础（Object-based）的类型系统</strong></p>
+
+<p>C#给他的程序员提供了一套以对象为基础的类型系统，这消除了Java程序中常常需要的复杂的、冗长的代码编写。</p>
+
+<p><strong>7、以标准为基础（Standards-based）的语言</strong></p>
+
+<p>C#提供给程序员的是一套以标准为基础(ECMA)并包含了它所有的优点的语言，这相对于Java来说是一个意义重大的优点。</p>
+
+<p><strong>8、瞄准了各种设备</strong></p>
+
+<p>C#让程序员使用同样的工具和同样的技术来开发台式机或是各种掌上机或是无线设备，当然，这些设备都必须装有Windows。</p>
+
+<p><strong>9、Visual Studio .NET IDE</strong></p>
+
+<p>C#为开发者提供了IDE（integrated development environment综合开发环境），这里面提供了任务列表、属性编辑器、Microsoft IntelliSense®、窗体设计器等等。在Windows上的开发而言，Visual Studio是王者。当然，除开微软专用这一特色外，Visual Studio还是落后Eclipse以及其他某些IDE一些。</p>
+
+<p><strong>10、支持XML注释</strong></p>
+
+<p>C#允许开发者使用XML（eXtensible Markup Language扩展标记性语言）注释来使用非常实用的自定义源代码文档。当然Java也有相应的其他实现方式。（冰河魔法师注：例如javadoc）</p>
+
+<p><strong>结论</strong></p>
+
+<p>这张表最早是起源于微软，由于Java和C#是出于竞争关系，他们的每一轮竞争都会提出比别人更优秀的地方。其实C#和Java都是一门非常优秀的语言，他们非常的相近，他们各自都有自己的优点和缺点，除非你是工作在只使用微软产品的公司里，否则对大多数项目来说，两种语言甚至还会有些其他的语言都会被涉及到。</p>
+
+
+  </section>
+  <div class="divider">
+    <span>
+    
+    <a href="/p/childhoods/site-diary-060815/"><i class="fa fa-chevron-left"></i></a>
+    
+    </span>
+    <span>
+    
+    <a href="/p/childhoods/color-orange/"><i class="fa fa-chevron-right"></i></a>
+    
+    </span>
+  </div>
+</article>
+
+      </div>
+      <footer>
+        <div>
+          
+          &copy; 2002 ~ 2020 冰河魔法师 | 本站使用 jekyll | 主题基于 <a href="http://lhzhang.com" title="sext vi">sext vi</a>
+        </div>
+      </footer>
+    </div> <!-- main -->
+    <div style="display:none;">
+      <script language="javascript" type="text/javascript" src="//js.users.51.la/17278963.js"></script>
+      <script language="javascript" type="text/javascript" src="//s22.cnzz.com/z_stat.php?id=1273658393&amp;web_id=1273658393"></script>
+    </div>
+  </body>
+</html>

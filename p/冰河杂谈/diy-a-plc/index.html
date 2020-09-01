@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="冰河魔法师" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <title>自己动手做一个PLC</title>
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    
+      <link rel="alternate" hreflang="zh" href="/p/%E5%86%B0%E6%B2%B3%E6%9D%82%E8%B0%88/diy-a-plc/" />
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="/atom.xml" rel="alternate" title="冰河设计" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/3rd/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/3rd/pygments/github.css">
+  </head>
+  <body>
+    <div id="main" role="main">
+      <header>
+        <div id="header">
+          <h1>
+            <a title="冰河设计" class="" href="/">冰河设计</a>
+            <p class="description">冰河魔法师的自留地</p>
+          </h1>
+        </div>
+        <nav>
+          
+          
+          
+            <span><a title="存档" href="/archive.html"><i class="fa fa-list-ul"></i></a></span>
+          
+            <span><a title="问答" href="/questions.html"><i class="fa fa-question"></i></a></span>
+          
+            <span><a title="关于" href="/about.html"><i class="fa fa-user"></i></a></span>
+          
+            <span><a title="项目" href="/projects.html"><i class="fa fa-film"></i></a></span>
+          
+          <span id="nav-other">
+            <i class="fa fa-external-link"></i>
+            <ul class="dropdown">
+            
+              <li><a href="/atom.xml" target="_blank"><i class="fa fa-fw fa-rss"></i> 订阅</a></li>
+            
+              <li><a href="http://love.icerdesign.com" target="_blank"><i class="fa fa-fw fa-heart"></i> 关于爱</a></li>
+            
+              <li><a href="http://www.hiyaphoto.com" target="_blank"><i class="fa fa-fw fa-camera"></i> 关于摄影</a></li>
+            
+            </ul>
+          </span>
+          
+
+
+
+
+<span>|</span>
+
+    
+    
+    <span>
+        <a href="/index-en.html" class="en">en</a>
+    </span>
+    
+    <span>
+        <a href="/index.html" class="zh">中</a>
+    </span>
+    
+
+
+        </nav>
+      </header>
+      <div id="content">
+      <article>
+  <section class="title">
+    <h2>自己动手做一个PLC</h2>
+  </section>
+  <section class="meta">
+  <span class="time">
+    <time datetime="2014-03-25">2014-03-25</time>
+  </span>
+  
+  <span class="tags">
+    
+    <a href="/tags.html#DIY" title="DIY">#DIY</a>
+    
+    <a href="/tags.html#微信" title="微信">#微信</a>
+    
+  </span>
+  
+  </section>
+  
+  
+  <section class="post">
+  <p>我们自己来做一个<code class="highlighter-rouge">PLC</code>(Programmable Logic Controller，即<code class="highlighter-rouge">可编程逻辑控制器</code>)怎么样？就像很多计算机专业的同学都自己写过最简单的操作系统一样，作为工控领域的软件人，怎么能不自己动手做个简单的PLC呢？</p>
+
+<p>PLC其实也是经历了很长时间的演变，最早的PLC虽然也是运行在单片机上，但是仅支持指定模块的编程，而<code class="highlighter-rouge">下装组态</code>其实是在传输各个点及各个点之间的连接信息，再由PLC根据这些信息在内部进行解析运行。而现在的PLC，大多数都可以被称之为<code class="highlighter-rouge">软PLC</code>（也称<code class="highlighter-rouge">Soft PLC</code>），即在PC端便已经编译成<code class="highlighter-rouge">二进制文件</code>，下载至PLC的过程是拷贝或者烧录程序的过程，这使得PC的高性能得到了更好的发挥，我们今天讨论的PLC便属于软PLC。</p>
+
+<blockquote>
+  <p>如果你想要找我要代码的话，虽然我自己已经尝试着做过一个简单基本的了，但是不得不说一个完整的PLC是相当的庞大和复杂，我自己的仅供我自己学习使用了，没有足够的注释和文档去帮助别人了解，故在这里我可以推荐一个做得还算不错的开源项目（当时我自己尝试的时候也借用了这个项目中不少的组件），这个开源项目叫做<code class="highlighter-rouge">beremiz</code>。</p>
+</blockquote>
+
+<p><strong>首先让我们来考虑一下，我自己要做的PLC需要些什么组件呢？</strong></p>
+
+<h3 id="软件环境">软件环境</h3>
+<ul>
+  <li><strong>PLC程序IDE</strong>，方便开发人员编写和调试程序的人机界面，支持多种语言的开发。可选的开源项目：
+    <ul>
+      <li><a href="http://www.plcedit.org/">PLCEdit</a>：完全按照IEC61131标准开发，所有五种语言均支持，使用Python开发，故可以做到跨平台。</li>
+      <li><a href="http://www.beremiz.org/">Beremiz</a>：一套完整的开源PLC解决方案，不过放在这里主要是因为它不但使用了上面说的PLCEdit，同时还对其进行了增强，使得其增加了重要的在线调试功能。</li>
+      <li><a href="http://soapboxautomation.com/products/soapbox-snap/">SoapBox Snap</a>：使用C#+WPF开发的，仅支持梯形图一种语言，不过却已经支持了在线调试功能，含模拟器。</li>
+      <li><strong>我的解决方案</strong>：我使用了Node.js+HTML5开发，仅支持梯形图一种语言，不支持在线调试，使用HTML5方案最大的优势有两点，一是适应未来发展需要，二是类似于家用路由器一样，可以将网页嵌入到设备中，故只要一台能浏览HTML5网页的浏览器便可以配置PLC。</li>
+    </ul>
+
+    <blockquote>
+      <p>按照工业控制领域常用的IEC61131-3标准来看，工业控制领域程序语言被分为了两大类五种语言，两大类是指图形化编程和代码编程，图形化编程中有Ladder（梯形图），FBD（Function Block Diagram，功能块图）和SFC（Sequential Function Chart，序列功能表），而代码编程有IL（Instruction List，指令集）和ST（Structured Text，结构化文本），具体内容我就不展开了，有需要自行百度百科或维基百科。</p>
+    </blockquote>
+  </li>
+  <li><strong>HMI设计器</strong>，Human-machine interface，即人机界面，主要用来显示控制过程中的实时数据，并设置一些按键方便操作员快速控制系统。可选方案：
+    <ul>
+      <li><a href="http://www.beremiz.org/">Beremiz</a>：使用SVG技术开发，样式可扩展性强，但是逻辑扩展性弱。</li>
+      <li><strong>我的解决方案</strong>：使用HTML5技术开发，不但有丰富的开源编辑器可供选用，而且用户可以自行嵌入JS逻辑。</li>
+    </ul>
+  </li>
+  <li><strong>编译器</strong>，顾名思义，就是将在IDE环境中编写好的程序转换成可以直接运行在单片机上的二进制序列。可选的开源项目：
+    <ul>
+      <li><a href="http://mat.sourceforge.net/">mat</a>：最全面的开源编译器，输入符合其标准的定义文件，并可以支持IL和ST两种文本语言。使用纯C开发，大量使用了宏定义，导致我看代码看得挺吃力的。</li>
+      <li><a href="https://github.com/tadpol/Avrian-Jump">Avrian-Jump</a>：一个非常初级的梯形图编辑器，并可以将该梯形图转译成<code class="highlighter-rouge">ATMega168</code>的二进制程序，使用js开发，直接在网页上操作。</li>
+      <li><strong>我的解决方案</strong>：我的初版解决方案是使用C#语言通过正则表达式识别代码并转成可供执行的Python代码。后来将正则表达式的方式改为<a href="http://www.ssw.uni-linz.ac.at/Coco/">Coco/R</a>，即专门的编译器生成器。</li>
+    </ul>
+  </li>
+  <li><strong>其他必要的类库或驱动</strong>，通常情况主要就是IO的驱动，以及通信的协议栈，当然还不能缺少基本的供开发人员调用的类库。很多时候都是内嵌在编译器中，或者提供足够的灵活性让用户自行开发。</li>
+</ul>
+
+<h3 id="硬件环境">硬件环境</h3>
+
+<ul>
+  <li>
+    <p><strong>MCU</strong>，Microcontroller Unit，微处理单元，用于具体执行逻辑的部件，必要时可能还会承担通信、程序更新和日志记录的工作。</p>
+  </li>
+  <li>
+    <p><strong>外围电路</strong>，其实主要说的外围电路就是IO相关的电路，不过作为软件人，这方面不用搞得非常清楚，我们只需要购置一些标准的开发板，便会将这些事情都处理的妥妥当当的。</p>
+  </li>
+</ul>
+
+<p><strong>我的解决方案</strong>：使用虚拟机运行Linux模拟，以及使用RaspberryPi这类支持运行Linux和Python的环境。</p>
+
+<p>每一个子项中的解决方案或者开源项目都还会有很多，在这里，我仅列举了我使用过和了解过的，相信你可以轻松的通过google搜索到更多的类似开源组件，所以在这里就不一一列举了。</p>
+
+<p>以上简单的介绍了一下自己设计的PLC系统的基本组成部分，以及一些可选的开源项目和他们的特性。制作PLC并不是一件简单的事情，相信你也无法在看过本文后便轻松的制作出自己那个PLC，不过我希望可以通过本文让你了解到，做一个自己的PLC所需要的部件，以及其实它也并非高不可攀的。</p>
+
+
+  </section>
+  <div class="divider">
+    <span>
+    
+    <a href="/p/%E5%86%B0%E6%B2%B3%E6%9D%82%E8%B0%88/interview-with-xiaochengzi/"><i class="fa fa-chevron-left"></i></a>
+    
+    </span>
+    <span>
+    
+    <a href="/p/%E5%86%B0%E6%B2%B3%E6%9D%82%E8%B0%88/universal-remote-controller-in-your-mobile/"><i class="fa fa-chevron-right"></i></a>
+    
+    </span>
+  </div>
+</article>
+
+      </div>
+      <footer>
+        <div>
+          
+          &copy; 2002 ~ 2020 冰河魔法师 | 本站使用 jekyll | 主题基于 <a href="http://lhzhang.com" title="sext vi">sext vi</a>
+        </div>
+      </footer>
+    </div> <!-- main -->
+    <div style="display:none;">
+      <script language="javascript" type="text/javascript" src="//js.users.51.la/17278963.js"></script>
+      <script language="javascript" type="text/javascript" src="//s22.cnzz.com/z_stat.php?id=1273658393&amp;web_id=1273658393"></script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="冰河魔法师" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <title>Five Great Net Framework 4 5 Features</title>
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="/atom.xml" rel="alternate" title="冰河设计" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/3rd/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/3rd/pygments/github.css">
+  </head>
+  <body>
+    <div id="main" role="main">
+      <header>
+        <div id="header">
+          <h1>
+            <a title="冰河设计" class="" href="/">冰河设计</a>
+            <p class="description">冰河魔法师的自留地</p>
+          </h1>
+        </div>
+        <nav>
+          
+          
+          
+            <span><a title="存档" href="/archive.html"><i class="fa fa-list-ul"></i></a></span>
+          
+            <span><a title="问答" href="/questions.html"><i class="fa fa-question"></i></a></span>
+          
+            <span><a title="关于" href="/about.html"><i class="fa fa-user"></i></a></span>
+          
+            <span><a title="项目" href="/projects.html"><i class="fa fa-film"></i></a></span>
+          
+          <span id="nav-other">
+            <i class="fa fa-external-link"></i>
+            <ul class="dropdown">
+            
+              <li><a href="/atom.xml" target="_blank"><i class="fa fa-fw fa-rss"></i> 订阅</a></li>
+            
+              <li><a href="http://love.icerdesign.com" target="_blank"><i class="fa fa-fw fa-heart"></i> 关于爱</a></li>
+            
+              <li><a href="http://www.hiyaphoto.com" target="_blank"><i class="fa fa-fw fa-camera"></i> 关于摄影</a></li>
+            
+            </ul>
+          </span>
+          
+
+
+
+
+<span>|</span>
+
+    
+    
+    <span>
+        <a href="/index-en.html" class="en">en</a>
+    </span>
+    
+    <span>
+        <a href="/index.html" class="zh">中</a>
+    </span>
+    
+
+
+        </nav>
+      </header>
+      <div id="content">
+      <article>
+  <section class="title">
+    <h2>Five Great Net Framework 4 5 Features</h2>
+  </section>
+  <section class="meta">
+  <span class="time">
+    <time datetime="2016-05-10">2016-05-10</time>
+  </span>
+  
+  <span class="tags">
+    
+  </span>
+  
+  </section>
+  
+  
+  <section class="post">
+  <p>译者：<a href="http://icerdesign.com">冰河魔法师</a>
+原文：<a href="http://www.codeproject.com/Articles/599756/Five-Great-NET-Framework-4-5-Features">Five Great .NET Framework 4.5 Features</a></p>
+
+<h1 id="介绍">介绍</h1>
+<p>微软的.Net 4.5框架已经发布了差不多一年了，和其他微软发布的产品有类似的缺乏沟通的问题，这个产品中只有一到两个特性是开发者们所知道的，剩下的那些直到最后都只能是在MSDN上面的一些简单文档而已。</p>
+
+<p>比如说，当你问一个.Net程序员在.Net4.5中究竟有什么样的更新，他们多半会回答你说async和await（至少我周围的朋友是这样回答的）</p>
+
+<p>当然，要想知道所有的特性点是非常困难的，毕竟有些特性在你的工作范围内一点都不涉及的情况下看起来好像也没什么用。</p>
+
+<p>所以在这篇文章里，我选择了五个我最喜欢的特性来介绍。重申一下，我最喜欢的特性不一定是你最喜欢的，但是我在选择的时候已经尽量考虑选择大部分.Net程序员都会用到的，我希望我的文章能够达到这个期望。</p>
+
+<p><img src="http://www.codeproject.com/KB/dotnet/599756/a1.jpg" alt="" /></p>
+
+<blockquote>
+  <p>注意：这篇文章讨论的新特性仅限于核心库(.Net 4.5 Core)，不会涉及 ASP.NET, WCF, WPF, WWF等。</p>
+</blockquote>
+
+<h1 id="特性一async和await">特性一：async和await</h1>
+<p><img src="http://www.codeproject.com/KB/dotnet/599756/a2.jpg" alt="" /></p>
+
+<p>这个特性被大量的宣传过，而且几乎每个.Net讲师都会提及它，不过它依旧是我最爱的新特性，不用急，你马上就能知道为什么我这么喜爱它了。</p>
+
+<blockquote>
+  <p><code class="highlighter-rouge">async</code><em>和</em><code class="highlighter-rouge">await</code><em>是一对标记符，可以用来标记当一个任务（线程）完成后将返回到哪里。</em></p>
+</blockquote>
+
+<p>上面这句话有点拗口，所以我们还是一起来尝试用实际的代码来理解这句话。</p>
+
+<p>首先我们来看看下面这段代码的执行步骤：</p>
+
+<ol>
+  <li><code class="highlighter-rouge">main</code>函数启动后，调用了<code class="highlighter-rouge">Method()</code>方法</li>
+  <li><code class="highlighter-rouge">Method()</code>方法里面用<code class="highlighter-rouge">Task</code>启动了一个<code class="highlighter-rouge">LongTask</code>函数（内容为等待10秒）</li>
+  <li>启动<code class="highlighter-rouge">LongTask</code>后会立即返回并执行<code class="highlighter-rouge">Method()</code>方法中的剩余代码。换句话说，启动多线程（<code class="highlighter-rouge">Task.Run</code>）后，<code class="highlighter-rouge">LongTask</code>在运行，而<code class="highlighter-rouge">Method()</code>方法中剩余的代码也能被执行</li>
+</ol>
+
+<p>接下来我们希望第三步执行的行为变化一下，我们希望在执行完<code class="highlighter-rouge">LongTask()</code>后才回到<code class="highlighter-rouge">Method()</code>方法继续执行剩余的代码。这里我们使用<code class="highlighter-rouge">async</code>和<code class="highlighter-rouge">await</code>关键字来实现上述行为。</p>
+
+<p><img src="http://www.codeproject.com/KB/dotnet/599756/a3.jpg" alt="" /></p>
+
+<p>这里有三点需要注意的地方：</p>
+<ol>
+  <li><code class="highlighter-rouge">async</code>和<code class="highlighter-rouge">await</code>是成对出现的，独立是无法使用的</li>
+  <li><code class="highlighter-rouge">async</code>是标记方法的，这个标记只是指示出该方法中将包含<code class="highlighter-rouge">await</code>关键字</li>
+  <li><code class="highlighter-rouge">await</code>关键字标记了任务执行结束后需要返回到的位置，所以你常常会将该关键字与<code class="highlighter-rouge">Task</code>类联用。</li>
+</ol>
+
+<p>下面这幅图是将我们之前讨论过的代码使用<code class="highlighter-rouge">async</code>和<code class="highlighter-rouge">await</code>改造过后的版本，除了第三步是在第二步执行完成后执行的外，其他部分都是和以前一样的。简单来说就是只会在任务<code class="highlighter-rouge">LongTask</code>执行完成后才会回到<code class="highlighter-rouge">Method()</code>中继续执行。</p>
+
+<p><img src="http://www.codeproject.com/KB/dotnet/599756/a4.jpg" alt="" /></p>
+
+<p>现在你已经了解了<code class="highlighter-rouge">async</code>和<code class="highlighter-rouge">await</code>，我来问一个问题权当家庭作业吧：使用<code class="highlighter-rouge">Task.Wait</code>或<code class="highlighter-rouge">Task.ContineWith</code>方法也可以达到同样的效果，不过他们有什么差别呢？</p>
+
+<h1 id="特性二zip压缩">特性二：Zip压缩</h1>
+<p><img src="http://www.codeproject.com/KB/dotnet/599756/a5.jpg" alt="" /></p>
+
+<p>Zip格式是现在接受程度最高之一的压缩档案格式。几乎所有操作系统都支持操作该格式。</p>
+
+<p>在以前的.Net版本中都没有内建对Zip压缩功能的支持，所以通常情况开发人员都会使用第三方的类似于<code class="highlighter-rouge">DotnetZip</code>之类的组件来达到该效果。不过在.Net4.5中，Zip压缩格式已经被内置到框架中去了，在<code class="highlighter-rouge">System.IO.Compression</code>命名空间中。</p>
+
+<p>要使用它，我们就先引用一下两个命名空间：</p>
+<ul>
+  <li><code class="highlighter-rouge">System.IO.Compression.FileSystem</code></li>
+  <li><code class="highlighter-rouge">System.IO.Comptession</code></li>
+</ul>
+
+<p>接下来将其引入代码：</p>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System.IO.Compression</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>如果你想将一个文件夹中的所有文件都打包进来，就使用<code class="highlighter-rouge">CreateFromDirectory</code>方法：</p>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ZipFile</span><span class="p">.</span><span class="nf">CreateFromDirectory</span><span class="p">(</span><span class="s">@"D:\data"</span><span class="p">,</span><span class="s">@"D:\data.zip"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>如果你想解压，可以使用<code class="highlighter-rouge">ExtractToDirectory</code>方法：</p>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ZipFile</span><span class="p">.</span><span class="nf">ExtractToDirectory</span><span class="p">(</span><span class="s">@"D:\data.zip"</span><span class="p">,</span> <span class="s">@"D:\data\unzip"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h1 id="特性三正则表达式执行超时">特性三：正则表达式执行超时</h1>
+<p><img src="http://www.codeproject.com/KB/dotnet/599756/a6.jpg" alt="" /></p>
+
+<p><code class="highlighter-rouge">正则表达式</code>是做字符串类验证的最好方式，如果你是第一次接触<code class="highlighter-rouge">正则表达式</code>，推荐你看一段<a href="http://youtu.be/f-JcHBF0b_0">视频</a>，但是标准的正则表达式逻辑却会给黑客们留下DoS（拒绝服务）攻击的可能性，我接下来详细的说明会让你明白这是为什么。</p>
+
+<p>假如我们有个正则表达式<code class="highlighter-rouge">^(\d+)$</code>，这个正则表达式希望这个字符串里只包含数字。你可以观察正则表达式符号图（Regex Symbolic Diagram）来了解正则表达式是如何被计算的。如果我们要验证字符串<code class="highlighter-rouge">123456X</code>，将会有6条路径来验证，如下图：</p>
+
+<p><img src="http://www.codeproject.com/KB/dotnet/599756/a7.jpg" alt="" /></p>
+
+<p>但是如果我们多加一个数字进去，将会变成7条路径。换句话说，随着字符串长度的增长，正则表达式将会花掉更多的时间来计算，再换句话说，计算时间和字符串长度是成线型比例的。</p>
+
+<p><img src="http://www.codeproject.com/KB/dotnet/599756/a8.jpg" alt="" /></p>
+
+<p>我们将之前定义的正则表达式变成更复杂的<code class="highlighter-rouge">^(\d+)+$</code>，你将看到正则表达式的计算过程变得更加复杂，如果我们试图验证字符串<code class="highlighter-rouge">123456X</code>，将会计算32条路径，只要你将字符串加长一个字符，将会计算64条路径</p>
+
+<p><img src="http://www.codeproject.com/KB/dotnet/599756/a9.jpg" alt="" /></p>
+
+<p>换句话说，计算时间将会随着字符串的增加而成倍增加。</p>
+
+<p><img src="http://www.codeproject.com/KB/dotnet/599756/a10.jpg" alt="" /></p>
+
+<p>现在你有可能会问，这个有什么关系呢？这种超长的计算时间很有可能会被黑客发现来做DoS攻击，他们只需要向你的服务器请求一个超长的字符串要验证，你的服务器将会一直等在那里。</p>
+
+<p>当然，解决这个问题的最佳方案就是在用正则表达式做验证的时候设置一个超时时间。在.Net4.5中就有这个功能，像如下代码中那样就可以。从此之后，哪怕用户发来了恶意字符串，我们的程序也不会卡死在那里。</p>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span>
+<span class="p">{</span>
+  <span class="kt">var</span> <span class="n">regEx</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Regex</span><span class="p">(</span><span class="s">@"^(\d+)+$"</span><span class="p">,</span> <span class="n">RegexOptions</span><span class="p">.</span><span class="n">Singleline</span><span class="p">,</span> <span class="n">TimeSpan</span><span class="p">.</span><span class="nf">FromSeconds</span><span class="p">(</span><span class="m">2</span><span class="p">));</span>
+  <span class="kt">var</span> <span class="n">match</span> <span class="p">=</span> <span class="n">regEx</span><span class="p">.</span><span class="nf">Match</span><span class="p">(</span><span class="s">"123453109839109283090492309480329489812093809x"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="n">RegexMatchTimeoutException</span> <span class="n">ex</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Regex Timeout"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="特性四配置profile优化提高启动性能">特性四：配置(Profile)优化（提高启动性能）</h1>
+<p><img src="http://www.codeproject.com/KB/dotnet/599756/a11.jpg" alt="" /></p>
+
+<p>我们都知道.Net的程序二进制文件是IL格式的，在运行时，由JIT(Just-in-Time)编译器即时的将IL代码转译成机器代码。因此我们常常都会抱怨.Net程序的启动速度缓慢，我们总是需要等待JIT将IL代码转换成机器代码。</p>
+
+<p>为了提高启动效率，在.Net4.5中，我们有一个称之为配置优化(Profile Optimization)的机制。配置其实仅仅是一个含有程序启动时所需方法列表的简单文件，所以当程序启动的时候，后台JIT(Backgroud JIT)运行并转译这些方法至机器代码。</p>
+
+<p>后台JIT编译启动方法的过程会使用多核进行，以得到更高的启动效率。必须注意的是 <strong>你必须使用多核CPU来实现配置优化</strong> 。如果你没有多核CPU，那么这些设置将会被忽略。</p>
+
+<p><img src="http://www.codeproject.com/KB/dotnet/599756/a12.jpg" alt="" /></p>
+
+<p>为了创建一个配置文件，你首先需要引入<code class="highlighter-rouge">System.Runtime</code>命名空间，然后你就可以调用在类<code class="highlighter-rouge">ProfileOptimization</code>中的<code class="highlighter-rouge">SetProfileRoot</code>和<code class="highlighter-rouge">StartProfile</code>方法。于是，当程序启动，后台JIT便会读取配置文件并且在后台编译你的启动方法，以此来减少启动时间。</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System.Runtime</span><span class="p">;</span>
+
+<span class="c1">// Call the Setprofilerroot and Startprofile method</span>
+<span class="n">ProfileOptimization</span><span class="p">.</span><span class="nf">SetProfileRoot</span><span class="p">(</span><span class="s">@"D:\ProfileFile"</span><span class="p">);</span>
+
+<span class="n">ProfileOptimization</span><span class="p">.</span><span class="nf">StartProfile</span><span class="p">(</span><span class="s">"ProfileFile"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>有一点需要注意：<code class="highlighter-rouge">ProfileOptimization</code>默认对于ASP.NET 4.5和Silverlight 5是开启的，所以对于它们来说不用手动写这些代码来开启。</p>
+
+<h1 id="特性五垃圾回收gc后台gc垃圾清理">特性五：垃圾回收(GC)（后台GC垃圾清理）</h1>
+<p><img src="http://www.codeproject.com/KB/dotnet/599756/a13.jpg" alt="" /></p>
+
+<p>对于.Net程序来说，垃圾回收(GC)的确是一件非常繁重和频繁(heavy)的任务。尤其是在ASP.NET程序中，大量的请求使得服务器建立了大量的对象，使得GC必须努力的工作以便把这些不需要的对象清理掉。</p>
+
+<p><img src="http://www.codeproject.com/KB/dotnet/599756/a14.jpg" alt="" /></p>
+
+<p>在.Net4.0中，当GC执行清理的时候，所有的程序线程均被暂停了。在上图中，我们有三个线程运行以及两个GC运行在不同的线程（并在独立的逻辑处理器上运行）中，现在程序线程运行并执行它们自己的任务（这些任务均会创建一些对象）。</p>
+
+<p>在某个时间点后台GC执行清理，当它们执行清理的时候，所有其他程序线程均会被暂停。这样就使得程序在那个时候会短暂的失去响应。</p>
+
+<p><img src="http://www.codeproject.com/KB/dotnet/599756/a15.jpg" alt="" /></p>
+
+<p>为了克服以上这个问题，服务器GC(Server GC)因此而生，在服务器GC中，将会多一个线程运行在后台，用来在后台清理Gen 2（<a href="http://youtu.be/gC8NdlOeNEs">观看这段视频来了解GC Gen 0,1,2</a>）的对象使得主GC线程的负载减小，由于两个GC线程在运行，这样使得主应用线程变得更短的暂停，因此而提高了应用程序的吞吐率(throughput)。要启用服务器GC，只需要添加<code class="highlighter-rouge">gcServer</code>XML标签并将其设为<code class="highlighter-rouge">true</code>即可：</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;configuration&gt;</span>
+   <span class="nt">&lt;runtime&gt;</span>
+      <span class="nt">&lt;gcServer</span> <span class="na">enabled=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/runtime&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span> 
+</code></pre></div></div>
+
+<h1 id="另外三个值得探索的新特性">另外三个值得探索的新特性</h1>
+<h2 id="设置应用域级别缺省culture">设置应用域级别缺省Culture</h2>
+<p>在之前的.Net版本中如果我们需要设置Culture，需要在每一个线程中设置Culture。下面这段代码就演示我们在线程级别设置Culture的痛苦之处。而且如果我们的程序是重多线程程序，那会是更加的痛苦。</p>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">CultureInfo</span> <span class="n">cul</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">CultureInfo</span><span class="p">(</span><span class="n">strCulture</span><span class="p">);</span>
+<span class="n">Thread</span><span class="p">.</span><span class="n">CurrentThread</span><span class="p">.</span><span class="n">CurrentCulture</span> <span class="p">=</span> <span class="n">cul</span><span class="p">;</span>
+<span class="n">Thread</span><span class="p">.</span><span class="n">CurrentThread</span><span class="p">.</span><span class="n">CurrentUICulture</span> <span class="p">=</span> <span class="n">cul</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>在4.5中，我们可以在应用域(App Domain)级别设置Culture，然后所有该应用域的线程均会继承该Culture，下面就演示了如何使用<code class="highlighter-rouge">DefaultThreadCurrentCulture</code></p>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">CultureInfo</span> <span class="n">culture</span> <span class="p">=</span> <span class="n">CultureInfo</span><span class="p">.</span><span class="nf">CreateSpecificCulture</span><span class="p">(</span><span class="s">"fr-FR"</span><span class="p">);</span>
+<span class="n">CultureInfo</span><span class="p">.</span><span class="n">DefaultThreadCurrentCulture</span> <span class="p">=</span> <span class="n">culture</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="数组支持超过2g大小">数组支持超过2G大小</h2>
+<p>其实我也不确定什么样的场景需要2G大小的集合。所以我个人来看，我并不知道什么时候这个特性会被用到，通常情况如果我们需要大集合的时候都会把它分散为小部分。不过我相信一定有足够重要的理由让.Net4.5支持这个特性。</p>
+
+<h2 id="控制台支持unicode">控制台支持Unicode</h2>
+<p>我想应该很少人会用控制台把，不过我看见过一些人使用控制台来做学术研究目的。不管怎么样，我们现在可以有支持Unicode的控制台了。</p>
+
+<h1 id="参考文献">参考文献</h1>
+<ul>
+  <li><a href="http://msdn.microsoft.com/en-us/library/ms171868.aspx">http://msdn.microsoft.com/en-us/library/ms171868.aspx</a></li>
+  <li>本文原文：<a href="http://www.codeproject.com/Articles/599756/Five-Great-NET-Framework-4-5-Features">Five Great .NET Framework 4.5 Features</a></li>
+</ul>
+
+<blockquote>
+  <p><strong>译者注</strong>: 本文作者推荐了两个视频来服务初学者，使其了解一些基本概念，若观看遇到连接断开的问题，请咨询周围程序员朋友。</p>
+</blockquote>
+
+  </section>
+  <div class="divider">
+    <span>
+    
+    <a href="/p/extending-html-with-angularjs-directives/"><i class="fa fa-chevron-left"></i></a>
+    
+    </span>
+    <span>
+    
+    <a href="/p/how-about-remove-all-screen-from-site/"><i class="fa fa-chevron-right"></i></a>
+    
+    </span>
+  </div>
+</article>
+
+      </div>
+      <footer>
+        <div>
+          
+          &copy; 2002 ~ 2020 冰河魔法师 | 本站使用 jekyll | 主题基于 <a href="http://lhzhang.com" title="sext vi">sext vi</a>
+        </div>
+      </footer>
+    </div> <!-- main -->
+    <div style="display:none;">
+      <script language="javascript" type="text/javascript" src="//js.users.51.la/17278963.js"></script>
+      <script language="javascript" type="text/javascript" src="//s22.cnzz.com/z_stat.php?id=1273658393&amp;web_id=1273658393"></script>
+    </div>
+  </body>
+</html>

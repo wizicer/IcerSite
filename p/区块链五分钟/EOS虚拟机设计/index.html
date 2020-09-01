@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="冰河魔法师" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <title>EOS虚拟机设计</title>
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="/atom.xml" rel="alternate" title="冰河设计" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/3rd/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/3rd/pygments/github.css">
+  </head>
+  <body>
+    <div id="main" role="main">
+      <header>
+        <div id="header">
+          <h1>
+            <a title="冰河设计" class="" href="/">冰河设计</a>
+            <p class="description">冰河魔法师的自留地</p>
+          </h1>
+        </div>
+        <nav>
+          
+          
+          
+            <span><a title="存档" href="/archive.html"><i class="fa fa-list-ul"></i></a></span>
+          
+            <span><a title="问答" href="/questions.html"><i class="fa fa-question"></i></a></span>
+          
+            <span><a title="关于" href="/about.html"><i class="fa fa-user"></i></a></span>
+          
+            <span><a title="项目" href="/projects.html"><i class="fa fa-film"></i></a></span>
+          
+          <span id="nav-other">
+            <i class="fa fa-external-link"></i>
+            <ul class="dropdown">
+            
+              <li><a href="/atom.xml" target="_blank"><i class="fa fa-fw fa-rss"></i> 订阅</a></li>
+            
+              <li><a href="http://love.icerdesign.com" target="_blank"><i class="fa fa-fw fa-heart"></i> 关于爱</a></li>
+            
+              <li><a href="http://www.hiyaphoto.com" target="_blank"><i class="fa fa-fw fa-camera"></i> 关于摄影</a></li>
+            
+            </ul>
+          </span>
+          
+
+
+
+
+<span>|</span>
+
+    
+    
+    <span>
+        <a href="/index-en.html" class="en">en</a>
+    </span>
+    
+    <span>
+        <a href="/index.html" class="zh">中</a>
+    </span>
+    
+
+
+        </nav>
+      </header>
+      <div id="content">
+      <article>
+  <section class="title">
+    <h2>EOS虚拟机设计</h2>
+  </section>
+  <section class="meta">
+  <span class="time">
+    <time datetime="2018-09-03">2018-09-03</time>
+  </span>
+  
+  <span class="tags">
+    
+    <a href="/tags.html#区块链" title="区块链">#区块链</a>
+    
+    <a href="/tags.html#教程" title="教程">#教程</a>
+    
+  </span>
+  
+  </section>
+  
+  
+  <section class="post">
+  <h2 id="今日案例">今日案例</h2>
+
+<blockquote>
+  <p>EOS表示，推出了WASM解释器，用来解释执行 WebAssembly 智能合约，目前已经通过所有测试并接入到主网和测试网。</p>
+
+  <p>EOS之前本来是编译执行，即直接将代码编译成为可执行的二进制机器码。而现在的解释执行则指用户拿到的是原始代码，解释器会像翻译员一样，一行一行地执行代码。</p>
+
+  <p>前者优点是执行速度快，但缺点是每次智能合约有更新时，见证人的服务器都要重新编译生成二进制机器码。对于执行次数不多的智能合约，是不划算的。解释执行正好相反，不需要提前编译，但执行时速度比编译执行慢很多。另外，比特币和以太坊采用的均是解释性的语言。</p>
+
+  <p>而EOS的智能合约语言Web Assembly(wasm)同时支持两种执行方式。因为 WebAssembly 类似 java，会生成中间语言：字节码，字节码既可以编译成机器码后执行，又可以使用解释器直接执行。中间语言赋予了 WebAssembly 灵活的执行方式。</p>
+
+  <p>EOS还表示，引入 WebAssembly
+解释器是给智能合约的结果提供了一个权威参考，当各个见证人的编译执行结果不一致时，就可以使用解释器得到参考结果。而且解释器也会给编译执行做后补，以防
+WASM 编译器出问题时维持系统稳定。</p>
+</blockquote>
+
+<p> </p>
+
+<p>读完这篇文章，我有一个疑问。在这篇文章当中，看到了EOS通过将代码编译成可执行的二进制机器码来执行，让我不禁产生了疑问：他如何能够，第一，防止恶意代码的执行，第二，防止计算资源被恶意占用。</p>
+
+<h2 id="eos虚拟机设计">EOS虚拟机设计 </h2>
+
+<p>我们知道，为了让区块链在安全和灵活性方面取得平衡，智能合约的设计就至关重要了。在比特币当中，为了安全性的考虑，比特币被设计成只能执行指定有限指令的，且不可执行循环操作的，图灵不完全的虚拟机，这使得比特币缺乏灵活性，而以太坊为了解决这个灵活性的问题，设计了燃料货币，会根据执行语句的数量计算燃料，当然燃料用尽的时候执行则结束。</p>
+
+<p>EOS还是一个很新潮的区块链，显然没有现成的资料可以直接解决我的疑问。因此，我查阅了EOS的源代码，并获得了以下的结论：由于EOS是将中间代码编译成二进制机器代码来执行的，因此，它无法直接控制代码流程，他使用了比较粗暴的方案，简单说就是按照权重分配CPU，掐秒执行，到点结束，这也说明了为什么后文提到的编译结果有可能不一致。因为一是你机器不一样，最终编译出来的二进制代码可能会有所差别，极可能导致执行结果不一致，二是按照权重分配CPU执行，会由于同一个区块中的交易内容不同，也会影响个别交易的输出结果，不过此方案确实获得了效率。</p>
+
+<p>看EOS到现在，它同时支持两种执行方式，极有可能最终还是会转移到解释执行这条路上来。另外插一句，虽然说编译成二进制机器码的方式，执行速度得到了大幅度的提高，但是因为编译成二进制码后，并没有在一个虚拟机当中执行，宿主程序很难控制其流程，EOS的做法是在转换成二进制机器码之前，注入了很多检查时间的代码，超时则会抛出异常并结束，因此这个也会成为导致机器码速度下降的一个重要原因，最终速度是否能够比优化过后的解释执行更快，还是很难说的。</p>
+
+
+  </section>
+  <div class="divider">
+    <span>
+    
+    <a href="/p/self-startup-one-year/"><i class="fa fa-chevron-left"></i></a>
+    
+    </span>
+    <span>
+    
+    <a href="/p/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%BA%94%E5%88%86%E9%92%9F/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%80%9D%E7%BB%B4/"><i class="fa fa-chevron-right"></i></a>
+    
+    </span>
+  </div>
+</article>
+
+      </div>
+      <footer>
+        <div>
+          
+          &copy; 2002 ~ 2020 冰河魔法师 | 本站使用 jekyll | 主题基于 <a href="http://lhzhang.com" title="sext vi">sext vi</a>
+        </div>
+      </footer>
+    </div> <!-- main -->
+    <div style="display:none;">
+      <script language="javascript" type="text/javascript" src="//js.users.51.la/17278963.js"></script>
+      <script language="javascript" type="text/javascript" src="//s22.cnzz.com/z_stat.php?id=1273658393&amp;web_id=1273658393"></script>
+    </div>
+  </body>
+</html>

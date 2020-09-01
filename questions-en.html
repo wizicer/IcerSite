@@ -1,0 +1,2385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Icer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <title>Questions</title>
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    
+    
+    
+      <link rel="alternate" hreflang="en" href="/questions-en.html" />
+    
+      <link rel="alternate" hreflang="zh" href="/questions.html" />
+    
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="/atom.xml" rel="alternate" title="Icer's blog" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/3rd/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/3rd/pygments/github.css">
+  </head>
+  <body>
+    <div id="main" role="main">
+      <header>
+        <div id="header">
+          <h1>
+            <a title="Icer's blog" class="" href="/index-en.html">Icer's blog</a>
+            <p class="description">Everything worth written</p>
+          </h1>
+        </div>
+        <nav>
+          
+          
+          
+            <span><a title="Archive" href="/archive-en.html"><i class="fa fa-list-ul"></i></a></span>
+          
+            <span class="active"><a title="Questions" href="/questions-en.html"><i class="fa fa-question"></i></a></span>
+          
+            <span><a title="About" href="/about-en.html"><i class="fa fa-user"></i></a></span>
+          
+            <span><a title="Project" href="/projects-en.html"><i class="fa fa-film"></i></a></span>
+          
+          <span id="nav-other">
+            <i class="fa fa-external-link"></i>
+            <ul class="dropdown">
+            
+              <li><a href="/atom.xml" target="_blank"><i class="fa fa-fw fa-rss"></i> Subscribe</a></li>
+            
+              <li><a href="http://love.icerdesign.com" target="_blank"><i class="fa fa-fw fa-heart"></i> Love</a></li>
+            
+              <li><a href="http://www.hiyaphoto.com" target="_blank"><i class="fa fa-fw fa-camera"></i> Photos</a></li>
+            
+            </ul>
+          </span>
+          
+
+
+
+
+<span>|</span>
+
+    
+
+    
+    <span>
+        <a href="/questions-en.html" class="en">en</a>
+    </span>
+    
+    <span>
+        <a href="/questions.html" class="zh">中</a>
+    </span>
+    
+
+    
+
+
+        </nav>
+      </header>
+      <div id="content">
+      <article>
+  
+  <section class="title">
+    <h2>Questions </h2>
+  </section>
+  
+  <section class="post">
+  
+<blockquote>
+  <a href="/questions">View QAs in Chinese</a>
+</blockquote>
+
+
+
+  <h2>C#</h2>
+     
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/if-debug-vs-conditionaldebug" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/if-debug-vs-conditionaldebug">#if DEBUG vs. Conditional("DEBUG")</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Extract key information from <a href="http://stackoverflow.com/a/3788719/2558077">this great explanation</a></p>
+
+<ul>
+  <li><code class="highlighter-rouge">#if DEBUG</code>: The code in here won’t even reach the IL on release.</li>
+  <li><code class="highlighter-rouge">[Conditional("DEBUG")]</code>: This code will reach the IL, however calls to the method will be omitted
+unless DEBUG is set when the caller is <strong>compiled</strong>.</li>
+</ul>
+
+<p><strong>Common Best Practice</strong></p>
+
+<ul>
+  <li>Use <code class="highlighter-rouge">#if DEBUG</code> for different variable assignment.</li>
+  <li>Use <code class="highlighter-rouge">[Conditional("DEBUG")]</code> for method invocation.</li>
+</ul>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/debug-vs2015-extension-project" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/debug-vs2015-extension-project">debug VS2015 extension project</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <ol>
+  <li>Right click on the project and select Properties</li>
+  <li>Go to the Debug Tab</li>
+  <li>Click on the radio button for Start External Program. Point it to the devenv.exe binary.
+On my machine it’s located at
+C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\devenv.exe
+On a non x64 machine though you can remove the “ (x86)” portion.</li>
+  <li>Then set the command line arguments to /rootsuffix Exp</li>
+</ol>
+
+<p><a href="http://stackoverflow.com/questions/9281662/how-to-debug-visual-studio-extensions">Link</a></p>
+
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/error-cs0656-after-used-dynamic" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/error-cs0656-after-used-dynamic">Error `CS0656` after used dynamic</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Need to reference <code class="highlighter-rouge">Microsoft.CSharp</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/image-comments-in-vs2015" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/image-comments-in-vs2015">image comments in VS2015</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>no stable extension so far, only available one is <a href="https://github.com/lukesdm/image-comments">https://github.com/lukesdm/image-comments</a> without maintenance for years</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/should-i-sign-my-extension-before-uploading-to-vs-gallery" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/should-i-sign-my-extension-before-uploading-to-vs-gallery">should I sign my extension before uploading to VS gallery?</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>No, many famous extension didn’t sign itself.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/what-if-i-want-to-sign-my-extension-for-vs" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/what-if-i-want-to-sign-my-extension-for-vs">what if I want to sign my extension for VS?</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Here is the tutorial: <a href="http://www.jeff.wilcox.name/2010/03/vsixcodesigning/">http://www.jeff.wilcox.name/2010/03/vsixcodesigning/</a></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/how-to-add-strong-name-to-dllsign-a-dll" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/how-to-add-strong-name-to-dllsign-a-dll">How to add strong name to dll(sign a dll)?</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ildasm.exe xxx.dll /out:xxx.il
+ilasm.exe xxx.il /dll /key<span class="o">=</span>xxx.snk /output<span class="o">=</span>xxx-signed.dll
+</code></pre></div></div>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/protected-internal-in-c" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/protected-internal-in-c">`protected internal` in C#?</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">protected internal</code> means <code class="highlighter-rouge">protected</code> <strong>OR</strong> <code class="highlighter-rouge">internal</code>.
+In order to make it protected <strong>AND</strong> internal, mark parent as <code class="highlighter-rouge">internal</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/set-value-of-internalprivate-fieldsproperties-via-dynamic" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/set-value-of-internalprivate-fieldsproperties-via-dynamic">Set value of internal/private fields/properties via dynamic</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>It’s impossible to set value through dynamic, instead, use reflection with <code class="highlighter-rouge">BindingFlags.Instance |
+BindingFlags.NonPublic</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/unit-test-datetimenow" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/unit-test-datetimenow">Unit test `DateTime.Now`</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Only way is use agent.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/select-all-design-pattern-with-post-selection-events-single-or-multiple-confirmation" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/select-all-design-pattern-with-post-selection-events-single-or-multiple-confirmation">Select-All design pattern with post-selection events (single or multiple confirmation)</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Differentiate Select-All and Single-Select by event source/args.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/annotate-a-file-in-vs2015git-blame" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/annotate-a-file-in-vs2015git-blame">Annotate a file in VS2015(git blame)</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Right click file in solution, <code class="highlighter-rouge">Annotate</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/ignore-first-time-selectionchanged-event" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/ignore-first-time-selectionchanged-event">Ignore first time SelectionChanged event</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <ol>
+  <li>use variable to lock</li>
+  <li>use <code class="highlighter-rouge">Loaded</code> event to wire SelectionChanged event.</li>
+</ol>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/shortcut-to-navigate-in-peek-definition" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/shortcut-to-navigate-in-peek-definition">shortcut to navigate in Peek Definition</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <ul>
+  <li><kbd>Shift</kbd>+<kbd>Esc</kbd>: Jump Between</li>
+  <li><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+[<kbd>-</kbd>/<kbd>+</kbd>]: Navigate between definition window</li>
+  <li>[<kbd>Shift</kbd>+]<kbd>F8</kbd>: navigate between multiple results</li>
+</ul>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/performance-appdomain-vs-process" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/performance-appdomain-vs-process">Performance: AppDomain vs Process</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>No comparison found, however, obviously AppDomain should be much faster than process which not
+involving a lot of system resource allocation.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/async-linq" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/async-linq">async linq?</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>In a word, linq was not designed to be asynced.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/async-wpf-click-event-for-cpu-intensive-operation" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/async-wpf-click-event-for-cpu-intensive-operation">async WPF click event for CPU intensive operation</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Lesson learned:</p>
+
+<ol>
+  <li>Don’t use async/await in .Net 4.0.</li>
+  <li>Use <code class="highlighter-rouge">Task.Run</code> to replace the CPU intensive code.</li>
+  <li>Need to manually fire <code class="highlighter-rouge">PropertyChanged</code> event for ViewModel.</li>
+</ol>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/caliburnmicro-propertychangedbase-not-serializable-even-mark-as-serializable-who-inherit-it" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/caliburnmicro-propertychangedbase-not-serializable-even-mark-as-serializable-who-inherit-it">Caliburn.Micro `PropertyChangedBase` not Serializable. (Even mark as Serializable who inherit it)</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>It marks with <code class="highlighter-rouge">[DataContract]</code>, maybe mark field with <code class="highlighter-rouge">[DataMember]</code> can fix this(not test).</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/cannot-be-serializable-who-implement-inotifypropertychanged" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/cannot-be-serializable-who-implement-inotifypropertychanged">Cannot be Serializable who implement INotifyPropertyChanged</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Because the event, change it to:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">field</span><span class="p">:</span><span class="n">NonSerializable</span><span class="p">]</span>
+<span class="k">public</span> <span class="k">event</span> <span class="n">ChangedEventHandler</span> <span class="n">PropertyChanged</span><span class="p">;</span>
+</code></pre></div></div>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/dynamic-moduleassembly" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/dynamic-moduleassembly">Dynamic Module(Assembly)?</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Use <code class="highlighter-rouge">AssemblyBuilder</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/side-effects-of-serializable" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/side-effects-of-serializable">Side effects of `[Serializable]`</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>No, because it’s <code class="highlighter-rouge">Attribute</code> which only read by some program runtime.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/taskrun-is-not-available-and-error-doesnt-contain-a-definition-for-getawaiter-in-taskfactorystartnew" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/taskrun-is-not-available-and-error-doesnt-contain-a-definition-for-getawaiter-in-taskfactorystartnew">`Task.Run` is not available and error `doesn't contain a definition for 'GetAwaiter'` in `Task.Factory.StartNew`</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">Task.Run</code> is available since .Net 4.5 and this error would disappear after switched target to 4.5</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/assemblyversion-vs-fileversion-vs-productversion" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/assemblyversion-vs-fileversion-vs-productversion">`AssemblyVersion` vs `FileVersion` vs `ProductVersion`</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <ul>
+  <li><code class="highlighter-rouge">AssemblyVersion</code> is used for assembly reference.</li>
+  <li><code class="highlighter-rouge">FileVersion</code> is used for mark which build the assembly produced.</li>
+  <li><code class="highlighter-rouge">ProductVersion</code> is used for marketing, not used in program. <strong>Note</strong>: aka
+<code class="highlighter-rouge">AssemblyInformationalVersion</code></li>
+</ul>
+
+<p>eg, version of <code class="highlighter-rouge">mscorlib 2.0.0.0</code></p>
+
+<ul>
+  <li><code class="highlighter-rouge">AssemblyVersion</code>: 2.0.0.0</li>
+  <li><code class="highlighter-rouge">FileVersion</code>: 2.0.50727.3521</li>
+  <li><code class="highlighter-rouge">ProductVersion</code>: 2.0.50727.3521</li>
+</ul>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/dependency-checkrestriction-of-csproj" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/dependency-checkrestriction-of-csproj">Dependency check(restriction) of csproj</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <ol>
+  <li>still cannot achieved by using code analysis</li>
+  <li>use <code class="highlighter-rouge">.Net Architecture Checker</code></li>
+</ol>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/error-raised-by-xaml-does-not-have-a-resource-identifier-by-the-uri" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/error-raised-by-xaml-does-not-have-a-resource-identifier-by-the-uri">Error raised by xaml: `does not have a resource identifier by the uri`</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Scenario is when try to load two different version of assemblies.(same code with different Assembly
+Version)</p>
+
+<p>It’s limitation to Xaml generator. Workaround:</p>
+<ol>
+  <li>put <code class="highlighter-rouge">&lt;AssemblyVersion&gt;</code> in <code class="highlighter-rouge">.csproj</code> file.</li>
+  <li>use build parameter.</li>
+</ol>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/error-xceedwpftoolkitaerolite-in-xaml-when-use-xceed" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/error-xceedwpftoolkitaerolite-in-xaml-when-use-xceed">Error `xceed.wpf.toolkit.aerolite` in xaml when use xceed</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Ignore it, as it’s internal mechanism to try to load it.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/loadfile-vs-loadfrom-in-assembly" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/loadfile-vs-loadfrom-in-assembly">`LoadFile` vs `LoadFrom` in `Assembly`</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <ul>
+  <li><code class="highlighter-rouge">LoadFrom</code>, default action when .Net load assembly, load only once for same identity even in two
+location with different meta data.</li>
+  <li><code class="highlighter-rouge">LoadFile</code>, load exactly what was requested, and would not load dependency.</li>
+</ul>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/taskrun-with-sta-apartment-state" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/taskrun-with-sta-apartment-state">`Task.Run` with STA apartment state</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Use following code instead of <code class="highlighter-rouge">Task.Run</code>, <a href="https://github.com/xunit/xunit/issues/103#issuecomment-62822506">Source</a></p>
+
+
+  
+  <a href="/questions/csharp/en/taskrun-with-sta-apartment-state/" title="`Task.Run` with STA apartment state" >More <i class="fa fa-arrow-circle-o-right"></i></a>
+  
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/error-message-cannot-modify-the-return-value-of-expression-because-it-is-not-a-variable" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/error-message-cannot-modify-the-return-value-of-expression-because-it-is-not-a-variable">Error Message: Cannot modify the return value of 'expression' because it is not a variable</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Example code which raises the error:</p>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="n">Point</span> <span class="n">Origin</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">Origin</span><span class="p">.</span><span class="n">X</span> <span class="p">=</span> <span class="m">10</span><span class="p">;</span> <span class="c1">// fails with CS1612</span>
+</code></pre></div></div>
+
+
+  
+  <a href="/questions/csharp/en/error-message-cannot-modify-the-return-value-of-expression-because-it-is-not-a-variable/" title="Error Message: Cannot modify the return value of 'expression' because it is not a variable" >More <i class="fa fa-arrow-circle-o-right"></i></a>
+  
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/merge-a-individual-application-configure-file-appsettings-to-application" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/merge-a-individual-application-configure-file-appsettings-to-application">Merge a individual application configure file (AppSettings) to application</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><strong>Scenario Description</strong>: for some reason we don’t want to modify the main configure file which name
+is <code class="highlighter-rouge">xxx.exe.config</code>, so we store configures in another file <code class="highlighter-rouge">ConfigurationFile</code>.</p>
+
+
+  
+  <a href="/questions/csharp/en/merge-a-individual-application-configure-file-appsettings-to-application/" title="Merge a individual application configure file (AppSettings) to application" >More <i class="fa fa-arrow-circle-o-right"></i></a>
+  
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/service-includeb4f97281-0dbd-4835-9ed8-7dfb966e87ff--in-csproj-file" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/service-includeb4f97281-0dbd-4835-9ed8-7dfb966e87ff--in-csproj-file">&lt;Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" /&gt; in csproj file</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>“This behavior is intentional.”</p>
+
+
+  
+  <a href="/questions/csharp/en/service-includeb4f97281-0dbd-4835-9ed8-7dfb966e87ff--in-csproj-file/" title="&lt;Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" /&gt; in csproj file" >More <i class="fa fa-arrow-circle-o-right"></i></a>
+  
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/compile-error-create-a-delegate-when-there-is-a-conditional-attribute" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/compile-error-create-a-delegate-when-there-is-a-conditional-attribute">Compile Error: Create a delegate when there is a conditional attribute</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Solution: Wrapping in lambda function.</p>
+
+<p><a href="http://stackoverflow.com/questions/20638873/create-a-delegate-when-there-is-a-conditional-attribute">Link</a></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/unit-test-hangs-when-testing-wpf-program-with-dispatcher" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/unit-test-hangs-when-testing-wpf-program-with-dispatcher">Unit test hangs when testing WPF program with `Dispatcher`</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>The unit test hangs at following statement which is working well in real life WPF program.</p>
+
+
+  
+  <a href="/questions/csharp/en/unit-test-hangs-when-testing-wpf-program-with-dispatcher/" title="Unit test hangs when testing WPF program with `Dispatcher`" >More <i class="fa fa-arrow-circle-o-right"></i></a>
+  
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/event-during-dragmove" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/event-during-dragmove">Event during DragMove?</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>In my application <a href="https://github.com/wizicer/TouchAssistant">TouchAssistant</a> I want it <em>disappear</em>
+after few seconds if no user interaction, however, after called <code class="highlighter-rouge">DragMove()</code>, there is no chance for me to
+listen to extra events to know if user still interacted with the program.</p>
+
+
+  
+  <a href="/questions/csharp/en/event-during-dragmove/" title="Event during DragMove?" >More <i class="fa fa-arrow-circle-o-right"></i></a>
+  
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/send-keystroke-to-application" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/send-keystroke-to-application">Send keystroke to application</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>The goal I want to achieve is send keystroke to another application, which is the core function of my
+new open source application <a href="https://github.com/wizicer/TouchAssistant">TouchAssistant</a>. And I want
+the keystroke can be customized easily by configuration from user interaction.</p>
+
+
+  
+  <a href="/questions/csharp/en/send-keystroke-to-application/" title="Send keystroke to application" >More <i class="fa fa-arrow-circle-o-right"></i></a>
+  
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/ternary-condition-returning-methoddelegate-not-compile" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/ternary-condition-returning-methoddelegate-not-compile">Ternary(?:) condition returning method(delegate) not compile.</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>I'm facing the same situation like <a href="http://stackoverflow.com/q/6015747/2558077">this link</a>.</p>
+
+
+  
+  <a href="/questions/csharp/en/ternary-condition-returning-methoddelegate-not-compile/" title="Ternary(?:) condition returning method(delegate) not compile." >More <i class="fa fa-arrow-circle-o-right"></i></a>
+  
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/prefix-spaces-for-each-line-in-a-string" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/prefix-spaces-for-each-line-in-a-string">Prefix spaces for each line in a string</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>My code generator requires to generate code with right indentation, so I need to prefix spaces for
+each line of a string. After google the world, there isn’t a out-of-box solution for me to use,
+finally I came up with my own solution:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">internal</span> <span class="k">static</span> <span class="kt">string</span> <span class="nf">Indent</span><span class="p">(</span><span class="k">this</span> <span class="kt">string</span> <span class="n">content</span><span class="p">,</span> <span class="kt">int</span> <span class="n">level</span> <span class="p">=</span> <span class="m">1</span><span class="p">)</span> <span class="p">=&gt;</span>
+    <span class="kt">string</span><span class="p">.</span><span class="nf">Join</span><span class="p">(</span><span class="n">Environment</span><span class="p">.</span><span class="n">NewLine</span><span class="p">,</span> <span class="n">content</span>
+        <span class="p">.</span><span class="nf">Split</span><span class="p">(</span><span class="k">new</span><span class="p">[]</span> <span class="p">{</span> <span class="s">"\r\n"</span> <span class="p">},</span> <span class="n">StringSplitOptions</span><span class="p">.</span><span class="n">None</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="n">_</span> <span class="p">=&gt;</span> <span class="s">$"</span><span class="p">{(</span><span class="n">_</span> <span class="p">==</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span> <span class="p">?</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span> <span class="p">:</span> <span class="k">new</span> <span class="kt">string</span><span class="p">(</span><span class="sc">' '</span><span class="p">,</span> <span class="n">level</span> <span class="p">*</span> <span class="m">4</span><span class="p">))}{</span><span class="n">_</span><span class="p">}</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">ToArray</span><span class="p">());</span>
+</code></pre></div></div>
+
+<p>Usage like this:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">str</span><span class="p">.</span><span class="nf">Indent</span><span class="p">();</span>
+</code></pre></div></div>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/csharp/en/use-roslyn-to-generate-semantic-code" type="checkbox" name="tabs">
+        <label for="tab-/questions/csharp/en/use-roslyn-to-generate-semantic-code">Use Roslyn to generate semantic code</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Scenario: I have made some utilities to generate C# code, however, I just utilize literal string
+with string.format, which is not good enough after Roslyn come out. So I tried to generate semantic
+code using Roslyn.</p>
+
+
+  
+  <a href="/questions/csharp/en/use-roslyn-to-generate-semantic-code/" title="Use Roslyn to generate semantic code" >More <i class="fa fa-arrow-circle-o-right"></i></a>
+  
+
+
+
+          </p>
+        </div>
+      </div>
+    
+
+  <h2>Git</h2>
+     
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/git-find-biggest-history" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/git-find-biggest-history">git find biggest history</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>One-liner:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git rev-list <span class="nt">--objects</span> <span class="nt">--all</span> | <span class="nb">grep</span> <span class="s2">"</span><span class="si">$(</span>git verify-pack <span class="nt">-v</span> .git/objects/pack/<span class="k">*</span>.idx | <span class="nb">sort</span> <span class="nt">-k</span> 3 <span class="nt">-n</span> | <span class="nb">tail</span> <span class="nt">-10</span> | <span class="nb">awk</span> <span class="s1">'{print$1}'</span><span class="si">)</span><span class="s2">"</span>
+</code></pre></div></div>
+
+<p><a href="http://stackoverflow.com/questions/10622179/how-to-find-identify-large-files-commits-in-git-history">Link</a></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/merge-two-repository" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/merge-two-repository">Merge two repository</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Directly merge them, you may want use <code class="highlighter-rouge">filter-branch</code> if subdirectory needed.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/move-files-to-sub-folder-with-history" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/move-files-to-sub-folder-with-history">Move files to sub folder with history</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>use <code class="highlighter-rouge">filter-branch --tree-filter</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/dot-file-management-with-git-with-proper-ignore" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/dot-file-management-with-git-with-proper-ignore">dot file management with git with proper ignore</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Add following pattern:</p>
+<pre><code class="language-git">.*
+!/.gitignore
+</code></pre>
+
+<p><a href="http://stackoverflow.com/questions/8021441/gitignore-hidden-dot-directories">Link</a></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/word-file-git-diff" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/word-file-git-diff">word file git diff</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <ol>
+  <li><code class="highlighter-rouge">.gitattributes</code> file in root folder of your git project
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*.docx diff=pandoc
+</code></pre></div>    </div>
+  </li>
+  <li><code class="highlighter-rouge">.gitconfig</code> file in your home folder
+    <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[diff "pandoc"]</span>
+ <span class="py">textconv</span><span class="p">=</span><span class="s">pandoc --to=markdown</span>
+ <span class="py">prompt</span> <span class="p">=</span> <span class="s">false</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p><a href="http://blog.martinfenner.org/2014/08/25/using-microsoft-word-with-git/">Link</a></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/error-src-refspec--matches-more-than-one" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/error-src-refspec--matches-more-than-one">Error: src refspec ... matches more than one</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Root cause is same name of branch and tag appears, usually we remove the conflicting tag to avoid
+the confliction.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/find-reflog-of-remote-repo" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/find-reflog-of-remote-repo">Find reflog of remote repo.</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Not possible, because reflog is local only.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/how-to-audit-force-push-in-gitlab" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/how-to-audit-force-push-in-gitlab">How to audit force push in gitlab?</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>No way, only to <code class="highlighter-rouge">protect</code> it.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/produce-patch-file" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/produce-patch-file">produce patch file</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">git diff commit[..commit] &gt;xxx.patch</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/reflog-of-gitlab" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/reflog-of-gitlab">`reflog` of gitlab</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Not supported in gitlab, github supported via API.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/delete-remote-branch" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/delete-remote-branch">Delete remote branch</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">git push origin :branchname</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/push-tag" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/push-tag">push tag</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">git push --follow-tags</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/unc-link-in-gitlab" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/unc-link-in-gitlab">UNC link in gitlab</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>file://///.....
+</code></pre></div></div>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/gitlab-wiki-toc" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/gitlab-wiki-toc">gitlab wiki TOC</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">[[_TOC_]]</code>, NOTE: preview mode not work.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/find-deleted-file-in-history" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/find-deleted-file-in-history">find deleted file in history</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">git log --all -- FILEPATH(wildcard allowed)</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/squash-all-commits-to-one-commit-at-one-point" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/squash-all-commits-to-one-commit-at-one-point">squash all commits to one commit at one point</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">No Answer</code></p>
+
+<p>The scenario of this question is because some company open source its project without sharing the
+whole history, so it keeps two different history copy.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/why-git-not-track-folder" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/why-git-not-track-folder">why git not track folder?</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>No answer, however, without folder tracking merge a old branch to another branch which done rename a
+folder may not complete automatically.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/get-sha-of-first-commit-in-git" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/get-sha-of-first-commit-in-git">get SHA of first commit in git?</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">git rev-list --max-parents=0 HEAD</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/revert-commit-after-push" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/revert-commit-after-push">revert commit after push</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">git revert</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/unstage-all" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/unstage-all">unstage all</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">git reset</code></p>
+
+<p>However, if the repository don’t have the first commit, you may want <code class="highlighter-rouge">rm -rf .git &amp;&amp; git init</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/case-insensitive-in-windows" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/case-insensitive-in-windows">case-insensitive in windows</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Git are case-sensitive, while Windows is case-insensitive.</p>
+
+<p>Then a very strange situation happened when directory <code class="highlighter-rouge">abc</code> and <code class="highlighter-rouge">Abc</code> both exist in git repository.
+In *nix you may find they are two directory while in Windows, you will find only <code class="highlighter-rouge">Abc</code> directory
+exists.</p>
+
+<p>Due to the character of git, <a href="https://developer.atlassian.com/blog/2014/12/securing-your-git-server/">security vulnerability</a> was found and fixed in <code class="highlighter-rouge">2.2.1</code>.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/check-out-without-change-files" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/check-out-without-change-files">check out without change files</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">git symbolic-ref HEAD refs/heads/branchname</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/git/en/how-to-blame-a-deleted-line" type="checkbox" name="tabs">
+        <label for="tab-/questions/git/en/how-to-blame-a-deleted-line">How to 'blame' a deleted line</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git log <span class="nt">-S</span> &lt;string&gt; path/to/file<span class="o">(</span>wildcard supported<span class="o">)</span>
+git log <span class="nt">-G</span> &lt;regex&gt; path/to/file<span class="o">(</span>wildcard supported<span class="o">)</span>
+</code></pre></div></div>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+
+  <h2>Linux</h2>
+     
+    
+      <div class="tab">
+        <input id="tab-/questions/linux/en/Bash-execute-next-command-even-error" type="checkbox" name="tabs">
+        <label for="tab-/questions/linux/en/Bash-execute-next-command-even-error">Bash execute next command even error?</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>use <code class="highlighter-rouge">||</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/linux/en/move-all-files-to-subfolder-without-error-in-linux" type="checkbox" name="tabs">
+        <label for="tab-/questions/linux/en/move-all-files-to-subfolder-without-error-in-linux">move all files to subfolder without error in linux</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>No simple solution, one way is to use <code class="highlighter-rouge">||</code> ignore all error</p>
+
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/linux/en/cross-platform-link-file-command" type="checkbox" name="tabs">
+        <label for="tab-/questions/linux/en/cross-platform-link-file-command">cross platform link file command.</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Very complex: <a href="http://stackoverflow.com/questions/18641864/git-bash-shell-fails-to-create-symbolic-links">http://stackoverflow.com/questions/18641864/git-bash-shell-fails-to-create-symbolic-links</a></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/linux/en/cAdvisor-or-influxdb" type="checkbox" name="tabs">
+        <label for="tab-/questions/linux/en/cAdvisor-or-influxdb">cAdvisor or influxdb?</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>cAdvisor has very basic function, while influxdb is only a database.
+They can be used in combination, other keyword is <code class="highlighter-rouge">docker-monitor</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/linux/en/for-each-directory-in-bash" type="checkbox" name="tabs">
+        <label for="tab-/questions/linux/en/for-each-directory-in-bash">for each directory in bash</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">for D in *; do [ -d "${D}"] &amp;&amp; my_command; done</code></p>
+
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/linux/en/How-to-diagnose-memory-in-linux" type="checkbox" name="tabs">
+        <label for="tab-/questions/linux/en/How-to-diagnose-memory-in-linux">How to diagnose memory in linux</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <ul>
+  <li><code class="highlighter-rouge">ps aux --sort rss</code> <a href="http://alvinalexander.com/linux/unix-linux-process-memory-sort-ps-command-cpu">Link</a></li>
+  <li><code class="highlighter-rouge">free -m</code></li>
+</ul>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/linux/en/Ubuntu-X64-Node-down" type="checkbox" name="tabs">
+        <label for="tab-/questions/linux/en/Ubuntu-X64-Node-down">Ubuntu X64 Node down?</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Just restart</p>
+
+
+  
+  <a href="/questions/linux/en/Ubuntu-X64-Node-down/" title="Ubuntu X64 Node down?" >More <i class="fa fa-arrow-circle-o-right"></i></a>
+  
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/linux/en/bash-tab-auto-completion-with-case-insensitive" type="checkbox" name="tabs">
+        <label for="tab-/questions/linux/en/bash-tab-auto-completion-with-case-insensitive">bash tab auto completion with case insensitive</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># If ~./inputrc doesn't exist yet, first include the original /etc/inputrc so we don't override it</span>
+<span class="k">if</span> <span class="o">[</span> <span class="o">!</span> <span class="nt">-a</span> ~/.inputrc <span class="o">]</span><span class="p">;</span> <span class="k">then </span><span class="nb">echo</span> <span class="s2">"</span><span class="se">\$</span><span class="s2">include /etc/inputrc"</span> <span class="o">&gt;</span> ~/.inputrc<span class="p">;</span> <span class="k">fi</span>
+<span class="c"># Add option to ~/.inputrc to enable case-insensitive tab completion</span>
+<span class="nb">echo</span> <span class="s2">"set completion-ignore-case On"</span> <span class="o">&gt;&gt;</span> ~/.inputrc
+</code></pre></div></div>
+
+<p><a href="http://askubuntu.com/questions/87061/can-i-make-tab-auto-completion-case-insensitive-in-the-terminal">Link</a></p>
+
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/linux/en/disk-space-shortage-and-need-to-find-the-largest-one" type="checkbox" name="tabs">
+        <label for="tab-/questions/linux/en/disk-space-shortage-and-need-to-find-the-largest-one">disk space shortage and need to find the largest one</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <ol>
+  <li><code class="highlighter-rouge">df</code> to roughly find largest mount</li>
+  <li><code class="highlighter-rouge">du -m --max-depth 1 | sort -rn | head -11</code> to find TOP 10 by size directories</li>
+</ol>
+
+<p>Hint: use <code class="highlighter-rouge">-h</code> for human readable size format</p>
+
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/linux/en/get-file-date" type="checkbox" name="tabs">
+        <label for="tab-/questions/linux/en/get-file-date">get file date</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">date -r &lt;filename&gt;</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+
+  <h2>Vim</h2>
+     
+    
+      <div class="tab">
+        <input id="tab-/questions/vim/en/gf-with-auto-file-extension-especially-in-wiki-markdown" type="checkbox" name="tabs">
+        <label for="tab-/questions/vim/en/gf-with-auto-file-extension-especially-in-wiki-markdown">`gf` with auto file extension, especially in wiki markdown</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Put following in vimrc</p>
+
+<div class="language-vim highlighter-rouge"><div class="highlight"><pre class="highlight"><code>autocmd <span class="nb">FileType</span> markdown <span class="k">setlocal</span> suffixesadd<span class="p">=.</span>md<span class="p">,.</span>markdown
+</code></pre></div></div>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/vim/en/voom-plugin-with-error-pythons-site-module-could-not-be-loaded" type="checkbox" name="tabs">
+        <label for="tab-/questions/vim/en/voom-plugin-with-error-pythons-site-module-could-not-be-loaded">Voom plugin with error: python's site module could not be loaded</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Due to bug of Python 2.7.11, workaround:</p>
+
+<ol>
+  <li>Install other version.</li>
+  <li>after install execute following command (of course, need admin privilege). refer to <a href="https://github.com/vim/vim/blob/master/appveyor.yml">Link</a>
+    <div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">reg</span> <span class="nb">copy</span> <span class="kd">HKLM</span>\SOFTWARE\Python\PythonCore\2.7 <span class="kd">HKLM</span>\SOFTWARE\Python\PythonCore\2.7<span class="o">-</span><span class="m">32</span> <span class="na">/s /reg</span>:32
+<span class="nb">reg</span> <span class="nb">copy</span> <span class="kd">HKLM</span>\SOFTWARE\Python\PythonCore\2.7 <span class="kd">HKLM</span>\SOFTWARE\Python\PythonCore\2.7<span class="o">-</span><span class="m">32</span> <span class="na">/s /reg</span>:64
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/vim/en/go-back-end-of-word-go-to-end-of-previous-word" type="checkbox" name="tabs">
+        <label for="tab-/questions/vim/en/go-back-end-of-word-go-to-end-of-previous-word">go back end of word (go to end of previous word)</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Use <code class="highlighter-rouge">ge</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/vim/en/vim-non-greedy-search" type="checkbox" name="tabs">
+        <label for="tab-/questions/vim/en/vim-non-greedy-search">vim non-greedy search</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>The non-greedy version of <code class="highlighter-rouge">*</code> is <code class="highlighter-rouge">\{-}</code>. So, simply replace <code class="highlighter-rouge">.*</code> with <code class="highlighter-rouge">.\{-</code></p>
+
+<p><a href="http://vi.stackexchange.com/questions/196/how-to-make-regex-matchers-non-greedy">Link</a></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/vim/en/convert-vimwiki-to-markdown-using-vim" type="checkbox" name="tabs">
+        <label for="tab-/questions/vim/en/convert-vimwiki-to-markdown-using-vim">convert VimWiki to markdown using Vim</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+* Convert bold: %s/\*\(.*\)\*/**\1**/g
+* Convert named link: %s/\[\[\(.\{-}\)|\(.\{-}\)\]\]/[\2](\1)/g
+* Convert link: %s/\[\[\(.\{-}\)\]\]/&lt;\1&gt;/g
+* Title: 
+  * First: %s/= \(.*\) =/# \1/g
+  * May multiple: %s/=\(.*\)=/#\1/g
+* Picture: %s/{{\(.\{-}\)}}/![](\1)/g
+* Fenced code start: %s/{{{class="brush:\(.*\)"/```\1/g
+* Fenced code end: %s/}}}/```/g
+* Manual change # ordered list
+
+</code></pre></div></div>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/vim/en/pick-the-first-spell-suggestion" type="checkbox" name="tabs">
+        <label for="tab-/questions/vim/en/pick-the-first-spell-suggestion">Pick the first spell suggestion</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">1z=</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/vim/en/use-vim-folder-in-windows" type="checkbox" name="tabs">
+        <label for="tab-/questions/vim/en/use-vim-folder-in-windows">use .vim folder in windows</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Add following lines to vimrc:</p>
+<div class="language-vim highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> has<span class="p">(</span><span class="s1">'win32'</span><span class="p">)</span> <span class="p">||</span> has<span class="p">(</span><span class="s1">'win64'</span><span class="p">)</span>
+  <span class="k">set</span> runtimepath<span class="p">=</span>$HOME<span class="sr">/.vim,$VIM/</span>vimfiles<span class="p">,</span>$VIMRUNTIME<span class="p">,</span>$VIM<span class="sr">/vimfiles/</span>after<span class="p">,</span>$HOME<span class="sr">/.vim/</span>after
+<span class="k">endif</span>
+</code></pre></div></div>
+
+<p><a href="http://stackoverflow.com/questions/5440281/is-it-possible-to-use-a-folder-named-vimfiles-to-replace-vim-in-macvim">Link</a></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/vim/en/perform-same-operation-across-buffers" type="checkbox" name="tabs">
+        <label for="tab-/questions/vim/en/perform-same-operation-across-buffers">Perform same operation across buffers</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <ol>
+  <li>store operation in macro <code class="highlighter-rouge">a</code></li>
+  <li>[OPTIONAL] <code class="highlighter-rouge">set nomore</code> to avoid interruption during processing</li>
+  <li><code class="highlighter-rouge">:bufdo execute "norma! @a" | update</code></li>
+</ol>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/vim/en/switch-case-of-letter" type="checkbox" name="tabs">
+        <label for="tab-/questions/vim/en/switch-case-of-letter">switch case of letter</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">~</code> in visual mode</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/vim/en/color-scheme-in-vim-in-conemu-not-work" type="checkbox" name="tabs">
+        <label for="tab-/questions/vim/en/color-scheme-in-vim-in-conemu-not-work">color scheme in Vim in ConEmu not work</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <ol>
+  <li>follow <a href="http://conemu.github.io/en/VimXterm.html">guide</a></li>
+  <li>rename/remove <code class="highlighter-rouge">/bin/vim</code> from git bash which is not supported.</li>
+</ol>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/vim/en/count-number-of-matches-of-a-pattern" type="checkbox" name="tabs">
+        <label for="tab-/questions/vim/en/count-number-of-matches-of-a-pattern">Count number of matches of a pattern</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>To count the number of matches of a pattern, use the substitute command with the n flag. The
+following shows the number of times that pattern matches text in the current buffer:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:%s/pattern//gn
+</code></pre></div></div>
+
+
+  
+  <a href="/questions/vim/en/count-number-of-matches-of-a-pattern/" title="Count number of matches of a pattern" >More <i class="fa fa-arrow-circle-o-right"></i></a>
+  
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/vim/en/multiple-condition-in-vim" type="checkbox" name="tabs">
+        <label for="tab-/questions/vim/en/multiple-condition-in-vim">multiple condition in Vim</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">&amp;&amp;</code>, tip: help expr</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/vim/en/highlight-changes-in-unified-diff" type="checkbox" name="tabs">
+        <label for="tab-/questions/vim/en/highlight-changes-in-unified-diff">Highlight changes in unified diff</label>
+        <div class="tab-content">
+          <p>
+            
+
+  
+  
+  <a href="/questions/vim/en/highlight-changes-in-unified-diff/" title="Highlight changes in unified diff" >More <i class="fa fa-arrow-circle-o-right"></i></a>
+  
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/vim/en/pipe-content-from-console-output-to-vim" type="checkbox" name="tabs">
+        <label for="tab-/questions/vim/en/pipe-content-from-console-output-to-vim">pipe content from console output to vim</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">vim -</code>, eg: <code class="highlighter-rouge">ls -la | vim -</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/vim/en/shortcut-to-exit-vim" type="checkbox" name="tabs">
+        <label for="tab-/questions/vim/en/shortcut-to-exit-vim">shortcut to exit vim</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <ul>
+  <li><code class="highlighter-rouge">ZZ</code> save and exit</li>
+  <li><code class="highlighter-rouge">ZQ</code> exit without save</li>
+</ul>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/vim/en/switch-from-vertical-split-to-horizontal-split" type="checkbox" name="tabs">
+        <label for="tab-/questions/vim/en/switch-from-vertical-split-to-horizontal-split">Switch from vertical split to horizontal split</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">^w</code> followed by capital H,J,K or L will move the current window to the far left,bottom,top or right respectively like normal cursor navigation.
+<a href="http://stackoverflow.com/a/7982215/2558077">Link</a></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+
+  <h2>Misc</h2>
+     
+    
+      <div class="tab">
+        <input id="tab-/questions/misc/en/markdown-preprocessor" type="checkbox" name="tabs">
+        <label for="tab-/questions/misc/en/markdown-preprocessor">Markdown preprocessor</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Could try ejs</p>
+
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/misc/en/markdown-table-with-multi-line-cell" type="checkbox" name="tabs">
+        <label for="tab-/questions/misc/en/markdown-table-with-multi-line-cell">Markdown table with multi-line cell</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Markdown not support it and so did some famous enhancement of original markdown,
+use following workaround:</p>
+
+<ol>
+  <li>Use <code class="highlighter-rouge">&lt;BR /&gt;</code> or directly HTML code.</li>
+  <li>Consider re-organize content to get rid of multi-line content.</li>
+</ol>
+
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/misc/en/supported-languagesyntax-highlighting-of-gitlabgithub" type="checkbox" name="tabs">
+        <label for="tab-/questions/misc/en/supported-languagesyntax-highlighting-of-gitlabgithub">Supported language(syntax) highlighting of gitlab/github</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Github use linguist as Parser.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/misc/en/hexo-break-line-even-without-an-empty-line" type="checkbox" name="tabs">
+        <label for="tab-/questions/misc/en/hexo-break-line-even-without-an-empty-line">hexo break line even without an empty line</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Set in <code class="highlighter-rouge">_config.yml</code></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>marked:
+  breaks: false
+</code></pre></div></div>
+
+<p><a href="https://github.com/hexojs/hexo-renderer-marked">Link</a></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/misc/en/separate-multiprog-compiler-from-itself" type="checkbox" name="tabs">
+        <label for="tab-/questions/misc/en/separate-multiprog-compiler-from-itself">separate MultiProg compiler from itself</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <ol>
+  <li><code class="highlighter-rouge">eCLR.dll</code> is compiled as managed CPP with lots of unsafe compiler option.</li>
+  <li>the program is generated under project folder with <code class="highlighter-rouge">.exe</code> extension.</li>
+  <li><code class="highlighter-rouge">eCLR.dll</code> start process <code class="highlighter-rouge">/eCLR/CIL-Compiler</code> to compile from project to binary using method
+named LinkImage.  (with uncertainty)</li>
+  <li>Execute <code class="highlighter-rouge">/eCLR/CIL-Compiler/____.exe ___/res/___.exe</code> would generate <code class="highlighter-rouge">___.img</code>.</li>
+</ol>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/misc/en/how-to-uninstall-all-dependency-no-longer-available-in-packagejson" type="checkbox" name="tabs">
+        <label for="tab-/questions/misc/en/how-to-uninstall-all-dependency-no-longer-available-in-packagejson">how to uninstall all dependency no longer available in package.json</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">npm prune</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/misc/en/wrong-spell-check-in-onenote----appears-full-of-red-lines" type="checkbox" name="tabs">
+        <label for="tab-/questions/misc/en/wrong-spell-check-in-onenote----appears-full-of-red-lines">wrong spell check in OneNote -- appears full of red lines</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>OneNote -&gt; Review -&gt; Language -&gt; Set Spell Checker -&gt; proper language</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/misc/en/merge-two-onenote-pages" type="checkbox" name="tabs">
+        <label for="tab-/questions/misc/en/merge-two-onenote-pages">Merge two OneNote pages</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Sadly, no convenience way.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/misc/en/importexport-settings-of-beyondcompare-with-command-line" type="checkbox" name="tabs">
+        <label for="tab-/questions/misc/en/importexport-settings-of-beyondcompare-with-command-line">Import/export settings of BeyondCompare with command line</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>No such command line support, however, we can simply overwrite the setting file.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/misc/en/uac-default-vs-not-dim" type="checkbox" name="tabs">
+        <label for="tab-/questions/misc/en/uac-default-vs-not-dim">UAC `default` vs `not dim`</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">not dim</code> means no secure desktop launched, it’s highly risky that already a malware on your PC.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/misc/en/vim-in-textarea-in-browser" type="checkbox" name="tabs">
+        <label for="tab-/questions/misc/en/vim-in-textarea-in-browser">Vim in textarea in browser</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Extension <code class="highlighter-rouge">wasavi</code></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/misc/en/test-ldap" type="checkbox" name="tabs">
+        <label for="tab-/questions/misc/en/test-ldap">test ldap?</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Only way is to use a tool.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/misc/en/find-binddn-of-ldap" type="checkbox" name="tabs">
+        <label for="tab-/questions/misc/en/find-binddn-of-ldap">find binddn of ldap</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">dsquery user -name Ja*</code> <a href="http://serverfault.com/questions/130543/how-can-i-figure-out-my-ldap-connection-string">Link</a></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/misc/en/xnview-replace-background-with-transparent-color" type="checkbox" name="tabs">
+        <label for="tab-/questions/misc/en/xnview-replace-background-with-transparent-color">XnView replace background with transparent color</label>
+        <div class="tab-content">
+          <p>
+            
+
+  
+  
+  <a href="/questions/misc/en/xnview-replace-background-with-transparent-color/" title="XnView replace background with transparent color" >More <i class="fa fa-arrow-circle-o-right"></i></a>
+  
+
+
+
+          </p>
+        </div>
+      </div>
+    
+
+  <h2>Windows</h2>
+     
+    
+      <div class="tab">
+        <input id="tab-/questions/windows/en/double-click-jar-file-to-execute-in-windows" type="checkbox" name="tabs">
+        <label for="tab-/questions/windows/en/double-click-jar-file-to-execute-in-windows">Double click .jar file to execute in windows</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Execute following script with admin privilege.</p>
+
+<div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">assoc</span> .jar<span class="o">=</span><span class="kd">jarfile</span>
+<span class="nb">ftype</span> <span class="kd">jarfile</span><span class="o">=</span><span class="s2">"C:\DevTools\jrex86\bin\javaw.exe"</span> <span class="na">-jar </span><span class="s2">"</span><span class="err">%%</span><span class="s2">1"</span> <span class="err">%%</span><span class="o">*</span>
+</code></pre></div></div>
+
+<p><a href="http://stackoverflow.com/a/30571306/2558077">Link</a></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/windows/en/install-pip-in-windows" type="checkbox" name="tabs">
+        <label for="tab-/questions/windows/en/install-pip-in-windows">Install pip in windows</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Start with <code class="highlighter-rouge">2.7.9</code>, pip already in python default installation package.
+To use it, just type <code class="highlighter-rouge">python -m pip install {something}</code></p>
+
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/windows/en/powerpoint-not-scale-properly-on-high-resolution-monitor" type="checkbox" name="tabs">
+        <label for="tab-/questions/windows/en/powerpoint-not-scale-properly-on-high-resolution-monitor">PowerPoint not scale properly on high resolution monitor</label>
+        <div class="tab-content">
+          <p>
+            
+
+  
+  
+  <a href="/questions/windows/en/powerpoint-not-scale-properly-on-high-resolution-monitor/" title="PowerPoint not scale properly on high resolution monitor" >More <i class="fa fa-arrow-circle-o-right"></i></a>
+  
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/windows/en/require-administrator-privilege-at-startup-of-batch-script" type="checkbox" name="tabs">
+        <label for="tab-/questions/windows/en/require-administrator-privilege-at-startup-of-batch-script">require administrator privilege at startup of batch script?</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>put following script at the beginning of the batch file.</p>
+
+
+  
+  <a href="/questions/windows/en/require-administrator-privilege-at-startup-of-batch-script/" title="require administrator privilege at startup of batch script?" >More <i class="fa fa-arrow-circle-o-right"></i></a>
+  
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/windows/en/restart-network-adapter" type="checkbox" name="tabs">
+        <label for="tab-/questions/windows/en/restart-network-adapter">restart network adapter?</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">wmic</span> <span class="nb">path</span> <span class="kd">win32_networkadapter</span> <span class="nb">where</span> <span class="kd">NetConnectionID</span><span class="o">=</span><span class="s2">"Wireless Network Connection"</span> <span class="k">call</span> <span class="na">disable</span>
+<span class="nb">wmic</span> <span class="nb">path</span> <span class="kd">win32_networkadapter</span> <span class="nb">where</span> <span class="kd">NetConnectionID</span><span class="o">=</span><span class="s2">"Wireless Network Connection"</span> <span class="k">call</span> <span class="kd">enable</span>
+</code></pre></div></div>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+
+  <h2>Unity</h2>
+     
+    
+      <div class="tab">
+        <input id="tab-/questions/unity/en/MonoBehaviour-lifecycle" type="checkbox" name="tabs">
+        <label for="tab-/questions/unity/en/MonoBehaviour-lifecycle">MonoBehaviour lifecycle</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><a href="http://docs.unity3d.com/Manual/ExecutionOrder.html">http://docs.unity3d.com/Manual/ExecutionOrder.html</a></p>
+
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/unity/en/button-to-change-scene-programmatically" type="checkbox" name="tabs">
+        <label for="tab-/questions/unity/en/button-to-change-scene-programmatically">button to change scene programmatically</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <ol>
+  <li>I add an empty game object. I attach my new script.
+    <div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">void</span> <span class="nf">NextLevelButton</span><span class="p">(</span><span class="kt">string</span> <span class="n">levelName</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">SceneManager</span><span class="p">.</span><span class="nf">LoadScene</span><span class="p">(</span><span class="n">levelName</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>I associate this game object with my new script to the Button(in the inspector) by: Clicking the
++(plus) button to add a callback from an object-&gt;script-&gt;method.</li>
+</ol>
+
+<p><a href="http://answers.unity3d.com/questions/836635/can-ui-buttons-load-scenes.html">Link</a></p>
+
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/unity/en/cannot-open-script-with-VS2015" type="checkbox" name="tabs">
+        <label for="tab-/questions/unity/en/cannot-open-script-with-VS2015">cannot open script with VS2015.</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Detail can be found in editor.log located under C:\Users\xxx\AppData\Local\Unity\Editor\Editor.log
+Identified as a bug in community forum. Workaround is restart.</p>
+
+<p>Found it may because last VS start failed and not close properly. Kill it in task manager first and try again.</p>
+
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/unity/en/glow-an-object-when-mouse-hover" type="checkbox" name="tabs">
+        <label for="tab-/questions/unity/en/glow-an-object-when-mouse-hover">glow an object when mouse hover</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>get Renderer and change its <code class="highlighter-rouge">material.color</code> when OnMouseEnter/Over/Exit event
+Refer to <a href="http://docs.unity3d.com/ScriptReference/MonoBehaviour.OnMouseEnter.html">http://docs.unity3d.com/ScriptReference/MonoBehaviour.OnMouseEnter.html</a></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/unity/en/integrate-git-with-unity-3d" type="checkbox" name="tabs">
+        <label for="tab-/questions/unity/en/integrate-git-with-unity-3d">integrate git with unity 3d</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Edit -&gt; Project Settings -&gt; Editor.
+Set Version Control to meta files. Set Asset Serialization to force text.</p>
+
+<p><a href="http://stackoverflow.com/questions/18225126/how-to-use-git-for-unity-source-control">Link</a></p>
+
+<p>And download <a href="https://raw.githubusercontent.com/github/gitignore/master/Unity.gitignore">https://raw.githubusercontent.com/github/gitignore/master/Unity.gitignore</a></p>
+
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/unity/en/showing-Load-name--1-couldnt-be-loaded-because-it-has-not-been-added-to-the-built-settings" type="checkbox" name="tabs">
+        <label for="tab-/questions/unity/en/showing-Load-name--1-couldnt-be-loaded-because-it-has-not-been-added-to-the-built-settings">showing Load 'name' (-1) couldn't be loaded because it has not been added to the built settings</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>To add a level to the build settings use the menu <code class="highlighter-rouge">File</code>-&gt;<code class="highlighter-rouge">Build</code> Settings…</p>
+
+<p><a href="http://answers.unity3d.com/questions/1011691/showing-load-name-1-couldnt-be-loaded-because-it-h.html">Link</a></p>
+
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/unity/en/MouseDown-event-not-fire-after-add-one-statement-inside-another-object" type="checkbox" name="tabs">
+        <label for="tab-/questions/unity/en/MouseDown-event-not-fire-after-add-one-statement-inside-another-object">MouseDown event not fire after add one statement inside another object.</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Didn’t find why, however, set location at <code class="highlighter-rouge">Start()</code> workaround this issue, maybe it’s a bug.</p>
+
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/unity/en/MouseDown-event-not-fire" type="checkbox" name="tabs">
+        <label for="tab-/questions/unity/en/MouseDown-event-not-fire">MouseDown event not fire?</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Need Box Collider to detect this type of event.</p>
+
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/unity/en/call-function-in-another-script-of-another-gameobject" type="checkbox" name="tabs">
+        <label for="tab-/questions/unity/en/call-function-in-another-script-of-another-gameobject">call function in another script of another gameobject</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Just use the type of that script as a field, and bind with the gameobject which has this type of script as component.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/unity/en/change-opacity-of-GameObject" type="checkbox" name="tabs">
+        <label for="tab-/questions/unity/en/change-opacity-of-GameObject">change opacity of GameObject</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p><code class="highlighter-rouge">[GameObject].SetActive(false);</code> another way is to disable renderer of that object.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/unity/en/change-opacity-or-something-else-frame-by-frame" type="checkbox" name="tabs">
+        <label for="tab-/questions/unity/en/change-opacity-or-something-else-frame-by-frame">change opacity or something else frame by frame.</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Use animation. Don’t use code.</p>
+
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/unity/en/error-no-model-is-available-for-preview-when-previewing-animation" type="checkbox" name="tabs">
+        <label for="tab-/questions/unity/en/error-no-model-is-available-for-preview-when-previewing-animation">error "no model is available for preview" when previewing animation</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Drag and drop the model source file into the animation preview window. </p>
+
+<p><a href="http://answers.unity3d.com/questions/374149/how-do-i-set-or-change-the-default-preview-model-f.html">Link</a></p>
+
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/unity/en/how-to-edit-prefab" type="checkbox" name="tabs">
+        <label for="tab-/questions/unity/en/how-to-edit-prefab">how to edit prefab?</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Some things you can add by clicking on the prefab and adding items using the Component menu. For
+more involved changes, drag the prefab into the scene, make whatever changes are necessary (ignore
+the message about breaking the prefab link), and when done, select Apply Changes to Prefab from the
+GameObject menu. Then delete the prefab from the scene.</p>
+
+<p><a href="http://answers.unity3d.com/questions/17976/edit-source-prefab-change-position-or-add-new-game.html">Link</a></p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/unity/en/make-2d-object-glow-when-event-fires" type="checkbox" name="tabs">
+        <label for="tab-/questions/unity/en/make-2d-object-glow-when-event-fires">make 2d object glow when event fires</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <ul>
+  <li>use shader to calculate glow shadow (very complex)</li>
+  <li>visible/invisible or change color of a substrate/glow layer</li>
+</ul>
+
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/unity/en/make-health-bar-in-unity3d-5-which-is-using-new-GUI-system" type="checkbox" name="tabs">
+        <label for="tab-/questions/unity/en/make-health-bar-in-unity3d-5-which-is-using-new-GUI-system">make health bar in unity3d 5 (which is using new GUI system)</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Add image inside panel, change its anchor to left (hold shift key), change scale programmatically</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/unity/en/move-object-gradually" type="checkbox" name="tabs">
+        <label for="tab-/questions/unity/en/move-object-gradually">move object gradually?</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <ol>
+  <li>Use iTween</li>
+  <li>Set use
+    <div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">startPoint</span> <span class="p">=</span> <span class="n">CrewControl</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">;</span>
+<span class="n">startTime</span> <span class="p">=</span> <span class="n">Time</span><span class="p">.</span><span class="n">time</span><span class="p">;</span>
+<span class="n">endPoint</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">;</span>
+</code></pre></div>    </div>
+    <p>Update use</p>
+    <div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">Time</span><span class="p">.</span><span class="n">time</span> <span class="p">-</span> <span class="n">startTime</span> <span class="p">&lt;</span> <span class="n">duration</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CrewControl</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="n">Vector3</span><span class="p">.</span><span class="nf">Lerp</span><span class="p">(</span><span class="n">startPoint</span><span class="p">,</span> <span class="n">endPoint</span><span class="p">,</span> <span class="p">(</span><span class="n">Time</span><span class="p">.</span><span class="n">time</span> <span class="p">-</span> <span class="n">startTime</span><span class="p">)</span> <span class="p">/</span> <span class="n">duration</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/unity/en/replace-pure-color-backgrounds-as-transparent" type="checkbox" name="tabs">
+        <label for="tab-/questions/unity/en/replace-pure-color-backgrounds-as-transparent">replace pure color backgrounds as transparent?</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>No way, do it in an image processing software.</p>
+
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/unity/en/replace-texture-from-jpg-to-png" type="checkbox" name="tabs">
+        <label for="tab-/questions/unity/en/replace-texture-from-jpg-to-png">replace texture from jpg to png</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>So far as I know, no way.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <input id="tab-/questions/unity/en/unity-not-support-C-60" type="checkbox" name="tabs">
+        <label for="tab-/questions/unity/en/unity-not-support-C-60">unity not support C# 6.0?</label>
+        <div class="tab-content">
+          <p>
+            
+
+  <p>Yes, only C# 4.0 supported.</p>
+
+
+
+          </p>
+        </div>
+      </div>
+    
+
+
+
+  </section>
+</article>
+
+      </div>
+      <footer>
+        <div>
+          
+          &copy; 2002 ~ 2020 Icer | powered by jekyll | theme based on <a href="http://lhzhang.com" title="sext vi">sext vi</a>
+        </div>
+      </footer>
+    </div> <!-- main -->
+    <div style="display:none;">
+      <script language="javascript" type="text/javascript" src="//js.users.51.la/17278963.js"></script>
+      <script language="javascript" type="text/javascript" src="//s22.cnzz.com/z_stat.php?id=1273658393&amp;web_id=1273658393"></script>
+    </div>
+  </body>
+</html>

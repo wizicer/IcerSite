@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="冰河魔法师" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <title>First Prototype Show Of Uchaindb</title>
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="/atom.xml" rel="alternate" title="冰河设计" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/3rd/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/3rd/pygments/github.css">
+  </head>
+  <body>
+    <div id="main" role="main">
+      <header>
+        <div id="header">
+          <h1>
+            <a title="冰河设计" class="" href="/">冰河设计</a>
+            <p class="description">冰河魔法师的自留地</p>
+          </h1>
+        </div>
+        <nav>
+          
+          
+          
+            <span><a title="存档" href="/archive.html"><i class="fa fa-list-ul"></i></a></span>
+          
+            <span><a title="问答" href="/questions.html"><i class="fa fa-question"></i></a></span>
+          
+            <span><a title="关于" href="/about.html"><i class="fa fa-user"></i></a></span>
+          
+            <span><a title="项目" href="/projects.html"><i class="fa fa-film"></i></a></span>
+          
+          <span id="nav-other">
+            <i class="fa fa-external-link"></i>
+            <ul class="dropdown">
+            
+              <li><a href="/atom.xml" target="_blank"><i class="fa fa-fw fa-rss"></i> 订阅</a></li>
+            
+              <li><a href="http://love.icerdesign.com" target="_blank"><i class="fa fa-fw fa-heart"></i> 关于爱</a></li>
+            
+              <li><a href="http://www.hiyaphoto.com" target="_blank"><i class="fa fa-fw fa-camera"></i> 关于摄影</a></li>
+            
+            </ul>
+          </span>
+          
+
+
+
+
+<span>|</span>
+
+    
+    
+    <span>
+        <a href="/index-en.html" class="en">en</a>
+    </span>
+    
+    <span>
+        <a href="/index.html" class="zh">中</a>
+    </span>
+    
+
+
+        </nav>
+      </header>
+      <div id="content">
+      <article>
+  <section class="title">
+    <h2>First Prototype Show Of Uchaindb</h2>
+  </section>
+  <section class="meta">
+  <span class="time">
+    <time datetime="2018-01-26">2018-01-26</time>
+  </span>
+  
+  <span class="tags">
+    
+  </span>
+  
+  </section>
+  
+  
+  <section class="post">
+  <p>今天将展示优链数据库的第一期原型客户端，虽说核心数据库第一期原型代码已经完成主要部件有一小段时间了，
+但是只有数据库操作API的核心代码，明显不是能用来向别人展示区块链数据库概念的。
+所以直到能展示优链数据库的设计思想的客户端基本成型后才能进行此次展示。</p>
+
+<p>展示前首先明确了优链数据库的愿景：</p>
+<blockquote>
+  <p>做一个历史记录不可更改的数据库</p>
+</blockquote>
+
+<p>同时还再次说明了优链数据库的几个基本场景：</p>
+
+<ol>
+  <li><strong>不能亲自监控数据库中数据变化的高层领导</strong>，通过在自己手机上的优链客户端，
+便可以信心满满的知道：<strong>我管辖下的数据库信息没有被一线数据库管理人员修改，数据是可信的。</strong></li>
+  <li><strong>多家组织共同运营一个项目</strong>，互相并不完全信任对方，总担心项目数据被对方人员修改，
+通过电脑版的完整客户端节点可以确保数据可恢复至任意时间，
+通过轻量级的手机客户端（无中心服务器）可以随时监控数据库数据是否被异常修改。</li>
+</ol>
+
+<h2 id="接下来开始了本次演示">接下来开始了本次演示</h2>
+
+<p>本次展示场景：</p>
+
+<ul>
+  <li>优链数据库核心数据表展示界面</li>
+  <li>通过向某慈善项目捐款，观察优链客户端中数据变化</li>
+  <li>模拟DBA直接修改数据库</li>
+  <li>观察优链客户端中的数据变化及修改历史记录</li>
+</ul>
+
+<p>首先展示了<strong>优链数据库核心数据表展示界面</strong></p>
+
+<p><img src="1.png" alt="" /></p>
+
+<p>通过向某慈善项目（本地测试版）捐款，<strong>观察优链客户端中数据变化</strong>，为了数据变化更明显，特意选择了比较特殊的数字</p>
+
+<p><img src="2.png" alt="" /></p>
+
+<p>捐赠完毕后，<strong>转到优链客户端中查看，发现新增一条数据</strong></p>
+
+<p><img src="3.png" alt="" /></p>
+
+<p>模拟DBA直接修改数据库：<strong>直接打开数据库，将刚捐的123改成了125</strong>。</p>
+
+<p><img src="4.png" alt="" /></p>
+
+<p>再次打开优链客户端，<strong>观察表中的数据变化</strong>（发生过变化的字段被标记为绿色）</p>
+
+<p><img src="5.png" alt="" /></p>
+
+<p>点击该链接，<strong>打开修改历史记录查看</strong>：（并可查看该单元格记录修改相关的记录及修改内容）</p>
+
+<p><img src="6.png" alt="" /></p>
+
+<h2 id="演示结束下面进行细节分解说明">演示结束，下面进行细节分解说明</h2>
+
+<p>理解本场景的几个要点</p>
+
+<ul>
+  <li><strong>分布式优链数据库</strong>，
+优链数据库基于区块链技术，是专门为数据库信息存储优化设计的区块链，同样支持分布式的全节点及轻量级节点。
+全节点存储所有数据，可以恢复数据至任意版本或分叉成为新的独立数据库；
+轻量级节点作为监查节点，可以监听和查阅全节点，存储少量信息即可确认监查对象是否有信息修改操作。</li>
+  <li><strong>独立存储带监控的客户端</strong>，
+本客户端是独立的客户端，所有数据直接向区块链数据库读取，
+监控信息存储在本地客户端中，故不存在客户端中信息被他人伪造或截取的可能。</li>
+  <li><strong>并非所有信息都是对公众开放的</strong>，虽然演示示例为对公众公开的捐款数据表，但是优链数据库是支持非公开内部使用的。</li>
+</ul>
+
+<p>不仅仅是以上看到的这些点（未来展望）</p>
+
+<ul>
+  <li>优链数据库第一期工程，<strong>使用数据库快照的方式</strong>进行，
+无须对原信息系统进行改造，即可简单快捷的接入优链数据库。</li>
+  <li>优链数据库第二期工程，<strong>直接作为关系型数据库使用</strong>，
+但功能比市面上已有的关系型数据库（如SqlServer或MySql）受到更多的限制，
+但也可以获得区块链独有的智能合约等功能，故原信息系统需要进行部分改造才能接入。</li>
+</ul>
+
+<blockquote>
+  <p>有人提出的核心问题：<strong>不懂区块链的用户可能无法理解如何使用该客户端</strong>。</p>
+</blockquote>
+
+<p>我的回复如下：</p>
+
+<blockquote>
+  <p>区块链数据库本身具有专业性，需要具备基本的区块链知识才能较好的使用该客户端，
+我们作为底层技术开发者，我们的责任是<strong>从底层机理上做到是一个历史记录不可修改的数据库</strong>，
+同时我们提供技术可行性，<strong>确保具备专业性的用户可以获得相应的信息以验证数据</strong>，进而证明数据本身的可靠。</p>
+</blockquote>
+
+
+  </section>
+  <div class="divider">
+    <span>
+    
+    <a href="/p/%E5%86%B0%E6%B2%B3%E6%9D%82%E8%B0%88/first-prototype-show-of-uchaindb/"><i class="fa fa-chevron-left"></i></a>
+    
+    </span>
+    <span>
+    
+    <a href="/p/%E5%86%B0%E6%B2%B3%E6%9D%82%E8%B0%88/uchaindb-weekly-20180225/"><i class="fa fa-chevron-right"></i></a>
+    
+    </span>
+  </div>
+</article>
+
+      </div>
+      <footer>
+        <div>
+          
+          &copy; 2002 ~ 2020 冰河魔法师 | 本站使用 jekyll | 主题基于 <a href="http://lhzhang.com" title="sext vi">sext vi</a>
+        </div>
+      </footer>
+    </div> <!-- main -->
+    <div style="display:none;">
+      <script language="javascript" type="text/javascript" src="//js.users.51.la/17278963.js"></script>
+      <script language="javascript" type="text/javascript" src="//s22.cnzz.com/z_stat.php?id=1273658393&amp;web_id=1273658393"></script>
+    </div>
+  </body>
+</html>

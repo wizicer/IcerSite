@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="冰河魔法师" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <title>区块链数据库迭代一的成果汇报</title>
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="/atom.xml" rel="alternate" title="冰河设计" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/3rd/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/3rd/pygments/github.css">
+  </head>
+  <body>
+    <div id="main" role="main">
+      <header>
+        <div id="header">
+          <h1>
+            <a title="冰河设计" class="" href="/">冰河设计</a>
+            <p class="description">冰河魔法师的自留地</p>
+          </h1>
+        </div>
+        <nav>
+          
+          
+          
+            <span><a title="存档" href="/archive.html"><i class="fa fa-list-ul"></i></a></span>
+          
+            <span><a title="问答" href="/questions.html"><i class="fa fa-question"></i></a></span>
+          
+            <span><a title="关于" href="/about.html"><i class="fa fa-user"></i></a></span>
+          
+            <span><a title="项目" href="/projects.html"><i class="fa fa-film"></i></a></span>
+          
+          <span id="nav-other">
+            <i class="fa fa-external-link"></i>
+            <ul class="dropdown">
+            
+              <li><a href="/atom.xml" target="_blank"><i class="fa fa-fw fa-rss"></i> 订阅</a></li>
+            
+              <li><a href="http://love.icerdesign.com" target="_blank"><i class="fa fa-fw fa-heart"></i> 关于爱</a></li>
+            
+              <li><a href="http://www.hiyaphoto.com" target="_blank"><i class="fa fa-fw fa-camera"></i> 关于摄影</a></li>
+            
+            </ul>
+          </span>
+          
+
+
+
+
+<span>|</span>
+
+    
+    
+    <span>
+        <a href="/index-en.html" class="en">en</a>
+    </span>
+    
+    <span>
+        <a href="/index.html" class="zh">中</a>
+    </span>
+    
+
+
+        </nav>
+      </header>
+      <div id="content">
+      <article>
+  <section class="title">
+    <h2>区块链数据库迭代一的成果汇报</h2>
+  </section>
+  <section class="meta">
+  <span class="time">
+    <time datetime="2017-08-11">2017-08-11</time>
+  </span>
+  
+  <span class="tags">
+    
+    <a href="/tags.html#区块链" title="区块链">#区块链</a>
+    
+    <a href="/tags.html#微信" title="微信">#微信</a>
+    
+  </span>
+  
+  </section>
+  
+  
+  <section class="post">
+  <p>虽然现在就一个人开发，但是多年积累下来的开发习惯是不会变的，首先做了如下图所示迭代一计划，
+一个迭代四周时间，定出迭代的终极目标：</p>
+
+<blockquote>
+  <p>一个拥有基本区块链功能的基本稳定并能容纳基本数据量的区块链数据库产品。</p>
+</blockquote>
+
+<p>这个迭代虽然延期了几天才算彻底完成，不过我勉强还是把它标记为一个成功的迭代吧。
+毕竟在定出目标时，都是随便凭感觉定的一个大目标，并没有报特别大的期待真的能完成。</p>
+
+<p>（嗯？你说这个月都快过去一半了，我说才延期几天？其实最近几天被拉着去看外包项目做需求分析了，这是另外一个故事了。）</p>
+
+<h3 id="基本运行下来实测结果如下">基本运行下来，实测结果如下：</h3>
+
+<ul>
+  <li>以下测试结果均为使用i5 CPU作为主机，
+将区块链数据库运行于其虚拟机中进行的测试（主机同时还运行着其他多台其他用途的虚拟机以及进行压力测试的测试程序）</li>
+  <li>第一台和第二台由看门狗重启的区块链数据库先后挂于运行了104~106小时之间（即第四天），
+同时其他两台仍长期正常工作中。（出现的错误是WebSocketSharp组件发送接口调用卡死）。
+重启后自动与正常运行的区块链数据库建立连接达成共识并恢复区块信息，恢复正常工作。</li>
+  <li>单个合约，总计交易数目达到20W时，完全无性能瓶颈（当前数据库限速为100条交易每秒）</li>
+  <li>单个合约，总计交易数目达到50W时，交易处理速度为35条交易每秒。</li>
+  <li>《多个合约的情景还没来得及测试，小数据量的测试上看，合约的数量略微增加可以提高性能》</li>
+  <li>出块速度：最高1秒（1秒内若无交易，则不出块）</li>
+  <li>交易数量达到30W时，内存占用400M</li>
+  <li>交易数量达到50W时，内存占用500M</li>
+</ul>
+
+<p>根据实测结果，以及我现在对潜在客户的定位，暂定性能优化目标为：<strong>100W交易数时，能达到20条交易每秒，内存占用不超过400M，并支持每秒10次的查询请求</strong>。
+而且该目标是在上述提过的单台物理机中的多台虚拟机中实现，故最终部署至独立服务器后，性能应至少有4倍以上的提高（按经验应有10倍以上的提高），可以认为能够满足绝大多数小型信息系统的要求。</p>
+
+<p>以上是截至目前的成果。</p>
+
+<h2 id="问答时间">问答时间</h2>
+
+<h3 id="1区块链数据库和一般的区块链有什么区别">1、区块链数据库和一般的区块链有什么区别？</h3>
+
+<p>区块链被人们所熟知主要来源于比特币，故早期的区块链设计主要针对金融领域，针对非货币型数字资产的存储，并无专门的设计，属于附带产物。而区块链数据库则直接针对非货币型数字资产的存储进行考虑及优化。</p>
+
+<h3 id="2现在已知的未来会遇到的困难有哪些">2、现在已知的未来会遇到的困难有哪些？</h3>
+
+<p>区块链数据库仍旧属于非常高新的产品，不管从稳定性角度考虑，还是从开发难易度角度考虑，对于想要使用区块链数据库的开发者来说都是一项挑战，因此想要说服他们来使用恐怕是有难度的。</p>
+
+<ul>
+  <li>解决方案一：提高终端开发人员的开发体验，使其更快更容易的上手。</li>
+  <li>解决方案二：亲自带头做一些示范性案例，当然不能仅仅是个实验室中的示范，得是在市场中经历考验的产品才行。</li>
+</ul>
+
+<h3 id="3既然目标是通用的区块链数据库未来是否会兼容sql标准">3、既然目标是通用的区块链数据库，未来是否会兼容SQL标准？</h3>
+
+<p>应该是不会的，首先区块链数据库本身并非关系型数据库，其次区块链数据库有了很多传统数据库所没有的性质，即便强行包装出语句兼容层，对数据库的性能提升会有致命伤的。</p>
+
+<h3 id="4现在已经面临的问题或困难">4、现在已经面临的问题或困难？</h3>
+
+<p>区块链有历史久远的数据不可更改，但最近数据却有可能被更替的性质，导致前端展现会和以前很不同，现在的比特币就有这样的性质，比如你提交了交易，你获得了对应的交易ID，但并不意味着你的这笔交易一定会进入无法更改历史的区块链中，所以比特币才会推荐大家对于大宗买卖，一定要等一个小时约6个区块之后才能明确知道你的交易成功了。而作为传统的信息系统，很难想象去要求使用人员要等上一段时间才确定信息录入成功了。</p>
+
+<p>解决方案：做一个监督层，使用人员录入的信息优先进入监督层，由监督层确保信息顺利进入区块链，对任何异常进行向上汇报。</p>
+
+<h3 id="5对于区块链来说如果历史数据一直保留岂不是数据库总有一天会庞大的不得了">5、对于区块链来说，如果历史数据一直保留，岂不是数据库总有一天会庞大的不得了？</h3>
+
+<p>是的，这就是一个区块链的重大问题，不能分布式存储，任何一个节点都需要存有所有完整数据，当然大家也都提出了一些解决方案：</p>
+<ul>
+  <li>以某个区块起作为历史打包，那个区块作为新的创世区块。（这个是我随便想出来的，尚未做明确的验证）</li>
+  <li>侧链，将所有高频交易放到区块链以外操作，最终将结果一次性汇总进来，减少数据量。（这个是现在比较流行的方案，也已经有很多公司在尝试着做这件事情了）</li>
+</ul>
+
+<h3 id="6高频大量交易打算怎么解决">6、高频大量交易打算怎么解决？</h3>
+
+<p>暂无解决方案，打算一步一个脚印的走，先走好小数据量的区块链数据库系统这一步，扎实的清除掉这些技术障碍，优先以更好的用户体验服务小型信息系统的开发者。未来再考虑高频交易的场景。</p>
+
+  </section>
+  <div class="divider">
+    <span>
+    
+    <a href="/p/how-i-begin-my-startup/"><i class="fa fa-chevron-left"></i></a>
+    
+    </span>
+    <span>
+    
+    <a href="/p/uchaindb-sprint1-report/"><i class="fa fa-chevron-right"></i></a>
+    
+    </span>
+  </div>
+</article>
+
+      </div>
+      <footer>
+        <div>
+          
+          &copy; 2002 ~ 2020 冰河魔法师 | 本站使用 jekyll | 主题基于 <a href="http://lhzhang.com" title="sext vi">sext vi</a>
+        </div>
+      </footer>
+    </div> <!-- main -->
+    <div style="display:none;">
+      <script language="javascript" type="text/javascript" src="//js.users.51.la/17278963.js"></script>
+      <script language="javascript" type="text/javascript" src="//s22.cnzz.com/z_stat.php?id=1273658393&amp;web_id=1273658393"></script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="冰河魔法师" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <title>Docker常用命令大全</title>
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="/atom.xml" rel="alternate" title="冰河设计" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/3rd/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/3rd/pygments/github.css">
+  </head>
+  <body>
+    <div id="main" role="main">
+      <header>
+        <div id="header">
+          <h1>
+            <a title="冰河设计" class="" href="/">冰河设计</a>
+            <p class="description">冰河魔法师的自留地</p>
+          </h1>
+        </div>
+        <nav>
+          
+          
+          
+            <span><a title="存档" href="/archive.html"><i class="fa fa-list-ul"></i></a></span>
+          
+            <span><a title="问答" href="/questions.html"><i class="fa fa-question"></i></a></span>
+          
+            <span><a title="关于" href="/about.html"><i class="fa fa-user"></i></a></span>
+          
+            <span><a title="项目" href="/projects.html"><i class="fa fa-film"></i></a></span>
+          
+          <span id="nav-other">
+            <i class="fa fa-external-link"></i>
+            <ul class="dropdown">
+            
+              <li><a href="/atom.xml" target="_blank"><i class="fa fa-fw fa-rss"></i> 订阅</a></li>
+            
+              <li><a href="http://love.icerdesign.com" target="_blank"><i class="fa fa-fw fa-heart"></i> 关于爱</a></li>
+            
+              <li><a href="http://www.hiyaphoto.com" target="_blank"><i class="fa fa-fw fa-camera"></i> 关于摄影</a></li>
+            
+            </ul>
+          </span>
+          
+
+
+
+
+<span>|</span>
+
+    
+    
+    <span>
+        <a href="/index-en.html" class="en">en</a>
+    </span>
+    
+    <span>
+        <a href="/index.html" class="zh">中</a>
+    </span>
+    
+
+
+        </nav>
+      </header>
+      <div id="content">
+      <article>
+  <section class="title">
+    <h2>Docker常用命令大全</h2>
+  </section>
+  <section class="meta">
+  <span class="time">
+    <time datetime="2019-02-05">2019-02-05</time>
+  </span>
+  
+  <span class="tags">
+    
+    <a href="/tags.html#编程" title="编程">#编程</a>
+    
+  </span>
+  
+  </section>
+  
+  
+  <section class="post">
+  <blockquote>
+  <p><strong>此列表不断更新中</strong>，最后更新于2019-2-7</p>
+</blockquote>
+
+<h2 id="执行命令">执行命令</h2>
+
+<p>有时候你需要在一个容器中执行命令，或者干脆启动一个bash——用这个万能的工具完成任务。</p>
+
+<p>以下分别以Docker和Docker Compose来描述命令。</p>
+
+<h3 id="docker">Docker</h3>
+
+<p>首先你需要知道容器的名字，不知道的话，可以运行<code class="highlighter-rouge">docker ps</code>命令列出所有运行的容器，从中获取容器名称。</p>
+
+<p>这里我们使用<code class="highlighter-rouge">docker exec</code>命令来执行命令，并配合
+<code class="highlighter-rouge">-i</code><ruby>交互<rt>interactive</rt></ruby>
+和
+<code class="highlighter-rouge">-t</code><ruby>终端<rt>terminal</rt></ruby>
+选项参数来开启终端并保持交互。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker <span class="nb">exec</span> <span class="nt">-i</span> <span class="nt">-t</span> container_name /bin/bash
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">-i</code>和<code class="highlighter-rouge">-t</code>选项参数可以合并为<code class="highlighter-rouge">-it</code>，同时也可以直接执行多条命令。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker <span class="nb">exec</span> <span class="nt">-it</span> container_name sh <span class="nt">-c</span> <span class="s2">"echo a &amp;&amp; echo b"</span>
+</code></pre></div></div>
+
+<h3 id="dockercompose">Docker Compose</h3>
+
+<p>如果使用Docker Compose的话，其内含的不管是<code class="highlighter-rouge">run</code>命令还是<code class="highlighter-rouge">exec</code>命令，都会自动的分配一个终端，
+因此只需要简单的执行以下命令。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker-compose <span class="nb">exec </span>container_name /bin/bash
+</code></pre></div></div>
+
+<p>同样的方法可以用来直接执行命令。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker-compose <span class="nb">exec </span>container_name <span class="nb">command</span>
+</code></pre></div></div>
+
+<p>但是如果需要执行一系列的命令，则需要使用<code class="highlighter-rouge">sh</code>命令将他们连接起来。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker-compose <span class="nb">exec </span>container_name sh <span class="nt">-c</span> <span class="s1">'echo a &amp;&amp; echo b'</span> 
+</code></pre></div></div>
+
+<h2 id="进入windows版docker的命令行">进入Windows版Docker的命令行</h2>
+
+<p>在使用Windows版Docker时，其实在Hyper-V上运行了一个订制后的Linux，其使用的是LinuxKit发布版本，
+但鉴于这个Linux并非时完整的发行版，因此功能是受限的，其实很少是有需要直接进入的。
+不过真要是有这个需求，就用以下命令即可。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-it</span> <span class="nt">--rm</span> <span class="nt">--privileged</span> <span class="nt">--pid</span><span class="o">=</span>host justincormack/nsenter1
+</code></pre></div></div>
+
+<h4 id="参考">参考</h4>
+
+<ul>
+  <li><a href="https://www.bretfisher.com/getting-a-shell-in-the-docker-for-windows-vm/">https://www.bretfisher.com/getting-a-shell-in-the-docker-for-windows-vm/</a></li>
+  <li><a href="https://github.com/justincormack/nsenter1">nsenter</a></li>
+</ul>
+
+<h2 id="将镜像从一台主机传输到另一台主机">将镜像从一台主机传输到另一台主机</h2>
+
+<h3 id="docker-hub">Docker Hub</h3>
+
+<p>这是一个公共的Docker镜像集散地，不过他也提供收费的企业版镜像功能，可以不用公开。</p>
+
+<p>在执行过<code class="highlighter-rouge">docker login</code>之后，可以使用以下命令推送镜像至Docker Hub</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker publish
+</code></pre></div></div>
+
+<h3 id="自建镜像集散地">自建镜像集散地</h3>
+
+<p>我们首先使用以下命令启动
+<ruby>自建镜像集散地<rt>Private Registry</rt></ruby></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">-d</span> <span class="nt">-p</span> 5000:5000 <span class="nt">--name</span> registry registry:2
+</code></pre></div></div>
+
+<p>使用以下命令将该镜像标记，链接至自建镜像集散地</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker image tag myimage <span class="o">(</span>ip-address<span class="o">)</span>:5000/myfirstimage
+</code></pre></div></div>
+
+<p>在第一台主机上，使用以下命令将该镜像推送上去</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker push <span class="o">(</span>ip-address<span class="o">)</span>:5000/myfirstimage
+</code></pre></div></div>
+
+<p>在另外一台主机上，使用以下命令将该镜像拉取下来。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker pull <span class="o">(</span>ip-address<span class="o">)</span>:5000/myfirstimage
+</code></pre></div></div>
+
+<p>使用过程中可能会有证书问题的提示，请根据以下参考网址进行处理。</p>
+
+<h4 id="参考-1">参考</h4>
+
+<ul>
+  <li><a href="https://docs.docker.com/registry/">https://docs.docker.com/registry/</a></li>
+</ul>
+
+<h3 id="通过文件传送">通过文件传送</h3>
+
+<p>首先在源主机使用以下命令将镜像存储为tar文件</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker save <span class="nt">-o</span> &lt;save image to path&gt; &lt;image name&gt;
+</code></pre></div></div>
+
+<p>接下来把这个tar文件拷贝到目标主机上，这个过程你可能会用到<code class="highlighter-rouge">cp</code>或<code class="highlighter-rouge">scp</code>命令。
+拷贝完成后，在这目标主机上执行以下命令，即可将镜像在该主机上恢复出来。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker load <span class="nt">-i</span> &lt;path to image <span class="nb">tar </span>file&gt;
+</code></pre></div></div>
+
+<p>如果两台主机可以使用<code class="highlighter-rouge">ssh</code>进行连接，或许以下快速方法会更加方便，
+顺序的完成打包、压缩、传送并释放装载的全过程。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker save &lt;image&gt; | bzip2 | <span class="se">\</span>
+      ssh user@host <span class="s1">'bunzip2 | docker load'</span>
+</code></pre></div></div>
+
+<p>如果你所使用系统中含有<code class="highlighter-rouge">pv</code>命令，也可以将其放在其中，可以监控整个流程。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker save &lt;image&gt; | bzip2 | pv | <span class="se">\</span>
+      ssh user@host <span class="s1">'bunzip2 | docker load'</span>
+</code></pre></div></div>
+
+<h4 id="参考-2">参考</h4>
+
+<ul>
+  <li><a href="https://stackoverflow.com/questions/23935141/how-to-copy-docker-images-from-one-host-to-another-without-via-repository">https://stackoverflow.com/questions/23935141/how-to-copy-docker-images-from-one-host-to-another-without-via-repository</a></li>
+</ul>
+
+<h2 id="清理空间">清理空间</h2>
+
+<p>Docker用久了后，很容易出现空间占用过多的问题，通过以下不同的方式进行清理</p>
+
+<h3 id="删除不再使用的镜像">删除不再使用的镜像</h3>
+
+<p>通常情况，如果拉取了很多镜像，尤其是在本地多次编译过镜像时尤为突出，
+可以使用以下命令删除这些没有被使用的镜像。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker rmi <span class="si">$(</span>docker images <span class="nt">-q</span> <span class="nt">--filter</span> <span class="s2">"dangling=true"</span><span class="si">)</span>
+</code></pre></div></div>
+
+<h3 id="删除已经停止的容器">删除已经停止的容器</h3>
+
+<p>已经停止的容器，而没有打算保留其状态，也是可以被删除的。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker <span class="nb">rm</span> <span class="sb">`</span>docker ps <span class="nt">--no-trunc</span> <span class="nt">-aq</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<h4 id="参考-3">参考</h4>
+
+<ul>
+  <li><a href="https://gist.github.com/ngpestelos/4fc2e31e19f86b9cf10b">https://gist.github.com/ngpestelos/4fc2e31e19f86b9cf10b</a></li>
+  <li><a href="http://stackoverflow.com/questions/17236796/how-to-remove-old-docker-containers">http://stackoverflow.com/questions/17236796/how-to-remove-old-docker-containers</a></li>
+</ul>
+
+<h2 id="proxy-on-ubuntu">Proxy on ubuntu</h2>
+
+<p>对于<code class="highlighter-rouge">Ubuntu 16.04 LTS</code>系统，可以使用内置的<code class="highlighter-rouge">systemd</code>，步骤如下：</p>
+
+<ol>
+  <li>建立目录:</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> /etc/systemd/system/docker.service.d
+</code></pre></div></div>
+
+<ol>
+  <li>创建 <code class="highlighter-rouge">/etc/systemd/system/docker.service.d/http-proxy.conf</code> 文件，内容如下:</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>Service]
+<span class="nv">Environment</span><span class="o">=</span><span class="s2">"HTTP_PROXY=https://web-proxy.corp.xxxxxx.com:8080/"</span>
+<span class="nv">Environment</span><span class="o">=</span><span class="s2">"HTTPS_PROXY=https://web-proxy.corp.xxxxxx.com:8080/"</span>
+<span class="nv">Environment</span><span class="o">=</span><span class="s2">"NO_PROXY=localhost,127.0.0.1,localaddress,.localdomain.com"</span>
+</code></pre></div></div>
+
+<ol>
+  <li>应用变化:</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>systemctl daemon-reload
+</code></pre></div></div>
+
+<ol>
+  <li>重启docker:</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>systemctl restart docker
+</code></pre></div></div>
+
+<h4 id="参考-4">参考</h4>
+
+<ul>
+  <li><a href="https://stackoverflow.com/questions/26550360/docker-ubuntu-behind-proxy">https://stackoverflow.com/questions/26550360/docker-ubuntu-behind-proxy</a></li>
+</ul>
+
+
+  </section>
+  <div class="divider">
+    <span>
+    
+    <a href="/p/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%BA%94%E5%88%86%E9%92%9F/%E7%9F%BF%E5%9C%BA%E4%B8%8E%E7%9F%BF%E6%B1%A0/"><i class="fa fa-chevron-left"></i></a>
+    
+    </span>
+    <span>
+    
+    <a href="/p/%E6%97%A5%E5%BF%97/compile-amlogic-android/"><i class="fa fa-chevron-right"></i></a>
+    
+    </span>
+  </div>
+</article>
+
+      </div>
+      <footer>
+        <div>
+          
+          &copy; 2002 ~ 2020 冰河魔法师 | 本站使用 jekyll | 主题基于 <a href="http://lhzhang.com" title="sext vi">sext vi</a>
+        </div>
+      </footer>
+    </div> <!-- main -->
+    <div style="display:none;">
+      <script language="javascript" type="text/javascript" src="//js.users.51.la/17278963.js"></script>
+      <script language="javascript" type="text/javascript" src="//s22.cnzz.com/z_stat.php?id=1273658393&amp;web_id=1273658393"></script>
+    </div>
+  </body>
+</html>

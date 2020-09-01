@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="冰河魔法师" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <title>Ai Gan Introduction</title>
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="/atom.xml" rel="alternate" title="冰河设计" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/3rd/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/3rd/pygments/github.css">
+  </head>
+  <body>
+    <div id="main" role="main">
+      <header>
+        <div id="header">
+          <h1>
+            <a title="冰河设计" class="" href="/">冰河设计</a>
+            <p class="description">冰河魔法师的自留地</p>
+          </h1>
+        </div>
+        <nav>
+          
+          
+          
+            <span><a title="存档" href="/archive.html"><i class="fa fa-list-ul"></i></a></span>
+          
+            <span><a title="问答" href="/questions.html"><i class="fa fa-question"></i></a></span>
+          
+            <span><a title="关于" href="/about.html"><i class="fa fa-user"></i></a></span>
+          
+            <span><a title="项目" href="/projects.html"><i class="fa fa-film"></i></a></span>
+          
+          <span id="nav-other">
+            <i class="fa fa-external-link"></i>
+            <ul class="dropdown">
+            
+              <li><a href="/atom.xml" target="_blank"><i class="fa fa-fw fa-rss"></i> 订阅</a></li>
+            
+              <li><a href="http://love.icerdesign.com" target="_blank"><i class="fa fa-fw fa-heart"></i> 关于爱</a></li>
+            
+              <li><a href="http://www.hiyaphoto.com" target="_blank"><i class="fa fa-fw fa-camera"></i> 关于摄影</a></li>
+            
+            </ul>
+          </span>
+          
+
+
+
+
+<span>|</span>
+
+    
+    
+    <span>
+        <a href="/index-en.html" class="en">en</a>
+    </span>
+    
+    <span>
+        <a href="/index.html" class="zh">中</a>
+    </span>
+    
+
+
+        </nav>
+      </header>
+      <div id="content">
+      <article>
+  <section class="title">
+    <h2>Ai Gan Introduction</h2>
+  </section>
+  <section class="meta">
+  <span class="time">
+    <time datetime="2017-04-18">2017-04-18</time>
+  </span>
+  
+  <span class="tags">
+    
+  </span>
+  
+  </section>
+  
+  
+  <section class="post">
+  <p>人工智能和机器学习之类的都是大门类，包含众多的下属细节，今天探讨的仅为生成式对抗网络(Generative Adversarial Networks)，这个算法在短短不足三年时间就在内容自动生成领域做出了巨大贡献。</p>
+
+<h2 id="一gan现在能做什么">一、GAN现在能做什么？</h2>
+<p>1、涂鸦</p>
+
+<p>你只要涂鸦，心想的场景就会被自动计算出来，比如我们只要画两笔绿色，草原就出来了。 <sup id="fnref:IED"><a href="#fn:IED" class="footnote">1</a></sup></p>
+
+<p><img src="editing-mountain-p1.gif" alt="" /></p>
+
+<p>我们再继续加上山脉的轮廓和雪山的白色。</p>
+
+<p><img src="editing-mountain-p2.gif" alt="" /></p>
+
+<p>这个也可以被用到类似于鞋包的设计上。</p>
+
+<p><img src="editing-shoe.gif" alt="" /></p>
+
+<p>依旧是涂鸦，</p>
+
+<p>不过生成是梵高风格的图片<sup id="fnref:NDD"><a href="#fn:NDD" class="footnote">2</a></sup></p>
+
+<p><img src="neural-doodle.gif" alt="" /></p>
+
+<p>甚至可以使用涂鸦来快速换妆<sup id="fnref:PED"><a href="#fn:PED" class="footnote">3</a></sup></p>
+
+<p><img src="face.gif" alt="" /></p>
+
+<p>还可以对线稿上色，只需要简单的涂鸦，左图是输入，右图为程序的运行的结果<sup id="fnref:CLA"><a href="#fn:CLA" class="footnote">4</a></sup></p>
+
+<p><img src="fillcolor.jpg" alt="" /></p>
+
+<p>2、生成</p>
+
+<p>在观看接下来的生成图片时，请一定带入以下<strong>几点前提</strong>：</p>
+
+<ul>
+  <li>所有图片都起始于一个<strong>随机数</strong>，所以一般生成开始时都能看到噪点一般的图片；</li>
+  <li>所有训练过程是<strong>无人参与</strong>，甚至对训练数据的分类都是没有的；</li>
+  <li>该算法的最初论文发表于<strong>2014年</strong>中，即发展至今也不足三年；</li>
+</ul>
+
+<p>可以生成花朵<sup id="fnref:FLR"><a href="#fn:FLR" class="footnote">5</a></sup></p>
+
+<p><img src="flower.gif" alt="" /></p>
+
+<p>可以生成女孩的脸<sup id="fnref:GLF"><a href="#fn:GLF" class="footnote">6</a></sup></p>
+
+<p><img src="girlface.gif" alt="" /></p>
+
+<p>可以生成装修的房屋平面图<sup id="fnref:LOT"><a href="#fn:LOT" class="footnote">7</a></sup></p>
+
+<p><img src="japanlayout.gif" alt="" /></p>
+
+<p>可以生成口袋妖怪的图片<sup id="fnref:PKM"><a href="#fn:PKM" class="footnote">8</a></sup></p>
+
+<p><img src="pokermango.gif" alt="" /></p>
+
+<p>甚至可以根据输入的文字描述来生成对应的图片<sup id="fnref:TIS"><a href="#fn:TIS" class="footnote">9</a></sup></p>
+
+<p><img src="text-to-image.png" alt="" /></p>
+
+<p>3、补全</p>
+
+<p>可以将图片中不完整的部分自动生成出来，如下图，中间的脸部区域是被删除掉了，由算法重新生成了不完整的部分<sup id="fnref:ICT"><a href="#fn:ICT" class="footnote">10</a></sup></p>
+
+<p><img src="facecompletion.gif" alt="" /></p>
+
+<p>4、优化实例</p>
+
+<p>这里展示一个典型的优化实例，但由于该例官方并未公布其算法原理，列在这里仅仅为了说明该算法可以胜任该类问题。</p>
+
+<blockquote>
+  <p>据说这是世界上第一台由机器学习自己创作的赛车</p>
+</blockquote>
+
+<p>第一步，工程师们将传感器部署在现在成熟的赛车框架各个部位，如下图：<sup id="fnref:HKR"><a href="#fn:HKR" class="footnote">11</a></sup></p>
+
+<p><img src="hackrod-sensor.gif" alt="" /></p>
+
+<p>第二步，通过人工智能的计算，设计出了以下这个绝对无法由人类设计出来的框架结构，做到了质量最轻而又结实的效果。 当然要制造出这样的框架就得靠3D打印这个同样前沿的技术。</p>
+
+<p><img src="hackrod-frame.jpg" alt="" /></p>
+
+<p>最后一步，设计师再为这个赛车设计一个酷炫的外壳。</p>
+
+<p><img src="hackrod-frame.gif" alt="" /></p>
+
+<h2 id="二基本原理">二、基本原理</h2>
+
+<p>我这里只最简单的说一下生成式对抗网络的生成过程。</p>
+
+<p>如下图一个单点的简单系统。<sup id="fnref:SGA"><a href="#fn:SGA" class="footnote">12</a></sup></p>
+
+<p><img src="simple.gif" alt="" /></p>
+
+<p>绿色圆点代表通过训练得到的目标特征，而深色圆点则是随机生成的起始位置，随着计算的深入，不断调整网络中的参数去拟合目标特征，最终做到符合目标特征。</p>
+
+<p>理解了这个简单的实例，我们就来看这个稍微复杂一点的实例：<sup id="fnref:MGA"><a href="#fn:MGA" class="footnote">13</a></sup></p>
+
+<p><img src="swarm.gif" alt="" /></p>
+
+<p>蓝色圆点代表通过训练后得到的目标特征群，红色圆点则是随机生成，同样随着计算的进行，不断的调整了网络中的参数去拟合目标特征，找到标准偏差最小的位置。有可能你会问为什么不让圆点完全重合，那是为了生成图片的随机性和多样性，若完全重合了，那所有图片都是一样的了。</p>
+
+<h2 id="三实施gan需要什么样的投入">三、实施GAN需要什么样的投入</h2>
+
+<p>为什么人工智能在最近几年得到如此快速的发展，这都得归功于硬件的快速发展以及软件平台的完善，NVidia的CUDA平台的成熟，使得开发变得更加简单和可控，另外还有开源神经网络TensorFlow和Torch等一系列基础平台的成熟，使得后来者可以站在巨人的肩膀上继续前行。</p>
+
+<p>对于个人，体验生成式对抗网络的最简易配置就是配备最新NVidia显卡的现代电脑。速度嘛，这里有个数据可以参考：</p>
+
+<blockquote>
+  <p>50000张的图片集在8块Titan（NVidia的最高端显卡，某东价10000+RMB）上进行训练，需要5天<sup id="fnref:SOG"><a href="#fn:SOG" class="footnote">14</a></sup></p>
+</blockquote>
+
+<p>注：不同的具体算法，速度和精度千差万别，以上数据只能说明当前存在这样的算法，而做机器学习的同学必然也会遇到需要验证以上算法情形，故该速度依旧有重要的参考价值。</p>
+
+<p>软件方面，当前最方便体验的是直接在机器上安装Linux操作系统，因为Windows虚拟机普遍为解决显卡共享问题而有显卡接口层，使得调用CUDA暂时不可能，只有非虚拟机中的原生Linux操作系统才能直接访问显卡执行CUDA命令，而Linux下的核心虚拟机无此限制，故Docker可以使用。</p>
+
+<h2 id="四机器学习在工业领域的潜在应用">四、机器学习在工业领域的潜在应用</h2>
+
+<p>目前为止，网络上还无法找到明确的机器学习生成网络在工业领域的应用，但是我们可以想象，使用这样的机器学习生成网络技术，我们能做到以下：</p>
+
+<ul>
+  <li>自动生成厂房及管路设计图</li>
+  <li>自动生成组态逻辑</li>
+</ul>
+
+<p>要做到这些我们的行业都还缺点什么呢？</p>
+
+<ul>
+  <li>人工智能及机器学习的基础人才和硬件环境</li>
+  <li>由过去经验总结出来的整理好的可行的厂房及管路设计图，和组态逻辑</li>
+  <li>确保正确的验证逻辑</li>
+</ul>
+
+<p>这一切都需要拥有这些经验的公司，擅长分析的数据专家，擅长整理数据和逻辑缜密的工程师一起来完成。</p>
+
+<h2 id="参考文献">参考文献</h2>
+<div class="footnotes">
+  <ol>
+    <li id="fn:IED">
+      <p>Image Editing with Generative Adversarial Networks https://www.youtube.com/watch?v=pqkpIfu36Os&amp;t=126s <a href="#fnref:IED" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:NDD">
+      <p>Neural doodle https://github.com/alexjc/neural-doodle <a href="#fnref:NDD" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:PED">
+      <p>Neural Photo Editing with Introspective Adversarial Networks https://www.youtube.com/watch?v=FDELBFSeqQs <a href="#fnref:PED" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:CLA">
+      <p>Automatic coloring and shading of manga-style lineart http://kvfrans.com/coloring-and-shading-line-art-automatically-through-conditional-gans/ <a href="#fnref:CLA" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:FLR">
+      <p>WGAN flowers https://www.youtube.com/watch?v=e50WBRManWU <a href="#fnref:FLR" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:GLF">
+      <p>Generating faces by DCGAN https://www.youtube.com/watch?v=Svk0SxyNdr8 <a href="#fnref:GLF" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:LOT">
+      <p>DCGAN Japanese floor plan https://www.youtube.com/watch?v=SwvM7f5CUjs <a href="#fnref:LOT" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:PKM">
+      <p>DCGAN with Pokemon GO https://www.youtube.com/watch?v=rs3aI7bACGc <a href="#fnref:PKM" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:TIS">
+      <p>Generative Adversarial Text to Image Synthesis https://arxiv.org/pdf/1605.05396v2.pdf <a href="#fnref:TIS" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:ICT">
+      <p>Image Completion with Deep Learning in TensorFlow https://github.com/bamos/dcgan-completion.tensorflow <a href="#fnref:ICT" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:HKR">
+      <p>Hack Rod https://www.youtube.com/watch?v=0ebsf2BMYm8&amp;t=12s <a href="#fnref:HKR" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:SGA">
+      <p>Simple Generative Adversarial Network (GAN) https://www.youtube.com/watch?v=ebMei6bYeWw <a href="#fnref:SGA" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:MGA">
+      <p>Generative Adversarial Example https://www.youtube.com/watch?v=CILzNj2MP3s <a href="#fnref:MGA" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:SOG">
+      <p>https://www.zhihu.com/question/54414709 <a href="#fnref:SOG" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </section>
+  <div class="divider">
+    <span>
+    
+    <a href="/p/%E5%86%B0%E6%B2%B3%E6%9D%82%E8%B0%88/ai-gan-introduction/"><i class="fa fa-chevron-left"></i></a>
+    
+    </span>
+    <span>
+    
+    <a href="/p/%E5%86%B0%E6%B2%B3%E6%9D%82%E8%B0%88/how-i-begin-my-startup/"><i class="fa fa-chevron-right"></i></a>
+    
+    </span>
+  </div>
+</article>
+
+      </div>
+      <footer>
+        <div>
+          
+          &copy; 2002 ~ 2020 冰河魔法师 | 本站使用 jekyll | 主题基于 <a href="http://lhzhang.com" title="sext vi">sext vi</a>
+        </div>
+      </footer>
+    </div> <!-- main -->
+    <div style="display:none;">
+      <script language="javascript" type="text/javascript" src="//js.users.51.la/17278963.js"></script>
+      <script language="javascript" type="text/javascript" src="//s22.cnzz.com/z_stat.php?id=1273658393&amp;web_id=1273658393"></script>
+    </div>
+  </body>
+</html>

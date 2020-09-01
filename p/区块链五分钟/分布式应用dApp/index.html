@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="冰河魔法师" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <title>分布式应用dApp</title>
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="/atom.xml" rel="alternate" title="冰河设计" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/3rd/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/3rd/pygments/github.css">
+  </head>
+  <body>
+    <div id="main" role="main">
+      <header>
+        <div id="header">
+          <h1>
+            <a title="冰河设计" class="" href="/">冰河设计</a>
+            <p class="description">冰河魔法师的自留地</p>
+          </h1>
+        </div>
+        <nav>
+          
+          
+          
+            <span><a title="存档" href="/archive.html"><i class="fa fa-list-ul"></i></a></span>
+          
+            <span><a title="问答" href="/questions.html"><i class="fa fa-question"></i></a></span>
+          
+            <span><a title="关于" href="/about.html"><i class="fa fa-user"></i></a></span>
+          
+            <span><a title="项目" href="/projects.html"><i class="fa fa-film"></i></a></span>
+          
+          <span id="nav-other">
+            <i class="fa fa-external-link"></i>
+            <ul class="dropdown">
+            
+              <li><a href="/atom.xml" target="_blank"><i class="fa fa-fw fa-rss"></i> 订阅</a></li>
+            
+              <li><a href="http://love.icerdesign.com" target="_blank"><i class="fa fa-fw fa-heart"></i> 关于爱</a></li>
+            
+              <li><a href="http://www.hiyaphoto.com" target="_blank"><i class="fa fa-fw fa-camera"></i> 关于摄影</a></li>
+            
+            </ul>
+          </span>
+          
+
+
+
+
+<span>|</span>
+
+    
+    
+    <span>
+        <a href="/index-en.html" class="en">en</a>
+    </span>
+    
+    <span>
+        <a href="/index.html" class="zh">中</a>
+    </span>
+    
+
+
+        </nav>
+      </header>
+      <div id="content">
+      <article>
+  <section class="title">
+    <h2>分布式应用dApp</h2>
+  </section>
+  <section class="meta">
+  <span class="time">
+    <time datetime="2018-09-22">2018-09-22</time>
+  </span>
+  
+  <span class="tags">
+    
+    <a href="/tags.html#区块链" title="区块链">#区块链</a>
+    
+    <a href="/tags.html#教程" title="教程">#教程</a>
+    
+  </span>
+  
+  </section>
+  
+  
+  <section class="post">
+  <h2 id="dapp">dApp</h2>
+
+<p>app就是我们平时经常提到的app应用的意思。而前面的那个d字母。是表示分布式的意思。因此dApp可以认为是分布式应用。按其定义来说的话，其实只要是运行在分布式系统上，不会因为单个节点的损坏或停止工作导致程序无法运行的分布式应用都可以被称之为dApp。不过，鉴于分布式应用是在区块链的基础上提出的，因此很多时候大家会默认为分布式应用一定是运行在区块链上的。</p>
+
+<p>关于分布式应用这个概念，还非常的新。因此对于它的具体定义，还有不少的争论。现在这里使用主流的观点来看待分布式应用。</p>
+
+<p>深入细节前，我先提一个可能很多人都会误用的概念。分布式应用dApp。在一些场合会被写作ÐApp，即在D这个字母当中加了一个横杠。通常，这除了想表明这个分布式应用是在区块链上的特殊应用之外，它还暗含了这个应用是运行在以太坊这个区块链上的含义。因为这种用法，其定义就来自于以太坊，D加一个横杠的这个字母来自于古英语，其读作/ɛð/。写作字母时，就为eth，正好和以太坊的前三个字母eth完全吻合。因此如果一个分布式应用并非运行在以太坊系统上时。应避免使用带横杠的ÐApp。</p>
+
+<h2 id="基本构成">基本构成 </h2>
+
+<p>一个典型的分布式应用包含界面展现和智能合约两个部分。</p>
+
+<p>相比传统的app应用程序来说。将传统的应用中的服务器部分换成了区块链上的智能合约。另外，他与传统的应用程序还有一些其他的区别。</p>
+
+<p><strong>第一是，数据是分布式存储的。</strong>可以防止中心化和单点故障。</p>
+
+<p><strong>第二是，数据是不可篡改的。</strong>这样才能确保我们使用的是一种稳定的。确定性的应用。是不会受人操控的。</p>
+
+<h2 id="开发">开发</h2>
+
+<p>在开发基于区块链的分布式应用时，应该考虑以下两点。</p>
+
+<p><strong>第一，模块化设计。</strong>由于区块链的不可篡改性。分布式应用一旦上线。除非开发者预留后门，否则是不可能修改的。而预留后门的应用，在用户知晓的情况也是不敢用的。因此为了保证系统的可扩展性。及当前上线模块的稳定性。应考虑分模块设计。</p>
+
+<p><strong>第二，商业模式。</strong>传统的应用可以由开发商付费。让用户体验。最终让一部分用户付费来支撑整个业务。这主要也是因为，开发商提供体验需要付出的代价并不高。而一个具备持续运营能力的分布式应用。很有可能只能是用户付费的。否则开发商就很容易受到女巫攻击。即黑客节点模仿无上限的虚拟用户体验业务。而用户的付费将会支付给，运行程序的区块链节点，也就是通常意义上的矿工。</p>
+
+<h2 id="基础区块链的选择">基础区块链的选择 </h2>
+
+<p>作为分布式应用的基础区块链的选择，通常情况下有以下几种。</p>
+
+<p><strong>第一、选择知名的基础公链。</strong>当然需要确保这条公链是能够支持你的分布式应用开发的。</p>
+
+<p><strong>第二、使用定制化的区块链。</strong>可以从零开始，也可以在现有的开源系统上进行进一步定制，部署时可以是采用公链，也可以是联盟链的形式。</p>
+
+<p><strong>第三、使用侧链。</strong>将应用的高频交易数据都保存在侧链中，交易结束后同时回到公链。</p>
+
+<h2 id="参考资料">参考资料</h2>
+
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Eth"><em>https://en.wikipedia.org/wiki/Eth</em></a></li>
+  <li><a href="https://www.jianshu.com/p/0f4a1c5a1389"><em>https://www.jianshu.com/p/0f4a1c5a1389</em></a></li>
+  <li><a href="https://www.jianshu.com/p/6a41485170bf"><em>https://www.jianshu.com/p/6a41485170bf</em></a></li>
+</ul>
+
+  </section>
+  <div class="divider">
+    <span>
+    
+    <a href="/p/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%BA%94%E5%88%86%E9%92%9F/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%AE%89%E5%85%A8/"><i class="fa fa-chevron-left"></i></a>
+    
+    </span>
+    <span>
+    
+    <a href="/p/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%BA%94%E5%88%86%E9%92%9F/%E5%86%B7%E9%92%B1%E5%8C%85/"><i class="fa fa-chevron-right"></i></a>
+    
+    </span>
+  </div>
+</article>
+
+      </div>
+      <footer>
+        <div>
+          
+          &copy; 2002 ~ 2020 冰河魔法师 | 本站使用 jekyll | 主题基于 <a href="http://lhzhang.com" title="sext vi">sext vi</a>
+        </div>
+      </footer>
+    </div> <!-- main -->
+    <div style="display:none;">
+      <script language="javascript" type="text/javascript" src="//js.users.51.la/17278963.js"></script>
+      <script language="javascript" type="text/javascript" src="//s22.cnzz.com/z_stat.php?id=1273658393&amp;web_id=1273658393"></script>
+    </div>
+  </body>
+</html>

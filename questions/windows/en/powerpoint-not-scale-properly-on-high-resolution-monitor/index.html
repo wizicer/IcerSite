@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Icer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <title>PowerPoint not scale properly on high resolution monitor</title>
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="/atom.xml" rel="alternate" title="Icer's blog" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/3rd/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/3rd/pygments/github.css">
+  </head>
+  <body>
+    <div id="main" role="main">
+      <header>
+        <div id="header">
+          <h1>
+            <a title="Icer's blog" class="" href="/index-en.html">Icer's blog</a>
+            <p class="description">Everything worth written</p>
+          </h1>
+        </div>
+        <nav>
+          
+          
+          
+            <span><a title="Archive" href="/archive-en.html"><i class="fa fa-list-ul"></i></a></span>
+          
+            <span><a title="Questions" href="/questions-en.html"><i class="fa fa-question"></i></a></span>
+          
+            <span><a title="About" href="/about-en.html"><i class="fa fa-user"></i></a></span>
+          
+            <span><a title="Project" href="/projects-en.html"><i class="fa fa-film"></i></a></span>
+          
+          <span id="nav-other">
+            <i class="fa fa-external-link"></i>
+            <ul class="dropdown">
+            
+              <li><a href="/atom.xml" target="_blank"><i class="fa fa-fw fa-rss"></i> Subscribe</a></li>
+            
+              <li><a href="http://love.icerdesign.com" target="_blank"><i class="fa fa-fw fa-heart"></i> Love</a></li>
+            
+              <li><a href="http://www.hiyaphoto.com" target="_blank"><i class="fa fa-fw fa-camera"></i> Photos</a></li>
+            
+            </ul>
+          </span>
+          
+
+
+
+
+<span>|</span>
+
+    
+    
+    <span>
+        <a href="/index-en.html" class="en">en</a>
+    </span>
+    
+    <span>
+        <a href="/index.html" class="zh">中</a>
+    </span>
+    
+
+
+        </nav>
+      </header>
+      <div id="content">
+      <article>
+  <section class="title">
+    <h2>PowerPoint not scale properly on high resolution monitor</h2>
+  </section>
+  <section class="meta">
+  <span class="time">
+    <time datetime="2016-05-04">2016-05-04</time>
+  </span>
+  
+  <span class="tags">
+    
+  </span>
+  
+  </section>
+  
+  
+  <section class="post">
+  
+For TL;DR:
+  
+
+Long Version:
+  
+<p>It’s really strange that PowerPoint which is key product of Microsoft would not scale properly on
+high resolution monitor while Excel and Word worked properly. And this problem even not fix in
+Office 2016.</p>
+
+<p>According to <a href="http://www.danantonielli.com/adobe-app-scaling-on-high-dpi-displays-fix/">this link</a>,
+you can fix Adobe Applications.</p>
+
+<p>According to <a href="http://answers.microsoft.com/en-us/office/forum/office_365hp-powerpoint/powerpoint-will-not-scale-properly-on-second/90235c12-ee4b-44ec-aafb-856b4edd6948">this link</a>,
+you can fix PowerPoint 2013.</p>
+
+<p>Following is my step to fix it in my machine with PowerPoint 2016 installed.</p>
+
+<p>Copy and paste following code to a text file with <code class="highlighter-rouge">.reg</code> extension.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SideBySide]
+"PreferExternalManifest"=dword:00000001
+</code></pre></div></div>
+
+<p>In the directory where the powerpoint exe resides (e.g. C:\Program Files (x86)\Microsoft Office\Office14\POWERPNT.EXE), create a file with the same name followed by “.manifest” and add the text below. (e.g. C:\Program Files (x86)\Microsoft Office\Office14\POWERPNT.EXE.manifest)
+Note: I had to change the security settings of the folder so I could create the file.</p>
+
+<p>In the directory where the powerpoint exe resides (e.g. C:\Program Files\Microsoft Office\root\Office16\POWERPNT.EXE),
+find the file with the same name followed by <code class="highlighter-rouge">.manifest</code> and change the
+text as below. (e.g. C:\Program Files\Microsoft Office\root\Office16\POWERPNT.EXE.manifest)</p>
+
+<p><strong>Note</strong>: if you read the links I mentioned above, you may aware the difference, Office 2016 come
+with a default <code class="highlighter-rouge">.manifest</code> file. That’s why we should modify it now.</p>
+
+<p>Changes as following:</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh">diff --git a/powerpnt.exe.manifest b/powerpnt.exe.manifest
+</span><span class="gd">--- a/powerpnt.exe.manifest
+</span><span class="gi">+++ b/powerpnt.exe.manifest
+</span><span class="p">@@ -24,7 +24,7 @@</span>
+    &lt;/compatibility&gt;
+    &lt;asmv3:application xmlns:asmv3="urn:schemas-microsoft-com:asm.v3"&gt;
+       &lt;asmv3:windowsSettings xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings"&gt;
+<span class="gd">-         &lt;dpiAware&gt;True/PM&lt;/dpiAware&gt;
+</span><span class="gi">+         &lt;dpiAware&gt;false&lt;/dpiAware&gt;
+</span>       &lt;/asmv3:windowsSettings&gt;
+    &lt;/asmv3:application&gt;
+</code></pre></div></div>
+
+<p>What you need is change <code class="highlighter-rouge">&lt;dpiAware&gt;True/PM&lt;/dpiAware&gt;</code> to <code class="highlighter-rouge">&lt;dpiAware&gt;false&lt;/dpiAware&gt;</code>.</p>
+
+<p><strong>Note</strong>: make sure you open this file with admin privilege as it required.</p>
+
+
+
+  </section>
+  <div class="divider">
+    <span>
+    
+    <a href="/questions/git/en/unc-link-in-gitlab/"><i class="fa fa-chevron-left"></i></a>
+    
+    </span>
+    <span>
+    
+    <a href="/questions/windows/en/require-administrator-privilege-at-startup-of-batch-script/"><i class="fa fa-chevron-right"></i></a>
+    
+    </span>
+  </div>
+</article>
+
+      </div>
+      <footer>
+        <div>
+          
+          &copy; 2002 ~ 2020 Icer | powered by jekyll | theme based on <a href="http://lhzhang.com" title="sext vi">sext vi</a>
+        </div>
+      </footer>
+    </div> <!-- main -->
+    <div style="display:none;">
+      <script language="javascript" type="text/javascript" src="//js.users.51.la/17278963.js"></script>
+      <script language="javascript" type="text/javascript" src="//s22.cnzz.com/z_stat.php?id=1273658393&amp;web_id=1273658393"></script>
+    </div>
+  </body>
+</html>

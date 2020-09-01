@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Icer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <title>Use Roslyn to generate semantic code</title>
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="/atom.xml" rel="alternate" title="Icer's blog" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/3rd/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/3rd/pygments/github.css">
+  </head>
+  <body>
+    <div id="main" role="main">
+      <header>
+        <div id="header">
+          <h1>
+            <a title="Icer's blog" class="" href="/index-en.html">Icer's blog</a>
+            <p class="description">Everything worth written</p>
+          </h1>
+        </div>
+        <nav>
+          
+          
+          
+            <span><a title="Archive" href="/archive-en.html"><i class="fa fa-list-ul"></i></a></span>
+          
+            <span><a title="Questions" href="/questions-en.html"><i class="fa fa-question"></i></a></span>
+          
+            <span><a title="About" href="/about-en.html"><i class="fa fa-user"></i></a></span>
+          
+            <span><a title="Project" href="/projects-en.html"><i class="fa fa-film"></i></a></span>
+          
+          <span id="nav-other">
+            <i class="fa fa-external-link"></i>
+            <ul class="dropdown">
+            
+              <li><a href="/atom.xml" target="_blank"><i class="fa fa-fw fa-rss"></i> Subscribe</a></li>
+            
+              <li><a href="http://love.icerdesign.com" target="_blank"><i class="fa fa-fw fa-heart"></i> Love</a></li>
+            
+              <li><a href="http://www.hiyaphoto.com" target="_blank"><i class="fa fa-fw fa-camera"></i> Photos</a></li>
+            
+            </ul>
+          </span>
+          
+
+
+
+
+<span>|</span>
+
+    
+    
+    <span>
+        <a href="/index-en.html" class="en">en</a>
+    </span>
+    
+    <span>
+        <a href="/index.html" class="zh">中</a>
+    </span>
+    
+
+
+        </nav>
+      </header>
+      <div id="content">
+      <article>
+  <section class="title">
+    <h2>Use Roslyn to generate semantic code</h2>
+  </section>
+  <section class="meta">
+  <span class="time">
+    <time datetime="2016-06-12">2016-06-12</time>
+  </span>
+  
+  <span class="tags">
+    
+  </span>
+  
+  </section>
+  
+  
+  <section class="post">
+  
+For TL;DR:
+  <p>Scenario: I have made some utilities to generate C# code, however, I just utilize literal string
+with string.format, which is not good enough after Roslyn come out. So I tried to generate semantic
+code using Roslyn.</p>
+
+
+
+Long Version:
+  
+
+<p>Step 1. Tried Code from <a href="http://stackoverflow.com/a/27856370/2558077">this link</a>,
+however, there is a error:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error	CS0246	The type or namespace name 'CustomWorkspace' could not be found
+</code></pre></div></div>
+
+<p>According to <a href="https://github.com/dotnet/roslyn/issues/2614">this link</a> modify code as follow:</p>
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">- var cw = new CustomWorkspace();
+</span><span class="gi">+ var cw = new AdhocWorkspace();
+</span></code></pre></div></div>
+
+<p>Another type <code class="highlighter-rouge">Formatter</code> cannot be found which resolve by importing <code class="highlighter-rouge">Microsoft.CodeAnalysis.CSharp.Workspaces</code>.</p>
+
+<p>Credit to <a href="https://github.com/dotnet/roslyn/tree/master/src/Workspaces/CSharp/Portable/Formatting">this link</a></p>
+
+<p>Finally the first working code look like this (with little refactoring):</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">Microsoft.CodeAnalysis</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.CodeAnalysis.CSharp</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.CodeAnalysis.CSharp.Formatting</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.CodeAnalysis.CSharp.Syntax</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.CodeAnalysis.Formatting</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">static</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">CodeAnalysis</span><span class="p">.</span><span class="n">CSharp</span><span class="p">.</span><span class="n">SyntaxFactory</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">ConsoleApplication1</span>
+<span class="p">{</span>
+    <span class="k">class</span> <span class="nc">Program</span>
+    <span class="p">{</span>
+        <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">consoleWriteLine</span> <span class="p">=</span> <span class="nf">MemberAccessExpression</span><span class="p">(</span><span class="n">SyntaxKind</span><span class="p">.</span><span class="n">SimpleMemberAccessExpression</span><span class="p">,</span> <span class="nf">IdentifierName</span><span class="p">(</span><span class="s">"Console"</span><span class="p">),</span> <span class="n">name</span><span class="p">:</span> <span class="nf">IdentifierName</span><span class="p">(</span><span class="s">"WriteLine"</span><span class="p">));</span>
+
+            <span class="kt">var</span> <span class="n">arguments</span> <span class="p">=</span> <span class="nf">ArgumentList</span><span class="p">(</span>
+                <span class="nf">SeparatedList</span><span class="p">(</span>
+                    <span class="k">new</span><span class="p">[]</span>
+                    <span class="p">{</span>
+                        <span class="nf">Argument</span><span class="p">(</span><span class="nf">LiteralExpression</span><span class="p">(</span><span class="n">SyntaxKind</span><span class="p">.</span><span class="n">StringLiteralExpression</span><span class="p">,</span> <span class="nf">Literal</span><span class="p">(</span><span class="s">@"""Goodbye everyone!"""</span><span class="p">,</span> <span class="s">"Goodbye everyone!"</span><span class="p">)))</span>
+                    <span class="p">}));</span>
+
+            <span class="kt">var</span> <span class="n">consoleWriteLineStatement</span> <span class="p">=</span> <span class="nf">ExpressionStatement</span><span class="p">(</span><span class="nf">InvocationExpression</span><span class="p">(</span><span class="n">consoleWriteLine</span><span class="p">,</span> <span class="n">arguments</span><span class="p">));</span>
+
+            <span class="kt">var</span> <span class="n">voidType</span> <span class="p">=</span> <span class="nf">PredefinedType</span><span class="p">(</span><span class="nf">Token</span><span class="p">(</span><span class="n">SyntaxKind</span><span class="p">.</span><span class="n">VoidKeyword</span><span class="p">));</span>
+
+            <span class="kt">var</span> <span class="n">intType</span> <span class="p">=</span> <span class="nf">PredefinedType</span><span class="p">(</span><span class="nf">Token</span><span class="p">(</span><span class="n">SyntaxKind</span><span class="p">.</span><span class="n">IntKeyword</span><span class="p">));</span>
+            <span class="kt">var</span> <span class="n">getterBody</span> <span class="p">=</span> <span class="nf">ReturnStatement</span><span class="p">(</span><span class="nf">DefaultExpression</span><span class="p">(</span><span class="n">intType</span><span class="p">));</span>
+            <span class="kt">var</span> <span class="n">getter</span> <span class="p">=</span> <span class="nf">AccessorDeclaration</span><span class="p">(</span><span class="n">SyntaxKind</span><span class="p">.</span><span class="n">GetAccessorDeclaration</span><span class="p">,</span> <span class="nf">Block</span><span class="p">(</span><span class="n">getterBody</span><span class="p">));</span>
+
+            <span class="kt">var</span> <span class="n">@class</span> <span class="p">=</span> <span class="nf">ClassDeclaration</span><span class="p">(</span><span class="s">"MyClass"</span><span class="p">)</span>
+                <span class="p">.</span><span class="nf">AddMembers</span><span class="p">(</span><span class="nf">MethodDeclaration</span><span class="p">(</span><span class="n">voidType</span><span class="p">,</span> <span class="s">"Method"</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nf">WithBody</span><span class="p">(</span><span class="nf">Block</span><span class="p">(</span><span class="n">consoleWriteLineStatement</span><span class="p">)))</span>
+                <span class="p">.</span><span class="nf">AddMembers</span><span class="p">(</span><span class="nf">PropertyDeclaration</span><span class="p">(</span><span class="n">intType</span><span class="p">,</span> <span class="s">"Property"</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nf">WithAccessorList</span><span class="p">(</span><span class="nf">AccessorList</span><span class="p">(</span><span class="nf">SingletonList</span><span class="p">(</span><span class="n">getter</span><span class="p">))));</span>
+
+            <span class="c1">// generate code</span>
+            <span class="kt">var</span> <span class="n">cw</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">AdhocWorkspace</span><span class="p">();</span>
+            <span class="n">cw</span><span class="p">.</span><span class="n">Options</span><span class="p">.</span><span class="nf">WithChangedOption</span><span class="p">(</span><span class="n">CSharpFormattingOptions</span><span class="p">.</span><span class="n">IndentBraces</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+            <span class="kt">var</span> <span class="n">formattedCode</span> <span class="p">=</span> <span class="n">Formatter</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span><span class="n">@class</span><span class="p">,</span> <span class="n">cw</span><span class="p">);</span>
+
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">formattedCode</span><span class="p">.</span><span class="nf">ToFullString</span><span class="p">());</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>It’s really verbose, if I convert my generator code to something like this, the visibility and
+maintainability must be dropped so much that I cannot afford. Here is a very great
+<a href="http://blog.comealive.io/Syntax-Factory-Vs-Parse-Text/">article</a> compared Roslyn Syntaxfactory with
+ParseText. For TL;DRs, here is the conclusion:</p>
+
+<blockquote>
+  <ul>
+    <li>When convenience and ease of maintenance is relatively most important, use ParseText</li>
+    <li>To be certain about the generated tree structure - use SyntaxFactory</li>
+    <li>To generate just one expression - SyntaxFactory for precision and correct type, and because
+ParseText may have too little context to identify tokens and nodes in an isolated line of code.
+SyntaxFactory.ParseExpression may also be used to parse an individual line of code.</li>
+    <li>To interpret arbitrary C# file - use ParseText</li>
+    <li>To interpret arbitrary string and build just one expression - use SyntaxFactory.ParseExpression or
+use ParseText with CSharpParseOptions.WithKind(SourceCodeKind.Script).</li>
+  </ul>
+</blockquote>
+
+<p>For my case, I choose to use ParseText.</p>
+
+
+
+  </section>
+  <div class="divider">
+    <span>
+    
+    <a href="/questions/csharp/en/prefix-spaces-for-each-line-in-a-string/"><i class="fa fa-chevron-left"></i></a>
+    
+    </span>
+    <span>
+    
+    <i class="fa fa-circle"></i>
+    
+    </span>
+  </div>
+</article>
+
+      </div>
+      <footer>
+        <div>
+          
+          &copy; 2002 ~ 2020 Icer | powered by jekyll | theme based on <a href="http://lhzhang.com" title="sext vi">sext vi</a>
+        </div>
+      </footer>
+    </div> <!-- main -->
+    <div style="display:none;">
+      <script language="javascript" type="text/javascript" src="//js.users.51.la/17278963.js"></script>
+      <script language="javascript" type="text/javascript" src="//s22.cnzz.com/z_stat.php?id=1273658393&amp;web_id=1273658393"></script>
+    </div>
+  </body>
+</html>

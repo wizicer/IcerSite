@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="冰河魔法师" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <title>Algorand——随机权益证明共识</title>
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="/atom.xml" rel="alternate" title="冰河设计" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/3rd/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/3rd/pygments/github.css">
+  </head>
+  <body>
+    <div id="main" role="main">
+      <header>
+        <div id="header">
+          <h1>
+            <a title="冰河设计" class="" href="/">冰河设计</a>
+            <p class="description">冰河魔法师的自留地</p>
+          </h1>
+        </div>
+        <nav>
+          
+          
+          
+            <span><a title="存档" href="/archive.html"><i class="fa fa-list-ul"></i></a></span>
+          
+            <span><a title="问答" href="/questions.html"><i class="fa fa-question"></i></a></span>
+          
+            <span><a title="关于" href="/about.html"><i class="fa fa-user"></i></a></span>
+          
+            <span><a title="项目" href="/projects.html"><i class="fa fa-film"></i></a></span>
+          
+          <span id="nav-other">
+            <i class="fa fa-external-link"></i>
+            <ul class="dropdown">
+            
+              <li><a href="/atom.xml" target="_blank"><i class="fa fa-fw fa-rss"></i> 订阅</a></li>
+            
+              <li><a href="http://love.icerdesign.com" target="_blank"><i class="fa fa-fw fa-heart"></i> 关于爱</a></li>
+            
+              <li><a href="http://www.hiyaphoto.com" target="_blank"><i class="fa fa-fw fa-camera"></i> 关于摄影</a></li>
+            
+            </ul>
+          </span>
+          
+
+
+
+
+<span>|</span>
+
+    
+    
+    <span>
+        <a href="/index-en.html" class="en">en</a>
+    </span>
+    
+    <span>
+        <a href="/index.html" class="zh">中</a>
+    </span>
+    
+
+
+        </nav>
+      </header>
+      <div id="content">
+      <article>
+  <section class="title">
+    <h2>Algorand——随机权益证明共识</h2>
+  </section>
+  <section class="meta">
+  <span class="time">
+    <time datetime="2018-09-14">2018-09-14</time>
+  </span>
+  
+  <span class="tags">
+    
+    <a href="/tags.html#区块链" title="区块链">#区块链</a>
+    
+    <a href="/tags.html#教程" title="教程">#教程</a>
+    
+  </span>
+  
+  </section>
+  
+  
+  <section class="post">
+  <h2 id="简介">简介</h2>
+
+<p>今天讲一下algorand。这是我最近几天才新接触到的一个区块链底层技术。其主要贡献在共识算法上。其核心思想比较有新意，在我看来，其思想可能会在区块链的共识算法中，留下重要的一笔。</p>
+
+<p>先简单讲一下背景，algorand的背景相当的雄厚，是MIT机械工程与计算机科学系的Silvio
+Micali教授为主要作者提出的区块链协议。他的研究领域包括密码学，零知识，伪随机数生成，安全协议和机制设计。1993年获得哥德尔奖，2004年获得了密码学领域的RSA奖，2012年获得图灵奖。这都是计算机领域重量级的大奖，而且获奖方向都是密码学领域。</p>
+
+<p>algorand是由算法的algorithm，和随机的random两个词合成的。顾名思义，就是基于随机算法的区块链协议。因此他提出了其设计目标是，能耗低。民主化。出现分叉的概率低。可扩展性好。</p>
+
+<h2 id="基本机制">基本机制</h2>
+
+<p>algorand中的很多设计与传统的比特币或以太坊的设计比较类似。</p>
+
+<p>就区块链网络来说，任意节点可以随时加入到网络中来，不需要申请，而且对节点数量也没有任何限制。</p>
+
+<p>就交易设计来说，使用电子签名机制，来锁定一定数量的货币。同样需要使用电子签名，从一个公钥转移一定数量的货币到另外一个公钥，并使用对应的私钥进行加密锁定。</p>
+
+<p>就区块设计来说。依旧是将上一个区块的哈希值指针放入当前区块，然后形成当前区块的哈希值，以确保任意前项区块的信息被篡改后，其后续区块会变得无效。</p>
+
+<h2 id="创新做法">创新做法</h2>
+
+<p>其不同点有，要求系统中拥有三分之二的权益的节点是诚实的，诚实被定义为，其行为遵守有关指引。并能完美的发送和接收消息。从这一点要求上就可以猜想出，其使用了拜占庭共识协议。</p>
+
+<p>另外一个显著区别在于，其并没有引入激励机制，甚至可以认为没有原生货币，仅有权益证明。</p>
+
+<p>整个algorand的机制中，最大的创新点就在于共识机制。共识机制的基础算法，非常类似于拜占庭协议。</p>
+
+<p>但其最突出的区别，也是它名字的来源。就是使用随机算法来选择下一批验证者。因此和传统的各种算法相比，最大的区别在于，所有的验证者都是可替换的。</p>
+
+<h2 id="具体做法">具体做法</h2>
+
+<p>每一轮中会创建一个种子参数，而且这个种子参数，是不可能被人预测，当然也就不可能被操纵了。</p>
+
+<p>在这一轮中，它会基于当前的种子参数构建，并公布一个随机算法。这种算法这也被称之为可验证的随机函数，该随机算法中的一个关键参数是用户的私钥，而这个私钥和各个区块链网络一样，都只有用户本人才知道。</p>
+
+<p>接下来每个用户使用自己的私钥运行系统公布的随机算法，得到自己的凭证。</p>
+
+<p>满足一定条件的用户，就是这一轮的验证者，而在这一个步骤当中，一个特殊的凭证获得者就是领导者。</p>
+
+<p>这个随机算法筛选验证者或者领导者的概率，是按照/用户所持有的网络资产权益/决定的。</p>
+
+<p>接下来，所有的验证者加领导者，共同运行拜占庭协议，来创建新的区块。</p>
+
+<h2 id="特点">特点</h2>
+
+<p>但他是如何做到，低能耗，民主化，出现分叉可能性小和可扩展性强的呢？</p>
+
+<p>该算法其本质是pos权益证明机制。因此，相比pow工作量证明，可以做到更低的能耗。</p>
+
+<p>该算法设计为公链，因此所有节点可以随时加入退出，做到了民主化。</p>
+
+<p>该算法基础共识方法为拜占庭算法，故出现分叉的几率小。</p>
+
+<p>值得特别提出的，这里所谓的发叉，跟我们一般说的，在区块链升级或改变时做的软分叉硬分叉，并不是同一个概念。无论区块链如何设计，他都不可能防止的了/被人修改共识协议后，进行的硬分叉。其硬分叉后可能形成的就是一个新的货币，对原货币并没有直接影响。因此通常不作讨论。</p>
+
+<p>最后其可拓展性好的特点，主要体现在实现低能耗后，提高交易速度的可能性比较高。</p>
+
+<h2 id="如何防止攻击">如何防止攻击？ </h2>
+
+<p>其实光听完这些，你可能会问，algorand如何防止攻击呢？</p>
+
+<p>我们可以来做一下，一个攻击的演示。</p>
+
+<p>由于每一次的验证者和领导者都是由随机算法通过种子参数计算出来的。而这个种子参数又是不可预测的，也不可被操纵的。因此没有人能够预测出下一轮的验证者和领导者是哪一些节点。</p>
+
+<p>在验证者和领导者在发出共识消息的时候，在这一瞬间。作恶者可能会知道这些信息以及这一轮哪些节点是验证者，然而因为这些信息是不可能撤回的，作恶者并没有机会去，篡改这些信息，或者让贿赂他们，使其撤回自己的信息。</p>
+
+<p>而进入到下一轮验证后，又会有新的一组验证者和领导者担任。</p>
+
+<p>因此想要攻击这个网络，必须是作恶的节点要足够多。这个比例在原论文当中并没有提出。我通过粗略的计算得出，当作恶者拥有整个网络30%的权益的时候。他作恶的成功率大概在4%左右。</p>
+
+<h2 id="总结">总结 </h2>
+
+<p>这是一个新兴的方法。而且作者本人就是常年研究密码学和随机数的，因此我们有理由相信其提出的随机数算法，是经得起验证的。在未来，这样的共识方法，很有可能会成为一个新的发展方向。</p>
+
+
+  </section>
+  <div class="divider">
+    <span>
+    
+    <a href="/p/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%BA%94%E5%88%86%E9%92%9F/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E9%97%AE%E9%A2%98/"><i class="fa fa-chevron-left"></i></a>
+    
+    </span>
+    <span>
+    
+    <a href="/p/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%BA%94%E5%88%86%E9%92%9F/%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96%E4%BA%A4%E6%98%93%E6%89%80/"><i class="fa fa-chevron-right"></i></a>
+    
+    </span>
+  </div>
+</article>
+
+      </div>
+      <footer>
+        <div>
+          
+          &copy; 2002 ~ 2020 冰河魔法师 | 本站使用 jekyll | 主题基于 <a href="http://lhzhang.com" title="sext vi">sext vi</a>
+        </div>
+      </footer>
+    </div> <!-- main -->
+    <div style="display:none;">
+      <script language="javascript" type="text/javascript" src="//js.users.51.la/17278963.js"></script>
+      <script language="javascript" type="text/javascript" src="//s22.cnzz.com/z_stat.php?id=1273658393&amp;web_id=1273658393"></script>
+    </div>
+  </body>
+</html>

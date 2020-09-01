@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="冰河魔法师" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <title>Self Startup One Year</title>
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="/atom.xml" rel="alternate" title="冰河设计" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/3rd/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/3rd/pygments/github.css">
+  </head>
+  <body>
+    <div id="main" role="main">
+      <header>
+        <div id="header">
+          <h1>
+            <a title="冰河设计" class="" href="/">冰河设计</a>
+            <p class="description">冰河魔法师的自留地</p>
+          </h1>
+        </div>
+        <nav>
+          
+          
+          
+            <span><a title="存档" href="/archive.html"><i class="fa fa-list-ul"></i></a></span>
+          
+            <span><a title="问答" href="/questions.html"><i class="fa fa-question"></i></a></span>
+          
+            <span><a title="关于" href="/about.html"><i class="fa fa-user"></i></a></span>
+          
+            <span><a title="项目" href="/projects.html"><i class="fa fa-film"></i></a></span>
+          
+          <span id="nav-other">
+            <i class="fa fa-external-link"></i>
+            <ul class="dropdown">
+            
+              <li><a href="/atom.xml" target="_blank"><i class="fa fa-fw fa-rss"></i> 订阅</a></li>
+            
+              <li><a href="http://love.icerdesign.com" target="_blank"><i class="fa fa-fw fa-heart"></i> 关于爱</a></li>
+            
+              <li><a href="http://www.hiyaphoto.com" target="_blank"><i class="fa fa-fw fa-camera"></i> 关于摄影</a></li>
+            
+            </ul>
+          </span>
+          
+
+
+
+
+<span>|</span>
+
+    
+    
+    <span>
+        <a href="/index-en.html" class="en">en</a>
+    </span>
+    
+    <span>
+        <a href="/index.html" class="zh">中</a>
+    </span>
+    
+
+
+        </nav>
+      </header>
+      <div id="content">
+      <article>
+  <section class="title">
+    <h2>Self Startup One Year</h2>
+  </section>
+  <section class="meta">
+  <span class="time">
+    <time datetime="2018-06-18">2018-06-18</time>
+  </span>
+  
+  <span class="tags">
+    
+  </span>
+  
+  </section>
+  
+  
+  <section class="post">
+  <blockquote>
+  <p>最近一段时间都不敢登陆社交网络，总怕朋友们关心我的区块链数据库</p>
+</blockquote>
+
+<p>而我在完成性能改进之前，我都有点不敢提，
+因为这次的改动非常的大，测试用例一片红色，甚至有连续几天的整体系统无法编译的情况，关键是正在写的代码是对我来说的一片全新领域，并没有既有经验可以支撑我对于这个情况的预测，
+实际情况就是，我知道我要去到的地方，以及这个过程中的各个里程碑，但是各个里程碑之间的距离我均没有经验估计，
+在一段不知道什么时候能到达目的地的旅途中，唯一能支撑我自己走下去的就是信心。
+比较庆幸的是，这段时期总算是顺利度过了。</p>
+
+<h2 id="更该重视的测试">更该重视的测试</h2>
+
+<blockquote>
+  <p>我的职业生涯中，其实是非常重视测试的，但这次事件却是由测试不充分导致的，这里有非常值得总结的经验。</p>
+</blockquote>
+
+<p>上个月，本以为该版本的软件已经接近完工，正在最后的bug修复，准备上线。
+却意外发现性能问题，原本这个性能问题是应该在更早的时间就被检测出来的。原因如下：</p>
+<ol>
+  <li>我是按照测试驱动开发的流程进行的，因此在测试用例全通过的情况，会比较放心和有信心；</li>
+  <li>最初的测试用例是针对区块链部分及最初的数据库指令的；</li>
+  <li>导致性能问题的是后来新增的数据库指令，而这部分恰巧没有被最初的测试用例包含进去。</li>
+</ol>
+
+<p>这个为我的测试检查列表中新增了一项：<strong>新功能添加后应重新审视测试用例的覆盖范围</strong>。</p>
+
+<h2 id="将demo包装成商业产品不是一个好做法">将DEMO包装成商业产品不是一个好做法</h2>
+
+<p>去年刚开始写这个程序的最初想法非常简单，就是做一个基本能用的区块链数据库程序</p>
+<ul>
+  <li>一来可以学习和验证区块链是否是我可以把控和感兴趣的技术方向；</li>
+  <li>二来通过这个原型性质的程序证明区块链数据库这一种区块链的具体应用是可行的。</li>
+</ul>
+
+<p>显然这个程序在这两个目的上都帮助我实现了，但是在试图将这个程序转换为可以销售的商业程序时出现了问题。
+本质上是急功近利的思想问题，居然试图将DEMO包装成商业产品，当然也不用太大惊小怪，这样的事情在我打工的职业生涯里其实也出现了多次，那时候我都扮演极力反对的角色，只是这次变成了纵容者了。不过还好及时打住了。</p>
+
+<p>作为技术原型，在很多方面都用了比较简单的处理方式，比如直接在内存中映射出了完整的数据库这种方式，这也是我为什么多次提到总数据量100万的原因。这次性能问题让我意识到：</p>
+
+<ul>
+  <li>第一，这种设计作为产品来说是不可行的，这不是一种可以扩展的架构。</li>
+  <li>第二，按照长远考虑，应以数据库应有的架构来实现，至少架构上应该是可以扩展的，未来只应该是不断对各个具有性能问题的小模块进行更新，而非整体架构的变更。</li>
+</ul>
+
+<h2 id="重写代码重新上路">重写代码，重新上路</h2>
+
+<blockquote>
+  <p>这一段时间里，我完全重写了底层代码。</p>
+</blockquote>
+
+<p>现在的架构是，除了为提高性能的缓存机制外，所有数据都是立即写入文件，或者在需要时从文件中直接读取出来。另一方面，把我自己编写的读写文件的部分改成了使用开源nosql数据库的方式，来帮助我进行高效的文件管理和读写查询。</p>
+
+<p>为了保证数据正确性，及减少对历史数据的重复计算，采用了以太坊提出的<code class="highlighter-rouge">Patricia Merkle</code>树（其实就是<code class="highlighter-rouge">Radix Trie</code>+<code class="highlighter-rouge">哈希</code>）结构。这样的设计，我理解起来增加和查询的时间复杂度都应该是<code class="highlighter-rouge">O(log(n))</code>，
+其中n为数据库中的所有数据单元的数量，因为每个叶子节点只存储了数据表中的一个单元格，也因此会导致整表的随机查询的复杂度变成了<code class="highlighter-rouge">O(klog(n))</code>，其中k为本次查询需要返回的单元格数量。</p>
+
+<p>到今天为止，区块链数据库程序部分终于通过了所有已经定义的测试用例（虽然还不全，但也算是个小里程碑）和基本性能指标。更为关键的是，架构修改过后，不再有数据量的限制，读写速度也是呈对数减慢（即随数据量的增加性能减慢极其缓慢）。</p>
+
+<h2 id="关于创业">关于创业</h2>
+
+<blockquote>
+  <p>从去年7月份创业开始到现在，已经马上就是1年时间了。</p>
+</blockquote>
+
+<p>这一年的时间基本上都在打磨产品，以及在创业的弯路上信步。
+从最初急着找合伙人、招人和找投资，到现在不急不慢的打磨产品，这中间经历了好几波不同程度的观念、理念上的冲击。
+从外表和行为看上去，我和一年前似乎没有变化，但是我却在内心能深刻的感受到，自己在各方面都飞速的成长着。
+也正是这份感觉——似乎有能力创造一个时代的感觉，让我爱上了创业。</p>
+
+<h2 id="关于区块链数据库">关于区块链数据库</h2>
+
+<p>前几天看到一个叫做chainsql的产品发布了，查看了一下细节：</p>
+
+<ul>
+  <li>公司于2017年1月（宣称）发布区块链产品的白皮书</li>
+  <li>公司于2017年10月完成3600万的融资</li>
+  <li>github上面的开源代码最初签入为2017年11月（但很有可能是内部开发，开源时从内部挪代码未保留历史记录）</li>
+  <li>整合了ripple（国外另外一个知名的从2011年开始开发的区块链项目）的源代码</li>
+  <li>该项目签入代码的开发人员仅有几人</li>
+  <li>白皮书中明确写到是“先入库再共识”的解决方案</li>
+</ul>
+
+<p>说下“先入库再共识”这个事情，值得提出来特别说一下，这个解决方案与已经披露的百度、京东、腾讯的区块链方案是一致的，
+而他们几家的目标受众和产品愿景与我现在的产品是完全一致，可以说是竞品关系了。
+但是我的解决方案和他们都完全不一样，正因为这个原因，我特别关注他们的发展和新闻。</p>
+
+<p>在我看来，“先入库再共识”有个致命缺点，就是和传统数据库一样，因为区块链和数据库是分割开的两个部分，所以和传统数据库一样，一旦有最高管理员修改数据库内部数据时，就会出现数据篡改情况，
+即便数据在区块链上存有一份，但是必须进行恢复和比照过后才能确定数据是否被修改了。
+而我的区块链数据库的做法，则是使用常规区块链项目均使用的Merkle树确保原始数据绝对无修改。</p>
+
+<p>有时候我也“理解”他们的做法，只有“先入库再共识”这个做法，才能迅速的做出极其高性能的“区块链”，
+因为这种解决方案，性能基本上与数据库的性能无异，而我们的真正的基于区块链的数据库，则在速度上和区块链基本无异，对于他们想要撬动的客户，他们需要这个高性能的故事。</p>
+
+<p>所以我会继续坚持我这条路走下去，因为我认定所有做区块链数据库的厂商最终都会回到我正在走的这条路上来，其实这也为我积累门槛带来了更多的缓冲时间。</p>
+
+<h2 id="最后">最后</h2>
+
+<p>对于区块链行业的判断，我依旧认为区块链数据库将会是一个能够大有作为的领域。
+不过实际看起来，区块链行业尤其是区块链数据库行业的发展，比想象中更加缓慢一些。
+区块链是一门新兴技术，确实需要花更多的时间，沉下心来认真地从底层研究起，这样才能让我们看得更远，走得更远。</p>
+
+
+  </section>
+  <div class="divider">
+    <span>
+    
+    <a href="/p/%E5%86%B0%E6%B2%B3%E6%9D%82%E8%B0%88/self-startup-one-year/"><i class="fa fa-chevron-left"></i></a>
+    
+    </span>
+    <span>
+    
+    <a href="/p/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%BA%94%E5%88%86%E9%92%9F/EOS%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E8%AE%A1/"><i class="fa fa-chevron-right"></i></a>
+    
+    </span>
+  </div>
+</article>
+
+      </div>
+      <footer>
+        <div>
+          
+          &copy; 2002 ~ 2020 冰河魔法师 | 本站使用 jekyll | 主题基于 <a href="http://lhzhang.com" title="sext vi">sext vi</a>
+        </div>
+      </footer>
+    </div> <!-- main -->
+    <div style="display:none;">
+      <script language="javascript" type="text/javascript" src="//js.users.51.la/17278963.js"></script>
+      <script language="javascript" type="text/javascript" src="//s22.cnzz.com/z_stat.php?id=1273658393&amp;web_id=1273658393"></script>
+    </div>
+  </body>
+</html>

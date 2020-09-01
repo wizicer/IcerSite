@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Icer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <title>Send keystroke to application</title>
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="/atom.xml" rel="alternate" title="Icer's blog" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/3rd/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/3rd/pygments/github.css">
+  </head>
+  <body>
+    <div id="main" role="main">
+      <header>
+        <div id="header">
+          <h1>
+            <a title="Icer's blog" class="" href="/index-en.html">Icer's blog</a>
+            <p class="description">Everything worth written</p>
+          </h1>
+        </div>
+        <nav>
+          
+          
+          
+            <span><a title="Archive" href="/archive-en.html"><i class="fa fa-list-ul"></i></a></span>
+          
+            <span><a title="Questions" href="/questions-en.html"><i class="fa fa-question"></i></a></span>
+          
+            <span><a title="About" href="/about-en.html"><i class="fa fa-user"></i></a></span>
+          
+            <span><a title="Project" href="/projects-en.html"><i class="fa fa-film"></i></a></span>
+          
+          <span id="nav-other">
+            <i class="fa fa-external-link"></i>
+            <ul class="dropdown">
+            
+              <li><a href="/atom.xml" target="_blank"><i class="fa fa-fw fa-rss"></i> Subscribe</a></li>
+            
+              <li><a href="http://love.icerdesign.com" target="_blank"><i class="fa fa-fw fa-heart"></i> Love</a></li>
+            
+              <li><a href="http://www.hiyaphoto.com" target="_blank"><i class="fa fa-fw fa-camera"></i> Photos</a></li>
+            
+            </ul>
+          </span>
+          
+
+
+
+
+<span>|</span>
+
+    
+    
+    <span>
+        <a href="/index-en.html" class="en">en</a>
+    </span>
+    
+    <span>
+        <a href="/index.html" class="zh">中</a>
+    </span>
+    
+
+
+        </nav>
+      </header>
+      <div id="content">
+      <article>
+  <section class="title">
+    <h2>Send keystroke to application</h2>
+  </section>
+  <section class="meta">
+  <span class="time">
+    <time datetime="2016-06-10">2016-06-10</time>
+  </span>
+  
+  <span class="tags">
+    
+  </span>
+  
+  </section>
+  
+  
+  <section class="post">
+  
+For TL;DR:
+  <p>The goal I want to achieve is send keystroke to another application, which is the core function of my
+new open source application <a href="https://github.com/wizicer/TouchAssistant">TouchAssistant</a>. And I want
+the keystroke can be customized easily by configuration from user interaction.</p>
+
+
+
+Long Version:
+  
+
+<ol>
+  <li>Use WinAPI <code class="highlighter-rouge">keybd_event</code> as this <a href="http://stackoverflow.com/questions/8339565">Link</a> suggested.
+example as followed:</li>
+</ol>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">[</span><span class="nf">DllImport</span><span class="p">(</span><span class="s">"user32.dll"</span><span class="p">)]</span>
+  <span class="k">static</span> <span class="k">extern</span> <span class="kt">uint</span> <span class="nf">keybd_event</span><span class="p">(</span><span class="kt">byte</span> <span class="n">bVk</span><span class="p">,</span> <span class="kt">byte</span> <span class="n">bScan</span><span class="p">,</span> <span class="kt">int</span> <span class="n">dwFlags</span><span class="p">,</span> <span class="kt">int</span> <span class="n">dwExtraInfo</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>So far, I’m using this API, no shortcoming except no one liner to simulate keystroke with
+  modifier.</p>
+
+<ol>
+  <li>Use WinAPI <code class="highlighter-rouge">SendInput</code> as this <a href="http://www.pinvoke.net/default.aspx/user32.sendinput">Link</a>
+suggested. <strong>Note</strong> this API is available after Vista.</li>
+</ol>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">[</span><span class="nf">DllImport</span><span class="p">(</span><span class="s">"user32.dll"</span><span class="p">)]</span>
+  <span class="k">static</span> <span class="k">extern</span> <span class="kt">uint</span> <span class="nf">SendInput</span> <span class="p">(</span><span class="kt">uint</span> <span class="n">nInputs</span><span class="p">,</span> <span class="p">[</span><span class="nf">MarshalAs</span><span class="p">(</span><span class="n">UnmanagedType</span><span class="p">.</span><span class="n">LPArray</span><span class="p">),</span> <span class="n">In</span><span class="p">]</span> <span class="n">INPUT</span><span class="p">[]</span> <span class="n">pInputs</span><span class="p">,</span><span class="err"> </span><span class="kt">int</span> <span class="n">cbSize</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Much complex than previous one, however, it may get better compatibility especially with future
+  version of Windows.</p>
+
+<ol>
+  <li>Original WinForm has a method like following:</li>
+</ol>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Forms</span><span class="p">.</span><span class="n">SendKeys</span><span class="p">.</span><span class="nf">SendWait</span><span class="p">(</span><span class="s">"{ESC}"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Very powerful function, and can be configured to use <code class="highlighter-rouge">keybd_event</code> or <code class="highlighter-rouge">SendInput</code> internally.
+  However, it’s not so good to reference <code class="highlighter-rouge">System.Windows.Forms</code> in WPF application.</p>
+
+<ol>
+  <li>There is an open source project <a href="http://inputsimulator.codeplex.com/">Windows Input Simulator</a>.</li>
+</ol>
+
+<p>Good wrapper, however, cannot gain enough flexibility for user customization like AHK or SendKeys
+  did.</p>
+
+<ol>
+  <li>Integrate AHK by using <a href="https://github.com/amazing-andrew/AutoHotkey.Interop">https://github.com/amazing-andrew/AutoHotkey.Interop</a></li>
+</ol>
+
+
+
+  </section>
+  <div class="divider">
+    <span>
+    
+    <a href="/questions/csharp/en/event-during-dragmove/"><i class="fa fa-chevron-left"></i></a>
+    
+    </span>
+    <span>
+    
+    <a href="/questions/csharp/en/ternary-condition-returning-methoddelegate-not-compile/"><i class="fa fa-chevron-right"></i></a>
+    
+    </span>
+  </div>
+</article>
+
+      </div>
+      <footer>
+        <div>
+          
+          &copy; 2002 ~ 2020 Icer | powered by jekyll | theme based on <a href="http://lhzhang.com" title="sext vi">sext vi</a>
+        </div>
+      </footer>
+    </div> <!-- main -->
+    <div style="display:none;">
+      <script language="javascript" type="text/javascript" src="//js.users.51.la/17278963.js"></script>
+      <script language="javascript" type="text/javascript" src="//s22.cnzz.com/z_stat.php?id=1273658393&amp;web_id=1273658393"></script>
+    </div>
+  </body>
+</html>
