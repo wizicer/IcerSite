@@ -6,7 +6,7 @@ tags:
 - 服务器
 categories:
 - program
-date: 2008-6-2
+date: 2008-06-02
 ---
 
 登陆界面

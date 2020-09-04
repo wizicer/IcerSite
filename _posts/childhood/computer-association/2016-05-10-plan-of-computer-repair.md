@@ -4,7 +4,7 @@ tags:
 - 计算机协会
 categories:
 - childhoods
-date: 2007-9-13
+date: 2007-09-13
 ---
 
 冰河魔法师 于 2007年9月12日 起草

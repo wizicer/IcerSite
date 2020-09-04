@@ -6,7 +6,7 @@ tags:
 - 客户端
 categories:
 - program
-date: 2009-11-2
+date: 2009-11-02
 ---
 
 ![](classalerter.png)

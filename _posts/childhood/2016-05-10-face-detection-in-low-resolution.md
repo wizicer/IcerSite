@@ -4,7 +4,7 @@ tags:
 - 论文
 categories:
 - childhoods
-date: 2007-8-30
+date: 2007-08-30
 ---
 
 ![](face-detection-01.jpg)

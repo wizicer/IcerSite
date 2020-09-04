@@ -6,7 +6,7 @@ tags:
 - 客户端
 categories:
 - program
-date: 2009-5-12
+date: 2009-05-12
 ---
 
 针对校内网开发的相册下载器

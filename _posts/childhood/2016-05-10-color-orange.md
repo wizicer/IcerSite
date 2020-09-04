@@ -4,7 +4,7 @@ tags:
 - 小说
 categories:
 - childhoods
-date: 2006-9-2
+date: 2006-09-02
 ---
 
 ```

@@ -4,7 +4,7 @@ tags:
 - 诗歌
 categories:
 - childhoods
-date: 2009-8-23
+date: 2009-08-23
 ---
 
 ```

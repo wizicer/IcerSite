@@ -5,7 +5,7 @@ tags:
 - HTML
 categories:
 - 冰河杂谈
-date: 2013-7-7
+date: 2013-07-07
 ---
 
 译者：[冰河魔法师](http://icerdesign.com)

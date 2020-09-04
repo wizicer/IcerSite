@@ -5,7 +5,7 @@ tags:
 - 微信
 categories:
 - 冰河杂谈
-date: 2014-3-6
+date: 2014-03-06
 ref: writing-with-markdown-in-wechat
 ---
 ## 为什么？

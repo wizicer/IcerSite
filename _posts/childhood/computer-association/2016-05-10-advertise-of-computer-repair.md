@@ -4,7 +4,7 @@ tags:
 - 计算机协会
 categories:
 - childhoods
-date: 2007-9-9
+date: 2007-09-09
 ---
 
     1、电脑中病毒

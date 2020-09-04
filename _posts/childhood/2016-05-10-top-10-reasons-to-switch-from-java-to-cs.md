@@ -4,7 +4,7 @@ tags:
 - C#
 categories:
 - childhoods
-date: 2006-8-15
+date: 2006-08-15
 ---
 
 * 原作：Will Wagers

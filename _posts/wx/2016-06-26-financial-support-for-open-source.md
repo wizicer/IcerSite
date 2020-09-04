@@ -5,7 +5,7 @@ tags:
 - 微信
 categories:
 - 冰河杂谈
-date: 2016-6-26
+date: 2016-06-26
 ---
 
 本文开源地址：<https://github.com/wizicer/FinancialSupportForOpenSource>

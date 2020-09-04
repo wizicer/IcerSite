@@ -4,7 +4,7 @@ tags:
 - 作品展示
 categories:
 - childhoods
-date: 2004-5-31
+date: 2004-05-31
 ---
 
 ![](1.jpg)

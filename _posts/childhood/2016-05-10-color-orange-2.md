@@ -4,7 +4,7 @@ tags:
 - 小说
 categories:
 - childhoods
-date: 2006-9-9
+date: 2006-09-09
 ---
 
 当我醒来的时候，还能看见她那带着泪花的睡脸。

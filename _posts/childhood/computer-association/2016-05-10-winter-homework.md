@@ -4,7 +4,7 @@ tags:
 - 计算机协会
 categories:
 - childhoods
-date: 2007-12-6
+date: 2007-12-06
 ---
 
 * 所有会员必须选择任意一组中的一道题来做。
