@@ -9,7 +9,7 @@ hasCJKLanguage = true
 summaryLength = 70
 buildFuture = true
 
-copyright = "&copy; 2002 ~ {year} 冰河魔法师"
+copyright = "&copy; 2002 ~ {year} 冰河魔法师 <a href='http://beian.miit.gov.cn/' target='_blank'>沪ICP备17050980号-2</a>"
 timeout = 10000
 enableEmoji = true
 paginate = 13
