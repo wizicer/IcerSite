@@ -1,0 +1,29 @@
+{{ if .IsHome }}
+<header class="header {{ if $.Param "hideHomeHeaderWhenMobile" }}hide-mobile{{ end }}">
+    {{ if and ($.Param "homeHeaderType") (eq ($.Param "homeHeaderType") "slide") }}
+        {{ partial "header/header-slide" . }}
+    {{ else if and ($.Param "homeHeaderType") (eq ($.Param "homeHeaderType") "img") }}
+        {{ partial "header/header-img" . }}
+    {{ else if and ($.Param "homeHeaderType") (eq ($.Param "homeHeaderType") "text") }}
+        {{ partial "header/header-text" . }}
+    {{ else if and ($.Param "homeHeaderType") (eq ($.Param "homeHeaderType") "typewriter") }}
+        {{ partial "header/header-typewriter" . }}
+    {{ else }}
+        {{ partial "header/custom-header" . }}
+    {{ end }}
+    <div class="site-header basicflex-column">
+        <div style="
+    background-color: #f8f8f8;
+    padding: 0.2em 1em;
+    border: 1px dashed #eee !important;
+    border-color: #e0e0e0 !important;
+    font-size: 15px;
+    line-height: 1.6;
+    display: block;
+    overflow: auto;
+    margin: 0 5em;">
+            此站点新上线测试中，点此前往<a href="https://archive.icerdesign.com/" target="_blank">旧站点</a>查看更全的信息。
+        </div>
+    </div>
+</header>
+{{ end }}
