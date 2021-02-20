@@ -18,7 +18,8 @@ description: About Page
 
 ### 履历
 
-* 2017.7~至今 **区块链数据**库 *创业中*
+* 2020.9~至今 **上海交通大学** \| *计算机科学与技术* \| 博士（在读）
+* 2017.7~至今 **上海素图科技** *创业中*
 * 2012.5~2017.6 **霍尼韦尔综合科技（中国）** \| *过程控制部*
   - 职业发展：开发工程师-技术架构师
   - 申请专利2项 \| 参加公司内部黑客马拉松2次 \| 获得优秀奖6次
@@ -35,29 +36,8 @@ description: About Page
 
 ### 链接
 
-* 查看详细的[简历](/p/about/resume.pdf)
-* 查看我的[作品](/tags.html#作品展示)
+* 查看详细的[简历](/about/resume.pdf)
+* 查看我的[作品](/zh/tags/作品展示/)
 * [Github](https://github.com/wizicer)
 * [LinkedIn](https://www.linkedin.com/in/icerdesign)
 * [微博](https://weibo.com/wizicer)
-
-### 技能图
-<a name="/skills"></a>
-
-<div id="skillmap">
-  <div class="skills-wrapper">
-      <div id="skills-chart-breadcrumb"></div>
-    <div class="row">
-    <div class="col-6 skills-sunburst"></div>
-    <div class="col-6 skills-chart">
-    </div>
-    </div>
-  </div>
-</div>
-<a href="http://bl.ocks.org/wizicer/f662a0b04425fc0f7489" target="_blank">想要复刻这幅图？ <i class="fa fa-external-link"></i></a>
-
-<!-- <link rel="stylesheet" href="/p/about/animate.css"> -->
-<link rel="stylesheet" href="/about/style.css">
-<script src="/about/jquery.min.js"></script>
-<script src="/about/d3.min.js"></script>
-<script src="/about/main.min.js"></script>
