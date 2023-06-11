@@ -16,29 +16,29 @@ date: 2017-04-18
 
 你只要涂鸦，心想的场景就会被自动计算出来，比如我们只要画两笔绿色，草原就出来了。 [^IED]
 
-![](editing-mountain-p1.gif)
+![](ai-gan-introduction/editing-mountain-p1.gif)
 
 我们再继续加上山脉的轮廓和雪山的白色。
 
-![](editing-mountain-p2.gif)
+![](ai-gan-introduction/editing-mountain-p2.gif)
 
 这个也可以被用到类似于鞋包的设计上。
 
-![](editing-shoe.gif)
+![](ai-gan-introduction/editing-shoe.gif)
 
 依旧是涂鸦，
 
 不过生成是梵高风格的图片[^NDD]
 
-![](neural-doodle.gif)
+![](ai-gan-introduction/neural-doodle.gif)
 
 甚至可以使用涂鸦来快速换妆[^PED]
 
-![](face.gif)
+![](ai-gan-introduction/face.gif)
 
 还可以对线稿上色，只需要简单的涂鸦，左图是输入，右图为程序的运行的结果[^CLA]
 
-![](fillcolor.jpg)
+![](ai-gan-introduction/fillcolor.jpg)
 
 2、生成
 
@@ -50,29 +50,29 @@ date: 2017-04-18
 
 可以生成花朵[^FLR]
 
-![](flower.gif)
+![](ai-gan-introduction/flower.gif)
 
 可以生成女孩的脸[^GLF]
 
-![](girlface.gif)
+![](ai-gan-introduction/girlface.gif)
 
 可以生成装修的房屋平面图[^LOT]
 
-![](japanlayout.gif)
+![](ai-gan-introduction/japanlayout.gif)
 
 可以生成口袋妖怪的图片[^PKM]
 
-![](pokermango.gif)
+![](ai-gan-introduction/pokermango.gif)
 
 甚至可以根据输入的文字描述来生成对应的图片[^TIS]
 
-![](text-to-image.png)
+![](ai-gan-introduction/text-to-image.png)
 
 3、补全
 
 可以将图片中不完整的部分自动生成出来，如下图，中间的脸部区域是被删除掉了，由算法重新生成了不完整的部分[^ICT]
 
-![](facecompletion.gif)
+![](ai-gan-introduction/facecompletion.gif)
 
 4、优化实例
 
@@ -82,15 +82,15 @@ date: 2017-04-18
 
 第一步，工程师们将传感器部署在现在成熟的赛车框架各个部位，如下图：[^HKR]
 
-![](hackrod-sensor.gif)
+![](ai-gan-introduction/hackrod-sensor.gif)
 
 第二步，通过人工智能的计算，设计出了以下这个绝对无法由人类设计出来的框架结构，做到了质量最轻而又结实的效果。 当然要制造出这样的框架就得靠3D打印这个同样前沿的技术。
 
-![](hackrod-frame.jpg)
+![](ai-gan-introduction/hackrod-frame.jpg)
 
 最后一步，设计师再为这个赛车设计一个酷炫的外壳。
 
-![](hackrod-frame.gif)
+![](ai-gan-introduction/hackrod-frame.gif)
 
 ## 二、基本原理
 
@@ -98,13 +98,13 @@ date: 2017-04-18
 
 如下图一个单点的简单系统。[^SGA]
 
-![](simple.gif)
+![](ai-gan-introduction/simple.gif)
 
 绿色圆点代表通过训练得到的目标特征，而深色圆点则是随机生成的起始位置，随着计算的深入，不断调整网络中的参数去拟合目标特征，最终做到符合目标特征。
 
 理解了这个简单的实例，我们就来看这个稍微复杂一点的实例：[^MGA]
 
-![](swarm.gif)
+![](ai-gan-introduction/swarm.gif)
 
 蓝色圆点代表通过训练后得到的目标特征群，红色圆点则是随机生成，同样随着计算的进行，不断的调整了网络中的参数去拟合目标特征，找到标准偏差最小的位置。有可能你会问为什么不让圆点完全重合，那是为了生成图片的随机性和多样性，若完全重合了，那所有图片都是一样的了。
 

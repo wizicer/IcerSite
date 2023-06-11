@@ -37,27 +37,27 @@ date: 2018-01-26
 
 首先展示了**优链数据库核心数据表展示界面**
 
-![](1.png)
+![](first-prototype-show-of-uchaindb/1.png)
  
 通过向某慈善项目（本地测试版）捐款，**观察优链客户端中数据变化**，为了数据变化更明显，特意选择了比较特殊的数字
  
-![](2.png)
+![](first-prototype-show-of-uchaindb/2.png)
  
 捐赠完毕后，**转到优链客户端中查看，发现新增一条数据**
  
-![](3.png)
+![](first-prototype-show-of-uchaindb/3.png)
  
 模拟DBA直接修改数据库：**直接打开数据库，将刚捐的123改成了125**。
  
-![](4.png)
+![](first-prototype-show-of-uchaindb/4.png)
  
 再次打开优链客户端，**观察表中的数据变化**（发生过变化的字段被标记为绿色）
  
-![](5.png)
+![](first-prototype-show-of-uchaindb/5.png)
  
 点击该链接，**打开修改历史记录查看**：（并可查看该单元格记录修改相关的记录及修改内容）
  
-![](6.png)
+![](first-prototype-show-of-uchaindb/6.png)
  
 ## 演示结束，下面进行细节分解说明
 

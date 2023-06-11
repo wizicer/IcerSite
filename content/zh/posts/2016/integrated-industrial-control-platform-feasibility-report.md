@@ -129,7 +129,7 @@ Honeywell的旗舰产品，大家都懂，无需多说。简言之就是功能�
 
 ### 系统架构
 
-<image src="image3.png" />
+![](integrated-industrial-control-platform-feasibility-report/image3.png)
 
 一期功能架构图（简版）
 

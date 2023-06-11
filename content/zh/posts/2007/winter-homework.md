@@ -77,8 +77,8 @@ PowerPoint制作。
 
 界面举例：
 
-![](image001.jpg)
-![](image002.jpg)
+![](winter-homework/image001.jpg)
+![](winter-homework/image002.jpg)
 
 注意：1.  考虑界面的友好性。2.    写代码时要注意风格，使代码具有可读性。
 
