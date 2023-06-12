@@ -13,6 +13,21 @@
       <OldNotice :date="date" />
     </template>
 
+    <template #home-features-after>
+      <div class="BlogList">
+        <div class="container">
+          <div class="main">
+            <div class="header">
+              <h1>最新博客</h1>
+              <div class="header-link">
+                <a :href="withBase('./archives')">查看所有</a>
+              </div>
+            </div>
+            <PageIndex :maxItem="4" />
+          </div>
+        </div>
+      </div>
+    </template>
     <!-- <template v-if="isPost" #doc-after>
       <ClientOnly>
         <PostBottom />
@@ -22,10 +37,11 @@
 </template>
 
 <script setup lang="ts">
-import OldNotice from '../components/OldNotice.vue'
+import OldNotice from "../components/OldNotice.vue";
 import defaultTheme from "vitepress/theme";
 import { useData } from "vitepress";
 import { computed } from "vue";
+import { withBase } from "vitepress";
 const { Layout } = defaultTheme;
 const { frontmatter } = useData();
 const isPost = computed<boolean>(() => !!frontmatter.value.isPost);
@@ -51,6 +67,57 @@ const date = computed<string>(() => frontmatter.value.date);
       letter-spacing: -0.02em;
       line-height: 40px;
       font-size: 32px;
+    }
+  }
+}
+
+.BlogList {
+  padding: 0px 24px 48px;
+
+  @media (min-width: 640px) {
+    padding: 0px 48px 64px;
+  }
+  @media (min-width: 960px) {
+    padding: 0px 64px 64px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1152px;
+
+    @media (min-width: 960px) {
+      flex-direction: row;
+    }
+
+    .main {
+      position: relative;
+      z-index: 10;
+      order: 2;
+      flex-grow: 1;
+      flex-shrink: 0;
+
+      @media (min-width: 960px) {
+        order: 1;
+        width: calc((100% / 3) * 2);
+      }
+    }
+  }
+  .header {
+    border-bottom: 1px solid #aaa;
+    margin: 32px 0 16px;
+    padding-bottom: 8px;
+
+    h1 {
+      font-size: 2rem;
+      display: inline-block;
+    }
+    .header-link {
+      float: right;
+      a{
+        color: #666;
+      }
     }
   }
 }

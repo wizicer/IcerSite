@@ -18,13 +18,13 @@
       <template v-if="currentTagPost.posts && currentTagPost.posts.length">
         <div class="post_list-header">共 {{ currentTagPost.count }} 篇</div>
         <div class="post_list-content space-y-4">
-          <div class="post-item space-y-2" v-for="post in currentTagPost.posts">
+          <div class="post-item space-y-2" v-for="post in currentTagPost.posts" :key="post.url">
             <div class="post-title">
               <a :href="withBase(post.url)">
                 {{ post.title }}
               </a>
             </div>
-            <PostMeta :tags="post.tags" :createTime="post.createTime" />
+            <PostMeta :tags="post.tags" :createTime="new Date(post.date ?? 0).getTime()" />
           </div>
         </div>
       </template>
@@ -34,80 +34,84 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, computed, onBeforeMount } from 'vue'
-  import { withBase } from 'vitepress'
-  import { postList } from '../utils/getPostList'
-  import PostMeta from '../components/PostMeta.vue'
-  const currentTag = ref<string | null>()
-  const tagMap: Record<string, any> = Object.create(null)
-  for (const post of postList) {
-    if (post.tags) {
-      for (const tag of post.tags) {
-        if (!tagMap[tag]) {
-          tagMap[tag] = {
-            title: tag,
-            count: 0,
-            posts: []
-          }
-        }
-        const cacheObj = tagMap[tag]
-        cacheObj.count += 1
-        cacheObj.posts.push(post)
-      }
-    }
-  }
-  const currentTagPost = computed(() => {
-    if (currentTag.value) return tagMap[currentTag.value]
-    else return []
-  })
+import { ref, computed, onBeforeMount } from "vue";
+import { withBase } from "vitepress";
+import { postList } from "../utils/getPostList";
+import PostMeta from "../components/PostMeta.vue";
+import { useData } from "vitepress";
+const { lang } = useData();
 
-  function handleClickTag(tag) {
-    if (currentTag.value !== tag) {
-      currentTag.value = tag
-    } else {
-      currentTag.value = null
+const currentTag = ref<string | null>();
+const tagMap: Record<string, any> = Object.create(null);
+for (const post of postList.filter((_) => _.lang == lang.value)) {
+  if (post.tags) {
+    for (const tag of post.tags) {
+      if (!tagMap[tag]) {
+        tagMap[tag] = {
+          title: tag,
+          count: 0,
+          posts: [],
+        };
+      }
+      const cacheObj = tagMap[tag];
+      cacheObj.count += 1;
+      cacheObj.posts.push(post);
     }
   }
-  onBeforeMount(() => {
-    currentTag.value = decodeURIComponent(window.location.hash?.replace('#', ''))
-  })
+}
+const currentTagPost = computed(() => {
+  if (currentTag.value) return tagMap[currentTag.value];
+  else return [];
+});
+
+function handleClickTag(tag) {
+  if (currentTag.value !== tag) {
+    currentTag.value = tag;
+  } else {
+    currentTag.value = null;
+  }
+}
+onBeforeMount(() => {
+  currentTag.value = decodeURIComponent(window.location.hash?.replace("#", ""));
+});
 </script>
 
 <style lang="scss" scoped>
-  .tags-page {
-    margin-top: 45px;
+.tags-page {
+  margin-top: 45px;
+}
+.tags-container {
+  border-bottom: 1px solid var(--vp-c-divider-light);
+  padding: 1rem;
+  flex-wrap: wrap;
+  .tag {
+    color: var(--vp-c-text-1);
+    display: inline-block;
+    padding-right: 10px;
+    font-size: 14px;
+    line-height: 24px;
+    cursor: pointer;
+    &:hover,
+    &.active {
+      color: var(--vp-c-brand);
+    }
   }
-  .tags-container {
+}
+.post_list-container {
+  border: 1px solid var(--vp-c-divider-light);
+  border-radius: 6px;
+  .post_list-header {
     border-bottom: 1px solid var(--vp-c-divider-light);
     padding: 1rem;
-    .tag {
+  }
+  .empty {
+    padding: 1rem;
+  }
+  .post_list-content {
+    padding: 1rem;
+    .post-item a {
       color: var(--vp-c-text-1);
-      display: inline-block;
-      padding-right: 10px;
-      font-size: 14px;
-      line-height: 24px;
-      cursor: pointer;
-      &:hover,
-      &.active {
-        color: var(--vp-c-brand);
-      }
     }
   }
-  .post_list-container {
-    border: 1px solid var(--vp-c-divider-light);
-    border-radius: 6px;
-    .post_list-header {
-      border-bottom: 1px solid var(--vp-c-divider-light);
-      padding: 1rem;
-    }
-    .empty {
-      padding: 1rem;
-    }
-    .post_list-content {
-      padding: 1rem;
-      .post-item a {
-        color: var(--vp-c-text-1);
-      }
-    }
-  }
+}
 </style>

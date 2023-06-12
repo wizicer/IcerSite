@@ -5,6 +5,8 @@ type: "about"
 description: About Page
 sidebar: false
 aside: false
+prev: false
+next: false
 ---
 
 梁爽，网名冰河魔法师，英文名简称Icer，现在作为区块链数据库技术架构师创业中，

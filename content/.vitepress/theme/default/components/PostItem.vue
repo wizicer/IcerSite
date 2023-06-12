@@ -56,6 +56,8 @@ const coverImg = computed(() => {
     h2 {
       border: none;
       margin-top: 15px;
+      font-size: 1.5rem;
+      padding-bottom: 0.75rem;
     }
     h2 a {
       color: var(--vp-c-text-1);
