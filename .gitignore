@@ -1,3 +1,7 @@
-/public
-.DS_Store
-/resources
+node_modules
+
+docs/.vitepress/cache
+docs/.vitepress/dist
+
+content/.vitepress/cache
+content/.vitepress/dist

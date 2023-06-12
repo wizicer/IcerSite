@@ -3,6 +3,8 @@ title: 关于我
 date: 2019-10-09T11:44:14+09:00
 type: "about"
 description: About Page
+sidebar: false
+aside: false
 ---
 
 梁爽，网名冰河魔法师，英文名简称Icer，现在作为区块链数据库技术架构师创业中，
@@ -36,8 +38,8 @@ description: About Page
 
 ### 链接
 
-* 查看详细的[简历](/about/resume.pdf)
-* 查看我的[作品](/zh/tags/作品展示/)
+<!-- * 查看详细的[简历](/about/resume.pdf) -->
+<!-- * 查看我的[作品](/zh/tags/作品展示/) -->
 * [Github](https://github.com/wizicer)
 * [LinkedIn](https://www.linkedin.com/in/icerdesign)
 * [微博](https://weibo.com/wizicer)
