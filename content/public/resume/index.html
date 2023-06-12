@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Web3 Architect" />
+    <meta name="keywords" content="resume,cv,Shuang Liang(Icer)" />
+    <meta name="author" content="Shuang Liang(Icer)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="./build.css" rel="stylesheet" />
+    <title>Shuang Liang - Resume</title>
+  </head>
+  <!-- Body ----------------------------------------------------------------------- -->
+  <body class="bg-hero-circuit-board">
+    <main id="app" class="font-jost hyphens-manual">
+      <!-- Page -------------------------------------------------------------------------------------------------------->
+      <section
+        class="max-w-3xl p-3 mx-auto my-auto bg-gray-50 border-4 border-gray-700 print:border-0 page print:max-w-a4 print:max-h-a4 print:mx-0 print:my-o lg:h-a4 md:max-w-a4 md:h-a4 xsm:p-8 sm:p-9 md:p-16 lg:mt-6 rounded-2xl print:bg-white"
+      >
+        <!-- Name ---------------------------------------------------------------------------------------------------->
+        <header class="inline-flex items-baseline justify-between w-full mb-2 align-top border-b-4 border-gray-300">
+          <section class="block">
+            <h1 class="mb-0 text-5xl font-bold text-gray-700" @click="switchLanguage()">{{info.name}}</h1>
+
+            <!--Job Title--------------------------------------------------------------------------------------------------------->
+            <h2 class="m-0 text-2xl font-semibold text-gray-700 leading-snugish">{{info.job}}</h2>
+
+            <!--Location --------------------------------------------------------------------------------------------------------->
+            <h3 class="m-0 mt-2 font-semibold text-lg text-gray-500 leading-snugish">{{info.location}}</h3>
+          </section>
+          <!-- Contact Information ------------------------------------------------------------------------------------->
+          <section class="pb-2 mb-0 mt-4 first:mt-0">
+            <!-- To keep in the same column -------------------------------------------------------------------------->
+            <section class="break-inside-avoid">
+              <section class="pb-4 mb-2 break-inside-avoid">
+                <ul class="list-inside pr-7">
+                  <li
+                    v-for="{url, leading, hint, text ,cls} in profileItems"
+                    class="mt-1 leading-normal text-gray-500 text-md hover:text-gray-700"
+                    :key="text"
+                  >
+                    <a :href="url" :target="url.startsWith('http')?'_blank':undefined" class="group">
+                      <span class="text-lg font-semibold text-gray-700 leading-snugish" :class="cls">{{leading}}:</span>
+                      {{text}}
+                      <span v-if="hint" class="inline-block text-base text-gray-500">({{hint}})</span>
+                      <span
+                        v-if="url.startsWith('http')"
+                        class="inline-block font-normal text-black text-gray-500 print:text-black group-hover:text-gray-700 print:hidden"
+                      >
+                        ↗
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </section>
+            </section>
+          </section>
+        </header>
+
+        <!-- Column -------------------------------------------------------------------------------------------------->
+        <section
+          class="flex flex-row col-gap-8 md:col-count-2 print:col-count-2 md:h-a4-col-full print:h-a4-col-full col-fill-balance"
+        >
+          <!--1st Column ------------------------------------------------------------------------------------------------------>
+          <section class="basis-1/3">
+            <!--Education -------------------------------------------------------------------------------------------------------->
+            <section class="pb-4 break-inside-avoid mt-2 border-b-4 border-gray-300 first:mt-0">
+              <!-- To keep in the same column -->
+              <section class="break-inside-avoid">
+                <h2 class="mb-2">{{titles.education}}</h2>
+                <!-- school --------------------------------------------------------------------------->
+                <section v-for="school in schools" class="mt-2 border-b-2 break-inside-avoid last:border-0">
+                  <header>
+                    <h3 class="text-lg font-semibold text-gray-700 leading-snugish">
+                      {{school.name}}
+                      <span class="text-base text-gray-400 hidden">({{school.short}})</span>
+                    </h3>
+                    <p class="leading-normal text-md text-gray-500">{{school.degree}}</p>
+                    <p class="leading-normal text-sm text-gray-400">{{school.duration}} | {{school.location}}</p>
+                  </header>
+                  <template v-for="{type, leading, content} in school.highlights">
+                    <p v-if="type=='two'" class="mt-1 leading-normal text-md text-gray-800">
+                      <span class="font-semibold text-gray-700 text-md leading-snugish">{{leading}}:</span>
+                      {{content}}
+                    </p>
+                    <p v-if="type=='onemin'" class="leading-normal text-md text-gray-800">
+                      <span class="leading-normal text-gray-400">{{content}}</span>
+                    </p>
+                    <p v-else class="mt-1 leading-normal text-md text-gray-800">{{content}}</p>
+                  </template>
+                </section>
+              </section>
+            </section>
+
+            <!--Metrics ----------------------------------------------------------------------------------------------------->
+            <section class="pb-6 mb-4 mt-2 first:mt-0 break-inside-avoid border-b-4 border-gray-300">
+              <section class="break-inside-avoid">
+                <h2 class="mb-2">{{titles.metrics}}</h2>
+
+                <section class="mt-2 break-inside-avoid">
+                  <template v-for="{metric, items} in metrics">
+                    <p class="leading-normal text-md text-gray-800">
+                      <span class="inline-block pr-2"> {{metric}}: </span>
+
+                      <span v-for="item in items" class="text-gray-400 pl-1">
+                        <a :href="item.url" target="_blank" :title="item.name">◉</a>
+                      </span>
+                      <span class="text-gray-400 pl-1">({{items.length}})</span>
+                    </p>
+                  </template>
+                </section>
+              </section>
+            </section>
+
+            <!--Begin Skills ----------------------------------------------------------------------------------------------------->
+            <section class="pb-6 mb-4 mt-0 first:mt-0 break-inside-avoid border-b-4 border-gray-300">
+              <!-- To keep in the same column -->
+              <section class="break-inside-avoid">
+                <h2 class="mb-2">{{titles.skills}}</h2>
+
+                <section v-for="(s,i) of skills" class="mt-2 break-inside-avoid border-b-2">
+                  <header>
+                    <h3 class="text-lg font-semibold text-gray-700 leading-snugish">{{s.name}}</h3>
+                  </header>
+                  <template v-for="{category, items} of s.list">
+                    <p class="mt-1 leading-normal text-md text-gray-500">{{category}}:</p>
+                    <p class="leading-normal text-md text-gray-800">
+                      <!-- <span class="font-semibold text-gray-700 text-md leading-snugish">  </span> -->
+                      <!-- <br /> -->
+                      <span class="transform -translate-y-px select-none text-gray-500"> &middot; </span>
+                      <span v-for="(ss,j) of items">
+                        <span v-if="j>0" class="text-gray-300">, </span>
+                        <span class="inline-block"> {{ss}} </span>
+                      </span>
+                      <!-- <ul class="flex flex-wrap text-md leading-relaxed -mr-1.6 -mb-1 font-bold">
+                      <li
+                        v-for="ss in items"
+                        class="p-1.5 mr-1.6 mb-1 text-white leading-relaxed print:bg-white print:border-inset bg-gray-800"
+                      >
+                        {{ss}}
+                      </li>
+                    </ul> -->
+                    </p>
+                  </template>
+                </section>
+
+                <section class="mt-2 break-inside-avoid">
+                  <header>
+                    <h3 class="text-lg font-semibold text-gray-700 leading-snugish">{{titles.language}}</h3>
+                  </header>
+                  <template v-for="({language, level},j) in languages">
+                    <span class="leading-normal text-md text-gray-800">
+                      <span v-if="j>0" class="text-gray-300">, </span>
+                      <span class="inline-block"> {{language}} </span>
+                      <span class="text-gray-400">({{level}})</span>
+                    </span>
+                  </template>
+                </section>
+              </section>
+            </section>
+
+            <!--Simple Awards ----------------------------------------------------------------------------------------------------->
+            <section class="pb-6 mb-4 mt-0 first:mt-0 break-inside-avoid border-b-0 border-gray-300">
+              <section class="break-inside-avoid">
+                <h2 class="mb-2">{{titles.awards}}</h2>
+
+                <section class="mt-2 break-inside-avoid">
+                  <!-- <header>
+                    <h3 class="text-lg font-semibold text-gray-700 leading-snugish">Language</h3>
+                  </header> -->
+                  <template v-for="{year, title, level} in simpleAwards">
+                    <p class="leading-normal text-md text-gray-800 mt-1">{{level}}</p>
+                    <p class="text-gray-400 text-base">
+                      <span>{{year}}</span>
+                      |
+                      <span>{{title}}</span>
+                    </p>
+                  </template>
+                </section>
+              </section>
+            </section>
+          </section>
+          <!--2nd Column ------------------------------------------------------------------------------------------------------>
+          <section class="basis-2/3 ml-5">
+            <!--Summary ---------------------------------------------------------------------------------------------------------->
+            <section class="pb-2 pb-4 mt-0 border-b-4 border-gray-300 first:mt-0">
+              <!-- To keep in the same column -->
+              <section class="break-inside-avoid">
+                <h2 class="mb-2">{{titles.summary}}</h2>
+
+                <section class="mb-2 break-inside-avoid">
+                  <p v-if="isEnglish" class="mt-2 leading-normal text-gray-700 text-lg">
+                    I have been programming for over <b>20 years</b>. I have published <b>4 papers</b> and
+                    <b>5 patents</b> issued(2 US patents and 3 Chinese patents). My PhD research is focused on ZKP-enabled
+                    database management system.
+                    <br />
+                    I'm extremely passionate about Web3 and ZKP, and I'm committed to investing my time and effort into this
+                    field.
+                    <!-- I'm extremely passionate about Web3 and ZKP, and I have taken a leave of absence to pursue impactful achievements in the field of ZKP. -->
+                  </p>
+                  <p v-else class="mt-2 leading-normal text-gray-700 text-lg">
+                    　　本人拥有 <b>20 余年</b>的程序开发经验，<b>10 余年</b>带团队经验（10 人及以下）。共发表了
+                    <b>4 篇论文</b>，获得了 <b>5 项专利</b>（其中 2 项美国专利和 3
+                    项中国专利）。本人博士研究方向为基于零知识证明的数据库管理系统。
+                    <br />
+                    　　长时间对区块链的研究及相关开发，让我熟悉并热爱 Web3
+                    这个大方向，而我坚信零知识证明是未来几十年的各种技术功能的基础能力，
+                    为了能在零知识证明领域做出一些有影响力的成绩，目前已经休学专心做零知识证明的相关工作。
+                  </p>
+                </section>
+              </section>
+            </section>
+
+            <!--PAST ------------------------------------------------------------------------------------------------------>
+            <section
+              v-for="(p,pi) of past"
+              class="pb-2 pb-4 mt-4 border-gray-300 first:mt-0"
+              :class=" {'border-b-4': pi<past.length-1}"
+              :key="p.title"
+            >
+              <section class="break-inside-avoid">
+                <h2 class="mb-2">{{p.title}}</h2>
+
+                <section
+                  v-for="(exp,i) of p.items"
+                  class="mb-2 pb-1 break-inside-avoid border-gray-300"
+                  :class="{'border-b-2':i<p.items.length-1}"
+                  :key="i"
+                >
+                  <header>
+                    <h3 class="text-xl font-semibold text-gray-800 leading-snugish">{{exp.employer}} | {{exp.position}}</h3>
+                    <p class="leading-normal text-base text-gray-500">{{exp.duration}} | {{exp.location}}</p>
+                  </header>
+                  <ul
+                    class="mt-2 font-normal text-lg text-gray-700 pl-3"
+                    :class="{'leading-snugish':isEnglish,'leading-normal':!isEnglish}"
+                  >
+                    <li v-for="h in exp.highlights">
+                      <span class="transform -translate-y-px select-none text-gray-500"> &rsaquo; </span>
+                      <span v-if="typeof h === 'string'"> {{h}} </span>
+                      <span else>
+                        {{h.content}}
+                        <span v-if="h.stack" class="text-base text-gray-400"
+                          >(<span v-if="titles.stack">{{titles.stack}}: </span>{{h.stack}})</span
+                        >
+                      </span>
+                    </li>
+                  </ul>
+                </section>
+              </section>
+            </section>
+
+            <!--Awards ------------------------------------------------------------------------------------------------------>
+            <section class="pb-2 pb-4 mt-4 border-b-4 border-gray-300 first:mt-0 hidden">
+              <section class="break-inside-avoid">
+                <h2 class="mb-2">AWARDS</h2>
+
+                <div v-for="({title, level, year},i) of awards" class="mb-1 break-inside-avoid border-gray-300" :key="i">
+                  <div class="flex flex-row">
+                    <div class="basis-16">{{year}}</div>
+                    <div class="basis-48">{{level}}</div>
+                    <div class="grow">{{title}}</div>
+                  </div>
+                </div>
+              </section>
+            </section>
+          </section>
+        </section>
+        <!-- end Column -->
+      </section>
+      <!-- end Page -->
+    </main>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

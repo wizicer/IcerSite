@@ -1,0 +1,24 @@
+{
+  "name": "icerdesign-resume",
+  "version": "0.1.0",
+  "description": "resume",
+  "private": true,
+  "author": "Shuang Liang (icerdesign) <liangshuang@sutu.tech>",
+  "scripts": {
+    "serve": "concurrently \"postcss ./tailwind.css -o docs/build.css --watch\"  \"live-server ./docs \"",
+    "build": "./build.sh"
+  },
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "4.0.3",
+    "autoprefixer": "^10.2.5",
+    "concurrently": "5.3.0",
+    "cross-env": "7.0.3",
+    "cssnano": "5.0.0",
+    "live-server": "1.2.1",
+    "postcss": "8.4.24",
+    "postcss-cli": "10.1.0",
+    "postcss-import": "15.1.0",
+    "tailwind-heropatterns": "^0.0.8",
+    "tailwindcss": "3.3.2"
+  }
+}
