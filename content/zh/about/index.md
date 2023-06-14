@@ -40,7 +40,7 @@ next: false
 
 ### 链接
 
-<!-- * 查看详细的[简历](/about/resume.pdf) -->
+* 查看详细的[简历](pathname:///resume/index.html)
 <!-- * 查看我的[作品](/zh/tags/作品展示/) -->
 * [Github](https://github.com/wizicer)
 * [LinkedIn](https://www.linkedin.com/in/icerdesign)
