@@ -4,10 +4,10 @@ import { createApp } from "./vue.esm-browser.js";
 createApp({
   data() {
     return {
-      // language: "en",
-      language: "zh",
-      // mode: "resume",
-      mode: "letter",
+      language: "en",
+      // language: "zh",
+      mode: "resume",
+      // mode: "letter",
     };
   },
   mounted() {
