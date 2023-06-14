@@ -4,14 +4,33 @@ import { createApp } from "./vue.esm-browser.js";
 createApp({
   data() {
     return {
-      language: "en",
-      //   language: "zh",
+      // language: "en",
+      language: "zh",
+      // mode: "resume",
+      mode: "letter",
     };
+  },
+  mounted() {
+    this.updateTitle();
   },
   methods: {
     switchLanguage() {
       this.language = this.language == "en" ? "zh" : "en";
-      document.title = this.isEnglish ? "Shuang Liang - Resume" : "梁爽 - 简历";
+      this.updateTitle();
+    },
+    switchMode() {
+      this.mode = this.mode == "resume" ? "letter" : "resume";
+      this.updateTitle();
+    },
+    updateTitle() {
+      document.title =
+        this.mode == "resume"
+          ? this.isEnglish
+            ? "Shuang Liang - Resume"
+            : "梁爽 - 简历"
+          : this.isEnglish
+          ? "Shuang Liang - Cover Letter"
+          : "梁爽 - 求职信";
     },
   },
   computed: {
@@ -33,12 +52,14 @@ createApp({
       return this.isEnglish
         ? {
             name: "Shuang Liang (梁爽)",
-            job: "Web3 Architect / ZKP Engineer",
+            // job: "Web3 Architect / ZKP Engineer",
+            job: "Senior Engineer - Zero-Knowledge Proof(ZKP)",
             location: "Shanghai, China",
           }
         : {
             name: "梁爽",
-            job: "Web3 架构师 / 零知识证明工程师",
+            // job: "Web3 架构师 / 零知识证明工程师",
+            job: "高级工程师 - 零知识证明 (ZKP)",
             location: "中国 上海",
           };
     },
