@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout :class="{indent}">
     <template #doc-before v-if="isPost">
       <PostHeader />
       <OldNotice :date="date" />
@@ -47,6 +47,7 @@ const { frontmatter } = useData();
 const isPost = computed<boolean>(() => !!frontmatter.value.isPost);
 const title = computed<string>(() => frontmatter.value.title);
 const date = computed<string>(() => frontmatter.value.date);
+const indent = computed<boolean>(() => !!(frontmatter.value.indent ?? true));
 </script>
 
 <style lang="scss" scoped>
@@ -115,10 +116,19 @@ const date = computed<string>(() => frontmatter.value.date);
     }
     .header-link {
       float: right;
-      a{
+      a {
         color: #666;
       }
     }
+  }
+}
+
+::v-deep.Layout.indent main.main .vp-doc {
+  & > div > p {
+    text-indent: 2em;
+  }
+  & > div > ul {
+    margin-left: 2em;
   }
 }
 </style>
