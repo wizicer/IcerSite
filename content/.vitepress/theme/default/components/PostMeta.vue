@@ -7,7 +7,7 @@
     <template v-if="props.tags">
       <div class="space-x-1">
         <BIconTags />
-        <a class="tag" :href="`/tags.html#${tag}`" v-for="(tag, index) in props.tags">
+        <a class="tag" :href="`/${lang}/tags.html#${tag}`" v-for="(tag, index) in props.tags">
           <span>{{ tag }}</span>
           <span v-if="index !== props.tags.length - 1">,</span>
         </a>
@@ -19,6 +19,8 @@
 <script setup lang="ts">
   import { useFriendlyDate } from '../utils/index'
   import { BIconTags, BIconCalendar } from 'bootstrap-icons-vue'
+  import { useData } from "vitepress";
+  const { lang } = useData();
   interface PostMetaProps {
     tags?: string[]
     createTime: number
