@@ -12,6 +12,6 @@ hero:
       link: /zh/about/
     - theme: sponsor
       text: 查看博客
-      link: /zh/achieves
+      link: /zh/archives
 ---
 
