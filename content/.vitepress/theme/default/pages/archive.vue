@@ -20,7 +20,7 @@
                 <BIconTags class="mr-1" />
                 <a class="tag" :href="`tags.html#${tag}`" v-for="(tag, index) in item.tags">
                   <span>{{ tag }}</span>
-                  <span v-if="index !== item.tags.length - 1">,</span>
+                  <span v-if="index !== item.tags.length - 1">,&nbsp;</span>
                 </a>
               </template>
             </div>
@@ -148,6 +148,9 @@ function formatDate(date: string | undefined): string {
     }
     .timeline-item-wrapper a {
       color: var(--vp-c-text-1);
+      &.tag {
+        color: var(--vp-c-text-3);
+      }
       &:hover {
         color: var(--vp-c-brand);
       }

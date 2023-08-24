@@ -9,7 +9,7 @@
         <BIconTags />
         <a class="tag" :href="`/${lang}/tags.html#${tag}`" v-for="(tag, index) in props.tags">
           <span>{{ tag }}</span>
-          <span v-if="index !== props.tags.length - 1">,</span>
+          <span v-if="index !== props.tags.length - 1">,&nbsp;</span>
         </a>
       </div>
     </template>
@@ -43,7 +43,7 @@
       display: flex;
     }
     .tag {
-      color: var(--vp-c-text-2);
+      color: var(--vp-c-text-3);
       display: inline-block;
       font-size: 14px;
       cursor: pointer;
