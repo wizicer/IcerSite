@@ -1,5 +1,11 @@
 const rawSidebar = [
   {
+    text: "区块链时期",
+    items: [
+      { text: "区块链展览", link: "/projects/2019/blockchain-exhibition/" },
+    ],
+  },
+  {
     text: "大学时期",
     items: [
       { text: "校内相册批量下载器", link: "/projects/2009/album-downloader/" },
