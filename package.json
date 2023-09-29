@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "serve": "vitepress dev content",
+    "dev": "vitepress dev content",
     "build": "vitepress build content",
     "preview": "vitepress preview content"
   },
