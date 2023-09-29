@@ -1,6 +1,6 @@
 ---
 title: "神速切割"
-slug: period
+slug: cut
 tags:
 - 作品展示
 categories:

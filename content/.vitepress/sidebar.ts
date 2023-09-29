@@ -10,14 +10,28 @@ const rawSidebar = [
     ],
   },
   {
-    text: "初高中时期",
+    text: "高中时期",
     collapsed: false,
     items: [
       { text: "魔法中学院", link: "/projects/2005/magic-school/" },
       { text: "涂鸦", link: "/projects/2005/doodle/" },
       { text: "画笔大战", link: "/projects/2004/paint-battle/" },
+      { text: "在线代码片段库", link: "/projects/2004/code-share/" },
+      { text: "网站大点兵", link: "/projects/2004/web-site/" },
       { text: "图标大战", link: "/projects/2003/icon-battler/" },
+      { text: "冰河评语", link: "/projects/2003/reviewer/" },
+      { text: "魔法鼠标控制", link: "/projects/2003/magic-mouse/" },
+    ],
+  },
+  {
+    text: "初中时期",
+    collapsed: false,
+    items: [
       { text: "第一个RPG游戏", link: "/projects/2002/first-rpg/" },
+      { text: "隐藏文件到图片中", link: "/projects/2002/hide-file/" },
+      { text: "世界时钟", link: "/projects/2002/world-clock/" },
+      { text: "生物周期速查", link: "/projects/2001/period/" },
+      { text: "神速切割", link: "/projects/2001/cut/" },
     ],
   },
 ];
