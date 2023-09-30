@@ -1,5 +1,5 @@
 ---
-title: The 1001st First Love [novella]
+title: The One Hundred and First Love [Part II]
 tags:
 - 小说
 categories:

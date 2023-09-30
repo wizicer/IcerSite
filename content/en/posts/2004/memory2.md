@@ -1,5 +1,5 @@
 ---
-title: The second time, the chasing soldiers went to the hell of the current secret road dangerous rescuer
+title: "No.2 Pursuers Return, Secret Passageway Unveiled: A Rescue in Hell's Depths"
 tags:
 - 小说
 categories:

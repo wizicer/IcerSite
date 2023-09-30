@@ -1,5 +1,5 @@
 ---
-title: The third time, the danger was born in the Yan Palace, and he drank magic water in confusion
+title: "No.3 Peril Abounds in the Flame Palace: Drinking the Bewildering Demon Water"
 tags:
 - 小说
 categories:

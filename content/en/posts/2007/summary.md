@@ -1,5 +1,5 @@
 ---
-title: Summary of the work of the first half of the 07-08 year of the Association for Computing Machinery and the work development plan for the second half of the semester
+title: 07-08 ACM Mid-Year Work Review and Second Semester Plan
 tags:
 - 计算机协会
 - 总结

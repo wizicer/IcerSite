@@ -1,5 +1,5 @@
 ---
-title: 'The sixth time: The Will Fights for the Spirit Lake The journey is again in the woods'
+title: "No.6 Battle of Wills in the Spirit Lake: A Journey Rekindled in the Forest"
 tags:
 - 小说
 categories:

@@ -1,5 +1,5 @@
 ---
-title: The first time Dream Awakening Female Companion in Distress Climbing the difficult journey to find memory
+title: "No.1 Awakening to Danger, Aided by a Mysterious Woman: The Quest for Lost Memories"
 tags:
 - 小说
 categories:
