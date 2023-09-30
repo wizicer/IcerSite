@@ -10,7 +10,7 @@ lang: en
 translateDate: 9/30/2023
 ---
 
-! [](1.png)
+![](1.png)
 
 **Introduction**: According to the cycle theory, the human biological cycle curve is intuitively displayed, and through internal and external adjustment, the candidate's intelligence, emotions and physical strength during the examination can be optimal. This software is green software, easy to carry around, can be queried instantly, and the character list can easily let you see the situation of a group.
 

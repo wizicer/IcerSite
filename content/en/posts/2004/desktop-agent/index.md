@@ -157,12 +157,12 @@ Exit () // End sprite
 As can be seen from the above program, the whole program is similar to the basic framework, but the network connection part is added, so we can easily extend the functionality through the basic framework.
 If the pictures and actions of the elves are always repeated, it is inevitable that there will be no boredom, but for an independent software developer, it is impossible to have so much energy to develop multiple sprite pictures, so we must do a good job of the interface of the program, so that others, even users, can develop the elves themselves.
 
-! [](1.png)
+![](1.png)
 
 Just like in the figure above, as long as the program is divided into the above parts, then the extensibility of the entire program has been greatly improved, and it can easily be that the whole program becomes colorful.
 In practice, if you provide a desktop sprite that doesn't have a very practical use, then usually no one will come specifically to make sprite pictures for your program, but we can also have another strategy, that is, provide your own program as a plugin to others, as shown in the following figure:
 
-! [](2.png)
+![](2.png)
 
 This makes it easy to make Desktop Sprites widely available.
 

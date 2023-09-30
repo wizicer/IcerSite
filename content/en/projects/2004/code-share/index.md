@@ -10,7 +10,7 @@ lang: en
 translateDate: 9/30/2023
 ---
 
-! [](1.png)
+![](1.png)
 
 **Introduction**: If you are a beginner, you can query the code you need through this software to enrich your program, but also save the pain of Internet search, if you are a master, you can also enrich this software by adding your own code, so that the majority of programmers get more resources. Similarly, this software has a good online upgrade function, which makes it easy to get the latest resources, and even if you are offline, you can query the downloaded code.
 

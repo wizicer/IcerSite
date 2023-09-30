@@ -14,19 +14,19 @@ Hehe, I haven't been in the school for three days, and I found that there are mo
 
 I haven't been idle for the past three days and continue to write my games. Let me disclose the results of my work during this time:
 
-! [](return-to-game-development/1.jpg)
+![](return-to-game-development/1.jpg)
 
 This is a diagram of the database physics model, a total of 68 tables, I drew for four whole days, Khan, after all, it was the first time to draw such a large one.
 
-! [](return-to-game-development/2.jpg)
+![](return-to-game-development/2.jpg)
 
 In fact, this should have been what should have been done at the beginning of the system analysis, but I ignored it, sweated, fortunately no one supervised me, and later added it, but fortunately, this model was clearly remembered in my brain.
 
-! [](return-to-game-development/3.jpg)
+![](return-to-game-development/3.jpg)
 
 This time the database operation I used new technology, hehe, greatly improved work efficiency, the amount of code has also been greatly reduced, hehe, thank you for the power of high technology.
 
-! [](return-to-game-development/4.jpg)
+![](return-to-game-development/4.jpg)
 
 The input interface of the most basic information of the system, hehe, the system is still big enough.
 

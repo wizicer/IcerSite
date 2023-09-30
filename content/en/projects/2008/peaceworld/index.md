@@ -15,12 +15,12 @@ translateDate: 9/30/2023
 Login screen
 -----------------
 
-! [](pwlogin.jpg)
+![](pwlogin.jpg)
 
 Brochures
 -----------------
 
-! [](5.jpg)
+![](5.jpg)
 
 Product documentation
 -----------------

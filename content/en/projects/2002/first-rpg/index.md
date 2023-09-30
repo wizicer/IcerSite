@@ -10,8 +10,8 @@ lang: en
 translateDate: 9/30/2023
 ---
 
-! [](1.png)
-! [](2.png)
+![](1.png)
+![](2.png)
 
 In 2002, my first graphical game, VB6
 

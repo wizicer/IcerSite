@@ -16,7 +16,7 @@ Icon Wars, 2003, VB6, the first Internet-enabled battle game, used image process
 
 **Self-evaluation**: This is a small software I made in my first year of high school, which is used for technical practice, mainly for the online battle part. It uses a lot of APIs, but this is also a classic game, unfortunately not my creativity, but this is also another game of mine.
 
-! [](1.png)
+![](1.png)
 
 ---
 #### Featured Reviews

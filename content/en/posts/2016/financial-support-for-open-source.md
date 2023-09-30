@@ -401,4 +401,4 @@ License, i.e. you are free to use, commercial or non-commercial, but if you do, 
 The Chinese version of the license is Creative Commons Attribution 4.0 International
 License, similar to the original license, can basically be said to use how you want, the only thing is not to modify the original author's name or declare the derivative work with the original author's name.
 
-! [](https://i.creativecommons.org/l/by/4.0/88x31.png)
+![](https://i.creativecommons.org/l/by/4.0/88x31.png)

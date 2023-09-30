@@ -79,8 +79,8 @@ Guidance: 1. Multi-function is included in one program, and different functions 
 
 Example of interface:
 
-! [](winter-homework/image001.jpg)
-! [](winter-homework/image002.jpg)
+![](winter-homework/image001.jpg)
+![](winter-homework/image002.jpg)
 
 Note: 1.  Consider the friendliness of the interface. 2. Pay attention to style when writing code to make the code readable.
 

@@ -10,6 +10,6 @@ lang: en
 translateDate: 9/30/2023
 ---
 
-! [](1.jpg)
+![](1.jpg)
 
 2005, three months, 7000+ code, VB6+DX8, VC++6

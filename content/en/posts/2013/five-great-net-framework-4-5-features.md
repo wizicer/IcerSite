@@ -22,12 +22,12 @@ Of course, it is very difficult to know all the feature points, after all, some 
 
 So in this article, I've selected five of my favorite features to present. To reiterate, my favorite feature is not necessarily your favorite, but I have tried to consider choosing most of them when choosing. It is used by net programmers, and I hope my article will meet this expectation.
 
-! [](http://www.codeproject.com/KB/dotnet/599756/a1.jpg)
+![](http://www.codeproject.com/KB/dotnet/599756/a1.jpg)
 
 > Note: The new features discussed in this article are limited to core libraries (.Net 4.5 Core) and will not cover ASP.NET, WCF, WPF, WF, etc.
 
 # Feature 1: async and await
-! [](http://www.codeproject.com/KB/dotnet/599756/a2.jpg)
+![](http://www.codeproject.com/KB/dotnet/599756/a2.jpg)
 
 This feature has been heavily publicized and almost every one. Net instructors talk about it, but it's still my favorite new feature, and don't worry, you'll know right away why I love it so much.
 
@@ -43,7 +43,7 @@ First, let's take a look at the following code execution steps:
 
 Next, we want the behavior of the third step to change, and we want to finish executing 'LongTask()' before returning to the 'Method()' method to continue executing the rest of the code. Here we use the 'async' and 'await' keywords to achieve the above behavior.
 
-! [](http://www.codeproject.com/KB/dotnet/599756/a3.jpg)
+![](http://www.codeproject.com/KB/dotnet/599756/a3.jpg)
 
 Here are three points to note:
 0. 'async' and 'await' come in pairs, stand-alone cannot be used
@@ -52,12 +52,12 @@ Here are three points to note:
 
 The following figure is a modified version of the code we discussed earlier using 'async' and 'await', except for the third step, which is executed after the second step is executed, and the rest of the code is the same as before. Simply put, the task 'LongTask' will only return to 'Method()' after the execution of the task 'LongTask' is completed.
 
-! [](http://www.codeproject.com/KB/dotnet/599756/a4.jpg)
+![](http://www.codeproject.com/KB/dotnet/599756/a4.jpg)
 
 Now that you know 'async' and 'await', let me ask you a question for homework: the same can be achieved using the 'Task.Wait' or 'Task.ContineWith' methods, but what is the difference?
 
 # Feature 2: Zip compression
-! [](http://www.codeproject.com/KB/dotnet/599756/a5.jpg)
+![](http://www.codeproject.com/KB/dotnet/599756/a5.jpg)
 
 Zip format is one of the most accepted compressed archive formats right now. Almost all operating systems support manipulating this format.
 
@@ -83,25 +83,25 @@ ZipFile.ExtractToDirectory(@"D:\data.zip", @"D:\data\unzip");
 ```
 
 # Feature 3: Regular expression execution timeout
-! [](http://www.codeproject.com/KB/dotnet/599756/a6.jpg)
+![](http://www.codeproject.com/KB/dotnet/599756/a6.jpg)
 
 'Regular expressions' are the best way to do string class verification, if you are new to 'regular expressions', I recommend watching a [video] (http://youtu.be/f-JcHBF0b_0), but the standard regular expression logic leaves the possibility of DoS (denial of service) attacks for hackers, and my detailed explanation will make you understand why.
 
 If we have a regular expression '^(\d+)$', the regular expression wants the string to contain only numbers. You can observe the Regex Symbolic Diagram to understand how regular expressions are evaluated. If we want to validate the string '123456X', there will be 6 paths to verify, as shown below:
 
-! [](http://www.codeproject.com/KB/dotnet/599756/a7.jpg)
+![](http://www.codeproject.com/KB/dotnet/599756/a7.jpg)
 
 But if we add one more number to it, it will become 7 paths. In other words, as the length of the string increases, the regular expression will take more time to compute, and in other words, the calculation time and string length are line-scale.
 
-! [](http://www.codeproject.com/KB/dotnet/599756/a8.jpg)
+![](http://www.codeproject.com/KB/dotnet/599756/a8.jpg)
 
 We change the previously defined regular expression to a more complex '^(\d+)+$', and you will see that the evaluation process of the regular expression becomes more complicated, if we try to validate the string '123456X', 32 paths will be evaluated, and if you lengthen the string by one character, 64 paths will be evaluated
 
-! [](http://www.codeproject.com/KB/dotnet/599756/a9.jpg)
+![](http://www.codeproject.com/KB/dotnet/599756/a9.jpg)
 
 In other words, the calculation time will multiply as the string increases.
 
-! [](http://www.codeproject.com/KB/dotnet/599756/a10.jpg)
+![](http://www.codeproject.com/KB/dotnet/599756/a10.jpg)
 
 Now you might ask, what does this matter? This long computation time is likely to be discovered by hackers to do DoS attacks, they only need to request an extra-long string from your server to verify, and your server will always be there.
 
@@ -119,7 +119,7 @@ catch (RegexMatchTimeoutException ex)
 ```
 
 # Feature 4: Profile optimization (improve startup performance)
-! [](http://www.codeproject.com/KB/dotnet/599756/a11.jpg)
+![](http://www.codeproject.com/KB/dotnet/599756/a11.jpg)
 
 We all know it. Net's program binaries are in IL format, and at runtime, the JIT (Just-in-Time) compiler translates IL code into machine code on the fly. That's why we often complain. Net programs start slowly, and we always need to wait for JIT to convert IL code into machine code.
 
@@ -127,7 +127,7 @@ To improve startup efficiency, in .Net 4.5 we have a mechanism called Profile Op
 
 The process of compiling the startup method in the background JIT will be carried out using multiple cores to obtain higher startup efficiency. It must be noted that **You must use a multi-core CPU for configuration optimization**. If you don't have a multi-core CPU, these settings will be ignored.
 
-! [](http://www.codeproject.com/KB/dotnet/599756/a12.jpg)
+![](http://www.codeproject.com/KB/dotnet/599756/a12.jpg)
 
 In order to create a configuration file, you first need to introduce the 'System.Runtime' namespace, and then you can call the 'SetProfileRoot' and 'StartProfile' methods in the class 'ProfileOptimization'. Therefore, when the program starts, the background JIT will read the configuration file and compile your startup method in the background to reduce the startup time.
 
@@ -143,17 +143,17 @@ ProfileOptimization.StartProfile("ProfileFile");
 One thing to note: 'ProfileOptimization' is enabled by default for ASP.NET 4.5 and Silverlight 5, so you don't have to write these codes manually to enable them.
 
 # Feature 5: Garbage Collection (GC) (background GC garbage cleanup)
-! [](http://www.codeproject.com/KB/dotnet/599756/a13.jpg)
+![](http://www.codeproject.com/KB/dotnet/599756/a13.jpg)
 
 About. For Web programs, garbage collection (GC) is indeed a very heavy and heavy task. Especially in ASP.NET programs, a large number of requests cause the server to create a large number of objects, so that the GC must work hard to clean up these unwanted objects.
 
-! [](http://www.codeproject.com/KB/dotnet/599756/a14.jpg)
+![](http://www.codeproject.com/KB/dotnet/599756/a14.jpg)
 
 In .Net 4.0, when the GC performs cleanup, all program threads are paused. In the figure above, we have three threads running and two GCs running on different threads (and running on separate logical processors), and now the program threads are running and performing their own tasks (each of which creates some objects).
 
 At some point in time, background GCs perform cleanup, and when they perform cleanup, all other program threads are paused. This causes the program to briefly become unresponsive at that time.
 
-! [](http://www.codeproject.com/KB/dotnet/599756/a15.jpg)
+![](http://www.codeproject.com/KB/dotnet/599756/a15.jpg)
 
 In order to overcome the above problem, the server GC (Server GC) was born, in the server GC, there will be an additional thread running in the background, used to clean up Gen 2 ([watch this video to understand GC Gen 0,1,2] (http://youtu.be/gC8NdlOeNEs)) objects in the background to reduce the load of the main GC thread, because two GC threads are running, which makes the main application thread shorter pause, As a result, the throughput of the application is increased. To enable server GC, simply add the 'gcServer' XML tag and set it to 'true':
 

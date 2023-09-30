@@ -44,4 +44,4 @@ In fact, this is also very feasible in home control, for example, for me, I espe
 
 Now many wearable devices have used such solutions, such as various pedometers, bracelets, health monitoring devices, and it is estimated that a larger number of devices will use this solution to interact with your phablet in the future.
 
-! [](bluetooth-4/5-band.jpg)
+![](bluetooth-4/5-band.jpg)

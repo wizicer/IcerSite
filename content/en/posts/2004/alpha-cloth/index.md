@@ -21,7 +21,7 @@ What we're talking about here is just a theory, so we'll use Visual Basic as the
 
 ## Second, analyze the image
 
-| ! [](1.png) | ! [](2.png) |
+| ![](1.png) | ![](2.png) |
 | -- | -- |
 
 As shown in the figure, these two pictures are the basic diagram of our operation. We can see a lot of pink areas, which are areas that we don't need. So we change the pink area into the background, and then change the different colored areas according to the right picture with different fabrics, and the protagonist will become more beautiful and outstanding.
@@ -32,7 +32,7 @@ As shown in the figure, these two pictures are the basic diagram of our operatio
 
 First read the color of the first pixel of the image, and then cycle to search for each pixel in the image, if the color of a pixel is different from the color of the first pixel of the image, the color of the pixel is output at the corresponding position in the background, and when the output is completed, the protagonist is output to the background, as shown below.
 
-! [](3.png)
+![](3.png)
 
 **Output clothes**
 
@@ -42,7 +42,7 @@ MColor can be set to the corresponding RGB values of red, green, blue, and yello
 
 red-255、green-64512、blue-16711680、yellow-64767
 
-! [](4.png)
+![](4.png)
 
 ## Fourth, further processing of images
 
@@ -54,7 +54,7 @@ Alpha technology is essentially a transparent technology, in the computer graphi
 
 Alpha technology is to first separate the RGB three primary color components of the source pixel and the target pixel, and then multiply the three primary color components of the source pixel by the value of Alpha, and multiply the three primary color components of the target pixel by the inverse value of Alpha, and then add the results according to the corresponding color components, and then divide the final obtained result of each component by the maximum value of Alpha (usually this step is done by shifting, which is why the maximum value of Alpha is always a power of two). Finally, the three primary color components are recombined into one pixel output.
 
-! [](5.png)
+![](5.png)
 
 ## Fifth, the post-production processing of the program
 
@@ -62,7 +62,7 @@ An indispensable step in program design is to adjust the program interface to ma
 
 The designed program is shown in the figure:
 
-! [](6.png)
+![](6.png)
 
 ## VI. Reference source program: (compiled under VB6) 
 

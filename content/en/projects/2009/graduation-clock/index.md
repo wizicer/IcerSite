@@ -10,6 +10,6 @@ lang: en
 translateDate: 9/30/2023
 ---
 
-! [](1.jpg)
-! [](2.jpg)
-! [](3.jpg)
+![](1.jpg)
+![](2.jpg)
+![](3.jpg)

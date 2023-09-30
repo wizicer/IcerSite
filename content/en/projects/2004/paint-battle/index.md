@@ -10,7 +10,7 @@ lang: en
 translateDate: 9/30/2023
 ---
 
-! [](1.jpg)
+![](1.jpg)
 
 Brush War, game material extracted from the Japanese game of the same name, early 2004, three months, VB6+GDI, compiled using classroom computers,
 I am very grateful to the students who played in the classroom at that time for their valuable suggestions for game improvement, and also thank the teacher for their acquiescence in this behavior

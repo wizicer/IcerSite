@@ -10,7 +10,7 @@ lang: en
 translateDate: 9/30/2023
 ---
 
-! [](1.png)
+![](1.png)
 
 **Introduction**: Glacier Comments is a comment editing system specially developed for teachers, whenever the end of the semester comes, it is always the teacher who is the most tired, and the most troublesome of them is to write comments, if with the help of modern tools, then this will definitely make you get a qualitative leap in efficiency.
 

@@ -131,7 +131,7 @@ Under the above conditions, the host computer can be connected to the controller
 
 ### System architecture
 
-! [](integrated-industrial-control-platform-feasibility-report/image3.png)
+![](integrated-industrial-control-platform-feasibility-report/image3.png)
 
 Phase I Functional Architecture Diagram (Simplified Version)
 

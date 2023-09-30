@@ -16,4 +16,4 @@ translateDate: 9/30/2023
 
 **Scope of application outlook**: Sometimes I think this is actually very boring, the speed of operation is not as good as opening shortcuts, but please note that if you want to show someone something, you don't want others to know where you put it, which comes in handy, and this can be used as a tool for entering passwords, a special password, so the development prospects are very broad! 
 
-! [](1.png)
+![](1.png)

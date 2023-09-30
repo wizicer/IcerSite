@@ -43,36 +43,36 @@ Recently, many people have asked me about the specific use of this software, and
 
 1. **Login**
 I don't need to say this, the .net program, the source code is easy to view, and the classmates who are afraid of my number theft will look at the source code to confirm. Also, the username is not remembered by my program, but by IE, and if you don't want to, I turn off IE's cookie.
-! [](s2.jpg)
+![](s2.jpg)
 
 2. **Download Album**
 First copy the address of your favorite album on the intranet, of course, you can also copy the user name to view all the albums of the user, as shown below:
-! [](s1.jpg)
-! [](s3.jpg)
+![](s1.jpg)
+![](s3.jpg)
 
 3. **Click Get from clipboard**
 If it is an album, it will go directly to the list, and if it is a user, it will be placed in the left box. (Note: There are many places in the school that can be copied and pasted directly)
-! [](s4.jpg)
+![](s4.jpg)
 If you are a user, when the user ID number appears in the left box, **Click Get Albums** to put all the user's albums into the download list.
-! [](s5.jpg)
+![](s5.jpg)
 Note: The download list supports right-click for simple removal.
 
 4. **View thumbnails**
 Double-click an item in the list to display all the photos of the album in the lower box, and double-click an item to view the thumbnail of the picture.
-! [](s6.jpg)
+![](s6.jpg)
 
 5. **Batch download**
 Click Batch Download in the upper right corner to start batch downloading the items in the list above. Before you begin, you need to select a save directory.
-! [](s7.jpg)
+![](s7.jpg)
 The various statuses are shown in the figure:
-! [](s8.jpg)
+![](s8.jpg)
 
 6. **Click to get friends list**
 You can easily get a list of all your friends, and you can click Get Album to get all the albums of that friend.
-! [](s9.jpg)
+![](s9.jpg)
 
 7. **File Directory Structure**
 Each album directory contains an index.htm file that can be opened like an album to view all pictures.
-! [](s10.jpg)
+![](s10.jpg)
 
 Finally, thank you for checking out, thank you for your support, and welcome suggestions and suggestions for improvement.

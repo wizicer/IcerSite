@@ -10,7 +10,7 @@ lang: en
 translateDate: 9/30/2023
 ---
 
-! [](1.jpg)
+![](1.jpg)
 
 **Note**: The clock has become very popular, but to see the time of many regions in a clock, it seems to be less common, this clock is born from this, the dial is printed with the name of each region, you can see the time of each country at a glance, the red region name is the opposite of the blue area day and night, so the time in any corner of the world can be represented by this dial, and the cost of this clock is very low, you can DIY one.
 

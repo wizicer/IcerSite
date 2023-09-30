@@ -10,7 +10,7 @@ lang: en
 translateDate: 9/30/2023
 ---
 
-! [](1.jpg)
+![](1.jpg)
 
 **Introduction**: My website has been revised again, looking at the complex and good-looking bamboo leaf source map I designed, I really don't know what to do! I checked it on the Internet, and there was no software in this regard, and under the scoundrel, I only compiled one myself. I think it works! The so-called sharpening knife does not cut wood by mistake, I designed the program and finished the bamboo leaves, which is 10 times faster than before, and I am not afraid of a little change in the future! He helped me cut the picture into pieces so I could put them on my website.
 

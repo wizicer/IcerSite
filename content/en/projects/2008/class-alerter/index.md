@@ -12,7 +12,7 @@ lang: en
 translateDate: 9/30/2023
 ---
 
-! [](classalerter.png)
+![](classalerter.png)
 Download address: [alerter.rar] (download/alerter.rar)
 
 # Software introduction
