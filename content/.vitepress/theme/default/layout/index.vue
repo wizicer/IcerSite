@@ -1,8 +1,9 @@
 <template>
-  <Layout :class="{indent}">
+  <Layout :class="{ indent }">
     <template #doc-before v-if="isPost">
       <PostHeader />
       <OldNotice :date="date" />
+      <TranslationNotice />
     </template>
     <template #doc-before v-else-if="title">
       <div class="post_header-container">
@@ -38,6 +39,7 @@
 
 <script setup lang="ts">
 import OldNotice from "../components/OldNotice.vue";
+import TranslationNotice from "../components/TranslationNotice.vue";
 import defaultTheme from "vitepress/theme";
 import { useData } from "vitepress";
 import { computed } from "vue";
@@ -123,7 +125,7 @@ const indent = computed<boolean>(() => !!(frontmatter.value.indent ?? true));
   }
 }
 
-html[lang=zh] .Layout.indent :deep(main.main) .vp-doc {
+html[lang="zh"] .Layout.indent :deep(main.main) .vp-doc {
   & > div > p {
     text-indent: 2em;
   }
