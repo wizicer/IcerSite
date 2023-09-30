@@ -89,12 +89,12 @@ const archivesList = computed<ArchivesList[]>(() => {
       if (addYearItemFlag) {
         _monthList.push({
           type: "year",
-          title: (theme.value?.blog?.list?.item?.year ?? ((year: number) => `${year}`))(year),
+          title: (theme.value?.locales?.blog?.list?.item?.year ?? ((year: number) => `${year}`))(year),
         });
       }
       _monthList.push({
         type: "month",
-        title: (theme.value?.blog?.list?.item?.month ?? defaultMonthConverter)(month),
+        title: (theme.value?.locales?.blog?.list?.item?.month ?? defaultMonthConverter)(month),
       });
     }
     post.type = "post";
