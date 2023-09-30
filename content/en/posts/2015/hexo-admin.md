@@ -1,5 +1,5 @@
 ---
-title: hexo-admin - Admin for static blogs[JS]
+title: hexo-admin - An Admin Interface for Hexo[JS]
 tags:
 - Javascript
 - Hexo
@@ -8,35 +8,55 @@ ref: hexo-admin
 categories:
 - 源代码分析
 date: 2015-02-23
+updated: 2015-05-27
 translateDate: 9/30/2023
 ---
 
-# Basic information
+# Basic Information
 
 * Name: [hexo-admin]
 * Version: 0.1.3
-* Open source protocol: ISC
-* Description: Dedicated background manager for static blog HEXO
+* License: ISC
+* Description: The administrator interface for static blogging program Hexo
 
-This is mainly for my wife, because she does not understand the program, and does not plan to know how to push/pull, it is already very difficult to persuade her to join the ranks of markdown, so I found this background program to cooperate with the [HEXO blog] (http://hiyaphoto.com) I helped her build, so that she can easily and intuitively edit background articles.
+My wife don't program, to better use Hexo, I downloaded this plug-in. With its help, my wife can
+easily edit her [Hexo Blog](http://hiyaphoto.com) in an intuitive way.
 
-The overall feeling was good, but it lacked some important features, so I added a delete function to myself [Wizicer's fork], but because I encountered a large number of posts duplicate bugs in one of the editing processes of Hyo itself, I didn't have time to solve the problem, so I didn't PR the update.
+It's really great, however it lack one important feature -- `Delete Post`, so I added it in [fork of
+wizicer].
 
-In addition, the picture-related functions are also quite weak, and basically the pictures (seven cows used) are first transmitted in another place and then pasted. The author has mentioned to himself that the image upload function is improved, but it is still open.
+I found another really annoying bug of Hexo itself, which made this plug-in less useful: every time
+you save file, a duplicated post would appear in local Hexo blog.
 
-There is also a serious problem that editing the page title will result in a new page (and duplicate) instead of changing the name, (*edit: but just looked at the latest repo situation, it seems that the latest [0.2.0] (https://github.com/jaredly/hexo-admin/commit/2b5f8529585fc2a6e9afe451f36af6e355a88e66) fixed, It hasn't been tested yet. *)
+(*edit: since Hexo 3.0, this issue has been fixed*)
+
+The blog of my wife is about photograph, there are lots of opportunity to embed image in blog. She
+complains a lot about images. Currently, she would like to upload to some place else and then paste
+the url. There is an open issue raised by author of this plug-in about enhance it with image upload.
+
+There are another severe issue, a new page would be created when you try to edit title, the expected
+behavior should be rename the page.
+
+(*edit: just quick glance, it looks fixed in latest
+[0.2.0](https://github.com/jaredly/hexo-admin/commit/2b5f8529585fc2a6e9afe451f36af6e355a88e66)*)
 
 # Dependencies
 
-## Framework components
-* [body-parser]: Middleware used to parse the body part of an HTTP request, does not support the body of a multipart (mainly used to upload files). One of the prerequisites in server, this type of component, I tend to use [busboy] lately.
-* [serve-static] : As the name suggests, a component used to servo static files. In this program, it is mainly servo image style and other static files.
-* [react]: A UI framework from Facebook, so it is usually the V part of MVC
-* [react-router]: A routing library designed for react, combined with react, to become the C part of MVC
+## Framework Components
 
-## Basic components
-* [es6-promise] : A lightweight asynchronous code management component that will execute asynchronously with a synchronous code reading experience.
-* [lodash] : A library with richer features than [underscore], the basic usage is the same, as the name suggests, this is a basic class library that comes out later and hopes to replace its predecessors, mainly to bring a series of functional programming experience to JS extension methods.
+* [body-parser] : middleware to parse body of http request，not support multipart bodies (used in
+  upload file). One of you must have component in server development. Recently, I prefer using
+  [busboy].
+* [serve-static] : easy to understand by its name, serve static files in server. It used to serve
+  image and style files.
+* [react] : very famous UI framework maintained by Facebook, it acts as View in MVC architecture.
+* [react-router] : router library for react, it acts as Controller in MVC architecture.
+
+## Basic Components
+
+* [es6-promise] : lightweight library for organizing asynchronous, with its help, you can write
+  asynchronous code like writing synchronous code.
+* [lodash] : a library like [underscore] with more function，the basic usage is same.
 * [marked]: A markdown parsing library that claims to be extremely efficient.
 
 ## Eye-catching components

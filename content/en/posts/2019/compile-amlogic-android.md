@@ -2,7 +2,6 @@
 title: Compile Android with AMLogic
 tags:
 - Android
-- Compile
 lang: en
 ref: compile-android-with-amlogic
 categories:
