@@ -74,11 +74,11 @@ export default defineConfigWithTheme<ThemeConfig>({
                 month: (month: number) => `${month}月`,
               },
             },
-              tags:{
-                total: (count: number) => `共 ${count} 篇`,
-                empty: "空空如也...",
-                clickHint: "点击上方标签，查看标签下的所有文章",
-              },
+            tags: {
+              total: (count: number) => `共 ${count} 篇`,
+              empty: "空空如也...",
+              clickHint: "点击上方标签，查看标签下的所有文章",
+            },
             content: {
               top: "置顶",
             },
@@ -116,6 +116,28 @@ export default defineConfigWithTheme<ThemeConfig>({
   markdown: {
     config: (md) => {
       md.use(mathjax3);
+
+      md.renderer.rules.image = (tokens, idx, options, env, slf) => {
+        const lang = env.frontmatter.lang;
+        if (lang != "zh") {
+          for (let i = 0; i < tokens.length; i++) {
+            const token = tokens[i];
+            if (!token.attrs) continue;
+            const apos = token.attrs.findIndex((_) => _[0] == "src");
+            if (apos == -1) continue;
+            const origin = token.attrs[apos][1];
+            if (origin.startsWith("/")) continue;
+            if (origin.startsWith("https://")) continue;
+            if (origin.startsWith("http://")) continue;
+            let path = env.relativePath.substr(0, env.relativePath.lastIndexOf("/") + 1);
+            path = path.replace(lang, "zh");
+            token.attrs[apos][1] = "/" + path + origin;
+            // console.log(path, token.attrs[apos], origin);
+          }
+        }
+        let htmlResult = slf.renderToken(tokens, idx, options);
+        return htmlResult;
+      };
     },
   },
   vue: {
