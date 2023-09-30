@@ -49,7 +49,7 @@ $ git clone https://github.com/wizicer/wx-article-starter.git
 
 The WeChat public platform, as a terminal for many news distribution, has its own peculiarities, and I found the following limitations (may not be complete, it will be constantly added):
 
-* Filter out '<div>/'<a>' tags (i.e. no full-page background, no links)
+* Filter out `<div>`/`<a>` tags (i.e. no full-page background, no links)
 * Preset a CSS file that changes the CSS style that is not explicitly specified
 
 On the basis of understanding the above limitations, it is good to do, as follows:
