@@ -70,7 +70,7 @@ for (const post of postList.filter((_) => _.lang == lang.value)) {
   }
 }
 const currentTagPost = computed(() => {
-  if (currentTag.value) return tagMap[currentTag.value];
+  if (currentTag.value) return tagMap[currentTag.value] ?? [];
   else return [];
 });
 

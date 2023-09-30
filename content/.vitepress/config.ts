@@ -4,6 +4,7 @@ import mathjax3 from "markdown-it-mathjax3";
 import viteConfig from "./vite.config";
 import { getSidebar } from "./sidebar";
 import { getSocialLinks } from "./socialLink";
+import { getTagMapping } from "./tag";
 
 // prettier-ignore
 const customElements = [
@@ -21,6 +22,8 @@ const customElements = [
   "msgroup", "msline", "msrow", "mstack", "maction", "semantics", "annotation",
   "annotation-xml",
 ];
+
+const tagMapping = getTagMapping("en");
 
 interface ThemeConfig extends DefaultTheme.Config {
   locales?: any;
@@ -146,5 +149,12 @@ export default defineConfigWithTheme<ThemeConfig>({
         isCustomElement: (tag) => customElements.includes(tag),
       },
     },
+  },
+  async transformPageData(pageData, { siteConfig }) {
+    let tags = pageData.frontmatter.tags;
+    if (pageData.frontmatter.lang == "zh") return;
+    if (!tags) return;
+    tags = tags.map((_) => tagMapping[_] ?? _);
+    pageData.frontmatter.tags = tags;
   },
 });
