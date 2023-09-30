@@ -47,7 +47,14 @@ for (int i = 0; i < posts.Length; i++)
             }
         }
     }
-    fm.TryAdd("lang", "en");
+    if (fm.ContainsKey("lang"))
+    {
+        fm["lang"] = "en";
+    }
+    else
+    {
+        fm.TryAdd("lang", "en");
+    }
     fm.TryAdd("translateDate", DateTime.Now.ToShortDateString());
     var body = await Translate(post.body);
     if (string.IsNullOrEmpty(body)) continue;

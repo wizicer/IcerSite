@@ -3,7 +3,7 @@ title: hexo-admin - Admin for static blogs[JS]
 tags:
 - Javascript
 - Hexo
-lang: zh
+lang: en
 ref: hexo-admin
 categories:
 - 源代码分析
