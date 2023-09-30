@@ -18,9 +18,9 @@
         <div class="container">
           <div class="main">
             <div class="header">
-              <h1>最新博客</h1>
+              <h1>{{ theme.locales?.index?.latestBlog?.title ?? "Lastest Blog" }}</h1>
               <div class="header-link">
-                <a :href="withBase('./archives')">查看所有</a>
+                <a :href="withBase('./archives')">{{ theme.locales?.index?.latestBlog?.more ?? "More" }}</a>
               </div>
             </div>
             <PageIndex :maxItem="4" />
@@ -43,7 +43,7 @@ import { useData } from "vitepress";
 import { computed } from "vue";
 import { withBase } from "vitepress";
 const { Layout } = defaultTheme;
-const { frontmatter } = useData();
+const { frontmatter, theme } = useData();
 const isPost = computed<boolean>(() => !!frontmatter.value.isPost);
 const title = computed<string>(() => frontmatter.value.title);
 const date = computed<string>(() => frontmatter.value.date);
@@ -123,7 +123,7 @@ const indent = computed<boolean>(() => !!(frontmatter.value.indent ?? true));
   }
 }
 
-::v-deep.Layout.indent main.main .vp-doc {
+html[lang=zh] .Layout.indent :deep(main.main) .vp-doc {
   & > div > p {
     text-indent: 2em;
   }

@@ -16,7 +16,9 @@
     </div>
     <div class="post_list-container space-y-4 mt-4">
       <template v-if="currentTagPost.posts && currentTagPost.posts.length">
-        <div class="post_list-header">共 {{ currentTagPost.count }} 篇</div>
+        <div class="post_list-header">
+          {{ (theme.locales?.blog?.tags?.total ?? ((count: number) => `Total: ${count}`))(currentTagPost.count) }}
+        </div>
         <div class="post_list-content space-y-4">
           <div class="post-item space-y-2" v-for="post in currentTagPost.posts" :key="post.url">
             <div class="post-title">
@@ -28,7 +30,15 @@
           </div>
         </div>
       </template>
-      <div class="empty" v-else v-text="currentTag ? '空空如也...' : '点击上方标签，查看标签下的所有文章'"></div>
+      <div
+        class="empty"
+        v-else
+        v-text="
+          currentTag
+            ? theme.locales?.blog?.tags?.empty ?? 'Empty'
+            : theme.locales?.blog?.tags?.clickHint ?? 'Click the tag to see articles.'
+        "
+      ></div>
     </div>
   </div>
 </template>
@@ -39,7 +49,7 @@ import { withBase } from "vitepress";
 import { postList } from "../utils/getPostList";
 import PostMeta from "../components/PostMeta.vue";
 import { useData } from "vitepress";
-const { lang } = useData();
+const { lang, theme } = useData();
 
 const currentTag = ref<string | null>();
 const tagMap: Record<string, any> = Object.create(null);

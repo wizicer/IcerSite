@@ -4,7 +4,7 @@
       <h2>
         <a :href="withBase(url)">
           {{ props.title }}
-          <Badge v-if="props.top" type="tip" text="置顶" />
+          <Badge v-if="props.top" type="tip" :text="theme?.locales?.blog?.list?.top ?? 'Top'" />
         </a>
       </h2>
       <p>{{ props.snippets }}</p>
@@ -20,6 +20,8 @@
 import PostMeta from "./PostMeta.vue";
 import { withBase } from "vitepress";
 import { computed } from "vue";
+import { useData } from "vitepress";
+const { theme } = useData();
 interface Props {
   title: string;
   snippets?: string;

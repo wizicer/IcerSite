@@ -2,7 +2,7 @@
   <div class="post_header-container">
     <h1 class="post_header-title">
       {{ frontmatter.title }}
-      <Badge v-if="frontmatter.top" type="tip" text="置顶" />
+      <Badge v-if="frontmatter.top" type="tip" :text="theme?.locales?.blog?.content?.top ?? 'Top'" />
     </h1>
     <PostMeta class="meta" :tags="frontmatter.tags" :createTime="new Date(frontmatter.date ?? 0).getTime()" />
   </div>
@@ -15,7 +15,7 @@
   import { useData, withBase } from 'vitepress'
   import { computed } from 'vue'
   import PostMeta from './PostMeta.vue'
-  const { frontmatter, localePath } = useData()
+  const { frontmatter, localePath, theme } = useData()
   const coverImg = computed(() => {
     const coverImg = frontmatter.value.coverImg
     if (coverImg && !coverImg.startsWith(localePath.value)) {

@@ -4,8 +4,8 @@
       <div class="timeline-item" :class="item.type" v-for="item in archivesList">
         <div class="timeline-item-node">
           <BIconCalendar v-if="item.type === 'post'" />
-          <span v-else-if="item.type === 'month'">月</span>
-          <span v-else>年</span>
+          <span v-else-if="item.type === 'month'">{{ theme.locales?.blog?.list?.icon?.month ?? "M" }}</span>
+          <span v-else>{{ theme.locales?.blog?.list?.icon?.year ?? "Y" }}</span>
         </div>
         <div class="timeline-item-wrapper space-y-2">
           <template v-if="item.type === 'post'">
@@ -40,7 +40,7 @@ import { computed } from "vue";
 import { withBase } from "vitepress";
 import { postList } from "../utils";
 import { useData } from "vitepress";
-const { lang } = useData();
+const { lang, theme } = useData();
 
 type NodeType = "year" | "month" | "post";
 interface ArchivesList {
@@ -57,6 +57,21 @@ interface ArchivesList {
 }
 
 const data = Object.create(null);
+function defaultMonthConverter(month: number) {
+  if (month == 1) return "January";
+  if (month == 2) return "February";
+  if (month == 3) return "March";
+  if (month == 4) return "April";
+  if (month == 5) return "May";
+  if (month == 6) return "June";
+  if (month == 7) return "July";
+  if (month == 8) return "August";
+  if (month == 9) return "September";
+  if (month == 10) return "October";
+  if (month == 11) return "November";
+  if (month == 12) return "December";
+  return "Unknown";
+}
 const archivesList = computed<ArchivesList[]>(() => {
   for (const post of postList.filter((_) => _.lang == lang.value)) {
     const { date } = post;
@@ -74,12 +89,12 @@ const archivesList = computed<ArchivesList[]>(() => {
       if (addYearItemFlag) {
         _monthList.push({
           type: "year",
-          title: `${year}年`,
+          title: (theme.value?.blog?.list?.item?.year ?? ((year: number) => `${year}`))(year),
         });
       }
       _monthList.push({
         type: "month",
-        title: `${month}月`,
+        title: (theme.value?.blog?.list?.item?.month ?? defaultMonthConverter)(month),
       });
     }
     post.type = "post";

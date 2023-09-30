@@ -1,17 +1,22 @@
 <template>
   <div v-if="age < 23 && age > 1" class="post-bottom space-y-2">
     <div>
-      <span>老文章预警：该文写于作者{{ age }}岁，里面提到的东西可能会过于幼稚或已经过时，请注意分辨。</span>
+      <span>{{ (theme.locales?.info?.oldNotice ?? defaultOldNotice)(age) }}</span>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { computed } from "vue";
+import { useData } from "vitepress";
+const { theme } = useData();
 interface OldNoticeProps {
   date?: string;
 }
 
+function defaultOldNotice(age) {
+  return `LEGACY WARNING: This article was written when the author was ${age} years old. The content mentioned might be immature or outdated, please evaluate accordingly.`;
+}
 const props = defineProps<OldNoticeProps>();
 const age = computed(() => {
   const date1 = new Date("1986-08-08");
