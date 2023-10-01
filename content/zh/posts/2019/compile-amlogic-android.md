@@ -1,5 +1,5 @@
 ---
-title: Compile Android with AMLogic
+title: 用AMLogic编译Android
 tags:
 - Android
 lang: zh
