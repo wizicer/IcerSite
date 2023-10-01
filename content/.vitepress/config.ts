@@ -90,7 +90,11 @@ export default defineConfigWithTheme<ThemeConfig>({
             oldNotice: (age: number) => `老文章预警：该文写于作者${age}岁，里面提到的东西可能会过于幼稚或已经过时，请注意分辨。`,
           },
         },
-
+        sidebarMenuLabel: "菜单",
+        returnToTopLabel: "返回顶部",
+        langMenuLabel: "改变语言",
+        darkModeSwitchLabel: "外观",
+        outlineTitle: "目录",
         nav: [
           { text: "主页", link: "/zh/" },
           { text: "关于", link: "/zh/about/" },
