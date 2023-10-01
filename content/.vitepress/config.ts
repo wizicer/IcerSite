@@ -2,9 +2,9 @@ import { DefaultTheme } from "vitepress/types/default-theme";
 import { defineConfigWithTheme } from "vitepress";
 import mathjax3 from "markdown-it-mathjax3";
 import viteConfig from "./vite.config";
-import { getSidebar } from "./sidebar";
-import { getSocialLinks } from "./socialLink";
-import { getTagMapping } from "./tag";
+import { getSidebar } from "./config/sidebar";
+import { getSocialLinks } from "./config/socialLink";
+import { getTagMapping } from "./config/tag";
 
 // prettier-ignore
 const customElements = [
