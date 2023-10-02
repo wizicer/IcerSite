@@ -18,5 +18,6 @@ export function getTagMapping(lang: LANGUAGE) {
     日记: "Diary",
     冰河作品选: "Selected Works",
     游戏思想与制作: "Game Ideas and Production",
+    活动: "Event",
   };
 }
