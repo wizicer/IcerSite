@@ -17,6 +17,10 @@ date: 2003-06-01
 
 ![](1.png)
 
+<video controls autoplay="autoplay" loop="loop">
+<source src="2.mp4">
+</video>
+
 ---
 #### 精选评论
 
