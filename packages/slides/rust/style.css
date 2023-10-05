@@ -1,0 +1,5 @@
+#slideshow > .slidev-layout > h2:first-of-type {
+    margin-bottom: 1rem;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+}

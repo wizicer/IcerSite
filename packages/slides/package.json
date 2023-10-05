@@ -1,0 +1,7 @@
+{
+  "name": "slidev",
+  "private": true,
+  "workspaces": [
+    "rust"
+  ]
+}
