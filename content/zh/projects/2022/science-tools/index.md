@@ -18,11 +18,11 @@ date: 2022-12-31
 ![](3.jpg)
 
 - 网站地址： https://sutulabs.github.io/BlockchainSurvey/
-- 网站地址： https://sutulabs.github.io/BlockchainSurvey/
+- 代码地址： https://github.com/SutuLabs/BlockchainSurvey
 
 还有一系列的工具：
 
 ![](1.png)
 
+- 网站地址： https://science.icerdesign.com/
 - 代码地址： https://github.com/wizicer/ScienceTool
-- 代码地址： https://github.com/SutuLabs/BlockchainSurvey
