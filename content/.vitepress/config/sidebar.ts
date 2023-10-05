@@ -5,7 +5,7 @@ const rawSidebar = [
     items: [
       //https://github.com/SutuLabs/hyperdriveWhitepaper
       { zh: "Mina CTF", en: "Mina CTF", link: "/projects/2023/mina-ctf/" },
-      { zh: "Plonk Script", en: "Plonk Script", link: "/projects/2023/plonk-script/" },
+      // { zh: "Plonk Script", en: "Plonk Script", link: "/projects/2023/plonk-script/" },
       { zh: "Pawket链上钱包", en: "Pawket", link: "/projects/2022/pawket/" },
       { zh: "运维平台", en: "Ops Platform", link: "/projects/2021/ops-platform/" },
       {
@@ -40,10 +40,10 @@ const rawSidebar = [
       { zh: "科研工具", en: "Science Tools", link: "/projects/2022/science-tools/" },
       { zh: "交大校友会", en: "SJTU Alumni", link: "/projects/2020/sjtu-alumni/" },
       { zh: "剪刀兔", en: "Editool", link: "/projects/2020/editool/" },
-      { zh: "标日学习", en: "Japanese Learning Assistant", link: "/projects/2016/learn-japan/" }, 
-      { zh: "C#自动代码生成", en: "C# Hidden Code Generator", link: "/projects/2015/cs-hidden-code-gen/" }, 
-      { zh: "ClearCase转git", en: "ClearCase-to-Git Helper", link: "/projects/2015/clearcase-to-git/" }, 
-      { zh: "UAP协议", en: "UAP Network", link: "/projects/2009/uap-network/" }, 
+      { zh: "标日学习", en: "Japanese Learning Assistant", link: "/projects/2016/learn-japan/" },
+      { zh: "C#自动代码生成", en: "C# Hidden Code Generator", link: "/projects/2015/cs-hidden-code-gen/" },
+      { zh: "ClearCase转git", en: "ClearCase-to-Git Helper", link: "/projects/2015/clearcase-to-git/" },
+      { zh: "UAP协议", en: "UAP Network", link: "/projects/2009/uap-network/" },
     ],
   },
   {
