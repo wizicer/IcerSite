@@ -14,6 +14,7 @@ lessons:
   - date: 23/9/28
     bili: https://www.bilibili.com/video/BV1eN411E7Eo/
   - date: 23/10/5
+    bili: https://www.bilibili.com/video/BV1uN411J7Gw/
   - date: 23/10/12
   - date: 23/10/19
   - date: 23/10/26
@@ -51,43 +52,61 @@ lessons:
   - date: 24/6/6
 slides:
   - name: 00 - Rust 入门
-    link: 00-introduction
+    link: http://cis198-2016s.github.io/slides/00/
     lessons: 3
   - name: 01 - 所有权
+    link: http://cis198-2016s.github.io/slides/01/
     lessons: 1
   - name: 02 - 结构化数据
+    link: http://cis198-2016s.github.io/slides/02/
     lessons: 2
   - name: 03 - 泛型 & 特性
+    link: http://cis198-2016s.github.io/slides/03/
     lessons: 3
   - name: 04 - 闭包
+    link: http://cis198-2016s.github.io/slides/04/
     lessons: 1
   - name: "05 - std: 标准库"
+    link: http://cis198-2016s.github.io/slides/05/
     lessons: 2
   - name: "06 - std: 指针类型"
+    link: http://cis198-2016s.github.io/slides/06/
     lessons: 1
   - name: "07 - 杂项: 语法，包，标准库"
+    link: http://cis198-2016s.github.io/slides/07/
     lessons: 2
   - name: 08 - I/O（输入/输出）
+    link: http://cis198-2016s.github.io/slides/08/
     lessons: 2
   - name: 09 - 网络编程
+    link: http://cis198-2016s.github.io/slides/09/
     lessons: 1
   - name: 10 - 并发 I
+    link: http://cis198-2016s.github.io/slides/10/
     lessons: 3
   - name: 11 - 并发 II
+    link: http://cis198-2016s.github.io/slides/11/
     lessons: 3
   - name: 12 - 非安全代码 & 外部函数接口（FFI）
+    link: http://cis198-2016s.github.io/slides/12/
     lessons: 3
   - name: 13 - 宏!
+    link: http://cis198-2016s.github.io/slides/13/
     lessons: 2
   - name: 14 - 社区/贡献
+    link: http://cis198-2016s.github.io/slides/14/
     lessons: 1
   - name: 15 - Rust的夜间版本
+    link: http://cis198-2016s.github.io/slides/15/
     lessons: 3
   - name: 16 - 高阶特性边界
+    link: http://cis198-2016s.github.io/slides/16/
     lessons: 1
   - name: 17 - 借用 & 所有权
+    link: http://cis198-2016s.github.io/slides/17/
     lessons: 1
   - name: 18 - 跨平台编译
+    link: http://cis198-2016s.github.io/slides/18/
     lessons: 1
 ---
 
