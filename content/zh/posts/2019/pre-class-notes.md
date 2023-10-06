@@ -7,7 +7,7 @@ date: 2019-10-26
 
 今天，我在浏览导师的朋友圈时，有一种醍醐灌顶的感觉。
 
-!()[note/0.jpg]
+![](pre-class-notes/0.jpg)
 
 以前，我一直以为我已经拥有了良好的笔记习惯，如课上做笔记，课后补充笔记，以及一个阶段结束后的笔记整理。然而，今天我意识到，我忽略了预习笔记这一重要环节。
 
@@ -15,11 +15,11 @@ date: 2019-10-26
 
 当我回过头去看自己的笔记时，我发现它们并不像我印象中的那么好。这提示我，我需要重新审视和改进我的笔记方法，特别是在预习阶段。预习笔记不仅可以帮助我更好地理解和吸收课程内容，而且还可以提高我的学习效率。
 
-!()[note/1.jpg]
-!()[note/2.jpg]
-!()[note/3.jpg]
-!()[note/4.jpg]
-!()[note/5.jpg]
-!()[note/6.jpg]
-!()[note/7.jpg]
-!()[note/8.jpg]
+![](pre-class-notes/1.jpg)
+![](pre-class-notes/2.jpg)
+![](pre-class-notes/3.jpg)
+![](pre-class-notes/4.jpg)
+![](pre-class-notes/5.jpg)
+![](pre-class-notes/6.jpg)
+![](pre-class-notes/7.jpg)
+![](pre-class-notes/8.jpg)
