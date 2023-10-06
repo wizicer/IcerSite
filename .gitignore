@@ -5,3 +5,4 @@ docs/.vitepress/dist
 
 content/.vitepress/cache
 content/.vitepress/dist
+content/.vitepress/.temp
