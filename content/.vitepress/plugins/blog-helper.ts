@@ -57,7 +57,8 @@ export function blogHelper(): Plugin {
         sidebar: false,
         lang: /\/en\//.test(id)?'en':'zh' ,
       })
-      return a
+      const b = a.replace(/!\[(.*?)\]\((?!\w+:\/\/|\.\/|\/)(.*?)\)/g, "![$1](./$2)")
+      return b
     }
   }
 }

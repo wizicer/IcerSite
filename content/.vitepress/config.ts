@@ -102,10 +102,11 @@ export default defineConfigWithTheme<ThemeConfig>({
             if (!token.attrs) continue;
             const apos = token.attrs.findIndex((_) => _[0] == "src");
             if (apos == -1) continue;
-            const origin = token.attrs[apos][1];
+            let origin = token.attrs[apos][1];
             if (origin.startsWith("/")) continue;
             if (origin.startsWith("https://")) continue;
             if (origin.startsWith("http://")) continue;
+            if (origin.startsWith("./")) origin = origin.slice(2);
             let path = env.relativePath.substr(0, env.relativePath.lastIndexOf("/") + 1);
             path = path.replace(lang, "zh");
             token.attrs[apos][1] = "/" + path + origin;

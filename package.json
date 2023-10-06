@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "scripts": {
     "dev": "vitepress dev content",
     "build": "vitepress build content",
@@ -8,7 +9,7 @@
     "big-integer": "^1.6.51",
     "js-yaml": "^4.1.0",
     "markdown-it-mathjax3": "^4.3.2",
-    "vitepress": "^1.0.0-beta.1",
+    "vitepress": "^1.0.0-rc.20",
 
     "bootstrap-icons-vue": "^1.8.1",
     "vue": "^3.2.45",

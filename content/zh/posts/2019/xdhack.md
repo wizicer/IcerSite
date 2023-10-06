@@ -33,4 +33,4 @@ date: 2019-10-21
 
 - [新闻链接](https://mp.weixin.qq.com/s/TNizB0jmKyuu5HwLiwFVVQ)
 
-PS: 后来这个系统变成了[剪刀兔](/projects/2019/editool/)这个产品。
+PS: 后来这个系统变成了[剪刀兔](../../projects/2020/editool/)这个产品。
