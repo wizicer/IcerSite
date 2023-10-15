@@ -16,6 +16,7 @@ lessons:
   - date: 23/10/5
     bili: https://www.bilibili.com/video/BV1uN411J7Gw/
   - date: 23/10/12
+    bili: https://www.bilibili.com/video/BV1Eu411K7o5/
   - date: 23/10/19
   - date: 23/10/26
   - date: 23/11/2
