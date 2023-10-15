@@ -39,7 +39,7 @@ next: false
 
 ### 链接
 
-* [个人简历](pathname:///resume/index.html)
+* [个人简历](/resume/index.html?language=zh){target="_blank"}
 * [个人作品](/zh/projects/)
 * [Github](https://github.com/wizicer)
 * [LinkedIn](https://www.linkedin.com/in/icerdesign)

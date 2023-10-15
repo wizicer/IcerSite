@@ -39,7 +39,7 @@ For love, please check [here](http://love.icerdesign.com/)
 
 ### Links
 
-* [Personal Resume](pathname:///resume/index.html)
+* [Personal Resume](/resume/index.html?language=en){target="_blank"}
 * [Personal Works](/zh/projects/)
 * [Github](https://github.com/wizicer)
 * [LinkedIn](https://www.linkedin.com/in/icerdesign)
