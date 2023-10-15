@@ -3,15 +3,39 @@ import { createApp } from "./vue.esm-browser.prod.js";
 
 createApp({
   data() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const language = urlParams.get("language");
     return {
-      language: "en",
-      //   language: "zh",
+      language: language == "zh" ? "zh" : "en",
+      // language: "zh",
+      mode: "resume",
+      // mode: "letter",
+      switchable: !language,
     };
+  },
+  mounted() {
+    this.updateTitle();
   },
   methods: {
     switchLanguage() {
+      if (!this.switchable) return;
       this.language = this.language == "en" ? "zh" : "en";
-      document.title = this.isEnglish ? "Shuang Liang - Resume" : "梁爽 - 简历";
+      this.updateTitle();
+    },
+    switchMode() {
+      if (!this.switchable) return;
+      this.mode = this.mode == "resume" ? "letter" : "resume";
+      this.updateTitle();
+    },
+    updateTitle() {
+      document.title =
+        this.mode == "resume"
+          ? this.isEnglish
+            ? "Shuang Liang - Resume"
+            : "梁爽 - 简历"
+          : this.isEnglish
+          ? "Shuang Liang - Cover Letter"
+          : "梁爽 - 求职信";
     },
   },
   computed: {

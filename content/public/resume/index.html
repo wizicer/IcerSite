@@ -23,7 +23,7 @@
             <h1 class="mb-0 text-5xl font-bold text-gray-700" @click="switchLanguage()">{{info.name}}</h1>
 
             <!--Job Title--------------------------------------------------------------------------------------------------------->
-            <h2 class="m-0 text-2xl font-semibold text-gray-700 leading-snugish">{{info.job}}</h2>
+            <h2 class="m-0 text-2xl font-semibold text-gray-700 leading-snugish" @click="switchMode()">{{info.job}}</h2>
 
             <!--Location --------------------------------------------------------------------------------------------------------->
             <h3 class="m-0 mt-2 font-semibold text-lg text-gray-500 leading-snugish">{{info.location}}</h3>
@@ -57,8 +57,119 @@
           </section>
         </header>
 
-        <!-- Column -------------------------------------------------------------------------------------------------->
+        <!-- Cover Letter -------------------------------------------------------------------------------------------------->
+        <section v-if="mode=='letter'" class="text-xl mt-5 md:h-a4-col-full print:h-a4-col-full text-justify">
+          <article v-if="isEnglish" class="text-lg space-y-3 font-sans">
+            <p class="font-jost">Dear Hiring Manager,</p>
+            <p>
+              I came across the job listing for a ZKP Engineer and I am writing to express my interest in the position. I
+              have been conducting in-depth research in the field of ZKP in recent years and forseeable future, which aligns
+              perfectly with the requirements of this job.
+            </p>
+            <p>
+              Allow me to introduce myself briefly. My name is Shuang Liang, born in 1986, and I graduated from the Chongqing
+              Jiaotong University in 2009. Following this, I completed my postgraduate studies in software engineering at Shanghai
+              JiaoTong University (SJTU) in 2016 while working. In 2017, I left Honeywell to start my own business, focusing on
+              blockchain data storage. In 2020, I returned to SJTU to start my doctoral research in Computer Science, with a focus
+              on ZKP database. Due to the busy daily affairs of the laboratory and my ambition in ZKP, I took a leave of absence
+              in 2023 to focus on the practical engineering applications of ZKP.
+            </p>
+            <p>
+              I am passionate about education and popularization and am currently the lead lecturer for the
+              <a href="https://zkshanghai.xyz" target="_blank">zkShanghai series of ZKP courses</a>, where I primarily teach the
+              mathematics behind ZKP and applications of ZKP. With years of experience in software development and architectural
+              design, I have never leave the field of coding. Here are some of my proudest achievements:
+            </p>
+
+            <ul class="list-disc list-inside">
+              <li>Over 20 years of programming experience with a total of over one million lines of code</li>
+              <li>Published 4 papers and obtained 5 invention patents</li>
+              <li>
+                Won multiple first, and second prizes at the national and provincial levels in various computer-related
+                competitions
+              </li>
+            </ul>
+            <p>For more details, please refer to my resume.</p>
+            <p>
+              Over the past few years, I have gained in-depth knowledge of the mathematics of ZKP and have lectured on them in the
+              <a href="https://zkshanghai.xyz" target="_blank">zkShanghai series of ZKP courses</a>. The course videos have been
+              uploaded to
+              <a href="https://www.youtube.com/playlist?list=PLBIxCe-LDnGC-hfuyKRBvi1eC_X_7JzU7" target="_blank">YouTube</a>. In
+              addition to computer-related courses, I have studied mathematics-related courses such as discrete mathematics,
+              combinatorics, number theory, and cryptography. I have the ability to write zkSNARK frameworks (such as Plonk and
+              Groth16) and zkSTARK arithmetization tool from scratch. I have extensive experience in writing CIRCOM (mainly used
+              for secure database index design in scientific research) and optimizing arithmetic circuits. Therefore, I believe
+              that my skills and experience are highly suitable for the job.
+            </p>
+            <p>
+              In terms of personal qualities, I am bold and meticulous, with a slight perfectionist tendency. Years of team
+              collaboration have taught me to compromise towards perfection but never towards quality. I enjoy developing various
+              efficiency tools and sharing my experiences, and I am always proactive in contributing to the team. I am a "catfish"
+              type in the team, not liking to stick to the rules but not rebellious, and understanding the importance of following
+              the rules.
+            </p>
+            <p>
+              Thank you very much for taking the time to read the letter. I believe that my skills and experience can be put to
+              good use in this position and I sincerely look forward to further communication with you.
+            </p>
+            <p class="font-jost pt-10">Sincerely,</p>
+            <p class="font-jost pt-4">Shuang Liang</p>
+            <p class="font-jost">XXX, XXth, XXXX</p>
+          </article>
+
+          <article v-else class="space-y-2 indent-10">
+            <p class="indent-0">尊敬的招聘经理：</p>
+            <p>
+              我在贵司的职位列表中看到正在招聘 ZKP 工程师，因为我过去几年及未来较长的时间都会在 ZKP
+              方向进行深入的研究，这正好与该职位相匹配，故成此文，希望能有进一步交流的可能性。
+            </p>
+            <p>
+              我先简单地做下自我介绍，我叫梁爽，1986 年生，2009 年从重庆交大电子系本科毕业后参加工作，2016
+              年在上海交大软件工程学院完成在职研究生学习，2017 年离开霍尼韦尔开始创业，方向是区块链数据存储，2020
+              年回到上海交大计算机系继续博士研究，研究方向是零知识证明数据库，因实验室日常事务繁杂，以及期望学以致用，故在 2023
+              年开始休学，重点关注 ZKP 的实际工程应用。个人热心于传道和科普，最近在<a
+                href="https://zkshanghai.xyz"
+                target="_blank"
+                >零知识证明系列课程 zkShanghai </a
+              >中任主讲，主要讲解 ZKP
+              的数学原理和工程应用。工作多年，主要从事软件开发及架构设计工作，从未离开过代码一线，具有扎实的基本功。我有以下引以为傲的标签：
+            </p>
+            <ul class="list-disc list-inside">
+              <li>20 多年编程经验，总代码行数超百万行</li>
+              <li>发表过 4 篇论文，获得发明专利 5 项</li>
+              <li>得过各种（计算机类）国家级、省市级一等奖、银牌、铜牌若干</li>
+            </ul>
+            <p>其他详情请见我的个人简历。</p>
+            <p>
+              我在过去的一段时间里对零知识证明的数学原理有过深入了解，并在<a href="https://zkshanghai.xyz" target="_blank">
+                zkShanghai 系列零知识课程</a
+              >上进行了讲解，该课程视频已经上传至<a
+                href="https://www.youtube.com/playlist?list=PLBIxCe-LDnGC-hfuyKRBvi1eC_X_7JzU7"
+                target="_blank"
+              >
+                YouTube </a
+              >。除了计算机相关专业课程之外，学习过离散数学、组合数学、初等数论和密码学等数学相关课程。具备从零编写 zkSNARK
+              框架（如 Plonk 和 Groth16）和 zkSTARK 算术化工具的能力。具有较长时间编写 CIRCOM
+              的经验（主要用于实现科研上的安全数据库索引设计），具备算术电路的优化经验。因此，我相信我自身的情况和条件非常符合贵司对
+              ZKP 工程师职位的定位。
+            </p>
+
+            <p>
+              关于个人素质，性格上是大胆和细心，略有完美主义倾向，多年的团队合作中养成了向完美妥协，但绝不向质量妥协的习惯。喜欢自己开发各种效率工具，喜欢分享各种心得，总是积极主动的为团队贡献自己的一份力量。在团队里面属于“鲶鱼”类型，不喜欢墨守成规，但不叛逆，懂得遵守规矩。
+            </p>
+            <p>非常感谢您抽出时间阅读我的求职信，我相信我的技能和经验可以在该职位上得到发挥，真诚期待与您的进一步交流。</p>
+            <p class="pt-10">此致</p>
+            <p class="indent-0">敬礼</p>
+            <div class="float-right mr-10">
+              <p class="text-center">梁爽</p>
+              <p class="text-center">XXXX 年 XX 月 XX 日</p>
+            </div>
+          </article>
+        </section>
+
+        <!-- Resume -------------------------------------------------------------------------------------------------->
         <section
+          v-if="mode=='resume'"
           class="flex flex-row col-gap-8 md:col-count-2 print:col-count-2 md:h-a4-col-full print:h-a4-col-full col-fill-balance"
         >
           <!--1st Column ------------------------------------------------------------------------------------------------------>
