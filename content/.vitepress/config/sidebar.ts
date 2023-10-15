@@ -43,7 +43,7 @@ const rawSidebar = [
       { zh: "标日学习", en: "Japanese Learning Assistant", link: "/projects/2016/learn-japan/" },
       { zh: "C#自动代码生成", en: "C# Hidden Code Generator", link: "/projects/2015/cs-hidden-code-gen/" },
       { zh: "ClearCase转git", en: "ClearCase-to-Git Helper", link: "/projects/2015/clearcase-to-git/" },
-      { zh: "UAP协议", en: "UAP Network", link: "/projects/2009/uap-network/" },
+      { zh: "UAP协议", en: "UAP Network", link: "/projects/2010/uap-network/" },
     ],
   },
   {
