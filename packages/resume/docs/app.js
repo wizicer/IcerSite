@@ -3,11 +3,14 @@ import { createApp } from "./vue.esm-browser.js";
 
 createApp({
   data() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const language = urlParams.get("language");
     return {
-      language: "en",
+      language: language == "zh" ? "zh" : "en",
       // language: "zh",
       mode: "resume",
       // mode: "letter",
+      switchable: !language,
     };
   },
   mounted() {
@@ -15,10 +18,12 @@ createApp({
   },
   methods: {
     switchLanguage() {
+      if (!this.switchable) return;
       this.language = this.language == "en" ? "zh" : "en";
       this.updateTitle();
     },
     switchMode() {
+      if (!this.switchable) return;
       this.mode = this.mode == "resume" ? "letter" : "resume";
       this.updateTitle();
     },
