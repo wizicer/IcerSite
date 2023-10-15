@@ -15,7 +15,7 @@
     "cross-env": "7.0.3",
     "cssnano": "5.0.0",
     "live-server": "1.2.1",
-    "postcss": "8.4.24",
+    "postcss": "8.4.31",
     "postcss-cli": "10.1.0",
     "postcss-import": "15.1.0",
     "tailwind-heropatterns": "^0.0.8",
