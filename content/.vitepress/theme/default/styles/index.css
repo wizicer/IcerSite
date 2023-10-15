@@ -1,4 +1,4 @@
-@import url('./utils.css');
+@import url("./utils.css");
 
 .VPBadge {
   margin-top: 15px;
@@ -11,4 +11,21 @@
 
 .VPContent .content * {
   pointer-events: auto;
+}
+
+/* 
+1. http://mcg.mbitson.com/
+2. select A200/A400/A700
+3. https://convertacolor.com/
+*/
+:root {
+  --vp-c-blue-1: #838dff;
+  --vp-c-blue-2: #505eff;
+  --vp-c-blue-3: #3646ff;
+  --vp-c-blue-soft: rgba(15, 27, 132, 0.14);
+
+  --vp-c-brand-1: var(--vp-c-blue-1);
+  --vp-c-brand-2: var(--vp-c-blue-2);
+  --vp-c-brand-3: var(--vp-c-blue-3);
+  --vp-c-brand-soft: var(--vp-c-blue-soft);
 }
