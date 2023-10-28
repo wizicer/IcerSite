@@ -20,6 +20,7 @@ lessons:
   - date: 23/10/19
     bili: https://www.bilibili.com/video/BV1LN411t7ee/
   - date: 23/10/26
+    bili: https://www.bilibili.com/video/BV1uw411q75N/
   - date: 23/11/2
   - date: 23/11/9
   - date: 23/11/16
