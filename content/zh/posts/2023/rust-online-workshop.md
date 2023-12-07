@@ -30,6 +30,7 @@ lessons:
   - date: 23/11/23
     bili: https://www.bilibili.com/video/BV1Sz4y1c7sU/
   - date: 23/12/7
+    bili: https://www.bilibili.com/video/BV1Mu4y137A7/
   - date: 23/12/14
   - date: 23/12/21
   - date: 23/12/28
