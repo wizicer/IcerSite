@@ -31,8 +31,8 @@ lessons:
     bili: https://www.bilibili.com/video/BV1Sz4y1c7sU/
   - date: 23/12/7
     bili: https://www.bilibili.com/video/BV1Mu4y137A7/
-  - date: 23/12/14
   - date: 23/12/21
+    bili: https://www.bilibili.com/video/BV1Nc41117Jm/
   - date: 23/12/28
   - date: 24/1/4
   - date: 24/1/11
@@ -58,6 +58,7 @@ lessons:
   - date: 24/5/30
   - date: 24/6/6
   - date: 24/6/13
+  - date: 24/6/20
 slides:
   - name: 00 - Rust 入门
     link: http://cis198-2016s.github.io/slides/00/
