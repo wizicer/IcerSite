@@ -36,6 +36,7 @@ lessons:
   - date: 23/12/28
     bili: https://www.bilibili.com/video/BV1Kp4y1o7Dc/
   - date: 24/1/4
+    bili: https://www.bilibili.com/video/BV1kt4y1Z76B/
   - date: 24/1/11
   - date: 24/1/18
   - date: 24/1/25
@@ -58,7 +59,6 @@ lessons:
   - date: 24/5/23
   - date: 24/5/30
   - date: 24/6/6
-  - date: 24/6/13
 slides:
   - name: 00 - Rust 入门
     link: http://cis198-2016s.github.io/slides/00/
@@ -86,7 +86,7 @@ slides:
     lessons: 1
   - name: 08 - I/O（输入/输出）
     link: http://cis198-2016s.github.io/slides/08/
-    lessons: 2
+    lessons: 1
   - name: 09 - 网络编程
     link: http://cis198-2016s.github.io/slides/09/
     lessons: 1
