@@ -38,6 +38,7 @@ lessons:
   - date: 24/1/4
     bili: https://www.bilibili.com/video/BV1kt4y1Z76B/
   - date: 24/1/11
+    bili: https://www.bilibili.com/video/BV1494y1T7h3/
   - date: 24/1/18
   - date: 24/1/25
   - date: 24/2/1
