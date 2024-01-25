@@ -39,8 +39,8 @@ lessons:
     bili: https://www.bilibili.com/video/BV1kt4y1Z76B/
   - date: 24/1/11
     bili: https://www.bilibili.com/video/BV1494y1T7h3/
-  - date: 24/1/18
   - date: 24/1/25
+    bili: https://www.bilibili.com/video/BV1Re411Y7SN/
   - date: 24/2/1
 #   - date: 24/2/8 // day before lunar new year'eve
 #   - date: 24/2/15 // lunar first month, 6th
@@ -93,7 +93,7 @@ slides:
     lessons: 1
   - name: 10 - 并发 I
     link: http://cis198-2016s.github.io/slides/10/
-    lessons: 3
+    lessons: 2
   - name: 11 - 并发 II
     link: http://cis198-2016s.github.io/slides/11/
     lessons: 3
