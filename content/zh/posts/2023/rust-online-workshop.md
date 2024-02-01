@@ -42,6 +42,7 @@ lessons:
   - date: 24/1/25
     bili: https://www.bilibili.com/video/BV1Re411Y7SN/
   - date: 24/2/1
+    bili: https://www.bilibili.com/video/BV1FC411r7a5/
 #   - date: 24/2/8 // day before lunar new year'eve
 #   - date: 24/2/15 // lunar first month, 6th
   - date: 24/2/22
