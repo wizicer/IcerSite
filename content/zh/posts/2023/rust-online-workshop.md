@@ -45,8 +45,8 @@ lessons:
     bili: https://www.bilibili.com/video/BV1FC411r7a5/
 #   - date: 24/2/8 // day before lunar new year'eve
 #   - date: 24/2/15 // lunar first month, 6th
-  - date: 24/2/22
   - date: 24/2/29
+    bili: https://www.bilibili.com/video/BV1Hm411f7c8/
   - date: 24/3/7
   - date: 24/3/14
   - date: 24/3/21
@@ -61,6 +61,7 @@ lessons:
   - date: 24/5/23
   - date: 24/5/30
   - date: 24/6/6
+  - date: 24/6/13
 slides:
   - name: 00 - Rust 入门
     link: http://cis198-2016s.github.io/slides/00/
